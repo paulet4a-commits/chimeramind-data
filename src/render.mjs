@@ -77,7 +77,7 @@ export function renderGuide(body, actor, sample) {
         .replace(/\{\{cta\}\}/g, () => `\n\n${cta(actor)}\n\n`)
         .replace(/\{\{price\}\}/g, () => (actor?.price ? `${money(actor.price.usd)} per 1,000 ${actor.price.unit}s` : ''));
     const faq = [];
-    const faqPart = /^## FAQ\s*$([\s\S]*?)(?=^## |\Z)/m.exec(filled)?.[1] ?? '';
+    const faqPart = /^## FAQ\s*$([\s\S]*?)(?=^## |(?![\s\S]))/m.exec(filled)?.[1] ?? '';
     for (const m of faqPart.matchAll(/^### (.+)\n([\s\S]*?)(?=^### |$(?![\s\S]))/gm)) faq.push({ q: m[1].trim(), a: m[2].trim().replace(/\s+/g, ' ') });
     const toc = [...filled.matchAll(/^## (.+)$/gm)].map((m) => m[1].trim());
     const renderer = new marked.Renderer();

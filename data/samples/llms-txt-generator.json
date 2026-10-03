@@ -1,0 +1,36 @@
+{
+  "runId": "9DhgEi2uzqJqRSlKv",
+  "finishedAt": "2026-10-03T14:16:45.587Z",
+  "items": [
+    {
+      "site": "crawlee.dev",
+      "url": "https://crawlee.dev/js/docs/quick-start",
+      "title": "Quick Start",
+      "description": "With this short tutorial you can start scraping with Crawlee in a minute or two. To learn more, read the Introduction.",
+      "section": "Docs",
+      "wordCount": 1484,
+      "tokens": 4413,
+      "markdown": "Version: 3.18\n\n# Quick Start\n\nWith this short tutorial you can start scraping with Crawlee in a minute or two. To learn in-depth how Crawlee works, read the [Introduction](https://crawlee.dev/js/docs/introduction), which is a comprehensive step-by-step guide for creating your …"
+    },
+    {
+      "site": "crawlee.dev",
+      "url": "https://crawlee.dev/js/docs/3.10/deployment/apify-platform",
+      "title": "Apify Platform",
+      "description": "Apify platform - large-scale and high-performance web scraping",
+      "section": "Docs",
+      "wordCount": 2156,
+      "tokens": 4321,
+      "markdown": "Version: 3.10\n\n# Apify Platform\n\nApify is a [platform](https://apify.com/) built to serve large-scale and high-performance web scraping and automation needs. It provides easy access to [compute instances (Actors)](https://crawlee.dev/js/docs/3.10/deployment/apify-platform#what…"
+    },
+    {
+      "site": "crawlee.dev",
+      "url": "https://crawlee.dev/js/docs/3.11/examples/crawler-plugins",
+      "title": "Using Puppeteer Stealth Plugin (puppeteer-extra) and playwright-extra",
+      "description": "puppeteer-extra and playwright-extra are community-built",
+      "section": "Docs",
+      "wordCount": 1270,
+      "tokens": 4284,
+      "markdown": "Version: 3.11\n\n# Using Puppeteer Stealth Plugin (puppeteer-extra) and playwright-extra\n\n[`puppeteer-extra`](https://www.npmjs.com/package/puppeteer-extra) and [`playwright-extra`](https://www.npmjs.com/package/playwright-extra) are community-built libraries that bring in a plu…"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "runId": "R75QcGz14i2rWPS2I",
+  "finishedAt": "2026-10-03T15:23:08.003Z",
+  "items": [
+    {
+      "domain": "apify.com",
+      "startUrl": "https://apify.com",
+      "title": "Apify: Marketplace of ready-to-run tools for AI",
+      "description": "Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.",
+      "emails": [
+        "hello@apify.com",
+        "info@baeckerei-mustermann.de",
+        "james.hill@apify.com"
+      ],
+      "phones": [],
+      "socials": {
+        "discord": [
+          "https://discord.com/invite/jyEM2PRvMU",
+          "https://discord.gg/w3e2v7rWDw"
+        ],
+        "github": [
+          "https://github.com/apify",
+          "https://github.com/google-agentic-commerce",
+          "https://github.com/mcp"
+        ],
+        "linkedin": [
+          "https://linkedin.com/company/apify"
+        ],
+        "twitter": [
+          "https://x.com/apify",
+          "https://x.com/Adrnalnrsh",
+          "https://x.com/DataVoyant"
+        ],
+        "tiktok": [
+          "https://tiktok.com/@apifytech",
+          "https://tiktok.com/@apifyoffice"
+        ]
+      },
+      "whatsapp": [],
+      "telegram": [],
+      "discord": [
+        "https://discord.com/invite/jyEM2PRvMU",
+        "https://discord.gg/w3e2v7rWDw"
+      ],
+      "emailCount": 6,
+      "phoneCount": 0,
+      "pagesCrawled": 30,
+      "scrapedAt": "2026-10-03T15:23:07.827Z"
+    }
+  ]
+}

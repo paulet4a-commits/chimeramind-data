@@ -1,0 +1,83 @@
+{
+  "runId": "gHUEmM0jhZBGQ1fWG",
+  "finishedAt": "2026-10-03T14:23:53.351Z",
+  "items": [
+    {
+      "query": "apify web scraping",
+      "page": 1,
+      "countryCode": "us",
+      "languageCode": "en",
+      "device": "desktop",
+      "searchUrl": "http://www.google.com/search?q=apify+web+scraping&hl=en&gl=us&num=10&gbv=1",
+      "totalResultsText": "About 111 results",
+      "organicResults": [
+        {
+          "position": 1,
+          "title": "Apify: Marketplace of ready-to-run tools for AI",
+          "url": "https://apify.com",
+          "displayedUrl": "https://apify.com",
+          "snippet": "79,599 tools for your AI ... Apify is a marketplace of ready-to-run tools for AI. Get real-time web data, track competitors, generate leads, monitor social media, ...",
+          "date": null,
+          "sitelinks": [
+            {
+              "title": "Web Scraper",
+              "url": null
+            },
+            {
+              "title": "Pricing",
+              "url": null
+            },
+            {
+              "title": "Apify Store",
+              "url": null
+            }
+          ]
+        },
+        {
+          "position": 2,
+          "title": "Apify",
+          "url": "https://github.com",
+          "displayedUrl": "https://github.com › apify",
+          "snippet": "Apify is the largest marketplace of tools for AI. Learn web scraping and automation with the free courses at Apify Academy. handle complex web crawling and  ...",
+          "date": null,
+          "sitelinks": []
+        },
+        {
+          "position": 3,
+          "title": "From Scrapy to Apify: how a retail data agency saved 90 ...",
+          "url": null,
+          "displayedUrl": "10+ comments  ·  4 years ago",
+          "snippet": "data agency saved 90% costs on web scraping. Apify Website Scraper Makes Web Scraping Way Easier With AI … scrapers convert better than popular ...",
+          "date": null,
+          "sitelinks": []
+        }
+      ],
+      "organicCount": 6,
+      "peopleAlsoAsk": [
+        {
+          "question": "Is Apify illegal?",
+          "answerSnippet": null,
+          "url": null
+        },
+        {
+          "question": "Is Apify a good scraper?",
+          "answerSnippet": null,
+          "url": null
+        },
+        {
+          "question": "Is AI scraping illegal?",
+          "answerSnippet": null,
+          "url": null
+        }
+      ],
+      "relatedSearches": [],
+      "featuredSnippet": null,
+      "ads": [],
+      "adCount": 0,
+      "knowledgePanelTitle": null,
+      "htmlLength": 566853,
+      "scrapedAt": "2026-10-03T14:23:39.997Z",
+      "error": null
+    }
+  ]
+}

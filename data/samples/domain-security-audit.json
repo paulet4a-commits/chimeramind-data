@@ -1,0 +1,67 @@
+{
+  "runId": "Z8gmO4h2vl5rGAFJX",
+  "finishedAt": "2026-10-03T15:21:08.674Z",
+  "items": [
+    {
+      "domain": "apify.com",
+      "certValidFrom": "2026-07-03T00:00:00.000Z",
+      "certValidTo": "2027-01-16T23:59:59.000Z",
+      "certDaysUntilExpiry": 105,
+      "certIssuerOrg": "Amazon",
+      "certIssuerCN": "Amazon RSA 2048 M04",
+      "certSubjectCN": "*.apify.com",
+      "certSanCount": 4,
+      "certAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "finalUrl": "https://apify.com/",
+      "redirectHops": 1,
+      "redirectChain": [
+        {
+          "url": "http://apify.com/",
+          "status": 301,
+          "location": "https://apify.com/"
+        },
+        {
+          "url": "https://apify.com/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "httpsRedirect": true,
+      "wwwRedirect": false,
+      "hasHsts": true,
+      "hstsMaxAge": 15768000,
+      "hstsIncludeSubdomains": false,
+      "hstsPreload": false,
+      "hasCsp": true,
+      "cspHasUnsafeInline": true,
+      "xFrameOptions": "SAMEORIGIN",
+      "xContentTypeOptions": "nosniff",
+      "referrerPolicy": null,
+      "permissionsPolicy": null,
+      "server": null,
+      "xPoweredBy": null,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "cookieCount": 0,
+      "secureCookieCount": 0,
+      "httpOnlyCookieCount": 0,
+      "sameSiteCookieCount": 0,
+      "robotsStatus": 200,
+      "robotsDisallowAll": false,
+      "robotsSitemapCount": 1,
+      "aiBotsDisallowed": [],
+      "llmsTxtExists": true,
+      "llmsTxtTitle": "Apify",
+      "llmsTxtSize": 16837,
+      "securityScore": 90,
+      "securityGrade": "A",
+      "issues": [
+        "CSP allows 'unsafe-inline'",
+        "No Referrer-Policy header",
+        "No Permissions-Policy header"
+      ],
+      "error": null,
+      "scrapedAt": "2026-10-03T15:21:07.940Z"
+    }
+  ]
+}

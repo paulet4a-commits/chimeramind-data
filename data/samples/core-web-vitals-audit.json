@@ -1,0 +1,53 @@
+{
+  "runId": "s4cvBCaBblPEpy46H",
+  "finishedAt": "2026-10-03T15:19:28.656Z",
+  "items": [
+    {
+      "url": "https://apify.com/",
+      "finalUrl": "https://apify.com/",
+      "strategy": "mobile",
+      "performanceScore": 35,
+      "accessibilityScore": null,
+      "bestPracticesScore": null,
+      "seoScore": null,
+      "lcpMs": 16894,
+      "cls": 0,
+      "tbtMs": 1835,
+      "fcpMs": 2701,
+      "speedIndexMs": 9369,
+      "ttiMs": 34446,
+      "ttfbMs": 15,
+      "fieldData": {
+        "lcpMs": 2463,
+        "cls": 0.01,
+        "inpMs": 385,
+        "fcpMs": 2326,
+        "ttfbMs": 1383,
+        "overallCategory": "AVERAGE"
+      },
+      "passesCoreWebVitals": false,
+      "labGrade": "poor",
+      "topOpportunities": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "savingsMs": 2550
+        },
+        {
+          "id": "unminified-css",
+          "title": "Minify CSS",
+          "savingsMs": 0
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "savingsMs": 0
+        }
+      ],
+      "lighthouseVersion": "13.5.0",
+      "fetchedAt": "2026-10-03T15:18:52.669Z",
+      "error": null,
+      "scrapedAt": "2026-10-03T15:19:28.193Z"
+    }
+  ]
+}

@@ -6,7 +6,7 @@
   "url": "https://apify.com/webdatatools/contact-extractor",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-SN88YAtrbnLiHjsJf-MJlWPlEH29-contact-extractor.png",
   "users30": 1,
-  "runs": 32,
+  "runs": 33,
   "categories": [
    "LEAD_GENERATION",
    "BUSINESS",
@@ -41,7 +41,7 @@
   "url": "https://apify.com/webdatatools/tech-stack-detector",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-K6jDqlY7EiQ2sbqLx-B97lz2udNQ-tech-stack-detector.png",
   "users30": 0,
-  "runs": 74,
+  "runs": 75,
   "categories": [
    "LEAD_GENERATION",
    "DEVELOPER_TOOLS",
@@ -76,7 +76,7 @@
   "url": "https://apify.com/webdatatools/core-web-vitals-audit",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-FM0Kfh5kY4KVsuHVe-Ebe6jE0AZz-core-web-vitals-audit.png",
   "users30": 4,
-  "runs": 36,
+  "runs": 38,
   "categories": [
    "SEO_TOOLS",
    "DEVELOPER_TOOLS",
@@ -148,7 +148,7 @@
   "url": "https://apify.com/webdatatools/hiring-signals",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-IzYAKYeRydOFJMgJQ-ehmKwB2RIR-hiring-signals.png",
   "users30": 2,
-  "runs": 70,
+  "runs": 72,
   "categories": [
    "JOBS",
    "LEAD_GENERATION",
@@ -680,7 +680,7 @@
   "url": "https://apify.com/webdatatools/domain-security-audit",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-SELey4npMakiVA1vf-miaSpY31Iu-domain-security-audit.png",
   "users30": 2,
-  "runs": 59,
+  "runs": 62,
   "categories": [
    "DEVELOPER_TOOLS",
    "SEO_TOOLS",
@@ -893,7 +893,7 @@
   "url": "https://apify.com/webdatatools/wikidata-entity-enrichment",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-ycbpmQFuSnrxe3om7-UpaL3qLvg4-wikidata-entity-enrichment.png",
   "users30": 2,
-  "runs": 42,
+  "runs": 43,
   "categories": [
    "BUSINESS",
    "LEAD_GENERATION",
@@ -959,7 +959,7 @@
   "url": "https://apify.com/webdatatools/seo-page-audit",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-J3O0j3UPwFG4gac3B-YP0MO9HU3E-seo-page-audit.png",
   "users30": 2,
-  "runs": 43,
+  "runs": 46,
   "categories": [
    "SEO_TOOLS",
    "DEVELOPER_TOOLS",
@@ -1275,7 +1275,7 @@
   "url": "https://apify.com/webdatatools/company-360",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-BbeJDj8MzLbIfg0hM-1zg6AG9CbT-company-360.png",
   "users30": 1,
-  "runs": 23,
+  "runs": 24,
   "categories": [
    "LEAD_GENERATION",
    "BUSINESS",

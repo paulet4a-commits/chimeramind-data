@@ -1,0 +1,71 @@
+{
+  "runId": "VwogsCfMHAcJhdp1X",
+  "finishedAt": "2026-10-03T15:21:16.758Z",
+  "items": [
+    {
+      "domain": "apify.com",
+      "websiteUrl": "https://apify.com",
+      "companyName": "Apify",
+      "description": "Czech tech startup",
+      "emails": [
+        "support@apify.com",
+        "hello@apify.com"
+      ],
+      "phones": [],
+      "socials": {
+        "linkedin": [
+          "https://linkedin.com/company/apify"
+        ],
+        "twitter": [
+          "https://x.com/apify"
+        ]
+      },
+      "linkedinUrl": "https://linkedin.com/company/apify",
+      "twitterUrl": "https://x.com/apify",
+      "facebookUrl": null,
+      "instagramUrl": null,
+      "youtubeUrl": null,
+      "cms": null,
+      "ecommercePlatform": null,
+      "analytics": [
+        "Google Tag Manager"
+      ],
+      "adPixels": [],
+      "chatWidget": "Intercom",
+      "paymentProviders": [],
+      "technologyCount": 11,
+      "emailProvider": "Google Workspace",
+      "dnsProvider": "Amazon Route 53",
+      "spfPolicy": "-all",
+      "dmarcPolicy": "reject",
+      "emailSecurityGrade": "A",
+      "registrar": "Amazon Registrar, Inc.",
+      "domainAgeDays": 6331,
+      "tlsValid": true,
+      "tlsDaysUntilExpiry": 105,
+      "securityGrade": "A",
+      "securityScore": 90,
+      "seoScore": 100,
+      "seoIssues": [],
+      "openJobs": 11,
+      "hiringVelocity": "low",
+      "topDepartments": [
+        "Engineering",
+        "GTM"
+      ],
+      "industries": [],
+      "headquarters": "Prague",
+      "country": "Czech Republic",
+      "employees": 66,
+      "revenue": 298000000,
+      "founders": [],
+      "foundedAt": "2016-02-15",
+      "crunchbaseId": null,
+      "wikidataQid": "Q112502991",
+      "profileCompleteness": 100,
+      "warnings": [],
+      "error": null,
+      "scrapedAt": "2026-10-03T15:21:06.594Z"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "runId": "x07MfC2O4aibK9dSv",
+  "finishedAt": "2026-10-03T15:21:12.297Z",
+  "items": [
+    {
+      "domain": "apify.com",
+      "startUrl": "https://apify.com",
+      "title": "Apify: Marketplace of ready-to-run tools for AI",
+      "description": "Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.",
+      "generator": null,
+      "cms": [],
+      "ecommerce": [],
+      "analytics": [
+        "Google Tag Manager"
+      ],
+      "advertising": [],
+      "emailMarketing": [
+        "HubSpot"
+      ],
+      "chat": [
+        "Intercom"
+      ],
+      "payments": [],
+      "frameworks": [
+        "Next.js"
+      ],
+      "cookieConsent": [
+        "OneTrust"
+      ],
+      "cdn": [
+        "Amazon CloudFront"
+      ],
+      "server": [],
+      "primaryCms": null,
+      "primaryEcommerce": null,
+      "isEcommerce": false,
+      "trackingIds": {
+        "gtm": [
+          "GTM-MNGXGGB"
+        ]
+      },
+      "technologies": [
+        {
+          "name": "Algolia",
+          "categories": [
+            "Search engines"
+          ],
+          "version": null,
+          "confidence": 100
+        },
+        {
+          "name": "Amazon CloudFront",
+          "categories": [
+            "CDN"
+          ],
+          "version": null,
+          "confidence": 100
+        },
+        {
+          "name": "Amazon S3",
+          "categories": [
+            "CDN"
+          ],
+          "version": null,
+          "confidence": 100
+        }
+      ],
+      "technologyCount": 11,
+      "byCategory": {
+        "Search engines": [
+          "Algolia"
+        ],
+        "CDN": [
+          "Amazon CloudFront",
+          "Amazon S3"
+        ],
+        "PaaS": [
+          "Amazon Web Services"
+        ],
+        "Documentation": [
+          "Docusaurus"
+        ],
+        "Static site generator": [
+          "Docusaurus"
+        ],
+        "Security": [
+          "HSTS"
+        ],
+        "Miscellaneous": [
+          "HTTP/3",
+          "Webpack"
+        ],
+        "Analytics": [
+          "Leadfeeder",
+          "Linkedin Insight Tag"
+        ],
+        "JavaScript frameworks": [
+          "React"
+        ]
+      },
+      "pagesCrawled": 3,
+      "scrapedAt": "2026-10-03T15:21:12.177Z",
+      "error": null
+    }
+  ]
+}

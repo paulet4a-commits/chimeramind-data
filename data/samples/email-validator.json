@@ -1,0 +1,33 @@
+{
+  "runId": "ZaOgVzYoRvHC2pOdc",
+  "finishedAt": "2026-09-28T10:50:28.539Z",
+  "items": [
+    {
+      "email": "support@apify.com",
+      "normalizedEmail": "support@apify.com",
+      "isValidSyntax": true,
+      "localPart": "support",
+      "domain": "apify.com",
+      "domainAscii": "apify.com",
+      "hasMx": true,
+      "mxRecords": [
+        "aspmx.l.google.com",
+        "alt2.aspmx.l.google.com",
+        "alt1.aspmx.l.google.com"
+      ],
+      "mxFallback": false,
+      "mxProvider": "Google Workspace",
+      "isDisposable": false,
+      "isFreeProvider": false,
+      "isRoleAddress": true,
+      "didYouMean": null,
+      "deliverability": "risky",
+      "score": 85,
+      "reasons": [
+        "Local part looks like a role account (e.g. info@, support@), not a named person"
+      ],
+      "error": null,
+      "scrapedAt": "2026-09-28T10:50:28.149Z"
+    }
+  ]
+}

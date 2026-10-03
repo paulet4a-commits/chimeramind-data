@@ -1,0 +1,72 @@
+{
+  "runId": "uVfQbmj1opo7fJolK",
+  "finishedAt": "2026-10-03T15:21:13.864Z",
+  "items": [
+    {
+      "url": "https://apify.com/",
+      "finalUrl": "https://apify.com/",
+      "statusCode": 200,
+      "responseTimeMs": 134,
+      "htmlSizeBytes": 492244,
+      "title": "Apify: Marketplace of ready-to-run tools for AI",
+      "titleLength": 47,
+      "metaDescription": "Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.",
+      "metaDescriptionLength": 143,
+      "canonical": "https://apify.com/",
+      "canonicalMatches": true,
+      "robotsMeta": "index,follow",
+      "isIndexable": true,
+      "lang": "en",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "charset": "utf-8",
+      "h1Count": 1,
+      "h1": [
+        "80,266 tools for your AI"
+      ],
+      "h2Count": 11,
+      "h3Count": 20,
+      "headingsOutline": [
+        {
+          "level": 1,
+          "text": "80,266 tools for your AI"
+        },
+        {
+          "level": 2,
+          "text": "Popular Actors"
+        },
+        {
+          "level": 3,
+          "text": "TikTok Scraper"
+        }
+      ],
+      "wordCount": 1174,
+      "textToHtmlRatio": 0.02,
+      "imageCount": 78,
+      "imagesMissingAlt": 0,
+      "imagesMissingAltSample": [],
+      "internalLinkCount": 78,
+      "externalLinkCount": 58,
+      "nofollowLinkCount": 20,
+      "brokenLinks": [],
+      "hreflang": [],
+      "openGraphComplete": true,
+      "twitterCardPresent": true,
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "SoftwareApplication"
+      ],
+      "hasFavicon": true,
+      "inlineScriptCount": 5,
+      "externalScriptCount": 46,
+      "cssCount": 4,
+      "hasAmp": false,
+      "mixedContentCount": 0,
+      "issues": [],
+      "seoScore": 100,
+      "seoGrade": "A",
+      "error": null,
+      "scrapedAt": "2026-10-03T15:21:13.215Z"
+    }
+  ]
+}
