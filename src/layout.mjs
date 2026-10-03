@@ -22,8 +22,10 @@ function ticker(actors) {
 export function page({ path, title, description, body, actors, jsonLd = [], ogType = 'website', nav = '' }) {
     const url = `${SITE.origin}${path}`;
     const ld = jsonLd.map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`).join('\n');
-    const beacon = process.env.CF_BEACON_TOKEN
-        ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"${esc(process.env.CF_BEACON_TOKEN)}"}'></script>`
+    // Cloudflare Web Analytics (cookieless). The token is public by design — it ships in every page.
+    const beaconToken = process.env.CF_BEACON_TOKEN ?? "fadbc13040624319a834f09c5b167e36";
+    const beacon = beaconToken
+        ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"${esc(beaconToken)}"}'></script>`
         : '';
     const cur = (p) => (nav === p ? ' aria-current="page"' : '');
     return `<!doctype html>
