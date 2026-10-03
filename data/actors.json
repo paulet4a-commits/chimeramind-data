@@ -1,0 +1,2113 @@
+{
+ "contact-extractor": {
+  "name": "contact-extractor",
+  "title": "Email Extractor — Website Contact & Social Finder",
+  "description": "Email Extractor finds every e-mail address, phone number and social profile on a website — one clean row per domain, ready for outreach.",
+  "url": "https://apify.com/webdatatools/contact-extractor",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-SN88YAtrbnLiHjsJf-MJlWPlEH29-contact-extractor.png",
+  "users30": 1,
+  "runs": 32,
+  "categories": [
+   "LEAD_GENERATION",
+   "BUSINESS",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.01,
+   "tiers": {
+    "FREE": 0.01,
+    "BRONZE": 0.008,
+    "SILVER": 0.007,
+    "GOLD": 0.006,
+    "PLATINUM": 0.006,
+    "DIAMOND": 0.006
+   }
+  },
+  "prefill": {
+   "startUrls": [
+    {
+     "url": "https://apify.com"
+    }
+   ],
+   "maxPagesPerDomain": 30,
+   "maxDepth": 2
+  }
+ },
+ "tech-stack-detector": {
+  "name": "tech-stack-detector",
+  "title": "Tech Stack Detector — Wappalyzer & BuiltWith Alternative",
+  "description": "Tech Stack Detector finds the CMS, e-commerce platform, analytics, ad pixels, chat widget and payment provider any website runs — one row per domain.",
+  "url": "https://apify.com/webdatatools/tech-stack-detector",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-K6jDqlY7EiQ2sbqLx-B97lz2udNQ-tech-stack-detector.png",
+  "users30": 0,
+  "runs": 74,
+  "categories": [
+   "LEAD_GENERATION",
+   "DEVELOPER_TOOLS",
+   "SEO_TOOLS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.005,
+   "tiers": {
+    "FREE": 0.005,
+    "BRONZE": 0.004,
+    "SILVER": 0.0035,
+    "GOLD": 0.003,
+    "PLATINUM": 0.003,
+    "DIAMOND": 0.003
+   }
+  },
+  "prefill": {
+   "startUrls": [
+    {
+     "url": "https://apify.com"
+    }
+   ],
+   "maxPagesPerDomain": 3,
+   "categories": []
+  }
+ },
+ "core-web-vitals-audit": {
+  "name": "core-web-vitals-audit",
+  "title": "Bulk Core Web Vitals & PageSpeed Audit",
+  "description": "Bulk Core Web Vitals and PageSpeed audit: Lighthouse performance, SEO and accessibility scores, LCP, CLS, INP, TBT and the top fixes — one row per URL and device.",
+  "url": "https://apify.com/webdatatools/core-web-vitals-audit",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-FM0Kfh5kY4KVsuHVe-Ebe6jE0AZz-core-web-vitals-audit.png",
+  "users30": 4,
+  "runs": 36,
+  "categories": [
+   "SEO_TOOLS",
+   "DEVELOPER_TOOLS",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.005,
+   "tiers": {
+    "FREE": 0.005,
+    "BRONZE": 0.004,
+    "SILVER": 0.0035,
+    "GOLD": 0.003,
+    "PLATINUM": 0.003,
+    "DIAMOND": 0.003
+   }
+  },
+  "prefill": {
+   "urls": [
+    "https://apify.com",
+    "https://example.com"
+   ],
+   "strategy": "mobile",
+   "categories": [
+    "performance",
+    "seo"
+   ]
+  }
+ },
+ "package-health-checker": {
+  "name": "package-health-checker",
+  "title": "npm, PyPI & Crates.io Package Health Checker",
+  "description": "Package health checker for npm, PyPI and Crates.io — deprecation, last publish date, licence, weekly downloads, maintainers, GitHub stars and a 0-100 health score, one row per package.",
+  "url": "https://apify.com/webdatatools/package-health-checker",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-TdSenN5Wsa4BXLhxv-WJyZEP1UDx-package-health-checker.png",
+  "users30": 1,
+  "runs": 10,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "OPEN_SOURCE",
+   "AI"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "packages": [
+    "npm:react",
+    "pypi:requests",
+    "crates:serde"
+   ],
+   "defaultRegistry": "npm",
+   "enrichGithub": true
+  }
+ },
+ "hiring-signals": {
+  "name": "hiring-signals",
+  "title": "Hiring Signals Scraper (Greenhouse, Lever, Ashby, Workable)",
+  "description": "Scrape company job postings and hiring signals from Greenhouse, Lever, Ashby and Workable job boards — one row per job, or one hiring summary per company.",
+  "url": "https://apify.com/webdatatools/hiring-signals",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-IzYAKYeRydOFJMgJQ-ehmKwB2RIR-hiring-signals.png",
+  "users30": 2,
+  "runs": 70,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "companies": [
+    "stripe",
+    "https://jobs.lever.co/spotify",
+    "https://jobs.ashbyhq.com/ashby"
+   ],
+   "outputMode": "jobs",
+   "maxJobsPerCompany": 200
+  }
+ },
+ "dns-email-security-checker": {
+  "name": "dns-email-security-checker",
+  "title": "Domain DNS & Email Security Checker",
+  "description": "Domain DNS & Email Security Checker returns SPF, DKIM, DMARC, MX, MTA-STS, BIMI, CAA, nameservers, registrar and domain age for every domain you give it — one scored row per domain.",
+  "url": "https://apify.com/webdatatools/dns-email-security-checker",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-bUdlJZmG1HcFViqgu-X3zJ15NNZh-dns-email-security-checker.png",
+  "users30": 1,
+  "runs": 8,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "LEAD_GENERATION",
+   "SEO_TOOLS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.005,
+   "tiers": {
+    "FREE": 0.005,
+    "BRONZE": 0.004,
+    "SILVER": 0.0035,
+    "GOLD": 0.003,
+    "PLATINUM": 0.003,
+    "DIAMOND": 0.003
+   }
+  },
+  "prefill": {
+   "domains": [
+    "apify.com",
+    "github.com"
+   ],
+   "checkDkim": true,
+   "dkimSelectors": [
+    "google",
+    "selector1",
+    "selector2",
+    "default",
+    "k1",
+    "s1",
+    "zoho",
+    "mail"
+   ]
+  }
+ },
+ "subdomain-finder": {
+  "name": "subdomain-finder",
+  "title": "Subdomain Finder (Certificate Transparency)",
+  "description": "Subdomain Finder enumerates every subdomain of a domain from Certificate Transparency logs (crt.sh, Cert Spotter) and resolves each one — one row per subdomain, no proxies needed.",
+  "url": "https://apify.com/webdatatools/subdomain-finder",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-UDB3k0SyLCgRgtAqY-jeRczjtqdn-subdomain-finder.png",
+  "users30": 1,
+  "runs": 25,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "SEO_TOOLS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "domains": [
+    "apify.com",
+    "github.com"
+   ],
+   "resolveDns": true,
+   "includeWildcards": false
+  }
+ },
+ "youtube-channel-videos": {
+  "name": "youtube-channel-videos",
+  "title": "YouTube Channel Latest Videos (RSS, no API key)",
+  "description": "YouTube channel latest videos scraper: give it a channel ID, @handle or channel URL and get the newest uploads with title, URL, views, likes, description and thumbnail — one row per video, no API key.",
+  "url": "https://apify.com/webdatatools/youtube-channel-videos",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-VZfgn1DEndK6GAlir-hdTPNTZJoc-youtube-channel-videos.png",
+  "users30": 0,
+  "runs": 28,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "MARKETING",
+   "FOR_CREATORS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "channels": [
+    "@MrBeast",
+    "https://www.youtube.com/@apify"
+   ],
+   "proxyMode": "auto",
+   "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": [
+     "RESIDENTIAL"
+    ]
+   }
+  }
+ },
+ "sitemap-extractor": {
+  "name": "sitemap-extractor",
+  "title": "Sitemap URL Extractor & Change Monitor",
+  "description": "Sitemap URL extractor that reads robots.txt, sitemap indexes, .xml.gz and plain-text sitemaps and returns one row per URL with lastmod, changefreq, priority — plus a new/removed diff between runs.",
+  "url": "https://apify.com/webdatatools/sitemap-extractor",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-7S7I3DEejoJsOwamc-fnzryRt3RE-sitemap-extractor.png",
+  "users30": 1,
+  "runs": 20,
+  "categories": [
+   "SEO_TOOLS",
+   "DEVELOPER_TOOLS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.0002,
+   "tiers": {
+    "FREE": 0.0002,
+    "BRONZE": 0.00016,
+    "SILVER": 0.00014,
+    "GOLD": 0.00012,
+    "PLATINUM": 0.00012,
+    "DIAMOND": 0.00012
+   }
+  },
+  "prefill": {
+   "sources": [
+    "https://apify.com",
+    "https://www.allbirds.com/sitemap.xml"
+   ],
+   "maxUrlsPerSource": 1000,
+   "urlFilter": ""
+  }
+ },
+ "structured-data-extractor": {
+  "name": "structured-data-extractor",
+  "title": "Structured Data & JSON-LD Extractor (Schema.org, Open Graph)",
+  "description": "Structured Data & JSON-LD Extractor reads every Schema.org JSON-LD block and Open Graph tag on a page and returns one clean row per URL — product, price, rating, article, job posting, event, recipe, FAQ and breadcrumb data, ready for RAG pipelines and SEO rich-result audits.",
+  "url": "https://apify.com/webdatatools/structured-data-extractor",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-AtTlsovORF4UbfgAx-6xCR3q19Ef-structured-data-extractor.png",
+  "users30": 1,
+  "runs": 25,
+  "categories": [
+   "SEO_TOOLS",
+   "ECOMMERCE",
+   "AI"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "urls": [
+    "https://www.apify.com",
+    "https://www.allbirds.com/products/mens-tree-dashers"
+   ],
+   "includeRawJsonLd": true,
+   "includeOpenGraph": true
+  }
+ },
+ "wayback-page-diff": {
+  "name": "wayback-page-diff",
+  "title": "Wayback Machine Snapshot & Page Change Tracker",
+  "description": "Wayback Machine Snapshot & Page Change Tracker lists every Internet Archive capture of a URL and diffs the visible text of the oldest vs. newest snapshot in range — one scored change row per URL, or a full snapshot list.",
+  "url": "https://apify.com/webdatatools/wayback-page-diff",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-fL6PnxZb9MbkBMTPx-csuRlROuH9-wayback-page-diff.png",
+  "users30": 2,
+  "runs": 20,
+  "categories": [
+   "SEO_TOOLS",
+   "DEVELOPER_TOOLS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.003,
+   "tiers": {
+    "FREE": 0.003,
+    "BRONZE": 0.0024,
+    "SILVER": 0.0021,
+    "GOLD": 0.0018,
+    "PLATINUM": 0.0018,
+    "DIAMOND": 0.0018
+   }
+  },
+  "prefill": {
+   "urls": [
+    "https://apify.com/pricing",
+    "https://example.com"
+   ],
+   "mode": "diff",
+   "maxSnapshots": 50
+  }
+ },
+ "app-store-lookup": {
+  "name": "app-store-lookup",
+  "title": "App Store (iOS) App Metadata, Ratings & Top Charts Lookup",
+  "description": "App Store lookup for iOS apps: ratings, price, version, update date, size, genres and description from any app id, bundle id, store URL or search term — plus Top Free and Top Paid charts.",
+  "url": "https://apify.com/webdatatools/app-store-lookup",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-5IESibEI2czmMZRLo-EpUmBFnxbC-app-store-lookup.png",
+  "users30": 1,
+  "runs": 20,
+  "categories": [
+   "BUSINESS",
+   "MARKETING",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "mode": "lookup",
+   "apps": [
+    "324684580",
+    "com.duolingo.DuolingoMobile",
+    "search:meditation"
+   ],
+   "country": "us"
+  }
+ },
+ "press-release-monitor": {
+  "name": "press-release-monitor",
+  "title": "Press Release Monitor: PR Newswire, BusinessWire, GlobeNewswire",
+  "description": "Press Release Monitor returns keyword-matched press releases from PR Newswire, Business Wire and GlobeNewswire RSS feeds — company, publish date, category and summary, one row per release.",
+  "url": "https://apify.com/webdatatools/press-release-monitor",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-prSHnDneKpW0Xbmhn-XrkmidRzLk-press-release-monitor.png",
+  "users30": 1,
+  "runs": 25,
+  "categories": [
+   "NEWS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "sources": [
+    "prnewswire",
+    "businesswire",
+    "globenewswire"
+   ],
+   "keywords": [
+    "funding",
+    "acquisition",
+    "partnership"
+   ],
+   "maxItemsPerSource": 100
+  }
+ },
+ "vscode-marketplace-extensions": {
+  "name": "vscode-marketplace-extensions",
+  "title": "VS Code Marketplace Extension Scraper (installs, ratings)",
+  "description": "VS Code Marketplace Extension Scraper returns installs, ratings, version, categories, tags, repository and license for any VS Code extension id, marketplace URL or search keyword — one row per extension.",
+  "url": "https://apify.com/webdatatools/vscode-marketplace-extensions",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-fUH9xFIrSlo78eTcE-TlWqyNQmjn-vscode-marketplace-extensions.png",
+  "users30": 1,
+  "runs": 18,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "BUSINESS",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.0015,
+   "tiers": {
+    "FREE": 0.0015,
+    "BRONZE": 0.0012,
+    "SILVER": 0.00105,
+    "GOLD": 0.0009,
+    "PLATINUM": 0.0009,
+    "DIAMOND": 0.0009
+   }
+  },
+  "prefill": {
+   "queries": [
+    "ms-python.python",
+    "esbenp.prettier-vscode",
+    "search:markdown"
+   ],
+   "searchLimit": 25,
+   "maxConcurrency": 3
+  }
+ },
+ "github-repo-health": {
+  "name": "github-repo-health",
+  "title": "GitHub Repository Health & Activity Report",
+  "description": "GitHub Repository Health & Activity Report returns stars, commit activity, contributors, latest release and community-health files for any repo list or org:<name> — one scored row per repo.",
+  "url": "https://apify.com/webdatatools/github-repo-health",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-RGWe5zbnuSSWEANBy-AzIauUlbDB-github-repo-health.png",
+  "users30": 1,
+  "runs": 20,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "BUSINESS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "repos": [
+    "apify/crawlee",
+    "https://github.com/expressjs/express",
+    "org:apify"
+   ],
+   "includeContributors": true,
+   "includeReleases": true
+  }
+ },
+ "crossref-doi-lookup": {
+  "name": "crossref-doi-lookup",
+  "title": "CrossRef DOI & Citation Metadata Lookup",
+  "description": "CrossRef DOI & Citation Metadata Lookup resolves DOIs, DOI URLs or citations via the CrossRef API and returns title, authors, journal, citation count, abstract and license — one row per item.",
+  "url": "https://apify.com/webdatatools/crossref-doi-lookup",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-C3mnrLCrRN28amGQ7-xBrBqH9Mkg-crossref-doi-lookup.png",
+  "users30": 0,
+  "runs": 6,
+  "categories": [
+   "AUTOMATION",
+   "AI",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "items": [
+    "10.1038/nature12373",
+    "https://doi.org/10.1145/3292500.3330919",
+    "search:Attention is all you need"
+   ],
+   "mailto": "",
+   "searchRows": 3
+  }
+ },
+ "ical-calendar-extractor": {
+  "name": "ical-calendar-extractor",
+  "title": "iCal / ICS Calendar Feed to Events Extractor",
+  "description": "iCal / ICS Calendar Feed to Events Extractor reads any ICS or webcal:// URL and returns one row per event instance, expanding RRULE recurring events within a date window, with times converted to UTC.",
+  "url": "https://apify.com/webdatatools/ical-calendar-extractor",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-BZpQ5zCPS8aqxH09b-LGx2LvaCmG-ical-calendar-extractor.png",
+  "users30": 1,
+  "runs": 17,
+  "categories": [
+   "AUTOMATION",
+   "INTEGRATIONS",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "feeds": [
+    "https://www.officeholidays.com/ics/usa",
+    "https://calendar.google.com/calendar/ical/en.usa%23holiday%40group.v.calendar.google.com/public/basic.ics"
+   ],
+   "from": "2026-01-01",
+   "to": "2026-12-31"
+  }
+ },
+ "chrome-web-store-extensions": {
+  "name": "chrome-web-store-extensions",
+  "title": "Chrome Web Store Extension Scraper (installs, ratings)",
+  "description": "Chrome Web Store Extension Scraper returns users, rating, version, size, category and developer contact for any Chrome extension id or store URL — one row per extension.",
+  "url": "https://apify.com/webdatatools/chrome-web-store-extensions",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-A5hkMNlwNhhPs8bFV-JCv1JyCTCl-chrome-web-store-extensions.png",
+  "users30": 1,
+  "runs": 18,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "MARKETING",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.0015,
+   "tiers": {
+    "FREE": 0.0015,
+    "BRONZE": 0.0012,
+    "SILVER": 0.00105,
+    "GOLD": 0.0009,
+    "PLATINUM": 0.0009,
+    "DIAMOND": 0.0009
+   }
+  },
+  "prefill": {
+   "extensions": [
+    "kbfnbcaeplbcioakkpcpgfkobkghlhen",
+    "https://chromewebstore.google.com/detail/grammarly/kbfnbcaeplbcioakkpcpgfkobkghlhen"
+   ],
+   "maxConcurrency": 3
+  }
+ },
+ "shopify-products-scraper": {
+  "name": "shopify-products-scraper",
+  "title": "Shopify Store Products Scraper",
+  "description": "Shopify Store Products Scraper reads any Shopify store's public products.json feed — title, price, compare-at price, discount %, stock, SKU and images, one row per product or variant.",
+  "url": "https://apify.com/webdatatools/shopify-products-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-mL0VyvXUakhDZ4Khl-cYcovMkzvu-shopify-products-scraper.png",
+  "users30": 0,
+  "runs": 27,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "stores": [
+    "https://www.allbirds.com"
+   ],
+   "maxProductsPerStore": 100,
+   "collectionHandles": []
+  }
+ },
+ "domain-security-audit": {
+  "name": "domain-security-audit",
+  "title": "Domain Security Audit (TLS, HTTP headers, redirects, robots)",
+  "description": "Domain Security Audit checks TLS certificate validity, HSTS/CSP and other HTTP security headers, the redirect chain and robots.txt/llms.txt AI-bot rules for any list of domains — one scored, graded row per domain.",
+  "url": "https://apify.com/webdatatools/domain-security-audit",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-SELey4npMakiVA1vf-miaSpY31Iu-domain-security-audit.png",
+  "users30": 2,
+  "runs": 59,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "SEO_TOOLS",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.005,
+   "tiers": {
+    "FREE": 0.005,
+    "BRONZE": 0.004,
+    "SILVER": 0.0035,
+    "GOLD": 0.003,
+    "PLATINUM": 0.003,
+    "DIAMOND": 0.003
+   }
+  },
+  "prefill": {
+   "domains": [
+    "apify.com",
+    "example.com"
+   ],
+   "checkTls": true,
+   "checkHeaders": true
+  }
+ },
+ "website-to-markdown": {
+  "name": "website-to-markdown",
+  "title": "Website to Markdown — Content Crawler for LLM & RAG",
+  "description": "Content Crawler turns any site into clean Markdown per page for LLMs, RAG pipelines and vector DBs — no headless browser, $1 per 1,000 pages.",
+  "url": "https://apify.com/webdatatools/website-to-markdown",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-XzLicaoE1OdrHNA4E-I3IqcPknuH-website-to-markdown.png",
+  "users30": 2,
+  "runs": 112,
+  "categories": [
+   "AI",
+   "DEVELOPER_TOOLS",
+   "AGENTS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "startUrls": [
+    {
+     "url": "https://docs.apify.com/platform"
+    },
+    {
+     "url": "https://crawlee.dev/docs"
+    }
+   ],
+   "maxPages": 50,
+   "maxDepth": 3
+  }
+ },
+ "yc-companies-scraper": {
+  "name": "yc-companies-scraper",
+  "title": "Y Combinator Companies & Founders Scraper",
+  "description": "Y Combinator company directory scraper — batch, industry, hiring status, one-liner, description and founder names/titles/LinkedIn/Twitter for every YC-funded startup, one row per company.",
+  "url": "https://apify.com/webdatatools/yc-companies-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-pG9PALrFB6nbU7rZ4-1jO5oiUUDt-yc-companies-scraper.png",
+  "users30": 1,
+  "runs": 26,
+  "categories": [
+   "LEAD_GENERATION",
+   "BUSINESS",
+   "AI"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "mode": "companies",
+   "query": "AI agents",
+   "batches": [
+    "W25"
+   ]
+  }
+ },
+ "article-extractor": {
+  "name": "article-extractor",
+  "title": "Article & News Extractor (clean text, author, date, markdown)",
+  "description": "Article & News Extractor returns clean article text, title, author(s), publish/modified date, tags and images from any news or blog URL — one row per URL, as Markdown, plain text or HTML.",
+  "url": "https://apify.com/webdatatools/article-extractor",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-iLkt2raxhx3zUCAQ1-5YVn5OumIo-article-extractor.png",
+  "users30": 1,
+  "runs": 22,
+  "categories": [
+   "NEWS",
+   "AI",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "urls": [
+    "https://blog.apify.com/best-web-scraping-tools/",
+    "https://techcrunch.com/",
+    "https://www.bbc.com/news"
+   ],
+   "outputFormat": "markdown",
+   "includeImages": true
+  }
+ },
+ "youtube-comments-scraper": {
+  "name": "youtube-comments-scraper",
+  "title": "YouTube Comments Scraper — Comments & Replies",
+  "description": "Comments Scraper extracts comments, replies, likes and author details from any YouTube video URL or ID — no YouTube Data API key or quota needed.",
+  "url": "https://apify.com/webdatatools/youtube-comments-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-teE3NUspiJubAkKUo-QKkys2aJx1-youtube-comments-scraper.png",
+  "users30": 1,
+  "runs": 35,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "VIDEOS",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "videos": [
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "jNQXAC9IVRw"
+   ],
+   "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": [
+     "RESIDENTIAL"
+    ]
+   },
+   "maxCommentsPerVideo": 100
+  }
+ },
+ "google-search-scraper": {
+  "name": "google-search-scraper",
+  "title": "Google Search Results Scraper — SERP API",
+  "description": "Google Search Results Scraper returns organic results (title, real URL, snippet, position) for any query through the Apify GOOGLE_SERP proxy — one row per SERP page, priced per page not per result.",
+  "url": "https://apify.com/webdatatools/google-search-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-WBNF7gdGseCUnEeYI-QLhsS8c3zR-google-search-scraper.png",
+  "users30": 6,
+  "runs": 141,
+  "categories": [
+   "SEO_TOOLS",
+   "LEAD_GENERATION",
+   "AI"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.005,
+   "tiers": {
+    "FREE": 0.005,
+    "BRONZE": 0.004,
+    "SILVER": 0.0035,
+    "GOLD": 0.003,
+    "PLATINUM": 0.003,
+    "DIAMOND": 0.003
+   }
+  },
+  "prefill": {
+   "queries": [
+    "apify web scraping",
+    "best crm for startups"
+   ],
+   "countryCode": "us",
+   "languageCode": "en"
+  }
+ },
+ "wikidata-entity-enrichment": {
+  "name": "wikidata-entity-enrichment",
+  "title": "Wikidata Entity & Company Enrichment (facts, IDs, links)",
+  "description": "Wikidata Entity & Company Enrichment resolves a QID, company name, or Wikipedia URL to its Wikidata item and returns facts (country, HQ, founders, CEO, employees, revenue), identifiers (ISIN, Crunchbase, LinkedIn) and social/media links — one row per entity.",
+  "url": "https://apify.com/webdatatools/wikidata-entity-enrichment",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-ycbpmQFuSnrxe3om7-UpaL3qLvg4-wikidata-entity-enrichment.png",
+  "users30": 2,
+  "runs": 42,
+  "categories": [
+   "BUSINESS",
+   "LEAD_GENERATION",
+   "AI"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "entities": [
+    "Q95",
+    "Apify",
+    "https://en.wikipedia.org/wiki/Stripe,_Inc."
+   ],
+   "language": "en",
+   "entityType": "any"
+  }
+ },
+ "openfda-recall-monitor": {
+  "name": "openfda-recall-monitor",
+  "title": "FDA Recalls & Adverse Events Monitor (openFDA)",
+  "description": "FDA Recalls & Adverse Events Monitor returns food, drug and device recalls, drug and device adverse-event reports, and drug labels from openFDA — one flat, scored row per record for a date range you choose.",
+  "url": "https://apify.com/webdatatools/openfda-recall-monitor",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-yrxg7HYzLmgBbXwNg-2uEUCTLqO9-openfda-recall-monitor.png",
+  "users30": 1,
+  "runs": 17,
+  "categories": [
+   "NEWS",
+   "BUSINESS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "dataset": "food-enforcement",
+   "searchQuery": "classification:\"Class I\"",
+   "sinceDays": 30
+  }
+ },
+ "seo-page-audit": {
+  "name": "seo-page-audit",
+  "title": "On-Page SEO Audit",
+  "description": "On-Page SEO Audit checks title, meta description, headings, images, links, Open Graph, Twitter Card and Schema.org data for any list of URLs — one scored row per page.",
+  "url": "https://apify.com/webdatatools/seo-page-audit",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-J3O0j3UPwFG4gac3B-YP0MO9HU3E-seo-page-audit.png",
+  "users30": 2,
+  "runs": 43,
+  "categories": [
+   "SEO_TOOLS",
+   "DEVELOPER_TOOLS",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "urls": [
+    "https://apify.com",
+    "https://example.com"
+   ],
+   "checkLinks": false,
+   "maxConcurrency": 5
+  }
+ },
+ "google-news-scraper": {
+  "name": "google-news-scraper",
+  "title": "Google News Scraper (RSS search by keyword, topic, site)",
+  "description": "Google News Scraper returns headlines from Google News RSS search and topic feeds for any keyword, site: or when: query, and resolves each article's real publisher URL — one row per article.",
+  "url": "https://apify.com/webdatatools/google-news-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-2sPLfa1CUhtQalf32-H4eJCSqTlf-google-news-scraper.png",
+  "users30": 1,
+  "runs": 20,
+  "categories": [
+   "NEWS",
+   "MARKETING",
+   "AI"
+  ],
+  "price": {
+   "unit": "article",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "queries": [
+    "web scraping",
+    "site:reuters.com AI"
+   ],
+   "topics": [
+    "TECHNOLOGY",
+    "BUSINESS"
+   ],
+   "language": "en"
+  }
+ },
+ "youtube-channel-scraper": {
+  "name": "youtube-channel-scraper",
+  "title": "YouTube Channel Scraper (videos, shorts, live)",
+  "description": "YouTube Channel Scraper extracts videos, Shorts or livestreams from any YouTube channel — title, views, duration, publish time and thumbnail — no API key or quota needed.",
+  "url": "https://apify.com/webdatatools/youtube-channel-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-eD9eBySeqkeqryITV-AMPbwLut0e-youtube-channel-scraper.png",
+  "users30": 1,
+  "runs": 34,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "VIDEOS",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "video",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "channels": [
+    "@MrBeast",
+    "@mkbhd"
+   ],
+   "proxyMode": "auto",
+   "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": [
+     "RESIDENTIAL"
+    ]
+   }
+  }
+ },
+ "youtube-search-scraper": {
+  "name": "youtube-search-scraper",
+  "title": "YouTube Search Results Scraper (videos, channels, no API key)",
+  "description": "YouTube Search Results Scraper returns videos, channels or playlists for any keyword, with title, views, duration, channel and publish time — no API key, no quota.",
+  "url": "https://apify.com/webdatatools/youtube-search-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-wYgOPl49mY2AWLW0Y-rdO80CYwAH-youtube-search-scraper.png",
+  "users30": 1,
+  "runs": 17,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "VIDEOS",
+   "SEO_TOOLS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "queries": [
+    "web scraping tutorial",
+    "apify"
+   ],
+   "type": "video",
+   "uploadDate": "any"
+  }
+ },
+ "podcast-lookup": {
+  "name": "podcast-lookup",
+  "title": "Apple Podcasts Lookup & Episodes Scraper",
+  "description": "Apple Podcasts lookup by id, URL, RSS feed or search term — podcast metadata (artwork, genres, episode count) plus the full episode list from the show's own RSS feed, one row per podcast or episode.",
+  "url": "https://apify.com/webdatatools/podcast-lookup",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-gorDJ9kZpjrkDs8Mf-79apQE9psA-podcast-lookup.png",
+  "users30": 1,
+  "runs": 13,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "MARKETING",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "episode",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "podcasts": [
+    "1200361736",
+    "search:true crime"
+   ],
+   "country": "us",
+   "searchLimit": 25
+  }
+ },
+ "email-validator": {
+  "name": "email-validator",
+  "title": "Email Validator & Verifier — Bulk Email Check",
+  "description": "Email Validator checks syntax, MX/A DNS records, disposable/free-provider/role classification and typo suggestions for a list of email addresses — one scored row per address, no SMTP mailbox probing.",
+  "url": "https://apify.com/webdatatools/email-validator",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-EgO1RDe4IoGjKlTWs-iZ9doqImUD-email-validator.png",
+  "users30": 0,
+  "runs": 5,
+  "categories": [
+   "LEAD_GENERATION",
+   "AUTOMATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "email",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "emails": [
+    "support@apify.com",
+    "jane.doe@gmail.com",
+    "info@mailinator.com"
+   ],
+   "checkMx": true,
+   "maxConcurrency": 10
+  }
+ },
+ "youtube-video-details": {
+  "name": "youtube-video-details",
+  "title": "YouTube Video Details Scraper (views, likes, description, tags)",
+  "description": "YouTube Video Details Scraper returns views, likes, description, tags, category, channel and comment count for any YouTube video URL or ID — no YouTube Data API key or quota needed.",
+  "url": "https://apify.com/webdatatools/youtube-video-details",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-oIsr3QIQoU6d5wmZn-w2lmUc4ftA-youtube-video-details.png",
+  "users30": 1,
+  "runs": 29,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "VIDEOS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "video",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "videos": [
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "jNQXAC9IVRw"
+   ],
+   "proxyMode": "auto",
+   "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": [
+     "RESIDENTIAL"
+    ]
+   }
+  }
+ },
+ "overpass-poi-extractor": {
+  "name": "overpass-poi-extractor",
+  "title": "OpenStreetMap POI Extractor (Overpass API: shops, amenities)",
+  "description": "OpenStreetMap POI Extractor returns shops, cafes, restaurants and any tagged place within a radius, a bounding box, or a named area — one row per point of interest, powered by the free Overpass API.",
+  "url": "https://apify.com/webdatatools/overpass-poi-extractor",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-veXPs55G7kO4b9vYM-og2E2I9tcM-overpass-poi-extractor.png",
+  "users30": 1,
+  "runs": 19,
+  "categories": [
+   "LEAD_GENERATION",
+   "TRAVEL",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "place",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "mode": "radius",
+   "latitude": 50.0755,
+   "longitude": 14.4378
+  }
+ },
+ "ai-web-search": {
+  "name": "ai-web-search",
+  "title": "AI Web Search & Read: Google results as clean Markdown",
+  "description": "AI Web Search runs a Google search, fetches the top organic results and returns clean Markdown per result — one call turns a question into LLM-ready context for agents, RAG and MCP.",
+  "url": "https://apify.com/webdatatools/ai-web-search",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-T9ennoxjzhhpNMTms-fWbXHfKfYt-ai-web-search.png",
+  "users30": 1,
+  "runs": 11,
+  "categories": [
+   "AI",
+   "AGENTS",
+   "SEO_TOOLS"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.005,
+   "tiers": {
+    "FREE": 0.005,
+    "BRONZE": 0.004,
+    "SILVER": 0.0035,
+    "GOLD": 0.003,
+    "PLATINUM": 0.003,
+    "DIAMOND": 0.003
+   }
+  },
+  "prefill": {
+   "query": "what is web scraping",
+   "queries": [
+    "best crm for startups"
+   ],
+   "maxResults": 3
+  }
+ },
+ "company-360": {
+  "name": "company-360",
+  "title": "Company 360: full company profile from a domain",
+  "description": "Company 360 turns a domain into one rich profile row: contacts, tech stack, DNS/e-mail security, TLS/security headers, on-page SEO, hiring signals and company facts (HQ, employees, revenue, founders) merged from our own scraper suite.",
+  "url": "https://apify.com/webdatatools/company-360",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-BbeJDj8MzLbIfg0hM-1zg6AG9CbT-company-360.png",
+  "users30": 1,
+  "runs": 23,
+  "categories": [
+   "LEAD_GENERATION",
+   "BUSINESS",
+   "AI"
+  ],
+  "price": {
+   "unit": "company",
+   "usd": 0.05,
+   "tiers": {
+    "FREE": 0.05,
+    "BRONZE": 0.04,
+    "SILVER": 0.035,
+    "GOLD": 0.03,
+    "PLATINUM": 0.03,
+    "DIAMOND": 0.03
+   }
+  },
+  "prefill": {
+   "domains": [
+    "apify.com",
+    "stripe.com"
+   ],
+   "includeContacts": true,
+   "includeTechStack": true
+  }
+ },
+ "bluesky-scraper": {
+  "name": "bluesky-scraper",
+  "title": "Bluesky Post, Search & Profile Scraper",
+  "description": "Bluesky Post, Search & Profile Scraper returns post text, engagement counts, images, profile bios, followers, follows and thread replies from Bluesky's public API — one row per item, no login required.",
+  "url": "https://apify.com/webdatatools/bluesky-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-5LnUc8cSEObBihsS0-UXmWg0hJMn-bluesky-scraper.png",
+  "users30": 1,
+  "runs": 28,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "post",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "mode": "posts",
+   "handles": [
+    "bsky.app",
+    "jay.bsky.team"
+   ],
+   "searchQuery": "web scraping"
+  }
+ },
+ "google-play-scraper": {
+  "name": "google-play-scraper",
+  "title": "Google Play Scraper",
+  "description": "Google Play Scraper returns app title, developer, rating, price, installs, category, media links, and optional reviews for any package id, Play Store URL or search term — one row per app.",
+  "url": "https://apify.com/webdatatools/google-play-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-D9STraSxQsJ1bAnKJ-zNiLkS1UoN-google-play-scraper.png",
+  "users30": 1,
+  "runs": 22,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "LEAD_GENERATION",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "app",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "apps": [
+    "com.spotify.music",
+    "com.duolingo",
+    "search:meditation"
+   ],
+   "country": "us",
+   "language": "en"
+  }
+ },
+ "github-trending-scraper": {
+  "name": "github-trending-scraper",
+  "title": "GitHub Trending Repositories Scraper",
+  "description": "Scrapes github.com/trending: the daily, weekly or monthly trending repositories or developers, by programming language and spoken language. One row per repo or developer with stars, forks, stars-in-period and description — no API key, no proxies.",
+  "url": "https://apify.com/webdatatools/github-trending-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-YvIV00qj9gqJvLlYx-jafqhyntfs-github-trending-scraper.png",
+  "users30": 1,
+  "runs": 8,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION",
+   "OTHER"
+  ],
+  "price": {
+   "unit": "Repository",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "languages": [
+    "",
+    "javascript",
+    "python"
+   ],
+   "since": "daily",
+   "spokenLanguage": ""
+  }
+ },
+ "hacker-news-scraper": {
+  "name": "hacker-news-scraper",
+  "title": "Hacker News Search & Front Page Scraper",
+  "description": "Search Hacker News stories, comments, Show HN and Ask HN posts by keyword, or pull the current front page — via the free Algolia HN API, no API key. One row per story or comment with points, author, comment count and text.",
+  "url": "https://apify.com/webdatatools/hacker-news-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-hNGe4bY11J9aUxpQA-PTMfaUEApD-hacker-news-scraper.png",
+  "users30": 1,
+  "runs": 8,
+  "categories": [
+   "NEWS",
+   "DEVELOPER_TOOLS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "Story",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "queries": [
+    "front_page",
+    "apify"
+   ],
+   "contentType": "story",
+   "sortBy": "relevance"
+  }
+ },
+ "domain-whois-rdap": {
+  "name": "domain-whois-rdap",
+  "title": "Bulk Domain WHOIS & RDAP Lookup",
+  "description": "Bulk domain WHOIS lookup via the official RDAP protocol — registrar, registration/expiry dates, domain age, nameservers, DNSSEC and status codes for any domain, no API key, no rate limits.",
+  "url": "https://apify.com/webdatatools/domain-whois-rdap",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-XSYatfAVSiocVM8cX-ILrvPJu5r3-domain-whois-rdap.png",
+  "users30": 1,
+  "runs": 9,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION",
+   "OTHER"
+  ],
+  "price": {
+   "unit": "Domain",
+   "usd": 0.003,
+   "tiers": {
+    "FREE": 0.003,
+    "BRONZE": 0.0024,
+    "SILVER": 0.0021,
+    "GOLD": 0.0018,
+    "PLATINUM": 0.0018,
+    "DIAMOND": 0.0018
+   }
+  },
+  "prefill": {
+   "domains": [
+    "github.com",
+    "wikipedia.org",
+    "apify.com"
+   ],
+   "includeNameservers": true,
+   "includeRawEvents": false
+  }
+ },
+ "market-quotes": {
+  "name": "market-quotes",
+  "title": "Stock, Crypto & FX Quotes",
+  "description": "Live-delayed stock, ETF, index, cryptocurrency and foreign-exchange quotes in one call — price, change, day range, volume and optional history, from free public endpoints with no API key.",
+  "url": "https://apify.com/webdatatools/market-quotes",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-jd64Hg3pv1cgJhSkg-15sJRhcOO4-market-quotes.png",
+  "users30": 1,
+  "runs": 7,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION",
+   "OTHER"
+  ],
+  "price": {
+   "unit": "Quote",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "symbols": [
+    "AAPL",
+    "BTC-USD",
+    "EUR/USD"
+   ],
+   "assetType": "auto",
+   "includeHistory": false
+  }
+ },
+ "substack-scraper": {
+  "name": "substack-scraper",
+  "title": "Substack Publication & Posts Scraper",
+  "description": "Scrapes any Substack publication's own public JSON archive API — title, author, publish date, paywall status, word count, likes and comments per post, one row per post, with an RSS fallback and optional full article text.",
+  "url": "https://apify.com/webdatatools/substack-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-Q9f0oa05gX0ySLgS7-liEHanA8J2-substack-scraper.png",
+  "users30": 1,
+  "runs": 14,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "MARKETING",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "Post",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "publications": [
+    "bariweiss"
+   ],
+   "maxPosts": 50,
+   "includeBody": false
+  }
+ },
+ "telegram-channel-scraper": {
+  "name": "telegram-channel-scraper",
+  "title": "Telegram Channel Posts Scraper",
+  "description": "Scrapes public Telegram channels via the t.me/s/ web preview — post text, view counts, media flags, forwards, replies and links, one row per post, no API key or login required.",
+  "url": "https://apify.com/webdatatools/telegram-channel-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-lqJAwcXhlwPcLKwes-mvxMDlQfR2-telegram-channel-scraper.png",
+  "users30": 1,
+  "runs": 12,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "MARKETING",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "Post",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "channels": [
+    "@telegram",
+    "@durov"
+   ],
+   "maxPosts": 50,
+   "includeText": true
+  }
+ },
+ "stackexchange-scraper": {
+  "name": "stackexchange-scraper",
+  "title": "Stack Overflow & Stack Exchange Q&A Scraper",
+  "description": "Search Stack Overflow or any Stack Exchange site's free public API by keyword or tag and get one row per question — score, tags, author, view/answer counts and the accepted answer's text.",
+  "url": "https://apify.com/webdatatools/stackexchange-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-kZtrM7DsUjqPxCabg-tlc5wpPpZa-stackexchange-scraper.png",
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "Question",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "queries": [
+    "web scraping",
+    "playwright timeout"
+   ],
+   "site": "stackoverflow",
+   "tagged": [
+    "python"
+   ]
+  }
+ },
+ "remote-jobs-aggregator": {
+  "name": "remote-jobs-aggregator",
+  "title": "Remote Jobs Aggregator (RemoteOK, WWR, Hacker News)",
+  "description": "Merge and de-duplicate remote job listings from RemoteOK, We Work Remotely and Hacker News' Who is Hiring thread into one clean row per job — title, company, salary, tags and apply link.",
+  "url": "https://apify.com/webdatatools/remote-jobs-aggregator",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-dOTXezjNUQbOdLhl7-TBOcsLL3HG-remote-jobs-aggregator.png",
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "JOBS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "Job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "sources": [
+    "remoteok",
+    "weworkremotely",
+    "hackernews"
+   ],
+   "keywords": [
+    "python"
+   ],
+   "maxJobs": 100
+  }
+ },
+ "css-selector-extractor": {
+  "name": "css-selector-extractor",
+  "title": "Web Scraper — CSS Selector & Data Extractor",
+  "description": "Web Scraper pulls any CSS selector off any page, returning text, HTML, attributes or match counts — one row per URL, no browser required.",
+  "url": "https://apify.com/webdatatools/css-selector-extractor",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-c705gmJYJNPuwewQI-aCgy3k2b5L-css-selector-extractor.png",
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "Page",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "urls": [
+    "https://example.com",
+    "https://apify.com"
+   ],
+   "selectors": [
+    {
+     "name": "title",
+     "selector": "h1",
+     "type": "text"
+    },
+    {
+     "name": "canonicalUrl",
+     "selector": "link[rel='canonical']",
+     "type": "attr",
+     "attribute": "href"
+    }
+   ],
+   "firstMatchOnly": true
+  }
+ },
+ "google-play-reviews-scraper": {
+  "name": "google-play-reviews-scraper",
+  "title": "Google Play Reviews Scraper",
+  "description": "Extract reviews, ratings, replies, and app versions from Google Play Store apps by package ID or URL.",
+  "url": "https://apify.com/webdatatools/google-play-reviews-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-2WntFeMxKMsEA6cKs-cS1n7z1ZXf-google-play-reviews-scraper.png",
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "ECOMMERCE",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "review",
+   "usd": 0.0002,
+   "tiers": {
+    "FREE": 0.0002,
+    "BRONZE": 0.00016,
+    "SILVER": 0.00014,
+    "GOLD": 0.00012,
+    "PLATINUM": 0.00012,
+    "DIAMOND": 0.00012
+   }
+  },
+  "prefill": {
+   "appIds": [
+    "com.whatsapp"
+   ],
+   "maxReviews": 100,
+   "sort": "newest"
+  }
+ },
+ "youtube-transcript-scraper": {
+  "name": "youtube-transcript-scraper",
+  "title": "YouTube Transcript Scraper",
+  "description": "Extract YouTube video transcripts, captions, and subtitles in JSON format with segments and timestamps. Supports multiple languages and auto-generated captions.",
+  "url": "https://apify.com/webdatatools/youtube-transcript-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-LHtsuOB3yYwpkLBwb-Eh7c9OIENP-youtube-transcript-scraper.png",
+  "users30": 0,
+  "runs": 12,
+  "categories": [
+   "VIDEOS",
+   "AI",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "video",
+   "usd": 0.004,
+   "tiers": {
+    "FREE": 0.004,
+    "BRONZE": 0.0032,
+    "SILVER": 0.0028,
+    "GOLD": 0.0024,
+    "PLATINUM": 0.0024,
+    "DIAMOND": 0.0024
+   }
+  },
+  "prefill": {
+   "videoUrls": [
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+   ],
+   "maxVideos": 10,
+   "language": "en"
+  }
+ },
+ "linkedin-jobs-scraper": {
+  "name": "linkedin-jobs-scraper",
+  "title": "LinkedIn Jobs Scraper",
+  "description": "LinkedIn Jobs Scraper returns public job listings from LinkedIn by keywords, location, and filters. Scrape job titles, companies, salaries, descriptions, and applicant counts from LinkedIn's public guest job search API.",
+  "url": "https://apify.com/webdatatools/linkedin-jobs-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-zbmmiZ7MqFBDfvtXC-nk8YUgO3Mj-linkedin-jobs-scraper.png",
+  "users30": 1,
+  "runs": 12,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "software engineer",
+   "location": "United States",
+   "datePosted": ""
+  }
+ },
+ "youtube-shorts-scraper": {
+  "name": "youtube-shorts-scraper",
+  "title": "YouTube Shorts Scraper",
+  "description": "YouTube Shorts Scraper collects Shorts from channels, #hashtag feeds and Shorts search — video ID, URL, title, view count, channel and thumbnail per Short, with no API key or quota.",
+  "url": "https://apify.com/webdatatools/youtube-shorts-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-Gv0WPIWUcBGqWi4mx-6wIAcBc2Bt-youtube-shorts-scraper.png",
+  "users30": 1,
+  "runs": 16,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "VIDEOS",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "short",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "channels": [
+    "@MrBeast"
+   ],
+   "hashtags": [],
+   "searchQueries": []
+  }
+ },
+ "google-maps-scraper": {
+  "name": "google-maps-scraper",
+  "title": "Google Maps Scraper",
+  "description": "Google Maps Scraper extracts places from Google Maps search: name, category, address, phone, website, rating, review count, coordinates and today's hours, in any country, no browser, $2 per 1,000 places.",
+  "url": "https://apify.com/webdatatools/google-maps-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-JbHOBsm4uEpF81Kat-TnDpOoel74-google-maps-scraper.png",
+  "users30": 1,
+  "runs": 7,
+  "categories": [
+   "LEAD_GENERATION",
+   "TRAVEL",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "place",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "searchQueries": "dentist",
+   "location": "Austin, TX",
+   "maxPlacesPerSearch": 20
+  }
+ },
+ "llms-txt-generator": {
+  "name": "llms-txt-generator",
+  "title": "llms.txt Generator (Website to llms.txt & llms-full.txt)",
+  "description": "Turn any website or docs site into an llms.txt (sectioned links with one-line descriptions) and llms-full.txt (every page as clean Markdown) for AI assistants, RAG and AI search. Plain HTTP, sitemap-aware, robots.txt-friendly.",
+  "url": "https://apify.com/webdatatools/llms-txt-generator",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-elRun5MdeavvM2AbA-VL717P5kuR-llms-txt-generator.png",
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "AI",
+   "DEVELOPER_TOOLS",
+   "SEO_TOOLS"
+  ],
+  "price": {
+   "unit": "page",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "startUrls": [
+    {
+     "url": "https://crawlee.dev/js/docs/quick-start"
+    }
+   ],
+   "maxPages": 50,
+   "maxDepth": 3
+  }
+ },
+ "pdf-to-markdown": {
+  "name": "pdf-to-markdown",
+  "title": "PDF to Markdown Converter (Text, Headings, Metadata)",
+  "description": "Convert PDF files to clean Markdown for LLMs and RAG: headings detected from font sizes, paragraphs joined, page headers, footers and page numbers removed, plus title, author, dates, page count, links and token count. Give PDF URLs or pages that link to PDFs.",
+  "url": "https://apify.com/webdatatools/pdf-to-markdown",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-nBk9ycSlmehoZP3FK-0Wo9htAe9m-pdf-to-markdown.png",
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "AI",
+   "DEVELOPER_TOOLS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "pdf",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "pdfUrls": [
+    "https://arxiv.org/pdf/1706.03762"
+   ],
+   "maxPdfsPerPage": 20,
+   "maxPagesPerPdf": 200
+  }
+ },
+ "rag-text-chunker": {
+  "name": "rag-text-chunker",
+  "title": "RAG Text Chunker (Markdown to Chunks, Token Counts)",
+  "description": "Split Markdown or text into RAG-ready chunks with exact OpenAI token counts (o200k/cl100k): heading-aware, code blocks kept whole, sentence-boundary overlap, heading path on every chunk. Chunks any dataset from Website to Markdown, PDF to Markdown or your own texts.",
+  "url": "https://apify.com/webdatatools/rag-text-chunker",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-QIZmifxee1cNc3cjl-U2WjuchNsP-rag-text-chunker.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "AI",
+   "DEVELOPER_TOOLS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "chunk",
+   "usd": 0.0002,
+   "tiers": {
+    "FREE": 0.0002,
+    "BRONZE": 0.00016,
+    "SILVER": 0.00014,
+    "GOLD": 0.00012,
+    "PLATINUM": 0.00012,
+    "DIAMOND": 0.00012
+   }
+  },
+  "prefill": {
+   "texts": [
+    "# Guide\n\nFirst section text.\n\n## Details\n\nMore text here."
+   ],
+   "chunkSize": 500,
+   "overlap": 50
+  }
+ },
+ "zillow-scraper": {
+  "name": "zillow-scraper",
+  "title": "Zillow Scraper (Homes for Sale, Rent & Sold, Zestimates)",
+  "description": "Scrape Zillow search results for any city, ZIP or map search: price, address, coordinates, beds, baths, square feet, lot size, home type, days on Zillow, Zestimate and rent Zestimate, tax value, broker, photos, rental building units, sold dates.",
+  "url": "https://apify.com/webdatatools/zillow-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-2lecSB0VaFJRDNcI8-Wtq8qRPtPN-zillow-scraper.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "REAL_ESTATE",
+   "LEAD_GENERATION",
+   "ECOMMERCE"
+  ],
+  "price": {
+   "unit": "home",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "locations": "Austin, TX",
+   "listingType": "sale",
+   "sortBy": "relevance"
+  }
+ },
+ "airbnb-scraper": {
+  "name": "airbnb-scraper",
+  "title": "Airbnb Scraper (Listings, Prices, Ratings, Coordinates)",
+  "description": "Scrape Airbnb search results for any destination and dates: stay name, type, area, coordinates, rating and review count, Superhost and Guest favorite badges, total and per-night price, discounts, bedrooms, beds, baths, free cancellation, photos.",
+  "url": "https://apify.com/webdatatools/airbnb-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-dgx4mcg0ZCcqrPPr4-a3QFYxEUX9-airbnb-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "TRAVEL",
+   "REAL_ESTATE",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "stay",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "locations": "Lisbon, Portugal",
+   "adults": 2,
+   "children": 0
+  }
+ },
+ "tiktok-profile-scraper": {
+  "name": "tiktok-profile-scraper",
+  "title": "TikTok Profile Scraper (Followers, Likes, Bio, Video Stats)",
+  "description": "Get public TikTok profile data in bulk: exact follower, following, like and video counts, bio and bio link, verified, private and business flags, avatar and join date. Add video URLs for views, likes, comments, shares, saves, hashtags and music. No login.",
+  "url": "https://apify.com/webdatatools/tiktok-profile-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-dFZaq6bVpU1TIlHjO-SmdMM3i4Lx-tiktok-profile-scraper.png",
+  "users30": 2,
+  "runs": 6,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "MARKETING",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "profile",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "profiles": [
+    "nasa"
+   ]
+  }
+ },
+ "stepstone-scraper": {
+  "name": "stepstone-scraper",
+  "title": "StepStone Scraper (Germany, Austria, Belgium Jobs)",
+  "description": "Scrape StepStone job listings in Germany, Austria and Belgium by keyword, location and radius, or by search URL: job title, company, logo, location, date posted, labels, skills, description snippet, quick-apply and sponsored flags.",
+  "url": "https://apify.com/webdatatools/stepstone-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-f7qS9bUgFkqqfdoaW-iybcnOBJey-stepstone-scraper.png",
+  "users30": 2,
+  "runs": 5,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "python",
+   "country": "de",
+   "sortBy": "relevance"
+  }
+ },
+ "zillow-detail-scraper": {
+  "name": "zillow-detail-scraper",
+  "title": "Zillow Home Details Scraper (Description, Photos, History)",
+  "description": "Get full Zillow property details by URL or zpid: description, year built, price per sq ft, HOA fee, tax rate, parking, all photos, price history, Zestimate and rent Zestimate, page views and saves, days on Zillow, MLS id, listing agent and brokerage.",
+  "url": "https://apify.com/webdatatools/zillow-detail-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-aYO5adUCTBao7cfLd-CpEd11Sibp-zillow-detail-scraper.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "REAL_ESTATE",
+   "LEAD_GENERATION",
+   "ECOMMERCE"
+  ],
+  "price": {
+   "unit": "home",
+   "usd": 0.003,
+   "tiers": {
+    "FREE": 0.003,
+    "BRONZE": 0.0024,
+    "SILVER": 0.0021,
+    "GOLD": 0.0018,
+    "PLATINUM": 0.0018,
+    "DIAMOND": 0.0018
+   }
+  },
+  "prefill": {
+   "homes": [
+    "https://www.zillow.com/homedetails/500-Denson-Dr-Austin-TX-78752/29412534_zpid/"
+   ]
+  }
+ }
+}
