@@ -32,7 +32,7 @@ Every section is independent. If one check finds nothing or fails, its fields st
 
 ## Where each section comes from
 
-Contacts come from the company's homepage plus one likely contact page (or from Wikidata when the site lists none). DNS and email security come from public DNS and RDAP records, and the tech stack is fingerprinted from the same homepage and contact page — all three inside Company 360 itself. The security audit, SEO, hiring and company facts come from specialist tools in the same suite — Domain Security Audit, On-Page SEO Audit, Hiring Signals and Wikidata Entity Enrichment — which Company 360 runs for you in parallel. Company facts come from Wikidata, so they are richest for companies that have a Wikidata entry; hiring data appears when the company runs a supported ATS job board under its own name.
+Contacts come from the company's homepage plus one likely contact page (or from Wikidata when the site lists none). DNS and email security come from public DNS and RDAP records, and the tech stack is fingerprinted from the same homepage and contact page. The security audit, SEO, hiring and company facts use the same code as the specialist tools in the suite — Domain Security Audit, On-Page SEO Audit, Hiring Signals and Wikidata Entity Enrichment — but every section runs inside Company 360 itself, in parallel. Company facts come from Wikidata, so they are richest for companies that have a Wikidata entry; hiring data appears when the company runs a supported ATS job board under its own name.
 
 ## Step-by-step
 
@@ -62,7 +62,7 @@ For a security, deliverability or SEO service, the profile is a ready-made reaso
 
 {{pricing}}
 
-One result is one company profile. Contacts, DNS/email security and tech stack are included in that price. The four specialist sections (security audit, SEO, hiring, company facts) run as separate tool runs on your Apify account and are billed at those tools' own per-result prices — about one extra cent per company with all four on. Switch off any you don't need with the `include…` options to pay exactly the profile price, and set **Maximum cost per run** to cap the total.
+One result is one company profile, and that is the whole bill: every section runs inside Company 360, so no other tool runs are started and nothing is charged on top. Switching sections off makes runs faster, not cheaper; set **Maximum cost per run** to cap the total.
 
 ## How it compares
 

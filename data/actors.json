@@ -76,7 +76,7 @@
   "url": "https://apify.com/webdatatools/core-web-vitals-audit",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-FM0Kfh5kY4KVsuHVe-Ebe6jE0AZz-core-web-vitals-audit.png",
   "users30": 5,
-  "runs": 38,
+  "runs": 39,
   "categories": [
    "SEO_TOOLS",
    "DEVELOPER_TOOLS",
@@ -148,7 +148,7 @@
   "url": "https://apify.com/webdatatools/hiring-signals",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-IzYAKYeRydOFJMgJQ-ehmKwB2RIR-hiring-signals.png",
   "users30": 0,
-  "runs": 74,
+  "runs": 75,
   "categories": [
    "JOBS",
    "LEAD_GENERATION",
@@ -226,7 +226,7 @@
   "url": "https://apify.com/webdatatools/subdomain-finder",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-UDB3k0SyLCgRgtAqY-jeRczjtqdn-subdomain-finder.png",
   "users30": 1,
-  "runs": 25,
+  "runs": 26,
   "categories": [
    "DEVELOPER_TOOLS",
    "SEO_TOOLS",
@@ -299,7 +299,7 @@
   "url": "https://apify.com/webdatatools/sitemap-extractor",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-7S7I3DEejoJsOwamc-fnzryRt3RE-sitemap-extractor.png",
   "users30": 1,
-  "runs": 20,
+  "runs": 21,
   "categories": [
    "SEO_TOOLS",
    "DEVELOPER_TOOLS",
@@ -367,7 +367,7 @@
   "url": "https://apify.com/webdatatools/wayback-page-diff",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-fL6PnxZb9MbkBMTPx-csuRlROuH9-wayback-page-diff.png",
   "users30": 2,
-  "runs": 20,
+  "runs": 21,
   "categories": [
    "SEO_TOOLS",
    "DEVELOPER_TOOLS",
@@ -401,7 +401,7 @@
   "url": "https://apify.com/webdatatools/app-store-lookup",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-5IESibEI2czmMZRLo-EpUmBFnxbC-app-store-lookup.png",
   "users30": 1,
-  "runs": 20,
+  "runs": 21,
   "categories": [
    "BUSINESS",
    "MARKETING",
@@ -436,7 +436,7 @@
   "url": "https://apify.com/webdatatools/press-release-monitor",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-prSHnDneKpW0Xbmhn-XrkmidRzLk-press-release-monitor.png",
   "users30": 1,
-  "runs": 25,
+  "runs": 26,
   "categories": [
    "NEWS",
    "LEAD_GENERATION",
@@ -475,7 +475,7 @@
   "url": "https://apify.com/webdatatools/vscode-marketplace-extensions",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-fUH9xFIrSlo78eTcE-TlWqyNQmjn-vscode-marketplace-extensions.png",
   "users30": 1,
-  "runs": 18,
+  "runs": 19,
   "categories": [
    "DEVELOPER_TOOLS",
    "BUSINESS",
@@ -510,7 +510,7 @@
   "url": "https://apify.com/webdatatools/github-repo-health",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-RGWe5zbnuSSWEANBy-AzIauUlbDB-github-repo-health.png",
   "users30": 1,
-  "runs": 20,
+  "runs": 21,
   "categories": [
    "DEVELOPER_TOOLS",
    "BUSINESS",
@@ -614,7 +614,7 @@
   "url": "https://apify.com/webdatatools/chrome-web-store-extensions",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-A5hkMNlwNhhPs8bFV-JCv1JyCTCl-chrome-web-store-extensions.png",
   "users30": 1,
-  "runs": 18,
+  "runs": 19,
   "categories": [
    "DEVELOPER_TOOLS",
    "MARKETING",
@@ -680,7 +680,7 @@
   "url": "https://apify.com/webdatatools/domain-security-audit",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-SELey4npMakiVA1vf-miaSpY31Iu-domain-security-audit.png",
   "users30": 0,
-  "runs": 64,
+  "runs": 65,
   "categories": [
    "DEVELOPER_TOOLS",
    "SEO_TOOLS",
@@ -752,7 +752,7 @@
   "url": "https://apify.com/webdatatools/yc-companies-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-pG9PALrFB6nbU7rZ4-1jO5oiUUDt-yc-companies-scraper.png",
   "users30": 1,
-  "runs": 26,
+  "runs": 27,
   "categories": [
    "LEAD_GENERATION",
    "BUSINESS",
@@ -859,7 +859,7 @@
   "url": "https://apify.com/webdatatools/google-search-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-WBNF7gdGseCUnEeYI-QLhsS8c3zR-google-search-scraper.png",
   "users30": 6,
-  "runs": 144,
+  "runs": 148,
   "categories": [
    "SEO_TOOLS",
    "LEAD_GENERATION",
@@ -1068,8 +1068,8 @@
   "description": "YouTube Search Results Scraper returns videos, channels or playlists for any keyword, with title, views, duration, channel and publish time — no API key, no quota.",
   "url": "https://apify.com/webdatatools/youtube-search-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-wYgOPl49mY2AWLW0Y-rdO80CYwAH-youtube-search-scraper.png",
-  "users30": 1,
-  "runs": 18,
+  "users30": 0,
+  "runs": 19,
   "categories": [
    "SOCIAL_MEDIA",
    "VIDEOS",
@@ -1241,8 +1241,8 @@
   "description": "AI Web Search runs a Google search, fetches the top organic results and returns clean Markdown per result — one call turns a question into LLM-ready context for agents, RAG and MCP.",
   "url": "https://apify.com/webdatatools/ai-web-search",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-T9ennoxjzhhpNMTms-fWbXHfKfYt-ai-web-search.png",
-  "users30": 1,
-  "runs": 11,
+  "users30": 0,
+  "runs": 28,
   "categories": [
    "AI",
    "AGENTS",
@@ -1275,7 +1275,7 @@
   "url": "https://apify.com/webdatatools/company-360",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-BbeJDj8MzLbIfg0hM-1zg6AG9CbT-company-360.png",
   "users30": 0,
-  "runs": 26,
+  "runs": 27,
   "categories": [
    "LEAD_GENERATION",
    "BUSINESS",
@@ -1700,7 +1700,7 @@
   "url": "https://apify.com/webdatatools/google-play-reviews-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-2WntFeMxKMsEA6cKs-cS1n7z1ZXf-google-play-reviews-scraper.png",
   "users30": 1,
-  "runs": 6,
+  "runs": 7,
   "categories": [
    "DEVELOPER_TOOLS",
    "ECOMMERCE",
@@ -1792,6 +1792,39 @@
    "geo": ""
   }
  },
+ "website-screenshot": {
+  "name": "website-screenshot",
+  "title": "Website Screenshot Generator",
+  "description": "Generate full-page or viewport screenshots of websites in PNG or JPEG format. Fast, reliable screenshots with customizable viewport size, wait time, and element hiding.",
+  "url": "https://apify.com/webdatatools/website-screenshot",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-InSuQgiyx5rq4mWu8-y51cyjuSTx-website-screenshot.png",
+  "users30": 1,
+  "runs": 38,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION",
+   "SEO_TOOLS"
+  ],
+  "price": {
+   "unit": "screenshot",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "urls": [
+    "https://example.com"
+   ],
+   "fullPage": false,
+   "format": "png"
+  }
+ },
  "linkedin-jobs-scraper": {
   "name": "linkedin-jobs-scraper",
   "title": "LinkedIn Jobs Scraper",
@@ -1830,7 +1863,7 @@
   "url": "https://apify.com/webdatatools/youtube-shorts-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-Gv0WPIWUcBGqWi4mx-6wIAcBc2Bt-youtube-shorts-scraper.png",
   "users30": 1,
-  "runs": 16,
+  "runs": 17,
   "categories": [
    "SOCIAL_MEDIA",
    "VIDEOS",
@@ -1854,6 +1887,37 @@
    ],
    "hashtags": [],
    "searchQueries": []
+  }
+ },
+ "seek-jobs-scraper": {
+  "name": "seek-jobs-scraper",
+  "title": "Seek Jobs Scraper (Australia & New Zealand)",
+  "description": "Scrape job listings from Seek.com.au and Seek.co.nz. Extract job details including title, company, location, salary, work type, and description.",
+  "url": "https://apify.com/webdatatools/seek-jobs-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-L8lhLJy1fVSiIQeI2-I7p5LDhO29-seek-jobs-scraper.png",
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "BUSINESS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "software engineer",
+   "keywordsList": [],
+   "location": "Sydney"
   }
  },
  "google-ads-transparency-scraper": {
@@ -1946,6 +2010,101 @@
    "searchQueries": "dentist",
    "location": "Austin, TX",
    "maxPlacesPerSearch": 20
+  }
+ },
+ "aliexpress-scraper": {
+  "name": "aliexpress-scraper",
+  "title": "AliExpress Scraper (Search Products & Prices)",
+  "description": "Scrape AliExpress search results by keyword: product id, title, price in USD, discount, image, sponsored flag and position. Sort by price, filter by price range. No login.",
+  "url": "https://apify.com/webdatatools/aliexpress-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-jdLShOWiausrabKyG-Rjiff0QdcI-aliexpress-scraper.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "product",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "wireless earbuds",
+   "sort": "default",
+   "includeAds": true
+  }
+ },
+ "wellfound-jobs-scraper": {
+  "name": "wellfound-jobs-scraper",
+  "title": "Wellfound Jobs Scraper (AngelList Startup Jobs)",
+  "description": "Scrape startup jobs from Wellfound (AngelList Talent) by role and city or remote: title, salary and equity ranges, job type, location, posted date, description, and the company’s size, stage and tagline. No login.",
+  "url": "https://apify.com/webdatatools/wellfound-jobs-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-jnPBuXv7gSNIy0G95-ESdQEesR5V-wellfound-jobs-scraper.png",
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "roles": "software engineer",
+   "locations": "New York",
+   "remoteOnly": false
+  }
+ },
+ "trustpilot-reviews-scraper": {
+  "name": "trustpilot-reviews-scraper",
+  "title": "Trustpilot Reviews Scraper (Ratings, Replies, No Login)",
+  "description": "Scrape Trustpilot reviews for any company: star rating, title, full text, language, dates, verification, reviewer country and the company’s reply, plus TrustScore and review count. Real browser, no login or cookies needed.",
+  "url": "https://apify.com/webdatatools/trustpilot-reviews-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-kwD64BFbKkyCqi7AE-kQcaEvou8x-trustpilot-reviews-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "ECOMMERCE",
+   "MARKETING",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "review",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "companies": [
+    "www.nordvpn.com"
+   ],
+   "maxReviewsPerCompany": 100,
+   "languages": "all"
   }
  },
  "x-tweet-scraper": {
