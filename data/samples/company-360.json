@@ -1,71 +1,142 @@
 {
-  "runId": "VwogsCfMHAcJhdp1X",
-  "finishedAt": "2026-10-03T15:21:16.758Z",
+  "runId": "9zXtjgwRIg5vUug8N",
+  "finishedAt": "2026-10-04T15:51:41.266Z",
   "items": [
     {
-      "domain": "apify.com",
-      "websiteUrl": "https://apify.com",
-      "companyName": "Apify",
-      "description": "Czech tech startup",
+      "domain": "shopify.com",
+      "websiteUrl": "https://shopify.com",
+      "companyName": "Shopify",
+      "description": "Try Shopify free. Build or grow your business fast with AI. Get more than ecommerce software with tools to manage every part of your business.",
       "emails": [
-        "support@apify.com",
-        "hello@apify.com"
+        "plus@shopify.com",
+        "u003eplus@shopify.com"
       ],
-      "phones": [],
+      "phones": [
+        "18442300603"
+      ],
       "socials": {
-        "linkedin": [
-          "https://linkedin.com/company/apify"
+        "facebook": [
+          "https://facebook.com/shopify"
         ],
         "twitter": [
-          "https://x.com/apify"
+          "https://twitter.com/shopify"
+        ],
+        "youtube": [
+          "https://youtube.com/user/shopify"
+        ],
+        "instagram": [
+          "https://instagram.com/shopify"
+        ],
+        "linkedin": [
+          "https://linkedin.com/company/shopify"
         ]
       },
-      "linkedinUrl": "https://linkedin.com/company/apify",
-      "twitterUrl": "https://x.com/apify",
-      "facebookUrl": null,
-      "instagramUrl": null,
-      "youtubeUrl": null,
+      "linkedinUrl": "https://linkedin.com/company/shopify",
+      "twitterUrl": "https://twitter.com/shopify",
+      "facebookUrl": "https://facebook.com/shopify",
+      "instagramUrl": "https://instagram.com/shopify",
+      "youtubeUrl": "https://youtube.com/user/shopify",
       "cms": null,
+      "ecommercePlatform": "Shopify",
+      "analytics": [],
+      "adPixels": [],
+      "chatWidget": null,
+      "paymentProviders": [],
+      "technologyCount": 3,
+      "emailProvider": "Google Workspace",
+      "dnsProvider": null,
+      "spfPolicy": "~all",
+      "dmarcPolicy": "reject",
+      "emailSecurityGrade": "A",
+      "registrar": "MarkMonitor Inc.",
+      "domainAgeDays": 7877,
+      "tlsValid": null,
+      "tlsDaysUntilExpiry": null,
+      "securityGrade": null,
+      "securityScore": null,
+      "seoScore": null,
+      "seoIssues": [],
+      "openJobs": null,
+      "hiringVelocity": null,
+      "topDepartments": [],
+      "industries": [],
+      "headquarters": null,
+      "country": null,
+      "employees": null,
+      "revenue": null,
+      "founders": [],
+      "foundedAt": null,
+      "crunchbaseId": null,
+      "wikidataQid": null,
+      "profileCompleteness": 100,
+      "warnings": [],
+      "error": null,
+      "scrapedAt": "2026-10-04T15:51:39.824Z"
+    },
+    {
+      "domain": "wordpress.org",
+      "websiteUrl": "https://wordpress.org",
+      "companyName": "Blog Tool, Publishing Platform, and CMS &#8211; WordPress.org",
+      "description": "Open source software which you can use to easily create a beautiful website, blog, or app.",
+      "emails": [],
+      "phones": [],
+      "socials": {
+        "twitter": [
+          "https://x.com/WordPress"
+        ],
+        "facebook": [
+          "https://facebook.com/WordPress"
+        ],
+        "instagram": [
+          "https://instagram.com/wordpress"
+        ],
+        "linkedin": [
+          "https://linkedin.com/company/wordpress"
+        ]
+      },
+      "linkedinUrl": "https://linkedin.com/company/wordpress",
+      "twitterUrl": "https://x.com/WordPress",
+      "facebookUrl": "https://facebook.com/WordPress",
+      "instagramUrl": "https://instagram.com/wordpress",
+      "youtubeUrl": null,
+      "cms": "WordPress",
       "ecommercePlatform": null,
       "analytics": [
         "Google Tag Manager"
       ],
       "adPixels": [],
-      "chatWidget": "Intercom",
+      "chatWidget": null,
       "paymentProviders": [],
-      "technologyCount": 11,
-      "emailProvider": "Google Workspace",
-      "dnsProvider": "Amazon Route 53",
+      "technologyCount": 6,
+      "emailProvider": "Self-hosted",
+      "dnsProvider": null,
       "spfPolicy": "-all",
       "dmarcPolicy": "reject",
       "emailSecurityGrade": "A",
-      "registrar": "Amazon Registrar, Inc.",
-      "domainAgeDays": 6331,
-      "tlsValid": true,
-      "tlsDaysUntilExpiry": 105,
-      "securityGrade": "A",
-      "securityScore": 90,
-      "seoScore": 100,
+      "registrar": "MarkMonitor Inc.",
+      "domainAgeDays": 8591,
+      "tlsValid": null,
+      "tlsDaysUntilExpiry": null,
+      "securityGrade": null,
+      "securityScore": null,
+      "seoScore": null,
       "seoIssues": [],
-      "openJobs": 11,
-      "hiringVelocity": "low",
-      "topDepartments": [
-        "Engineering",
-        "GTM"
-      ],
+      "openJobs": null,
+      "hiringVelocity": null,
+      "topDepartments": [],
       "industries": [],
-      "headquarters": "Prague",
-      "country": "Czech Republic",
-      "employees": 66,
-      "revenue": 298000000,
+      "headquarters": null,
+      "country": null,
+      "employees": null,
+      "revenue": null,
       "founders": [],
-      "foundedAt": "2016-02-15",
+      "foundedAt": null,
       "crunchbaseId": null,
-      "wikidataQid": "Q112502991",
+      "wikidataQid": null,
       "profileCompleteness": 100,
       "warnings": [],
       "error": null,
-      "scrapedAt": "2026-10-03T15:21:06.594Z"
+      "scrapedAt": "2026-10-04T15:51:40.376Z"
     }
   ]
 }

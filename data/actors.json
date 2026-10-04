@@ -6,7 +6,7 @@
   "url": "https://apify.com/webdatatools/contact-extractor",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-SN88YAtrbnLiHjsJf-MJlWPlEH29-contact-extractor.png",
   "users30": 1,
-  "runs": 33,
+  "runs": 34,
   "categories": [
    "LEAD_GENERATION",
    "BUSINESS",
@@ -41,7 +41,7 @@
   "url": "https://apify.com/webdatatools/tech-stack-detector",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-K6jDqlY7EiQ2sbqLx-B97lz2udNQ-tech-stack-detector.png",
   "users30": 0,
-  "runs": 75,
+  "runs": 78,
   "categories": [
    "LEAD_GENERATION",
    "DEVELOPER_TOOLS",
@@ -75,7 +75,7 @@
   "description": "Bulk Core Web Vitals and PageSpeed audit: Lighthouse performance, SEO and accessibility scores, LCP, CLS, INP, TBT and the top fixes — one row per URL and device.",
   "url": "https://apify.com/webdatatools/core-web-vitals-audit",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-FM0Kfh5kY4KVsuHVe-Ebe6jE0AZz-core-web-vitals-audit.png",
-  "users30": 4,
+  "users30": 5,
   "runs": 38,
   "categories": [
    "SEO_TOOLS",
@@ -147,8 +147,8 @@
   "description": "Scrape company job postings and hiring signals from Greenhouse, Lever, Ashby and Workable job boards — one row per job, or one hiring summary per company.",
   "url": "https://apify.com/webdatatools/hiring-signals",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-IzYAKYeRydOFJMgJQ-ehmKwB2RIR-hiring-signals.png",
-  "users30": 2,
-  "runs": 72,
+  "users30": 0,
+  "runs": 74,
   "categories": [
    "JOBS",
    "LEAD_GENERATION",
@@ -260,7 +260,7 @@
   "url": "https://apify.com/webdatatools/youtube-channel-videos",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-VZfgn1DEndK6GAlir-hdTPNTZJoc-youtube-channel-videos.png",
   "users30": 0,
-  "runs": 28,
+  "runs": 30,
   "categories": [
    "SOCIAL_MEDIA",
    "MARKETING",
@@ -333,7 +333,7 @@
   "url": "https://apify.com/webdatatools/structured-data-extractor",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-AtTlsovORF4UbfgAx-6xCR3q19Ef-structured-data-extractor.png",
   "users30": 1,
-  "runs": 25,
+  "runs": 26,
   "categories": [
    "SEO_TOOLS",
    "ECOMMERCE",
@@ -580,7 +580,7 @@
   "url": "https://apify.com/webdatatools/ical-calendar-extractor",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-BZpQ5zCPS8aqxH09b-LGx2LvaCmG-ical-calendar-extractor.png",
   "users30": 1,
-  "runs": 17,
+  "runs": 18,
   "categories": [
    "AUTOMATION",
    "INTEGRATIONS",
@@ -647,7 +647,7 @@
   "url": "https://apify.com/webdatatools/shopify-products-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-mL0VyvXUakhDZ4Khl-cYcovMkzvu-shopify-products-scraper.png",
   "users30": 0,
-  "runs": 27,
+  "runs": 28,
   "categories": [
    "ECOMMERCE",
    "LEAD_GENERATION",
@@ -679,8 +679,8 @@
   "description": "Domain Security Audit checks TLS certificate validity, HSTS/CSP and other HTTP security headers, the redirect chain and robots.txt/llms.txt AI-bot rules for any list of domains — one scored, graded row per domain.",
   "url": "https://apify.com/webdatatools/domain-security-audit",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-SELey4npMakiVA1vf-miaSpY31Iu-domain-security-audit.png",
-  "users30": 2,
-  "runs": 62,
+  "users30": 0,
+  "runs": 64,
   "categories": [
    "DEVELOPER_TOOLS",
    "SEO_TOOLS",
@@ -714,7 +714,7 @@
   "url": "https://apify.com/webdatatools/website-to-markdown",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-XzLicaoE1OdrHNA4E-I3IqcPknuH-website-to-markdown.png",
   "users30": 2,
-  "runs": 112,
+  "runs": 113,
   "categories": [
    "AI",
    "DEVELOPER_TOOLS",
@@ -785,7 +785,7 @@
   "url": "https://apify.com/webdatatools/article-extractor",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-iLkt2raxhx3zUCAQ1-5YVn5OumIo-article-extractor.png",
   "users30": 1,
-  "runs": 22,
+  "runs": 23,
   "categories": [
    "NEWS",
    "AI",
@@ -820,7 +820,7 @@
   "url": "https://apify.com/webdatatools/youtube-comments-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-teE3NUspiJubAkKUo-QKkys2aJx1-youtube-comments-scraper.png",
   "users30": 1,
-  "runs": 35,
+  "runs": 36,
   "categories": [
    "SOCIAL_MEDIA",
    "VIDEOS",
@@ -859,7 +859,7 @@
   "url": "https://apify.com/webdatatools/google-search-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-WBNF7gdGseCUnEeYI-QLhsS8c3zR-google-search-scraper.png",
   "users30": 6,
-  "runs": 141,
+  "runs": 144,
   "categories": [
    "SEO_TOOLS",
    "LEAD_GENERATION",
@@ -892,8 +892,8 @@
   "description": "Wikidata Entity & Company Enrichment resolves a QID, company name, or Wikipedia URL to its Wikidata item and returns facts (country, HQ, founders, CEO, employees, revenue), identifiers (ISIN, Crunchbase, LinkedIn) and social/media links — one row per entity.",
   "url": "https://apify.com/webdatatools/wikidata-entity-enrichment",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-ycbpmQFuSnrxe3om7-UpaL3qLvg4-wikidata-entity-enrichment.png",
-  "users30": 2,
-  "runs": 43,
+  "users30": 0,
+  "runs": 45,
   "categories": [
    "BUSINESS",
    "LEAD_GENERATION",
@@ -928,7 +928,7 @@
   "url": "https://apify.com/webdatatools/openfda-recall-monitor",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-yrxg7HYzLmgBbXwNg-2uEUCTLqO9-openfda-recall-monitor.png",
   "users30": 1,
-  "runs": 17,
+  "runs": 18,
   "categories": [
    "NEWS",
    "BUSINESS",
@@ -958,8 +958,8 @@
   "description": "On-Page SEO Audit checks title, meta description, headings, images, links, Open Graph, Twitter Card and Schema.org data for any list of URLs — one scored row per page.",
   "url": "https://apify.com/webdatatools/seo-page-audit",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-J3O0j3UPwFG4gac3B-YP0MO9HU3E-seo-page-audit.png",
-  "users30": 2,
-  "runs": 46,
+  "users30": 0,
+  "runs": 49,
   "categories": [
    "SEO_TOOLS",
    "DEVELOPER_TOOLS",
@@ -993,7 +993,7 @@
   "url": "https://apify.com/webdatatools/google-news-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-2sPLfa1CUhtQalf32-H4eJCSqTlf-google-news-scraper.png",
   "users30": 1,
-  "runs": 20,
+  "runs": 25,
   "categories": [
    "NEWS",
    "MARKETING",
@@ -1030,7 +1030,7 @@
   "url": "https://apify.com/webdatatools/youtube-channel-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-eD9eBySeqkeqryITV-AMPbwLut0e-youtube-channel-scraper.png",
   "users30": 1,
-  "runs": 34,
+  "runs": 35,
   "categories": [
    "SOCIAL_MEDIA",
    "VIDEOS",
@@ -1069,7 +1069,7 @@
   "url": "https://apify.com/webdatatools/youtube-search-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-wYgOPl49mY2AWLW0Y-rdO80CYwAH-youtube-search-scraper.png",
   "users30": 1,
-  "runs": 17,
+  "runs": 18,
   "categories": [
    "SOCIAL_MEDIA",
    "VIDEOS",
@@ -1103,7 +1103,7 @@
   "url": "https://apify.com/webdatatools/podcast-lookup",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-gorDJ9kZpjrkDs8Mf-79apQE9psA-podcast-lookup.png",
   "users30": 1,
-  "runs": 13,
+  "runs": 14,
   "categories": [
    "SOCIAL_MEDIA",
    "MARKETING",
@@ -1172,7 +1172,7 @@
   "url": "https://apify.com/webdatatools/youtube-video-details",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-oIsr3QIQoU6d5wmZn-w2lmUc4ftA-youtube-video-details.png",
   "users30": 1,
-  "runs": 29,
+  "runs": 30,
   "categories": [
    "SOCIAL_MEDIA",
    "VIDEOS",
@@ -1211,7 +1211,7 @@
   "url": "https://apify.com/webdatatools/overpass-poi-extractor",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-veXPs55G7kO4b9vYM-og2E2I9tcM-overpass-poi-extractor.png",
   "users30": 1,
-  "runs": 19,
+  "runs": 20,
   "categories": [
    "LEAD_GENERATION",
    "TRAVEL",
@@ -1274,8 +1274,8 @@
   "description": "Company 360 turns a domain into one rich profile row: contacts, tech stack, DNS/e-mail security, TLS/security headers, on-page SEO, hiring signals and company facts (HQ, employees, revenue, founders) merged from our own scraper suite.",
   "url": "https://apify.com/webdatatools/company-360",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-BbeJDj8MzLbIfg0hM-1zg6AG9CbT-company-360.png",
-  "users30": 1,
-  "runs": 24,
+  "users30": 0,
+  "runs": 26,
   "categories": [
    "LEAD_GENERATION",
    "BUSINESS",
@@ -1309,7 +1309,7 @@
   "url": "https://apify.com/webdatatools/bluesky-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-5LnUc8cSEObBihsS0-UXmWg0hJMn-bluesky-scraper.png",
   "users30": 1,
-  "runs": 28,
+  "runs": 29,
   "categories": [
    "SOCIAL_MEDIA",
    "LEAD_GENERATION",
@@ -1343,7 +1343,7 @@
   "url": "https://apify.com/webdatatools/google-play-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-D9STraSxQsJ1bAnKJ-zNiLkS1UoN-google-play-scraper.png",
   "users30": 1,
-  "runs": 22,
+  "runs": 23,
   "categories": [
    "DEVELOPER_TOOLS",
    "LEAD_GENERATION",
@@ -1378,7 +1378,7 @@
   "url": "https://apify.com/webdatatools/github-trending-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-YvIV00qj9gqJvLlYx-jafqhyntfs-github-trending-scraper.png",
   "users30": 1,
-  "runs": 8,
+  "runs": 9,
   "categories": [
    "DEVELOPER_TOOLS",
    "AUTOMATION",
@@ -1413,7 +1413,7 @@
   "url": "https://apify.com/webdatatools/hacker-news-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-hNGe4bY11J9aUxpQA-PTMfaUEApD-hacker-news-scraper.png",
   "users30": 1,
-  "runs": 8,
+  "runs": 9,
   "categories": [
    "NEWS",
    "DEVELOPER_TOOLS",
@@ -1447,7 +1447,7 @@
   "url": "https://apify.com/webdatatools/domain-whois-rdap",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-XSYatfAVSiocVM8cX-ILrvPJu5r3-domain-whois-rdap.png",
   "users30": 1,
-  "runs": 9,
+  "runs": 10,
   "categories": [
    "DEVELOPER_TOOLS",
    "AUTOMATION",
@@ -1482,7 +1482,7 @@
   "url": "https://apify.com/webdatatools/market-quotes",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-jd64Hg3pv1cgJhSkg-15sJRhcOO4-market-quotes.png",
   "users30": 1,
-  "runs": 7,
+  "runs": 8,
   "categories": [
    "DEVELOPER_TOOLS",
    "AUTOMATION",
@@ -1517,7 +1517,7 @@
   "url": "https://apify.com/webdatatools/substack-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-Q9f0oa05gX0ySLgS7-liEHanA8J2-substack-scraper.png",
   "users30": 1,
-  "runs": 14,
+  "runs": 15,
   "categories": [
    "SOCIAL_MEDIA",
    "MARKETING",
@@ -1550,7 +1550,7 @@
   "url": "https://apify.com/webdatatools/telegram-channel-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-lqJAwcXhlwPcLKwes-mvxMDlQfR2-telegram-channel-scraper.png",
   "users30": 1,
-  "runs": 12,
+  "runs": 13,
   "categories": [
    "SOCIAL_MEDIA",
    "MARKETING",
@@ -1584,7 +1584,7 @@
   "url": "https://apify.com/webdatatools/stackexchange-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-kZtrM7DsUjqPxCabg-tlc5wpPpZa-stackexchange-scraper.png",
   "users30": 1,
-  "runs": 6,
+  "runs": 7,
   "categories": [
    "DEVELOPER_TOOLS",
    "AUTOMATION"
@@ -1619,7 +1619,7 @@
   "url": "https://apify.com/webdatatools/remote-jobs-aggregator",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-dOTXezjNUQbOdLhl7-TBOcsLL3HG-remote-jobs-aggregator.png",
   "users30": 1,
-  "runs": 6,
+  "runs": 7,
   "categories": [
    "JOBS",
    "AUTOMATION"
@@ -1655,7 +1655,7 @@
   "url": "https://apify.com/webdatatools/css-selector-extractor",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-c705gmJYJNPuwewQI-aCgy3k2b5L-css-selector-extractor.png",
   "users30": 1,
-  "runs": 6,
+  "runs": 7,
   "categories": [
    "DEVELOPER_TOOLS",
    "AUTOMATION"
@@ -1759,6 +1759,39 @@
    "language": "en"
   }
  },
+ "google-trends-scraper": {
+  "name": "google-trends-scraper",
+  "title": "Google Trends Scraper",
+  "description": "Google Trends Scraper extracts search interest data from Google Trends by keyword, including interest over time, regional interest, and related search queries.",
+  "url": "https://apify.com/webdatatools/google-trends-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-zk06ZdvgUvbgOhBiA-GbE7bsUMeI-google-trends-scraper.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "MARKETING",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "keyword",
+   "usd": 0.01,
+   "tiers": {
+    "FREE": 0.01,
+    "BRONZE": 0.008,
+    "SILVER": 0.007,
+    "GOLD": 0.006,
+    "PLATINUM": 0.006,
+    "DIAMOND": 0.006
+   }
+  },
+  "prefill": {
+   "keyword": "",
+   "keywords": [
+    "coffee"
+   ],
+   "geo": ""
+  }
+ },
  "linkedin-jobs-scraper": {
   "name": "linkedin-jobs-scraper",
   "title": "LinkedIn Jobs Scraper",
@@ -1766,7 +1799,7 @@
   "url": "https://apify.com/webdatatools/linkedin-jobs-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-zbmmiZ7MqFBDfvtXC-nk8YUgO3Mj-linkedin-jobs-scraper.png",
   "users30": 1,
-  "runs": 12,
+  "runs": 13,
   "categories": [
    "JOBS",
    "LEAD_GENERATION",
@@ -1823,14 +1856,75 @@
    "searchQueries": []
   }
  },
+ "google-ads-transparency-scraper": {
+  "name": "google-ads-transparency-scraper",
+  "title": "Google Ads Transparency Scraper",
+  "description": "Google Ads Transparency Scraper extracts ad creatives from Google's Ad Transparency Center. Search by advertiser domain, advertiser ID, or name, filter by region and date range, and retrieve creative details including text, images, video previews, and show/hide dates.",
+  "url": "https://apify.com/webdatatools/google-ads-transparency-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-YsN83avk4MH8cT94a-gYQg9C3fub-google-ads-transparency-scraper.png",
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "MARKETING",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "ad",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "advertisers": "nike.com",
+   "region": "US",
+   "format": "all"
+  }
+ },
+ "career-site-jobs-api": {
+  "name": "career-site-jobs-api",
+  "title": "Career Site Jobs API (Greenhouse, Lever, Ashby, Workday +1)",
+  "description": "Career Site Jobs API finds which ATS a company uses (Greenhouse, Lever, Ashby, SmartRecruiters, Workday) from its domain or name and returns its open jobs in one unified format, $3 per 1,000 jobs.",
+  "url": "https://apify.com/webdatatools/career-site-jobs-api",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-zJSbELghatdvlbRcC-Y8PKU7iWMj-career-site-jobs-api.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.003,
+   "tiers": {
+    "FREE": 0.003,
+    "BRONZE": 0.0024,
+    "SILVER": 0.0021,
+    "GOLD": 0.0018,
+    "PLATINUM": 0.0018,
+    "DIAMOND": 0.0018
+   }
+  },
+  "prefill": {
+   "companies": "stripe.com; ramp.com; palantir.com",
+   "company": "",
+   "keywords": ""
+  }
+ },
  "google-maps-scraper": {
   "name": "google-maps-scraper",
   "title": "Google Maps Scraper",
   "description": "Google Maps Scraper extracts places from Google Maps search: name, category, address, phone, website, rating, review count, coordinates and today's hours, in any country, no browser, $2 per 1,000 places.",
   "url": "https://apify.com/webdatatools/google-maps-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-JbHOBsm4uEpF81Kat-TnDpOoel74-google-maps-scraper.png",
-  "users30": 1,
-  "runs": 7,
+  "users30": 2,
+  "runs": 12,
   "categories": [
    "LEAD_GENERATION",
    "TRAVEL",
@@ -1854,6 +1948,38 @@
    "maxPlacesPerSearch": 20
   }
  },
+ "x-tweet-scraper": {
+  "name": "x-tweet-scraper",
+  "title": "X Tweet Scraper (Twitter Posts by URL, No Login)",
+  "description": "Get full details of X (Twitter) posts from their URLs or ids: text, date, likes, replies, author, verification, hashtags, mentions, links, photos, videos (MP4), link cards, quotes and replies. No login, cookies or API key.",
+  "url": "https://apify.com/webdatatools/x-tweet-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-73fHdfmMLDzePgHob-z6802m54xY-x-tweet-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "MARKETING",
+   "DEVELOPER_TOOLS"
+  ],
+  "price": {
+   "unit": "tweet",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "tweets": [
+    "https://x.com/jack/status/20"
+   ],
+   "language": "en"
+  }
+ },
  "llms-txt-generator": {
   "name": "llms-txt-generator",
   "title": "llms.txt Generator (Website to llms.txt & llms-full.txt)",
@@ -1861,7 +1987,7 @@
   "url": "https://apify.com/webdatatools/llms-txt-generator",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-elRun5MdeavvM2AbA-VL717P5kuR-llms-txt-generator.png",
   "users30": 1,
-  "runs": 6,
+  "runs": 7,
   "categories": [
    "AI",
    "DEVELOPER_TOOLS",
@@ -1896,7 +2022,7 @@
   "url": "https://apify.com/webdatatools/pdf-to-markdown",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-nBk9ycSlmehoZP3FK-0Wo9htAe9m-pdf-to-markdown.png",
   "users30": 1,
-  "runs": 5,
+  "runs": 6,
   "categories": [
    "AI",
    "DEVELOPER_TOOLS",
@@ -1929,7 +2055,7 @@
   "url": "https://apify.com/webdatatools/rag-text-chunker",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-QIZmifxee1cNc3cjl-U2WjuchNsP-rag-text-chunker.png",
   "users30": 1,
-  "runs": 4,
+  "runs": 5,
   "categories": [
    "AI",
    "DEVELOPER_TOOLS",
@@ -1962,7 +2088,7 @@
   "url": "https://apify.com/webdatatools/zillow-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-2lecSB0VaFJRDNcI8-Wtq8qRPtPN-zillow-scraper.png",
   "users30": 1,
-  "runs": 4,
+  "runs": 5,
   "categories": [
    "REAL_ESTATE",
    "LEAD_GENERATION",
@@ -1993,7 +2119,7 @@
   "url": "https://apify.com/webdatatools/airbnb-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-dgx4mcg0ZCcqrPPr4-a3QFYxEUX9-airbnb-scraper.png",
   "users30": 1,
-  "runs": 3,
+  "runs": 4,
   "categories": [
    "TRAVEL",
    "REAL_ESTATE",
@@ -2024,7 +2150,7 @@
   "url": "https://apify.com/webdatatools/tiktok-profile-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-dFZaq6bVpU1TIlHjO-SmdMM3i4Lx-tiktok-profile-scraper.png",
   "users30": 2,
-  "runs": 6,
+  "runs": 7,
   "categories": [
    "SOCIAL_MEDIA",
    "MARKETING",
@@ -2055,7 +2181,7 @@
   "url": "https://apify.com/webdatatools/stepstone-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-f7qS9bUgFkqqfdoaW-iybcnOBJey-stepstone-scraper.png",
   "users30": 2,
-  "runs": 5,
+  "runs": 6,
   "categories": [
    "JOBS",
    "LEAD_GENERATION",
@@ -2086,7 +2212,7 @@
   "url": "https://apify.com/webdatatools/zillow-detail-scraper",
   "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-aYO5adUCTBao7cfLd-CpEd11Sibp-zillow-detail-scraper.png",
   "users30": 1,
-  "runs": 4,
+  "runs": 5,
   "categories": [
    "REAL_ESTATE",
    "LEAD_GENERATION",
@@ -2108,6 +2234,41 @@
    "homes": [
     "https://www.zillow.com/homedetails/500-Denson-Dr-Austin-TX-78752/29412534_zpid/"
    ]
+  }
+ },
+ "naukri-jobs-scraper": {
+  "name": "naukri-jobs-scraper",
+  "title": "Naukri Jobs Scraper (Salary, Skills, Company Rating)",
+  "description": "Scrape Naukri.com job listings by keyword and city or from any search URL: title, company, salary range, experience, skills, work mode, posting date and AmbitionBox company rating. Real browser, no login, pay per job.",
+  "url": "https://apify.com/webdatatools/naukri-jobs-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 7,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.0008,
+   "tiers": {
+    "FREE": 0.0008,
+    "BRONZE": 0.00064,
+    "SILVER": 0.00056,
+    "GOLD": 0.00048,
+    "PLATINUM": 0.00048,
+    "DIAMOND": 0.00048
+   }
+  },
+  "prefill": {
+   "keywords": [
+    "python developer"
+   ],
+   "locations": [
+    "bengaluru"
+   ],
+   "maxJobsPerSearch": 100
   }
  }
 }
