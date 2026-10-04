@@ -16,3 +16,5 @@ git commit -qm "Deploy $(date -u +%Y-%m-%dT%H:%MZ)"
 git push -qf https://github.com/paulet4a-commits/chimeramind-data.git gh-pages
 rm -rf .git
 echo "deployed $(date -u +%FT%TZ)"
+cd ..
+node indexnow.mjs || true

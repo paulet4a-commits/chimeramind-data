@@ -1,5 +1,11 @@
 // Page shell: head (SEO meta, Open Graph, JSON-LD, fonts, analytics), masthead, ticker, footer.
+import fs from 'node:fs';
+
 import { esc, money } from './render.mjs';
+
+// Google Search Console HTML-tag verification: put the content= value in data/gsc-verification.txt.
+const gscFile = new URL('../data/gsc-verification.txt', import.meta.url);
+const GSC = fs.existsSync(gscFile) ? fs.readFileSync(gscFile, 'utf8').trim() : '';
 
 export const SITE = {
     origin: 'https://data.chimeramind.com',
@@ -43,6 +49,7 @@ export function page({ path, title, description, body, actors, jsonLd = [], ogTy
 <meta property="og:site_name" content="${SITE.name}">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#0b8f6a">
+${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">` : ''}
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
