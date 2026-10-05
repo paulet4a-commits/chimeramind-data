@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulk Domain Security Check — SSL Expiry, Security Headers, HTTPS Redirects | ChimeraMiND Data</title>
+<meta name="description" content="Audit TLS certificates, HTTP→HTTPS redirects, HSTS, CSP and other security headers, cookie flags and robots.txt / llms.txt AI-crawler rules for any list of domains — one scored, graded row per domain.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/domain-security-audit/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bulk Domain Security Check — SSL Expiry, Security Headers, HTTPS Redirects | ChimeraMiND Data">
+<meta property="og:description" content="Audit TLS certificates, HTTP→HTTPS redirects, HSTS, CSP and other security headers, cookie flags and robots.txt / llms.txt AI-crawler rules for any list of domains — one scored, graded row per domain.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/domain-security-audit/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Bulk Domain Security Check — SSL Expiry, Security Headers, HTTPS Redirects","description":"Audit TLS certificates, HTTP→HTTPS redirects, HSTS, CSP and other security headers, cookie flags and robots.txt / llms.txt AI-crawler rules for any list of domains — one scored, graded row per domain.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/domain-security-audit/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Domain Security Audit (TLS, HTTP headers, redirects, robots)","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/domain-security-audit","offers":{"@type":"Offer","price":"5.00","priceCurrency":"USD","description":"per 1,000 results"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Bulk Domain Security Check — SSL Expiry, Security Headers, HTTPS Redirects","item":"https://data.chimeramind.com/guides/domain-security-audit/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this a penetration test?","acceptedAnswer":{"@type":"Answer","text":"No. It reads public, passive signals — the certificate, response headers, redirects and robots.txt — that any visitor receives. It doesn't probe for vulnerabilities, so it's safe to run against prospects and third parties."}},{"@type":"Question","name":"What happens if a domain doesn't resolve?","acceptedAnswer":{"@type":"Answer","text":"You still get a row, with `error` explaining the failure and the other fields `null`. One dead domain never fails the whole run."}},{"@type":"Question","name":"Why does a site with a valid certificate still score low?","acceptedAnswer":{"@type":"Answer","text":"The certificate is only a quarter of the score. Missing HSTS, no Content-Security-Policy or a leaking `X-Powered-By` header each cost points; `issues` lists exactly which."}},{"@type":"Question","name":"Which headers matter most?","acceptedAnswer":{"@type":"Answer","text":"HSTS carries the biggest weight after HTTPS itself, followed by Content-Security-Policy. The smaller headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy) are quick wins worth 5 points each."}},{"@type":"Question","name":"Is it legal to check other people's domains?","acceptedAnswer":{"@type":"Answer","text":"Yes. Certificates, headers and robots.txt are public information servers send to anyone who connects, and no personal data is collected."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Domain Security Audit</div>
+<div class="guide"><div><header><div class="kicker">Security &amp; compliance</div><h1>Check SSL certificates, security headers and redirects for a whole domain list</h1><p class="lede">Audit TLS certificates, HTTP→HTTPS redirects, HSTS, CSP and other security headers, cookie flags and robots.txt / llms.txt AI-crawler rules for any list of domains — one scored, graded row per domain.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>Checking a single domain&#39;s security basics means three tools: <code>openssl s_client</code> for the certificate, <code>curl -I</code> for headers, and a manual read of <code>robots.txt</code>. Doing it for 40 client domains, 300 sales prospects or your own portfolio of brand sites is a day of copy-paste. This guide shows how to run all of those checks over <strong>a list of domains in one go</strong> and get one row per domain with a 0–100 <code>securityScore</code>, an A–F <code>securityGrade</code> and plain-English <code>issues</code> — for $5 per 1,000 results.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>Each domain returns 40+ fields across four areas:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Example fields</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TLS certificate</td>
+<td><code>certValidTo</code>, <code>certDaysUntilExpiry</code>, <code>certIssuerOrg</code>, <code>certSubjectCN</code>, <code>certSanCount</code>, <code>certAuthorized</code>, <code>tlsProtocol</code></td>
+</tr>
+<tr>
+<td>Redirects</td>
+<td><code>finalUrl</code>, <code>redirectHops</code>, <code>redirectChain</code>, <code>httpsRedirect</code>, <code>wwwRedirect</code></td>
+</tr>
+<tr>
+<td>Security headers &amp; cookies</td>
+<td><code>hasHsts</code>, <code>hstsMaxAge</code>, <code>hstsPreload</code>, <code>hasCsp</code>, <code>cspHasUnsafeInline</code>, <code>xFrameOptions</code>, <code>xContentTypeOptions</code>, <code>referrerPolicy</code>, <code>permissionsPolicy</code>, <code>xPoweredBy</code>, <code>cookieCount</code>, <code>secureCookieCount</code>, <code>httpOnlyCookieCount</code></td>
+</tr>
+<tr>
+<td>robots.txt / llms.txt</td>
+<td><code>robotsStatus</code>, <code>robotsDisallowAll</code>, <code>robotsSitemapCount</code>, <code>aiBotsDisallowed</code>, <code>llmsTxtExists</code>, <code>llmsTxtTitle</code></td>
+</tr>
+</tbody></table>
+</div><p>A real row from a recent run:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run Z8gmO4h2vl5rGAFJX · 2026-10-03</span></figcaption><pre><code class="language-json">{
+  &quot;domain&quot;: &quot;apify.com&quot;,
+  &quot;certValidFrom&quot;: &quot;2026-07-03T00:00:00.000Z&quot;,
+  &quot;certValidTo&quot;: &quot;2027-01-16T23:59:59.000Z&quot;,
+  &quot;certDaysUntilExpiry&quot;: 105,
+  &quot;certIssuerOrg&quot;: &quot;Amazon&quot;,
+  &quot;certIssuerCN&quot;: &quot;Amazon RSA 2048 M04&quot;,
+  &quot;certSubjectCN&quot;: &quot;*.apify.com&quot;,
+  &quot;certSanCount&quot;: 4,
+  &quot;certAuthorized&quot;: true,
+  &quot;tlsProtocol&quot;: &quot;TLSv1.3&quot;,
+  &quot;finalUrl&quot;: &quot;https://apify.com/&quot;,
+  &quot;redirectHops&quot;: 1,
+  &quot;redirectChain&quot;: [
+    {
+      &quot;url&quot;: &quot;http://apify.com/&quot;,
+      &quot;status&quot;: 301,
+      &quot;location&quot;: &quot;https://apify.com/&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://apify.com/&quot;,
+      &quot;status&quot;: 200,
+      &quot;location&quot;: null
+    }
+  ],
+  &quot;httpsRedirect&quot;: true,
+  &quot;wwwRedirect&quot;: false,
+  &quot;hasHsts&quot;: true,
+  &quot;hstsMaxAge&quot;: 15768000,
+  &quot;hstsIncludeSubdomains&quot;: false,
+  &quot;hstsPreload&quot;: false,
+  &quot;hasCsp&quot;: true,
+  &quot;cspHasUnsafeInline&quot;: true,
+  &quot;xFrameOptions&quot;: &quot;SAMEORIGIN&quot;,
+  &quot;xContentTypeOptions&quot;: &quot;nosniff&quot;,
+  &quot;referrerPolicy&quot;: null,
+  &quot;permissionsPolicy&quot;: null,
+  &quot;server&quot;: null,
+  &quot;xPoweredBy&quot;: null,
+  &quot;cacheControl&quot;: &quot;private, no-cache, no-store, max-age=0, must-revalidate&quot;,
+  &quot;cookieCount&quot;: 0,
+  &quot;secureCookieCount&quot;: 0,
+  &quot;httpOnlyCookieCount&quot;: 0,
+  &quot;sameSiteCookieCount&quot;: 0,
+  &quot;robotsStatus&quot;: 200,
+  &quot;robotsDisallowAll&quot;: false,
+  &quot;robotsSitemapCount&quot;: 1,
+  &quot;aiBotsDisallowed&quot;: [],
+  &quot;llmsTxtExists&quot;: true,
+  &quot;llmsTxtTitle&quot;: &quot;Apify&quot;,
+  &quot;llmsTxtSize&quot;: 16837,
+  &quot;securityScore&quot;: 90,
+  &quot;securityGrade&quot;: &quot;A&quot;,
+  &quot;issues&quot;: [
+    &quot;CSP allows &#39;unsafe-inline&#39;&quot;,
+    &quot;No Referrer-Policy header&quot;,
+    &quot;No Permissions-Policy header&quot;
+  ],
+  &quot;error&quot;: null,
+  &quot;scrapedAt&quot;: &quot;2026-10-03T15:21:07.940Z&quot;
+}</code></pre></figure><p>The certificate data comes from a direct TLS handshake on port 443; the rest is ordinary HTTP requests — the same public information any browser receives when it connects.</p>
+<h2 id="how-the-score-works">How the score works</h2>
+<p>Points are earned for: HTTPS redirect (+20), a valid, trusted certificate (+20) with more than 14 days left (+5), HSTS (+15), Content-Security-Policy (+10), X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy (+5 each), no <code>X-Powered-By</code> leak (+5) and all cookies carrying the <code>Secure</code> flag (+5). Grades: A ≥ 85, B ≥ 70, C ≥ 50, D ≥ 30, otherwise F. Every missed point is spelled out in <code>issues</code>, e.g. &quot;No HSTS header&quot; or &quot;TLS certificate expires in 9 day(s)&quot;.</p>
+<h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and paste domains into <strong>Domains</strong>. Bare domains, full URLs and <code>www.</code> are all accepted — <code>https://www.example.com/store</code> is normalised to <code>example.com</code>.</li>
+<li>Keep all four checks on for the full audit: <strong>Check TLS certificate</strong>, <strong>Check HTTP security headers</strong>, <strong>Follow redirect chain</strong> and <strong>Check robots.txt and llms.txt</strong>. Turn one off to skip that section.</li>
+<li>Raise <strong>Max concurrency</strong> for long lists and click <strong>Start</strong>.</li>
+<li>Use the ready-made <strong>Overview</strong>, <strong>TLS certificate</strong> and <strong>Headers, redirects &amp; robots</strong> views, or export everything to CSV or Excel.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/domain-security-audit?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run Domain Security Audit (TLS, HTTP headers, redirects, robots) on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-domain-security-audit" id="t-domain-security-audit-python" checked><label for="t-domain-security-audit-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/domain-security-audit&quot;).call(run_input={
+    &quot;domains&quot;: [
+        &quot;apify.com&quot;,
+        &quot;example.com&quot;
+    ],
+    &quot;checkTls&quot;: True,
+    &quot;checkHeaders&quot;: True
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-domain-security-audit" id="t-domain-security-audit-js"><label for="t-domain-security-audit-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/domain-security-audit&#39;).call({
+    &quot;domains&quot;: [
+        &quot;apify.com&quot;,
+        &quot;example.com&quot;
+    ],
+    &quot;checkTls&quot;: true,
+    &quot;checkHeaders&quot;: true
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-domain-security-audit" id="t-domain-security-audit-bash"><label for="t-domain-security-audit-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~domain-security-audit/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~domain-security-audit/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;domains&quot;:[&quot;apify.com&quot;,&quot;example.com&quot;],&quot;checkTls&quot;:true,&quot;checkHeaders&quot;:true}&#39;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="certificate-expiry-alerts-for-your-domain-portfolio">Certificate-expiry alerts for your domain portfolio</h3>
+<p>Schedule a daily run over every domain you own and add a webhook. Your endpoint filters rows where <code>certDaysUntilExpiry</code> is under 14 — or <code>certAuthorized</code> is <code>false</code> — and pings the on-call channel. An unreachable domain still returns a row with <code>error</code> set, so outages surface too.</p>
+<h3 id="security-hygiene-report-for-clients">Security hygiene report for clients</h3>
+<p>MSPs and consultants run the client&#39;s domains monthly and paste <code>securityGrade</code> and <code>issues</code> straight into the report. Because the scoring rules are fixed and published above, month-over-month changes mean something.</p>
+<h3 id="ai-crawler-policy-survey">AI-crawler policy survey</h3>
+<p><code>aiBotsDisallowed</code> lists which AI crawlers (GPTBot, ClaudeBot, Google-Extended, PerplexityBot and others) a site blocks in robots.txt, and <code>llmsTxtExists</code> shows whether it publishes an <code>llms.txt</code>. Run it over a competitor set to see who is opting in or out of AI search.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.005</td><td class="num">$5</td></tr><tr><td>Starter</td><td class="num">$0.004</td><td class="num">$4</td></tr><tr><td>Scale</td><td class="num">$0.0035</td><td class="num">$3.50</td></tr><tr><td>Business</td><td class="num">$0.003</td><td class="num">$3</td></tr><tr><td>Enterprise</td><td class="num">$0.003</td><td class="num">$3</td></tr><tr><td>Enterprise+</td><td class="num">$0.003</td><td class="num">$3</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>Each domain is one TLS handshake, up to 10 redirect hops, one headers fetch and two small text fetches, so platform usage stays negligible. Set <strong>Maximum cost per run</strong> in Apify and the tool trims the list to fit the budget.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>Whole domain lists in one run; TLS, redirects, headers, cookies and AI-crawler rules together; scored rows; schedules, API and MCP</td>
+<td>Checks the homepage response of each domain, not every subpage; it is a hygiene audit, not a vulnerability scanner</td>
+</tr>
+<tr>
+<td><code>openssl</code> + <code>curl</code> by hand</td>
+<td>Precise control over one domain</td>
+<td>Three tools per domain, no structured output</td>
+</tr>
+<tr>
+<td>Single-site header graders</td>
+<td>Detailed explanation for one site</td>
+<td>One domain at a time, no export</td>
+</tr>
+<tr>
+<td>Certificate monitoring services</td>
+<td>Expiry alerts</td>
+<td>Usually certificates only, often per-domain pricing tiers</td>
+</tr>
+</tbody></table>
+</div><h2 id="faq">FAQ</h2>
+<h3 id="is-this-a-penetration-test">Is this a penetration test?</h3>
+<p>No. It reads public, passive signals — the certificate, response headers, redirects and robots.txt — that any visitor receives. It doesn&#39;t probe for vulnerabilities, so it&#39;s safe to run against prospects and third parties.</p>
+<h3 id="what-happens-if-a-domain-doesn-39-t-resolve">What happens if a domain doesn&#39;t resolve?</h3>
+<p>You still get a row, with <code>error</code> explaining the failure and the other fields <code>null</code>. One dead domain never fails the whole run.</p>
+<h3 id="why-does-a-site-with-a-valid-certificate-still-score-low">Why does a site with a valid certificate still score low?</h3>
+<p>The certificate is only a quarter of the score. Missing HSTS, no Content-Security-Policy or a leaking <code>X-Powered-By</code> header each cost points; <code>issues</code> lists exactly which.</p>
+<h3 id="which-headers-matter-most">Which headers matter most?</h3>
+<p>HSTS carries the biggest weight after HTTPS itself, followed by Content-Security-Policy. The smaller headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy) are quick wins worth 5 points each.</p>
+<h3 id="is-it-legal-to-check-other-people-39-s-domains">Is it legal to check other people&#39;s domains?</h3>
+<p>Yes. Certificates, headers and robots.txt are public information servers send to anyone who connects, and no personal data is collected.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-SELey4npMakiVA1vf-miaSpY31Iu-domain-security-audit.png" alt="" width="44" height="44"><h4>Domain Security Audit (TLS, HTTP headers, redirects, robots)</h4></div>
+<dl><dt>Price</dt><dd>$5 / 1k results</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/domain-security-audit?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#how-the-score-works">How the score works</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

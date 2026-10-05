@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Stock, Crypto and FX Quotes API Without an API Key | ChimeraMiND Data</title>
+<meta name="description" content="Get latest price, daily change, day range, volume and optional daily history for stocks, ETFs, indices, crypto pairs and currency pairs from one mixed watchlist — as clean JSON rows.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/stock-crypto-fx-quotes-api/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Free Stock, Crypto and FX Quotes API Without an API Key | ChimeraMiND Data">
+<meta property="og:description" content="Get latest price, daily change, day range, volume and optional daily history for stocks, ETFs, indices, crypto pairs and currency pairs from one mixed watchlist — as clean JSON rows.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/stock-crypto-fx-quotes-api/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Free Stock, Crypto and FX Quotes API Without an API Key","description":"Get latest price, daily change, day range, volume and optional daily history for stocks, ETFs, indices, crypto pairs and currency pairs from one mixed watchlist — as clean JSON rows.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/stock-crypto-fx-quotes-api/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Stock, Crypto & FX Quotes","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/market-quotes","offers":{"@type":"Offer","price":"1.00","priceCurrency":"USD","description":"per 1,000 Quotes"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Free Stock, Crypto and FX Quotes API Without an API Key","item":"https://data.chimeramind.com/guides/stock-crypto-fx-quotes-api/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a Yahoo Finance, Binance or CoinGecko API key?","acceptedAnswer":{"@type":"Answer","text":"No. Every source the tool reads is a free, public, unauthenticated endpoint. You only need an Apify account, and the free plan's monthly credit covers small watchlists."}},{"@type":"Question","name":"Is the stock price real time?","acceptedAnswer":{"@type":"Answer","text":"No. US equity quotes from Yahoo Finance are typically delayed 15–20 minutes. Crypto prices come from Binance and are close to live. FX rows are the ECB's daily reference rates. Use a broker feed for anything you execute trades on."}},{"@type":"Question","name":"Why are dayHigh, dayLow and volume empty for currency pairs?","acceptedAnswer":{"@type":"Answer","text":"The ECB reference-rate source publishes one rate per day per pair — there is no intraday range or volume to report, so those fields are null by design."}},{"@type":"Question","name":"What if a coin isn't found?","acceptedAnswer":{"@type":"Answer","text":"Binance doesn't list every coin against USDT. The tool falls back to CoinGecko for a curated set of popular coins; anything outside both returns a clear error row instead of a guess."}},{"@type":"Question","name":"Is this investment advice?","acceptedAnswer":{"@type":"Answer","text":"No. It retrieves publicly available market data for information only and does not recommend any trade."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Stock, Crypto &amp; FX Quotes</div>
+<div class="guide"><div><header><div class="kicker">Market data</div><h1>One call for stock, crypto and FX prices — no API key, no brokerage account</h1><p class="lede">Get latest price, daily change, day range, volume and optional daily history for stocks, ETFs, indices, crypto pairs and currency pairs from one mixed watchlist — as clean JSON rows.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>A real watchlist is never one asset class. You hold a few stocks, an index ETF, some Bitcoin and you care about EUR/USD — and every data source covers only one of those, each with its own API key, symbol format and rate limit. This guide shows how to pull <strong>all of them in one call</strong> and get one consistently typed row per symbol, for $1 per 1,000 Quotes.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>Give the tool a mixed list such as <code>AAPL</code>, <code>^GSPC</code>, <code>BTC-USD</code>, <code>ETH</code> and <code>EUR/USD</code>. It detects each symbol&#39;s type, reads it from the right public source and returns the same fields for every row. A real row from a recent run:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run 1Icx9NCNAupKGjkNf · 2026-10-03</span></figcaption><pre><code class="language-json">{
+  &quot;symbol&quot;: &quot;AAPL&quot;,
+  &quot;resolvedSymbol&quot;: &quot;AAPL&quot;,
+  &quot;assetType&quot;: &quot;stock&quot;,
+  &quot;name&quot;: &quot;Apple Inc.&quot;,
+  &quot;price&quot;: 333.69,
+  &quot;currency&quot;: &quot;USD&quot;,
+  &quot;previousClose&quot;: 324.96,
+  &quot;changeAbs&quot;: 8.730000000000018,
+  &quot;changePct&quot;: 1.02,
+  &quot;dayHigh&quot;: 334.54,
+  &quot;dayLow&quot;: 330.61,
+  &quot;volume&quot;: 31878433,
+  &quot;marketState&quot;: null,
+  &quot;exchange&quot;: &quot;NasdaqGS&quot;,
+  &quot;asOf&quot;: &quot;2026-10-02T20:00:01.000Z&quot;,
+  &quot;source&quot;: &quot;yahoo&quot;,
+  &quot;history&quot;: null,
+  &quot;error&quot;: null,
+  &quot;scrapedAt&quot;: &quot;2026-10-03T15:06:55.200Z&quot;
+}</code></pre></figure><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>price</code>, <code>currency</code></td>
+<td>Latest price and its currency</td>
+</tr>
+<tr>
+<td><code>previousClose</code>, <code>changeAbs</code>, <code>changePct</code></td>
+<td>Prior close and the move since then</td>
+</tr>
+<tr>
+<td><code>dayHigh</code>, <code>dayLow</code>, <code>volume</code></td>
+<td>Intraday range and volume (not published for FX)</td>
+</tr>
+<tr>
+<td><code>assetType</code>, <code>source</code></td>
+<td><code>stock</code> / <code>crypto</code> / <code>fx</code>, and which source answered</td>
+</tr>
+<tr>
+<td><code>exchange</code>, <code>marketState</code>, <code>asOf</code></td>
+<td>Exchange name, session state and the quote&#39;s own timestamp</td>
+</tr>
+<tr>
+<td><code>history</code></td>
+<td>Daily <code>{date, close}</code> points when <strong>Include price history</strong> is on</td>
+</tr>
+</tbody></table>
+</div><h2 id="where-the-numbers-come-from">Where the numbers come from</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Source</th>
+<th>Freshness</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Stocks, ETFs, indices (<code>AAPL</code>, <code>^GSPC</code>, <code>BRK-B</code>)</td>
+<td>Yahoo Finance public chart data</td>
+<td>Typically 15–20 minutes delayed for US equities</td>
+</tr>
+<tr>
+<td>Crypto (<code>BTC</code>, <code>BTC-USD</code>, <code>ETHUSDT</code>)</td>
+<td>Binance public market data, CoinGecko as fallback</td>
+<td>Close to live exchange price</td>
+</tr>
+<tr>
+<td>FX (<code>EUR/USD</code>, <code>USDJPY=X</code>)</td>
+<td>Frankfurter (European Central Bank reference rates)</td>
+<td>Once per weekday — a reference rate, not a tradable quote</td>
+</tr>
+</tbody></table>
+</div><p>All sources are free, public and unauthenticated, which is why you don&#39;t need an account or key anywhere.</p>
+<h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and put one symbol per line in <strong>Symbols</strong> — stocks, crypto and FX can be mixed.</li>
+<li>Keep <strong>Asset type</strong> on <code>auto</code>. It treats <code>EUR/USD</code>, <code>EURUSD</code> and <code>=X</code> symbols as FX; <code>-USD</code>/<code>USDT</code> pairs and well-known coin tickers as crypto; everything else as a stock or index.</li>
+<li>Turn on <strong>Include price history</strong> and set <strong>History days</strong> (up to 365) if you need daily closes for a chart or a backtest.</li>
+<li>Click <strong>Start</strong>, then export to JSON, CSV or Excel — or schedule the run to snapshot your watchlist every day.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/market-quotes?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run Stock, Crypto &amp; FX Quotes on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-market-quotes" id="t-market-quotes-python" checked><label for="t-market-quotes-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/market-quotes&quot;).call(run_input={
+    &quot;symbols&quot;: [
+        &quot;AAPL&quot;,
+        &quot;BTC-USD&quot;,
+        &quot;EUR/USD&quot;
+    ],
+    &quot;assetType&quot;: &quot;auto&quot;,
+    &quot;includeHistory&quot;: False
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-market-quotes" id="t-market-quotes-js"><label for="t-market-quotes-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/market-quotes&#39;).call({
+    &quot;symbols&quot;: [
+        &quot;AAPL&quot;,
+        &quot;BTC-USD&quot;,
+        &quot;EUR/USD&quot;
+    ],
+    &quot;assetType&quot;: &quot;auto&quot;,
+    &quot;includeHistory&quot;: false
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-market-quotes" id="t-market-quotes-bash"><label for="t-market-quotes-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~market-quotes/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~market-quotes/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;symbols&quot;:[&quot;AAPL&quot;,&quot;BTC-USD&quot;,&quot;EUR/USD&quot;],&quot;assetType&quot;:&quot;auto&quot;,&quot;includeHistory&quot;:false}&#39;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="daily-portfolio-snapshot-into-a-spreadsheet">Daily portfolio snapshot into a spreadsheet</h3>
+<p>Create a schedule in Apify that runs the tool every weekday after the US close, and connect the Google Sheets integration to the run&#39;s dataset. Each day appends one row per holding with price and daily change — a free, always-updating portfolio log.</p>
+<h3 id="price-alerts">Price alerts</h3>
+<p>Run it every 15 minutes on a schedule and attach a webhook. Your endpoint receives the dataset, compares <code>changePct</code> or <code>price</code> against your thresholds and sends the alert. Because the tool returns <code>error</code> instead of a wrong price when a symbol can&#39;t be resolved, a broken ticker never triggers a false alarm.</p>
+<h3 id="feeding-a-trading-model-or-an-ai-agent">Feeding a trading model or an AI agent</h3>
+<p><code>history</code> gives daily closes in a ready-to-use list. For an AI assistant, the tool is callable through the Apify MCP server: ask &quot;how did my watchlist move today?&quot; and the agent can run it and read the rows itself.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per Quote</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>A 50-symbol watchlist is 50 results. Even refreshed hourly during US market hours, a month of snapshots stays in the low single dollars.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="do-i-need-a-yahoo-finance-binance-or-coingecko-api-key">Do I need a Yahoo Finance, Binance or CoinGecko API key?</h3>
+<p>No. Every source the tool reads is a free, public, unauthenticated endpoint. You only need an Apify account, and the free plan&#39;s monthly credit covers small watchlists.</p>
+<h3 id="is-the-stock-price-real-time">Is the stock price real time?</h3>
+<p>No. US equity quotes from Yahoo Finance are typically delayed 15–20 minutes. Crypto prices come from Binance and are close to live. FX rows are the ECB&#39;s daily reference rates. Use a broker feed for anything you execute trades on.</p>
+<h3 id="why-are-dayhigh-daylow-and-volume-empty-for-currency-pairs">Why are dayHigh, dayLow and volume empty for currency pairs?</h3>
+<p>The ECB reference-rate source publishes one rate per day per pair — there is no intraday range or volume to report, so those fields are null by design.</p>
+<h3 id="what-if-a-coin-isn-39-t-found">What if a coin isn&#39;t found?</h3>
+<p>Binance doesn&#39;t list every coin against USDT. The tool falls back to CoinGecko for a curated set of popular coins; anything outside both returns a clear error row instead of a guess.</p>
+<h3 id="is-this-investment-advice">Is this investment advice?</h3>
+<p>No. It retrieves publicly available market data for information only and does not recommend any trade.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-jd64Hg3pv1cgJhSkg-15sJRhcOO4-market-quotes.png" alt="" width="44" height="44"><h4>Stock, Crypto &amp; FX Quotes</h4></div>
+<dl><dt>Price</dt><dd>$1 / 1k Quotes</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/market-quotes?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#where-the-numbers-come-from">Where the numbers come from</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

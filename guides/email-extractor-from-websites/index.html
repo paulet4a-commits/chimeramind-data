@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email Extractor for Websites — Find Emails, Phones and Social Profiles in Bulk | ChimeraMiND Data</title>
+<meta name="description" content="Paste a list of company websites and get one clean row per domain with every public email address, phone number and social profile the site exposes — de-duplicated, ready for a CRM import.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/email-extractor-from-websites/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Email Extractor for Websites — Find Emails, Phones and Social Profiles in Bulk | ChimeraMiND Data">
+<meta property="og:description" content="Paste a list of company websites and get one clean row per domain with every public email address, phone number and social profile the site exposes — de-duplicated, ready for a CRM import.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/email-extractor-from-websites/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Email Extractor for Websites — Find Emails, Phones and Social Profiles in Bulk","description":"Paste a list of company websites and get one clean row per domain with every public email address, phone number and social profile the site exposes — de-duplicated, ready for a CRM import.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/email-extractor-from-websites/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Email Extractor — Website Contact & Social Finder","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/contact-extractor","offers":{"@type":"Offer","price":"10.00","priceCurrency":"USD","description":"per 1,000 results"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Email Extractor for Websites — Find Emails, Phones and Social Profiles in Bulk","item":"https://data.chimeramind.com/guides/email-extractor-from-websites/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the email addresses?","acceptedAnswer":{"@type":"Answer","text":"They are taken from `mailto:` links and the page source, then filtered through a blocklist that removes common false positives such as image file names, error-tracking keys and placeholder addresses. Unusual markup can still let some noise through, which is one more reason to run the list through the Email Validator before sending."}},{"@type":"Question","name":"Why are there no phone numbers for a site that clearly shows one?","acceptedAnswer":{"@type":"Answer","text":"Phone numbers are only taken from `tel:` links. Scraping digits out of plain text produces far more wrong numbers than right ones, so numbers written only as text are skipped on purpose."}},{"@type":"Question","name":"Can it find the email of a specific person?","acceptedAnswer":{"@type":"Answer","text":"Only if that address is published somewhere on the site. The tool doesn't guess patterns like firstname.lastname@ — it reports what the website actually shows."}},{"@type":"Question","name":"Does it crawl subdomains like blog.example.com?","acceptedAnswer":{"@type":"Answer","text":"Not by default. Turn on **Follow subdomains** to include them."}},{"@type":"Question","name":"Can I feed it from another tool's results?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set `inputDatasetId` to another run's dataset and `inputField` to the column that holds the website (for example `website` or `url`). Those URLs are combined with anything typed into Websites."}},{"@type":"Question","name":"What if a site blocks the crawler?","acceptedAnswer":{"@type":"Answer","text":"Add a proxy in **Proxy configuration** — Apify's datacenter proxy is enough for most sites and keeps runs cheap — or lower **Max concurrency** for sites that rate-limit."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Email Extractor</div>
+<div class="guide"><div><header><div class="kicker">Leads &amp; company data</div><h1>Extract emails, phone numbers and social profiles from a list of websites</h1><p class="lede">Paste a list of company websites and get one clean row per domain with every public email address, phone number and social profile the site exposes — de-duplicated, ready for a CRM import.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>You have a list of company websites — from a trade-show exhibitor list, a Google Maps search, a directory or your own CRM — and you need a way to contact each one. Opening every site, hunting for the contact page and copy-pasting addresses works for ten companies, not for a thousand. This guide shows how to crawl the whole list in one run and get <strong>one row per website</strong> with every public email, phone number and social profile, for $10 per 1,000 results.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>The tool visits each website&#39;s pages (home, about, contact and whatever they link to, up to your page budget), collects every contact channel it finds and merges them into a single row per domain. Two hundred crawled pages still produce one usable lead, not two hundred fragments. A real row from a recent run:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run R75QcGz14i2rWPS2I · 2026-10-03</span></figcaption><pre><code class="language-json">{
+  &quot;domain&quot;: &quot;apify.com&quot;,
+  &quot;startUrl&quot;: &quot;https://apify.com&quot;,
+  &quot;title&quot;: &quot;Apify: Marketplace of ready-to-run tools for AI&quot;,
+  &quot;description&quot;: &quot;Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.&quot;,
+  &quot;emails&quot;: [
+    &quot;hello@apify.com&quot;,
+    &quot;info@baeckerei-mustermann.de&quot;,
+    &quot;james.hill@apify.com&quot;
+  ],
+  &quot;phones&quot;: [],
+  &quot;socials&quot;: {
+    &quot;discord&quot;: [
+      &quot;https://discord.com/invite/jyEM2PRvMU&quot;,
+      &quot;https://discord.gg/w3e2v7rWDw&quot;
+    ],
+    &quot;github&quot;: [
+      &quot;https://github.com/apify&quot;,
+      &quot;https://github.com/google-agentic-commerce&quot;,
+      &quot;https://github.com/mcp&quot;
+    ],
+    &quot;linkedin&quot;: [
+      &quot;https://linkedin.com/company/apify&quot;
+    ],
+    &quot;twitter&quot;: [
+      &quot;https://x.com/apify&quot;,
+      &quot;https://x.com/Adrnalnrsh&quot;,
+      &quot;https://x.com/DataVoyant&quot;
+    ],
+    &quot;tiktok&quot;: [
+      &quot;https://tiktok.com/@apifytech&quot;,
+      &quot;https://tiktok.com/@apifyoffice&quot;
+    ]
+  },
+  &quot;whatsapp&quot;: [],
+  &quot;telegram&quot;: [],
+  &quot;discord&quot;: [
+    &quot;https://discord.com/invite/jyEM2PRvMU&quot;,
+    &quot;https://discord.gg/w3e2v7rWDw&quot;
+  ],
+  &quot;emailCount&quot;: 6,
+  &quot;phoneCount&quot;: 0,
+  &quot;pagesCrawled&quot;: 30,
+  &quot;scrapedAt&quot;: &quot;2026-10-03T15:23:07.827Z&quot;
+}</code></pre></figure><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>domain</code>, <code>startUrl</code></td>
+<td>Root domain (<code>www.</code> stripped) and the URL you gave</td>
+</tr>
+<tr>
+<td><code>title</code>, <code>description</code></td>
+<td>The site&#39;s <code>&lt;title&gt;</code> and meta description — a ready-made label for the lead</td>
+</tr>
+<tr>
+<td><code>emails</code></td>
+<td>Unique, lower-cased addresses from <code>mailto:</code> links and page source</td>
+</tr>
+<tr>
+<td><code>phones</code></td>
+<td>Numbers from <code>tel:</code> links, normalised so formatting variants de-duplicate</td>
+</tr>
+<tr>
+<td><code>socials</code></td>
+<td>Profile URLs grouped by platform: LinkedIn, X/Twitter, Instagram, Facebook, YouTube, TikTok, GitHub, Telegram, WhatsApp, Discord</td>
+</tr>
+<tr>
+<td><code>whatsapp</code>, <code>telegram</code>, <code>discord</code></td>
+<td>Messaging links, normalised (WhatsApp always as <code>https://wa.me/&lt;digits&gt;</code>)</td>
+</tr>
+<tr>
+<td><code>emailCount</code>, <code>phoneCount</code>, <code>pagesCrawled</code></td>
+<td>Quick sort keys and how many pages were actually visited</td>
+</tr>
+</tbody></table>
+</div><h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and paste your websites into <strong>Websites</strong> — bare domains (<code>example.com</code>) and full URLs both work.</li>
+<li>Keep <strong>Max pages per website</strong> at 30 and <strong>Max link depth</strong> at 2. Contact details almost always sit on the home, about and contact pages, so going deeper mostly adds cost and time.</li>
+<li>Switch off <strong>Extract e-mails</strong>, <strong>Extract phone numbers</strong> or <strong>Extract social profiles</strong> if you only need one channel.</li>
+<li>Click <strong>Start</strong>. When the run finishes, export to CSV or Excel for your CRM, or read the dataset through the API.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/contact-extractor?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run Email Extractor — Website Contact &amp; Social Finder on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-contact-extractor" id="t-contact-extractor-python" checked><label for="t-contact-extractor-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/contact-extractor&quot;).call(run_input={
+    &quot;startUrls&quot;: [
+        {
+            &quot;url&quot;: &quot;<a href="https://apify.com">https://apify.com</a>&quot;
+        }
+    ],
+    &quot;maxPagesPerDomain&quot;: 30,
+    &quot;maxDepth&quot;: 2
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-contact-extractor" id="t-contact-extractor-js"><label for="t-contact-extractor-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/contact-extractor&#39;).call({
+    &quot;startUrls&quot;: [
+        {
+            &quot;url&quot;: &quot;<a href="https://apify.com">https://apify.com</a>&quot;
+        }
+    ],
+    &quot;maxPagesPerDomain&quot;: 30,
+    &quot;maxDepth&quot;: 2
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-contact-extractor" id="t-contact-extractor-bash"><label for="t-contact-extractor-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~contact-extractor/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~contact-extractor/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;startUrls&quot;:[{&quot;url&quot;:&quot;<a href="https://apify.com&amp;quot;%7D%5D,&amp;quot;maxPagesPerDomain&amp;quot;:30,&amp;quot;maxDepth&amp;quot;:2%7D&amp;#39">https://apify.com&amp;quot;}],&amp;quot;maxPagesPerDomain&amp;quot;:30,&amp;quot;maxDepth&amp;quot;:2}&amp;#39</a>;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="google-maps-search-contact-list">Google Maps search → contact list</h3>
+<p>Run a Google Maps search for your target niche and city (for example &quot;dental clinic, Berlin&quot;). Its results include a <code>website</code> column. Start this tool with <code>inputDatasetId</code> set to that run&#39;s dataset ID and <code>inputField</code> set to <code>website</code>: every business website is crawled and you get emails and social profiles next to the phone numbers Maps already gave you. No copy-pasting between runs.</p>
+<h3 id="contact-list-validated-email-list">Contact list → validated email list</h3>
+<p>Bounces hurt your sender reputation, so check addresses before the first send. Take this tool&#39;s dataset ID and start the Email Validator with <code>inputDatasetId</code> set to it and <code>inputField</code> set to <code>emails</code>. The <code>emails</code> array of every domain is flattened into one row per address, each with a syntax check, MX lookup, disposable/free-provider/role flags and a 0–100 score. Filter on <code>deliverability</code> and import only the good ones.</p>
+<h3 id="find-the-social-accounts-of-a-competitor-list">Find the social accounts of a competitor list</h3>
+<p>Turn off emails and phones, keep <strong>Extract social profiles</strong> on, and run your competitor domains. The <code>socials</code> object gives you every LinkedIn page, X account, YouTube channel and TikTok profile they link from their own site — a clean starting point for social monitoring.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.01</td><td class="num">$10</td></tr><tr><td>Starter</td><td class="num">$0.008</td><td class="num">$8</td></tr><tr><td>Scale</td><td class="num">$0.007</td><td class="num">$7</td></tr><tr><td>Business</td><td class="num">$0.006</td><td class="num">$6</td></tr><tr><td>Enterprise</td><td class="num">$0.006</td><td class="num">$6</td></tr><tr><td>Enterprise+</td><td class="num">$0.006</td><td class="num">$6</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>Billing is <strong>per website, not per page</strong>. A site that takes 25 pages to crawl is still one result. Set <strong>Maximum cost per run</strong> in the run options and the tool trims its own website list to fit the budget instead of overspending.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>One merged row per domain; emails, phones, 10 social and messaging platforms in one pass; plain HTTP, so fast and cheap; billed per website</td>
+<td>Reads what the site publishes — it does not guess addresses that aren&#39;t on the page, and does not run page JavaScript</td>
+</tr>
+<tr>
+<td>Manual research</td>
+<td>Judgement on which contact is the right person</td>
+<td>Doesn&#39;t scale past a few dozen companies</td>
+</tr>
+<tr>
+<td>Email-finder databases</td>
+<td>Named people and job titles</td>
+<td>Subscription pricing; data can be stale; contacts come from a third-party database rather than the company&#39;s own site</td>
+</tr>
+<tr>
+<td>Page-level scrapers</td>
+<td>Raw extraction from any URL</td>
+<td>You get one row per page and must merge and de-duplicate yourself</td>
+</tr>
+</tbody></table>
+</div><p>The two approaches combine well: use this tool for the company&#39;s own public channels (info@, sales@, press@, its social accounts) and a people database only where you need a named decision-maker.</p>
+<h2 id="responsible-use">Responsible use</h2>
+<p>Everything this tool returns is published on the company&#39;s own website. That still doesn&#39;t make every use lawful. Under the GDPR and similar laws (the UK GDPR, Turkey&#39;s KVKK), even a business email that contains a person&#39;s name is personal data: you need a lawful basis such as legitimate interest, you must tell people where you got their address when you first contact them, and you must honour opt-outs promptly. US commercial email falls under CAN-SPAM: identify yourself, include a working unsubscribe link and a physical address. Generic role addresses (info@, sales@) carry less risk than named ones. Crawl only sites you are allowed to crawl, and don&#39;t keep data you don&#39;t need.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="how-accurate-are-the-email-addresses">How accurate are the email addresses?</h3>
+<p>They are taken from <code>mailto:</code> links and the page source, then filtered through a blocklist that removes common false positives such as image file names, error-tracking keys and placeholder addresses. Unusual markup can still let some noise through, which is one more reason to run the list through the Email Validator before sending.</p>
+<h3 id="why-are-there-no-phone-numbers-for-a-site-that-clearly-shows-one">Why are there no phone numbers for a site that clearly shows one?</h3>
+<p>Phone numbers are only taken from <code>tel:</code> links. Scraping digits out of plain text produces far more wrong numbers than right ones, so numbers written only as text are skipped on purpose.</p>
+<h3 id="can-it-find-the-email-of-a-specific-person">Can it find the email of a specific person?</h3>
+<p>Only if that address is published somewhere on the site. The tool doesn&#39;t guess patterns like firstname.lastname@ — it reports what the website actually shows.</p>
+<h3 id="does-it-crawl-subdomains-like-blog-example-com">Does it crawl subdomains like blog.example.com?</h3>
+<p>Not by default. Turn on <strong>Follow subdomains</strong> to include them.</p>
+<h3 id="can-i-feed-it-from-another-tool-39-s-results">Can I feed it from another tool&#39;s results?</h3>
+<p>Yes. Set <code>inputDatasetId</code> to another run&#39;s dataset and <code>inputField</code> to the column that holds the website (for example <code>website</code> or <code>url</code>). Those URLs are combined with anything typed into Websites.</p>
+<h3 id="what-if-a-site-blocks-the-crawler">What if a site blocks the crawler?</h3>
+<p>Add a proxy in <strong>Proxy configuration</strong> — Apify&#39;s datacenter proxy is enough for most sites and keeps runs cheap — or lower <strong>Max concurrency</strong> for sites that rate-limit.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-SN88YAtrbnLiHjsJf-MJlWPlEH29-contact-extractor.png" alt="" width="44" height="44"><h4>Email Extractor — Website Contact &amp; Social Finder</h4></div>
+<dl><dt>Price</dt><dd>$10 / 1k results</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/contact-extractor?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#responsible-use">Responsible use</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

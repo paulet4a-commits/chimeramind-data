@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulk On-Page SEO Audit — Check Titles, Meta Tags and Headings for Any URL List | ChimeraMiND Data</title>
+<meta name="description" content="Check titles, meta descriptions, headings, canonicals, indexability, image alt text, links, Open Graph and schema.org for any list of pages, and get one scored row per URL with plain-English issues.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/on-page-seo-audit/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bulk On-Page SEO Audit — Check Titles, Meta Tags and Headings for Any URL List | ChimeraMiND Data">
+<meta property="og:description" content="Check titles, meta descriptions, headings, canonicals, indexability, image alt text, links, Open Graph and schema.org for any list of pages, and get one scored row per URL with plain-English issues.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/on-page-seo-audit/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Bulk On-Page SEO Audit — Check Titles, Meta Tags and Headings for Any URL List","description":"Check titles, meta descriptions, headings, canonicals, indexability, image alt text, links, Open Graph and schema.org for any list of pages, and get one scored row per URL with plain-English issues.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/on-page-seo-audit/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"On-Page SEO Audit","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/seo-page-audit","offers":{"@type":"Offer","price":"2.00","priceCurrency":"USD","description":"per 1,000 results"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Bulk On-Page SEO Audit — Check Titles, Meta Tags and Headings for Any URL List","item":"https://data.chimeramind.com/guides/on-page-seo-audit/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it render JavaScript?","acceptedAnswer":{"@type":"Answer","text":"No. It fetches the raw HTML, which is what many crawlers see on their first pass. If your titles or content are injected client-side, they won't appear in the audit — which is itself a useful warning."}},{"@type":"Question","name":"Why doesn't alt=\"\" count as missing alt text?","acceptedAnswer":{"@type":"Answer","text":"An empty `alt=\"\"` is the correct, deliberate way to mark decorative images for screen readers. Only a missing `alt` attribute is counted as an issue."}},{"@type":"Question","name":"Can it crawl my whole site by itself?","acceptedAnswer":{"@type":"Answer","text":"It audits the URLs you give it. To cover a whole site, feed it a sitemap or a crawl result through `inputDatasetId`, as in the first recipe."}},{"@type":"Question","name":"How does broken-link checking work?","acceptedAnswer":{"@type":"Answer","text":"With Check internal links on, it HEAD-checks up to 50 internal links per page and lists the ones that fail in `brokenLinks`. External links are counted but not checked."}},{"@type":"Question","name":"Can an AI assistant use it?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's callable through the Apify MCP server, so you can ask an assistant to \"audit these ten blog posts and tell me which need a meta description\" and it runs the audit itself."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / On-Page SEO Audit</div>
+<div class="guide"><div><header><div class="kicker">SEO &amp; site audits</div><h1>Audit on-page SEO for a whole list of URLs in seconds</h1><p class="lede">Check titles, meta descriptions, headings, canonicals, indexability, image alt text, links, Open Graph and schema.org for any list of pages, and get one scored row per URL with plain-English issues.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>Most on-page SEO problems are boring and mechanical: a template that drops the meta description, a canonical pointing at the wrong URL, a <code>noindex</code> that survived a staging deploy, product images without alt text. Finding them across hundreds of pages by hand is the expensive part. This guide shows how to audit <strong>any list of URLs</strong> and get one row per page with the facts, a 0–100 score, an A–F grade and a list of issues in plain English — for $2 per 1,000 results.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>Every audited page returns the raw on-page facts and a verdict:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Title &amp; description</td>
+<td><code>title</code>, <code>titleLength</code>, <code>metaDescription</code>, <code>metaDescriptionLength</code></td>
+</tr>
+<tr>
+<td>Indexing</td>
+<td><code>canonical</code>, <code>canonicalMatches</code>, <code>robotsMeta</code>, <code>isIndexable</code>, <code>statusCode</code>, <code>finalUrl</code></td>
+</tr>
+<tr>
+<td>Structure</td>
+<td><code>h1Count</code>, <code>h1</code>, <code>h2Count</code>, <code>h3Count</code>, <code>headingsOutline</code>, <code>wordCount</code>, <code>textToHtmlRatio</code></td>
+</tr>
+<tr>
+<td>Images</td>
+<td><code>imageCount</code>, <code>imagesMissingAlt</code>, <code>imagesMissingAltSample</code></td>
+</tr>
+<tr>
+<td>Links</td>
+<td><code>internalLinkCount</code>, <code>externalLinkCount</code>, <code>nofollowLinkCount</code>, <code>brokenLinks</code></td>
+</tr>
+<tr>
+<td>Social &amp; structured data</td>
+<td><code>openGraphComplete</code>, <code>twitterCardPresent</code>, <code>schemaTypes</code></td>
+</tr>
+<tr>
+<td>Verdict</td>
+<td><code>issues</code>, <code>seoScore</code>, <code>seoGrade</code></td>
+</tr>
+</tbody></table>
+</div><p>A real row from a recent run:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run uVfQbmj1opo7fJolK · 2026-10-03</span></figcaption><pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://apify.com/&quot;,
+  &quot;finalUrl&quot;: &quot;https://apify.com/&quot;,
+  &quot;statusCode&quot;: 200,
+  &quot;responseTimeMs&quot;: 134,
+  &quot;htmlSizeBytes&quot;: 492244,
+  &quot;title&quot;: &quot;Apify: Marketplace of ready-to-run tools for AI&quot;,
+  &quot;titleLength&quot;: 47,
+  &quot;metaDescription&quot;: &quot;Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.&quot;,
+  &quot;metaDescriptionLength&quot;: 143,
+  &quot;canonical&quot;: &quot;https://apify.com/&quot;,
+  &quot;canonicalMatches&quot;: true,
+  &quot;robotsMeta&quot;: &quot;index,follow&quot;,
+  &quot;isIndexable&quot;: true,
+  &quot;lang&quot;: &quot;en&quot;,
+  &quot;viewportMeta&quot;: &quot;width=device-width, initial-scale=1&quot;,
+  &quot;charset&quot;: &quot;utf-8&quot;,
+  &quot;h1Count&quot;: 1,
+  &quot;h1&quot;: [
+    &quot;80,266 tools for your AI&quot;
+  ],
+  &quot;h2Count&quot;: 11,
+  &quot;h3Count&quot;: 20,
+  &quot;headingsOutline&quot;: [
+    {
+      &quot;level&quot;: 1,
+      &quot;text&quot;: &quot;80,266 tools for your AI&quot;
+    },
+    {
+      &quot;level&quot;: 2,
+      &quot;text&quot;: &quot;Popular Actors&quot;
+    },
+    {
+      &quot;level&quot;: 3,
+      &quot;text&quot;: &quot;TikTok Scraper&quot;
+    }
+  ],
+  &quot;wordCount&quot;: 1174,
+  &quot;textToHtmlRatio&quot;: 0.02,
+  &quot;imageCount&quot;: 78,
+  &quot;imagesMissingAlt&quot;: 0,
+  &quot;imagesMissingAltSample&quot;: [],
+  &quot;internalLinkCount&quot;: 78,
+  &quot;externalLinkCount&quot;: 58,
+  &quot;nofollowLinkCount&quot;: 20,
+  &quot;brokenLinks&quot;: [],
+  &quot;hreflang&quot;: [],
+  &quot;openGraphComplete&quot;: true,
+  &quot;twitterCardPresent&quot;: true,
+  &quot;schemaTypes&quot;: [
+    &quot;Organization&quot;,
+    &quot;WebSite&quot;,
+    &quot;SoftwareApplication&quot;
+  ],
+  &quot;hasFavicon&quot;: true,
+  &quot;inlineScriptCount&quot;: 5,
+  &quot;externalScriptCount&quot;: 46,
+  &quot;cssCount&quot;: 4,
+  &quot;hasAmp&quot;: false,
+  &quot;mixedContentCount&quot;: 0,
+  &quot;issues&quot;: [],
+  &quot;seoScore&quot;: 100,
+  &quot;seoGrade&quot;: &quot;A&quot;,
+  &quot;error&quot;: null,
+  &quot;scrapedAt&quot;: &quot;2026-10-03T15:21:13.215Z&quot;
+}</code></pre></figure><h2 id="how-the-score-works">How the score works</h2>
+<p>Every page starts at 100 and loses points per issue: missing or too-long title (15 / 5), missing or too-long meta description (10 / 5), no H1 or several H1s (10 each), images missing alt text (5), <code>noindex</code> (20), canonical mismatch (10), missing viewport (5), missing <code>lang</code> attribute (5), thin content under 300 words (15) and mixed HTTP content on an HTTPS page (10). The score is floored at 0 and graded A ≥ 90, B ≥ 75, C ≥ 60, D ≥ 40, otherwise F. Because every deduction also appears as a sentence in <code>issues</code>, the score is never a black box — you can see exactly why a page lost points.</p>
+<h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and paste page URLs into <strong>URLs</strong> — one row comes back per URL. Bare domains get <code>https://</code> added.</li>
+<li>Optional: turn on <strong>Check internal links for broken ones</strong> to HEAD-check up to 50 internal links per page and list the broken ones in <code>brokenLinks</code>. It adds requests, so leave it off for quick passes.</li>
+<li>Click <strong>Start</strong>. A page typically audits in under a second, so a few hundred pages finish in minutes.</li>
+<li>Sort the dataset by <code>seoScore</code>, or filter <code>isIndexable = false</code>, and export to CSV or Excel.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/seo-page-audit?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run On-Page SEO Audit on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-seo-page-audit" id="t-seo-page-audit-python" checked><label for="t-seo-page-audit-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/seo-page-audit&quot;).call(run_input={
+    &quot;urls&quot;: [
+        &quot;<a href="https://apify.com">https://apify.com</a>&quot;,
+        &quot;<a href="https://example.com">https://example.com</a>&quot;
+    ],
+    &quot;checkLinks&quot;: False,
+    &quot;maxConcurrency&quot;: 5
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-seo-page-audit" id="t-seo-page-audit-js"><label for="t-seo-page-audit-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/seo-page-audit&#39;).call({
+    &quot;urls&quot;: [
+        &quot;<a href="https://apify.com">https://apify.com</a>&quot;,
+        &quot;<a href="https://example.com">https://example.com</a>&quot;
+    ],
+    &quot;checkLinks&quot;: false,
+    &quot;maxConcurrency&quot;: 5
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-seo-page-audit" id="t-seo-page-audit-bash"><label for="t-seo-page-audit-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~seo-page-audit/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~seo-page-audit/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;urls&quot;:[&quot;<a href="https://apify.com&amp;quot;,&amp;quot;https://example.com&amp;quot;%5D,&amp;quot;checkLinks&amp;quot;:false,&amp;quot;maxConcurrency&amp;quot;:5%7D&amp;#39">https://apify.com&amp;quot;,&amp;quot;https://example.com&amp;quot;],&amp;quot;checkLinks&amp;quot;:false,&amp;quot;maxConcurrency&amp;quot;:5}&amp;#39</a>;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="audit-a-whole-site-from-its-sitemap">Audit a whole site from its sitemap</h3>
+<p>Run the Sitemap Extractor on the domain, then start this audit with <code>inputDatasetId</code> set to that run&#39;s dataset (and <code>inputField</code> to the URL column). Every URL in the sitemap gets a scored row without you copying a single link.</p>
+<h3 id="catch-template-regressions-after-a-deploy">Catch template regressions after a deploy</h3>
+<p>Pick one URL per template and schedule a daily run. A drop in <code>seoScore</code> on the product template, or a new &quot;Missing meta description&quot; issue, means the last deploy broke something — you&#39;ll know before Search Console does.</p>
+<h3 id="content-qa-before-publishing">Content QA before publishing</h3>
+<p>Writers paste draft preview URLs (if they&#39;re publicly reachable) and fix anything flagged in <code>issues</code> — thin content, missing H1, images without alt text — before the page goes live.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.002</td><td class="num">$2</td></tr><tr><td>Starter</td><td class="num">$0.0016</td><td class="num">$1.60</td></tr><tr><td>Scale</td><td class="num">$0.0014</td><td class="num">$1.40</td></tr><tr><td>Business</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise+</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>Pages that fail to load are not charged. Auditing 1,000 pages is 1,000 results, with no subscription and no software to install.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>Any URL list, from any source; API, schedules and MCP; scored rows with explicit issues; nothing to install</td>
+<td>Reads raw HTML, so content injected by JavaScript after load isn&#39;t seen; audits the pages you give it rather than discovering a whole site</td>
+</tr>
+<tr>
+<td>Desktop SEO crawlers</td>
+<td>Full-site discovery, deep reports, JavaScript rendering options</td>
+<td>Installed software and licences; harder to automate in a pipeline</td>
+</tr>
+<tr>
+<td>SEO suite site audits</td>
+<td>Dashboards, trends, many extra checks</td>
+<td>Monthly subscription, project limits</td>
+</tr>
+<tr>
+<td>Browser extensions</td>
+<td>Instant check of the page you&#39;re on</td>
+<td>One page at a time, nothing to export</td>
+</tr>
+</tbody></table>
+</div><h2 id="faq">FAQ</h2>
+<h3 id="does-it-render-javascript">Does it render JavaScript?</h3>
+<p>No. It fetches the raw HTML, which is what many crawlers see on their first pass. If your titles or content are injected client-side, they won&#39;t appear in the audit — which is itself a useful warning.</p>
+<h3 id="why-doesn-39-t-alt-quot-quot-count-as-missing-alt-text">Why doesn&#39;t alt=&quot;&quot; count as missing alt text?</h3>
+<p>An empty <code>alt=&quot;&quot;</code> is the correct, deliberate way to mark decorative images for screen readers. Only a missing <code>alt</code> attribute is counted as an issue.</p>
+<h3 id="can-it-crawl-my-whole-site-by-itself">Can it crawl my whole site by itself?</h3>
+<p>It audits the URLs you give it. To cover a whole site, feed it a sitemap or a crawl result through <code>inputDatasetId</code>, as in the first recipe.</p>
+<h3 id="how-does-broken-link-checking-work">How does broken-link checking work?</h3>
+<p>With Check internal links on, it HEAD-checks up to 50 internal links per page and lists the ones that fail in <code>brokenLinks</code>. External links are counted but not checked.</p>
+<h3 id="can-an-ai-assistant-use-it">Can an AI assistant use it?</h3>
+<p>Yes. It&#39;s callable through the Apify MCP server, so you can ask an assistant to &quot;audit these ten blog posts and tell me which need a meta description&quot; and it runs the audit itself.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-J3O0j3UPwFG4gac3B-YP0MO9HU3E-seo-page-audit.png" alt="" width="44" height="44"><h4>On-Page SEO Audit</h4></div>
+<dl><dt>Price</dt><dd>$2 / 1k results</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/seo-page-audit?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#how-the-score-works">How the score works</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

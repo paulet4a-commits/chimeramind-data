@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Company Data from a Domain — Contacts, Tech Stack, Firmographics and Hiring in One Row | ChimeraMiND Data</title>
+<meta name="description" content="Turn a list of company domains into enriched profiles — contacts, tech stack, email security, TLS and SEO checks, hiring signals and company facts like headquarters, employees and founding date — merged into one flat row per company.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/company-data-from-domain/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Company Data from a Domain — Contacts, Tech Stack, Firmographics and Hiring in One Row | ChimeraMiND Data">
+<meta property="og:description" content="Turn a list of company domains into enriched profiles — contacts, tech stack, email security, TLS and SEO checks, hiring signals and company facts like headquarters, employees and founding date — merged into one flat row per company.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/company-data-from-domain/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Company Data from a Domain — Contacts, Tech Stack, Firmographics and Hiring in One Row","description":"Turn a list of company domains into enriched profiles — contacts, tech stack, email security, TLS and SEO checks, hiring signals and company facts like headquarters, employees and founding date — merged into one flat row per company.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/company-data-from-domain/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Company 360: full company profile from a domain","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/company-360","offers":{"@type":"Offer","price":"50.00","priceCurrency":"USD","description":"per 1,000 companys"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Company Data from a Domain — Contacts, Tech Stack, Firmographics and Hiring in One Row","item":"https://data.chimeramind.com/guides/company-data-from-domain/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is a section empty even though I switched it on?","acceptedAnswer":{"@type":"Answer","text":"That check found nothing for the domain, failed or timed out. The reason is in `warnings`, and the rest of the row is unaffected."}},{"@type":"Question","name":"Why is hiringVelocity empty for most companies?","acceptedAnswer":{"@type":"Answer","text":"Hiring data is matched by the domain's name (`apify` for `apify.com`) against public ATS job boards. Most companies don't run a board under exactly that name, so an empty value is normal. For a reliable hiring picture, give the Hiring Signals tool the company's actual board URL."}},{"@type":"Question","name":"How is profileCompleteness calculated?","acceptedAnswer":{"@type":"Answer","text":"It's the share of the sections you switched on that returned usable data, rounded to a whole percent."}},{"@type":"Question","name":"Can I feed it domains from another tool?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set `inputDatasetId` to another run's dataset and `inputField` to the column that holds the domain or website; those are combined with anything in Domains."}},{"@type":"Question","name":"How fast is it for a long list?","acceptedAnswer":{"@type":"Answer","text":"Each profile runs several checks in parallel, and checks are throttled to stay within Apify's concurrent-run limits, so very long lists take proportionally longer. Split huge lists across scheduled runs if you need results continuously."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Company 360</div>
+<div class="guide"><div><header><div class="kicker">Leads &amp; company data</div><h1>Get a full company profile from just a domain name</h1><p class="lede">Turn a list of company domains into enriched profiles — contacts, tech stack, email security, TLS and SEO checks, hiring signals and company facts like headquarters, employees and founding date — merged into one flat row per company.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>Account research usually means six browser tabs per company: the website for contacts, a tech-lookup tool, a DNS checker, the careers page, a company database for headcount and headquarters, and an SEO checker. Multiply by a few hundred accounts and the research costs more than the deal. This guide shows how to get all of that <strong>from a domain name alone</strong>, merged into one row per company, for $50 per 1,000 companys.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>Each domain becomes one flat, scored row with up to seven sections. A real row from a recent run:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run BlkSGNhf624qTVUg3 · 2026-10-04</span></figcaption><pre><code class="language-json">{
+  &quot;domain&quot;: &quot;stripe.com&quot;,
+  &quot;websiteUrl&quot;: &quot;https://stripe.com&quot;,
+  &quot;companyName&quot;: &quot;Stripe&quot;,
+  &quot;description&quot;: &quot;Irish-American payment technology company&quot;,
+  &quot;emails&quot;: [
+    &quot;jane.diaz@stripe.com&quot;
+  ],
+  &quot;phones&quot;: [],
+  &quot;socials&quot;: {},
+  &quot;linkedinUrl&quot;: &quot;https://www.linkedin.com/company/stripe&quot;,
+  &quot;twitterUrl&quot;: &quot;https://twitter.com/stripe&quot;,
+  &quot;facebookUrl&quot;: &quot;https://www.facebook.com/175383762511776&quot;,
+  &quot;instagramUrl&quot;: null,
+  &quot;youtubeUrl&quot;: null,
+  &quot;cms&quot;: null,
+  &quot;ecommercePlatform&quot;: null,
+  &quot;analytics&quot;: [
+    &quot;Google Tag Manager&quot;
+  ],
+  &quot;adPixels&quot;: [],
+  &quot;chatWidget&quot;: null,
+  &quot;paymentProviders&quot;: [],
+  &quot;technologyCount&quot;: 6,
+  &quot;emailProvider&quot;: &quot;Google Workspace&quot;,
+  &quot;dnsProvider&quot;: &quot;Amazon Route 53&quot;,
+  &quot;spfPolicy&quot;: &quot;~all&quot;,
+  &quot;dmarcPolicy&quot;: &quot;reject&quot;,
+  &quot;emailSecurityGrade&quot;: &quot;A&quot;,
+  &quot;registrar&quot;: &quot;SafeNames Ltd.&quot;,
+  &quot;domainAgeDays&quot;: 11345,
+  &quot;tlsValid&quot;: true,
+  &quot;tlsDaysUntilExpiry&quot;: 67,
+  &quot;securityGrade&quot;: &quot;A&quot;,
+  &quot;securityScore&quot;: 95,
+  &quot;seoScore&quot;: 90,
+  &quot;seoIssues&quot;: [
+    &quot;Multiple H1 tags found&quot;
+  ],
+  &quot;openJobs&quot;: 716,
+  &quot;hiringVelocity&quot;: &quot;high&quot;,
+  &quot;topDepartments&quot;: [
+    &quot;1185 Account Executives (EMEA)&quot;,
+    &quot;Global Operations&quot;,
+    &quot;5112 General University&quot;
+  ],
+  &quot;industries&quot;: [
+    &quot;financial services&quot;,
+    &quot;mobile payment industry&quot;
+  ],
+  &quot;headquarters&quot;: &quot;San Francisco&quot;,
+  &quot;country&quot;: &quot;United States&quot;,
+  &quot;employees&quot;: 8000,
+  &quot;revenue&quot;: null,
+  &quot;founders&quot;: [
+    &quot;Patrick Collison&quot;,
+    &quot;John Collison&quot;
+  ],
+  &quot;foundedAt&quot;: &quot;2010-01-01&quot;,
+  &quot;crunchbaseId&quot;: &quot;stripe&quot;,
+  &quot;wikidataQid&quot;: &quot;Q7624104&quot;,
+  &quot;profileCompleteness&quot;: 100,
+  &quot;warnings&quot;: [],
+  &quot;error&quot;: null,
+  &quot;scrapedAt&quot;: &quot;2026-10-04T19:24:39.512Z&quot;
+}</code></pre></figure><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Identity</td>
+<td><code>domain</code>, <code>websiteUrl</code>, <code>companyName</code>, <code>description</code></td>
+</tr>
+<tr>
+<td>Contacts</td>
+<td><code>emails</code>, <code>phones</code>, <code>socials</code>, plus <code>linkedinUrl</code>, <code>twitterUrl</code>, <code>facebookUrl</code>, <code>instagramUrl</code>, <code>youtubeUrl</code></td>
+</tr>
+<tr>
+<td>Tech stack</td>
+<td><code>cms</code>, <code>ecommercePlatform</code>, <code>analytics</code>, <code>adPixels</code>, <code>chatWidget</code>, <code>paymentProviders</code>, <code>technologyCount</code></td>
+</tr>
+<tr>
+<td>DNS &amp; email security</td>
+<td><code>emailProvider</code>, <code>dnsProvider</code>, <code>spfPolicy</code>, <code>dmarcPolicy</code>, <code>emailSecurityGrade</code>, <code>registrar</code>, <code>domainAgeDays</code></td>
+</tr>
+<tr>
+<td>Security audit</td>
+<td><code>tlsValid</code>, <code>tlsDaysUntilExpiry</code>, <code>securityGrade</code>, <code>securityScore</code></td>
+</tr>
+<tr>
+<td>SEO</td>
+<td><code>seoScore</code>, <code>seoIssues</code></td>
+</tr>
+<tr>
+<td>Hiring</td>
+<td><code>openJobs</code>, <code>hiringVelocity</code>, <code>topDepartments</code></td>
+</tr>
+<tr>
+<td>Company facts</td>
+<td><code>industries</code>, <code>headquarters</code>, <code>country</code>, <code>employees</code>, <code>revenue</code>, <code>founders</code>, <code>foundedAt</code>, <code>crunchbaseId</code>, <code>wikidataQid</code></td>
+</tr>
+<tr>
+<td>Quality</td>
+<td><code>profileCompleteness</code> (0–100), <code>warnings</code>, <code>error</code></td>
+</tr>
+</tbody></table>
+</div><p>Every section is independent. If one check finds nothing or fails, its fields stay empty and a line is added to <code>warnings</code> — you always get the row, and <code>profileCompleteness</code> shows at a glance how much of it filled in.</p>
+<h2 id="where-each-section-comes-from">Where each section comes from</h2>
+<p>Contacts come from the company&#39;s homepage plus one likely contact page (or from Wikidata when the site lists none). DNS and email security come from public DNS and RDAP records, and the tech stack is fingerprinted from the same homepage and contact page. The security audit, SEO, hiring and company facts use the same code as the specialist tools in the suite — Domain Security Audit, On-Page SEO Audit, Hiring Signals and Wikidata Entity Enrichment — but every section runs inside Company 360 itself, in parallel. Company facts come from Wikidata, so they are richest for companies that have a Wikidata entry; hiring data appears when the company runs a supported ATS job board under its own name.</p>
+<h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and paste your list into <strong>Domains</strong>. Full URLs and <code>www.</code> prefixes are stripped automatically, so a CRM export works as-is.</li>
+<li>Keep all seven <strong>Include…</strong> switches on for a full profile, or turn off the sections you don&#39;t need — each one you skip makes the run faster.</li>
+<li>Click <strong>Start</strong>. Each domain&#39;s checks run in parallel, so a single profile typically finishes in under a minute.</li>
+<li>Export to CSV or Excel, or read the dataset through the API.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/company-360?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run Company 360: full company profile from a domain on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-company-360" id="t-company-360-python" checked><label for="t-company-360-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/company-360&quot;).call(run_input={
+    &quot;domains&quot;: [
+        &quot;apify.com&quot;,
+        &quot;stripe.com&quot;
+    ],
+    &quot;includeContacts&quot;: True,
+    &quot;includeTechStack&quot;: True
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-company-360" id="t-company-360-js"><label for="t-company-360-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/company-360&#39;).call({
+    &quot;domains&quot;: [
+        &quot;apify.com&quot;,
+        &quot;stripe.com&quot;
+    ],
+    &quot;includeContacts&quot;: true,
+    &quot;includeTechStack&quot;: true
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-company-360" id="t-company-360-bash"><label for="t-company-360-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~company-360/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~company-360/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;domains&quot;:[&quot;apify.com&quot;,&quot;stripe.com&quot;],&quot;includeContacts&quot;:true,&quot;includeTechStack&quot;:true}&#39;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="enrich-a-crm-export-before-outreach">Enrich a CRM export before outreach</h3>
+<p>Export accounts with their website, paste the domains (or point <code>inputDatasetId</code> at a dataset and <code>inputField</code> at the column holding the domain) and import the result back on <code>domain</code>. Reps get headcount, HQ, tech stack and a contact channel on every account without opening a single tab.</p>
+<h3 id="qualify-agency-or-saas-prospects-by-their-stack">Qualify agency or SaaS prospects by their stack</h3>
+<p>Running a Shopify agency, or selling a product that competes with a specific chat widget or analytics tool? Profile a long list with only <strong>Include tech stack</strong>, <strong>Include contacts</strong> and <strong>Include company facts</strong> on, then filter on <code>ecommercePlatform</code>, <code>cms</code>, <code>chatWidget</code> or <code>analytics</code>. You get a target list of companies that use exactly what you work with.</p>
+<h3 id="spot-technical-opportunities">Spot technical opportunities</h3>
+<p>For a security, deliverability or SEO service, the profile is a ready-made reason to reach out: <code>dmarcPolicy</code> missing or set to <code>none</code>, <code>tlsDaysUntilExpiry</code> low, <code>securityGrade</code> poor or a low <code>seoScore</code> with a list of <code>seoIssues</code>. Sort by the weakness you fix.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per company</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.05</td><td class="num">$50</td></tr><tr><td>Starter</td><td class="num">$0.04</td><td class="num">$40</td></tr><tr><td>Scale</td><td class="num">$0.035</td><td class="num">$35</td></tr><tr><td>Business</td><td class="num">$0.03</td><td class="num">$30</td></tr><tr><td>Enterprise</td><td class="num">$0.03</td><td class="num">$30</td></tr><tr><td>Enterprise+</td><td class="num">$0.03</td><td class="num">$30</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>One result is one company profile, and that is the whole bill: every section runs inside Company 360, so no other tool runs are started and nothing is charged on top. Switching sections off makes runs faster, not cheaper; set <strong>Maximum cost per run</strong> to cap the total.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>One joined row from public sources; seven sections in one call; per-section warnings instead of silent gaps</td>
+<td>A first-pass profile, lighter than running each specialist tool directly; company facts depend on Wikidata coverage; hiring data only for companies on supported ATS boards</td>
+</tr>
+<tr>
+<td>Separate tools per data type</td>
+<td>Depth on one axis</td>
+<td>Several logins, exports and a manual join on domain name</td>
+</tr>
+<tr>
+<td>Commercial firmographic databases</td>
+<td>Large curated datasets, named contacts</td>
+<td>Subscription pricing; data is a third-party snapshot rather than read from the company&#39;s own site and DNS</td>
+</tr>
+</tbody></table>
+</div><p>Need more depth on one section? Each specialist tool behind Company 360 is available on its own — for example the full Tech Stack Detector or the Email Extractor, which crawls up to your chosen page budget instead of just the homepage and one contact page.</p>
+<h2 id="responsible-use">Responsible use</h2>
+<p>All sources are public: the company&#39;s own website, public DNS and RDAP records, public job boards and Wikidata. Contact details can still include personal data (a named person&#39;s email), so use them under a lawful basis such as legitimate interest, follow GDPR, KVKK and CAN-SPAM rules for outreach, and honour opt-outs.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="why-is-a-section-empty-even-though-i-switched-it-on">Why is a section empty even though I switched it on?</h3>
+<p>That check found nothing for the domain, failed or timed out. The reason is in <code>warnings</code>, and the rest of the row is unaffected.</p>
+<h3 id="why-is-hiringvelocity-empty-for-most-companies">Why is hiringVelocity empty for most companies?</h3>
+<p>Hiring data is matched by the domain&#39;s name (<code>apify</code> for <code>apify.com</code>) against public ATS job boards. Most companies don&#39;t run a board under exactly that name, so an empty value is normal. For a reliable hiring picture, give the Hiring Signals tool the company&#39;s actual board URL.</p>
+<h3 id="how-is-profilecompleteness-calculated">How is profileCompleteness calculated?</h3>
+<p>It&#39;s the share of the sections you switched on that returned usable data, rounded to a whole percent.</p>
+<h3 id="can-i-feed-it-domains-from-another-tool">Can I feed it domains from another tool?</h3>
+<p>Yes. Set <code>inputDatasetId</code> to another run&#39;s dataset and <code>inputField</code> to the column that holds the domain or website; those are combined with anything in Domains.</p>
+<h3 id="how-fast-is-it-for-a-long-list">How fast is it for a long list?</h3>
+<p>Each profile runs several checks in parallel, and checks are throttled to stay within Apify&#39;s concurrent-run limits, so very long lists take proportionally longer. Split huge lists across scheduled runs if you need results continuously.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-BbeJDj8MzLbIfg0hM-1zg6AG9CbT-company-360.png" alt="" width="44" height="44"><h4>Company 360: full company profile from a domain</h4></div>
+<dl><dt>Price</dt><dd>$50 / 1k companys</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/company-360?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#where-each-section-comes-from">Where each section comes from</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#responsible-use">Responsible use</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

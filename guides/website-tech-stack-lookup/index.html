@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Tech Stack Lookup in Bulk — a Wappalyzer and BuiltWith Alternative | ChimeraMiND Data</title>
+<meta name="description" content="Detect the CMS, e-commerce platform, analytics, ad pixels, payment providers, chat widgets, frameworks and hosting of any list of websites — one row per site, with tracking IDs and confidence scores.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/website-tech-stack-lookup/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Website Tech Stack Lookup in Bulk — a Wappalyzer and BuiltWith Alternative | ChimeraMiND Data">
+<meta property="og:description" content="Detect the CMS, e-commerce platform, analytics, ad pixels, payment providers, chat widgets, frameworks and hosting of any list of websites — one row per site, with tracking IDs and confidence scores.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/website-tech-stack-lookup/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Website Tech Stack Lookup in Bulk — a Wappalyzer and BuiltWith Alternative","description":"Detect the CMS, e-commerce platform, analytics, ad pixels, payment providers, chat widgets, frameworks and hosting of any list of websites — one row per site, with tracking IDs and confidence scores.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/website-tech-stack-lookup/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Tech Stack Detector — Wappalyzer & BuiltWith Alternative","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/tech-stack-detector","offers":{"@type":"Offer","price":"5.00","priceCurrency":"USD","description":"per 1,000 results"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Website Tech Stack Lookup in Bulk — a Wappalyzer and BuiltWith Alternative","item":"https://data.chimeramind.com/guides/website-tech-stack-lookup/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"Signatures are anchored to technical evidence such as vendor script hosts, headers, cookies and generator tags, so false positives are rare. Each detection carries a confidence score so you can filter borderline ones."}},{"@type":"Question","name":"Why is a tool I know they use missing?","acceptedAnswer":{"@type":"Answer","text":"Most often it's loaded through Google Tag Manager, which this HTML-based tool can't see inside. Otherwise the script may live on a page outside the crawl budget — raise Max pages per website."}},{"@type":"Question","name":"Does it detect regional platforms?","acceptedAnswer":{"@type":"Answer","text":"Yes, the open-source ruleset covers many regional platforms, and the tool adds its own signatures for Turkish e-commerce and payments: Ticimax, IdeaSoft, T-Soft, ikas, Platin Market, iyzico, PayTR and Shopier."}},{"@type":"Question","name":"Do I need a proxy?","acceptedAnswer":{"@type":"Answer","text":"Usually not — it runs on plain HTTP. A proxy option is available for sites that rate-limit repeated requests."}},{"@type":"Question","name":"Can an AI agent call it?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's available through the Apify MCP server, so an assistant can fingerprint a list of domains and summarise the results for you."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Tech Stack Lookup</div>
+<div class="guide"><div><header><div class="kicker">Leads &amp; company data</div><h1>Find out what any website is built with — for thousands of sites at once</h1><p class="lede">Detect the CMS, e-commerce platform, analytics, ad pixels, payment providers, chat widgets, frameworks and hosting of any list of websites — one row per site, with tracking IDs and confidence scores.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>&quot;Which of these 2,000 companies run Shopify and use Klaviyo?&quot; is a question sales, partnership and market-research teams ask every week. Browser extensions answer it one site at a time; lookup subscriptions answer it with monthly caps. This guide shows how to fingerprint <strong>a whole list of websites</strong> and get one clean row per site — CMS, shop platform, analytics, ad pixels, payments, chat, frameworks, hosting and tracking IDs — for $5 per 1,000 results.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>The tool crawls a few pages per site over plain HTTP and matches them against 7,000+ open-source Wappalyzer fingerprints. Each website becomes one row:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cms</code>, <code>ecommerce</code>, <code>primaryCms</code>, <code>primaryEcommerce</code>, <code>isEcommerce</code></td>
+<td>Content and shop platforms, plus a best single guess</td>
+</tr>
+<tr>
+<td><code>analytics</code>, <code>advertising</code></td>
+<td>Analytics tools and ad pixels</td>
+</tr>
+<tr>
+<td><code>emailMarketing</code>, <code>chat</code>, <code>payments</code></td>
+<td>Marketing, live-chat and payment providers</td>
+</tr>
+<tr>
+<td><code>frameworks</code>, <code>cookieConsent</code>, <code>cdn</code>, <code>server</code></td>
+<td>Front-end stack, consent tool, hosting and web server</td>
+</tr>
+<tr>
+<td><code>trackingIds</code></td>
+<td>GA4, GTM, Google Ads, Meta Pixel, Hotjar, Yandex and TikTok IDs found on the site</td>
+</tr>
+<tr>
+<td><code>technologies</code>, <code>byCategory</code>, <code>technologyCount</code></td>
+<td>Every detection with categories, version and confidence (0–100)</td>
+</tr>
+<tr>
+<td><code>domain</code>, <code>title</code>, <code>description</code>, <code>generator</code>, <code>pagesCrawled</code></td>
+<td>Who the site is and how much was crawled</td>
+</tr>
+</tbody></table>
+</div><p>A real row from a recent run:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run x07MfC2O4aibK9dSv · 2026-10-03</span></figcaption><pre><code class="language-json">{
+  &quot;domain&quot;: &quot;apify.com&quot;,
+  &quot;startUrl&quot;: &quot;https://apify.com&quot;,
+  &quot;title&quot;: &quot;Apify: Marketplace of ready-to-run tools for AI&quot;,
+  &quot;description&quot;: &quot;Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.&quot;,
+  &quot;generator&quot;: null,
+  &quot;cms&quot;: [],
+  &quot;ecommerce&quot;: [],
+  &quot;analytics&quot;: [
+    &quot;Google Tag Manager&quot;
+  ],
+  &quot;advertising&quot;: [],
+  &quot;emailMarketing&quot;: [
+    &quot;HubSpot&quot;
+  ],
+  &quot;chat&quot;: [
+    &quot;Intercom&quot;
+  ],
+  &quot;payments&quot;: [],
+  &quot;frameworks&quot;: [
+    &quot;Next.js&quot;
+  ],
+  &quot;cookieConsent&quot;: [
+    &quot;OneTrust&quot;
+  ],
+  &quot;cdn&quot;: [
+    &quot;Amazon CloudFront&quot;
+  ],
+  &quot;server&quot;: [],
+  &quot;primaryCms&quot;: null,
+  &quot;primaryEcommerce&quot;: null,
+  &quot;isEcommerce&quot;: false,
+  &quot;trackingIds&quot;: {
+    &quot;gtm&quot;: [
+      &quot;GTM-MNGXGGB&quot;
+    ]
+  },
+  &quot;technologies&quot;: [
+    {
+      &quot;name&quot;: &quot;Algolia&quot;,
+      &quot;categories&quot;: [
+        &quot;Search engines&quot;
+      ],
+      &quot;version&quot;: null,
+      &quot;confidence&quot;: 100
+    },
+    {
+      &quot;name&quot;: &quot;Amazon CloudFront&quot;,
+      &quot;categories&quot;: [
+        &quot;CDN&quot;
+      ],
+      &quot;version&quot;: null,
+      &quot;confidence&quot;: 100
+    },
+    {
+      &quot;name&quot;: &quot;Amazon S3&quot;,
+      &quot;categories&quot;: [
+        &quot;CDN&quot;
+      ],
+      &quot;version&quot;: null,
+      &quot;confidence&quot;: 100
+    }
+  ],
+  &quot;technologyCount&quot;: 11,
+  &quot;byCategory&quot;: {
+    &quot;Search engines&quot;: [
+      &quot;Algolia&quot;
+    ],
+    &quot;CDN&quot;: [
+      &quot;Amazon CloudFront&quot;,
+      &quot;Amazon S3&quot;
+    ],
+    &quot;PaaS&quot;: [
+      &quot;Amazon Web Services&quot;
+    ],
+    &quot;Documentation&quot;: [
+      &quot;Docusaurus&quot;
+    ],
+    &quot;Static site generator&quot;: [
+      &quot;Docusaurus&quot;
+    ],
+    &quot;Security&quot;: [
+      &quot;HSTS&quot;
+    ],
+    &quot;Miscellaneous&quot;: [
+      &quot;HTTP/3&quot;,
+      &quot;Webpack&quot;
+    ],
+    &quot;Analytics&quot;: [
+      &quot;Leadfeeder&quot;,
+      &quot;Linkedin Insight Tag&quot;
+    ],
+    &quot;JavaScript frameworks&quot;: [
+      &quot;React&quot;
+    ]
+  },
+  &quot;pagesCrawled&quot;: 3,
+  &quot;scrapedAt&quot;: &quot;2026-10-03T15:21:12.177Z&quot;,
+  &quot;error&quot;: null
+}</code></pre></figure><p>Detections are anchored to signals a site can only have if it truly runs the technology — HTTP headers, cookies, generator tags, script sources from the vendor&#39;s own hosts, namespaced JavaScript globals — rather than brand names appearing in page text.</p>
+<h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and paste websites into <strong>Websites</strong> — bare domains or full URLs.</li>
+<li>Leave <strong>Max pages per website</strong> at 3 (homepage plus a couple of internal pages catches most scripts). Raise it if a tool you expect is missing.</li>
+<li>Optional: narrow <strong>Technology categories</strong> (for example <code>cms</code>, <code>ecommerce</code>, <code>advertising</code>). Empty means detect everything.</li>
+<li>Turn on <strong>Follow subdomains</strong> when the shop or app lives on <code>shop.</code> or <code>app.</code>.</li>
+<li>Click <strong>Start</strong> and export JSON, CSV or Excel. <code>trackingIds</code> and <code>byCategory</code> are objects; the flat fields like <code>primaryCms</code> and <code>isEcommerce</code> filter nicely in a spreadsheet.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/tech-stack-detector?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run Tech Stack Detector — Wappalyzer &amp; BuiltWith Alternative on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-tech-stack-detector" id="t-tech-stack-detector-python" checked><label for="t-tech-stack-detector-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/tech-stack-detector&quot;).call(run_input={
+    &quot;startUrls&quot;: [
+        {
+            &quot;url&quot;: &quot;<a href="https://apify.com">https://apify.com</a>&quot;
+        }
+    ],
+    &quot;maxPagesPerDomain&quot;: 3,
+    &quot;categories&quot;: []
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-tech-stack-detector" id="t-tech-stack-detector-js"><label for="t-tech-stack-detector-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/tech-stack-detector&#39;).call({
+    &quot;startUrls&quot;: [
+        {
+            &quot;url&quot;: &quot;<a href="https://apify.com">https://apify.com</a>&quot;
+        }
+    ],
+    &quot;maxPagesPerDomain&quot;: 3,
+    &quot;categories&quot;: []
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-tech-stack-detector" id="t-tech-stack-detector-bash"><label for="t-tech-stack-detector-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~tech-stack-detector/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~tech-stack-detector/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;startUrls&quot;:[{&quot;url&quot;:&quot;<a href="https://apify.com&amp;quot;%7D%5D,&amp;quot;maxPagesPerDomain&amp;quot;:3,&amp;quot;categories&amp;quot;:%5B%5D%7D&amp;#39">https://apify.com&amp;quot;}],&amp;quot;maxPagesPerDomain&amp;quot;:3,&amp;quot;categories&amp;quot;:[]}&amp;#39</a>;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="build-a-segmented-lead-list">Build a segmented lead list</h3>
+<p>Start from a list of company domains (a CRM export, a directory scrape, or Google results from the search tool chained through <code>inputDatasetId</code>). Run the detector, then filter <code>primaryEcommerce = &quot;Shopify&quot;</code> and <code>emailMarketing</code> containing your competitor. You now have a list of shops that use the product you replace.</p>
+<h3 id="competitive-and-market-mapping">Competitive and market mapping</h3>
+<p>Fingerprint the top 500 sites in a niche and count <code>primaryCms</code>, <code>payments</code> and <code>analytics</code> values. It&#39;s a quick, defensible answer to &quot;what share of DTC brands in Germany run Shopware vs. Shopify?&quot; — with the raw rows to back it up.</p>
+<h3 id="agency-audit-prep">Agency audit prep</h3>
+<p>Before a pitch, run the prospect&#39;s domains and note the analytics and ad pixels (<code>trackingIds</code> shows the exact GA4 and Meta Pixel IDs). Missing GA4, duplicate tag containers or no consent tool are concrete talking points.</p>
+<h2 id="limitations-worth-knowing">Limitations worth knowing</h2>
+<ul>
+<li><strong>Tags loaded through Google Tag Manager are invisible.</strong> They&#39;re injected at runtime by JavaScript; this tool reads HTML, so it reports the GTM container (and its ID) but not the tags inside it.</li>
+<li>It reads a few pages per site. A script that only appears on the checkout page may be missed unless you raise <strong>Max pages per website</strong>.</li>
+<li>Sites that block automated HTTP requests return a row with <code>error</code> instead of detections.</li>
+</ul>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.005</td><td class="num">$5</td></tr><tr><td>Starter</td><td class="num">$0.004</td><td class="num">$4</td></tr><tr><td>Scale</td><td class="num">$0.0035</td><td class="num">$3.50</td></tr><tr><td>Business</td><td class="num">$0.003</td><td class="num">$3</td></tr><tr><td>Enterprise</td><td class="num">$0.003</td><td class="num">$3</td></tr><tr><td>Enterprise+</td><td class="num">$0.003</td><td class="num">$3</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>One website is one result, however many pages are crawled for it. Narrowing categories and keeping the page budget low also keeps platform usage down. Set <strong>Maximum cost per run</strong> to cap spend.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>Thousands of sites per run, one row per site, tracking IDs, confidence scores; API, schedules and MCP; pay per site</td>
+<td>HTML-only: misses tags injected through Google Tag Manager or loaded only after user interaction</td>
+</tr>
+<tr>
+<td>Browser extensions</td>
+<td>Instant answer for the site you&#39;re viewing, including runtime-loaded scripts</td>
+<td>One site at a time, no export</td>
+</tr>
+<tr>
+<td>Lookup subscriptions</td>
+<td>Historical data and large precomputed databases</td>
+<td>Monthly plans with lookup caps</td>
+</tr>
+<tr>
+<td>DIY fingerprinting</td>
+<td>Full control</td>
+<td>Maintaining thousands of signatures yourself</td>
+</tr>
+</tbody></table>
+</div><h2 id="faq">FAQ</h2>
+<h3 id="how-accurate-is-it">How accurate is it?</h3>
+<p>Signatures are anchored to technical evidence such as vendor script hosts, headers, cookies and generator tags, so false positives are rare. Each detection carries a confidence score so you can filter borderline ones.</p>
+<h3 id="why-is-a-tool-i-know-they-use-missing">Why is a tool I know they use missing?</h3>
+<p>Most often it&#39;s loaded through Google Tag Manager, which this HTML-based tool can&#39;t see inside. Otherwise the script may live on a page outside the crawl budget — raise Max pages per website.</p>
+<h3 id="does-it-detect-regional-platforms">Does it detect regional platforms?</h3>
+<p>Yes, the open-source ruleset covers many regional platforms, and the tool adds its own signatures for Turkish e-commerce and payments: Ticimax, IdeaSoft, T-Soft, ikas, Platin Market, iyzico, PayTR and Shopier.</p>
+<h3 id="do-i-need-a-proxy">Do I need a proxy?</h3>
+<p>Usually not — it runs on plain HTTP. A proxy option is available for sites that rate-limit repeated requests.</p>
+<h3 id="can-an-ai-agent-call-it">Can an AI agent call it?</h3>
+<p>Yes. It&#39;s available through the Apify MCP server, so an assistant can fingerprint a list of domains and summarise the results for you.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-K6jDqlY7EiQ2sbqLx-B97lz2udNQ-tech-stack-detector.png" alt="" width="44" height="44"><h4>Tech Stack Detector — Wappalyzer &amp; BuiltWith Alternative</h4></div>
+<dl><dt>Price</dt><dd>$5 / 1k results</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/tech-stack-detector?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#limitations-worth-knowing">Limitations worth knowing</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

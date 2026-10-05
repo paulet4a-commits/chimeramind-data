@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Maps Scraper — Export Businesses, Phones, Websites and Ratings to CSV | ChimeraMiND Data</title>
+<meta name="description" content="Search Google Maps for any business type in any city or country and get one row per place — name, category, address, phone, website, rating, review count, coordinates and today&#39;s opening hours — as JSON, CSV or Excel.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/google-maps-scraper/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Maps Scraper — Export Businesses, Phones, Websites and Ratings to CSV | ChimeraMiND Data">
+<meta property="og:description" content="Search Google Maps for any business type in any city or country and get one row per place — name, category, address, phone, website, rating, review count, coordinates and today&#39;s opening hours — as JSON, CSV or Excel.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/google-maps-scraper/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Google Maps Scraper — Export Businesses, Phones, Websites and Ratings to CSV","description":"Search Google Maps for any business type in any city or country and get one row per place — name, category, address, phone, website, rating, review count, coordinates and today's opening hours — as JSON, CSV or Excel.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/google-maps-scraper/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google Maps Scraper","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/google-maps-scraper","offers":{"@type":"Offer","price":"2.00","priceCurrency":"USD","description":"per 1,000 places"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Google Maps Scraper — Export Businesses, Phones, Websites and Ratings to CSV","item":"https://data.chimeramind.com/guides/google-maps-scraper/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do I get at most about 120 places per search?","acceptedAnswer":{"@type":"Answer","text":"That's Google's own limit — Maps stops returning results after roughly 120 per search. Split large areas into several smaller locations to collect more."}},{"@type":"Question","name":"Does it extract reviews or the full opening hours?","acceptedAnswer":{"@type":"Answer","text":"No. Search results carry today's hours and the review count only. The tool stays fast and cheap by not opening every place page. Use a dedicated reviews tool if you need review text."}},{"@type":"Question","name":"Why are phone or website empty for some places?","acceptedAnswer":{"@type":"Answer","text":"Not every business lists them on Google Maps. The fields are null when Google has nothing to show."}},{"@type":"Question","name":"Does it work outside the US?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set the location to any city or region, and use **Language** and **Country** to get local names and results, for example `tr` and `tr` for Turkey."}},{"@type":"Question","name":"Is it legal to scrape Google Maps?","acceptedAnswer":{"@type":"Answer","text":"The tool collects publicly visible business listings without logging in. How you use the data is your responsibility — especially privacy and anti-spam rules if you contact businesses."}},{"@type":"Question","name":"Can I switch from another Google Maps scraper without changing my code?","acceptedAnswer":{"@type":"Answer","text":"Often yes. Besides its own input names, the tool accepts `searchStringsArray`, `locationQuery`, `query` and `keyword`, which many existing workflows and AI agents already use."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Google Maps Scraper</div>
+<div class="guide"><div><header><div class="kicker">Leads &amp; local data</div><h1>Export Google Maps businesses to a spreadsheet — phones, websites, ratings and coordinates</h1><p class="lede">Search Google Maps for any business type in any city or country and get one row per place — name, category, address, phone, website, rating, review count, coordinates and today&#39;s opening hours — as JSON, CSV or Excel.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>Google Maps is the most complete directory of local businesses there is, but it&#39;s built for finding one coffee shop, not for exporting five hundred of them. Sales teams building lead lists, agencies auditing local SEO, analysts mapping competitors and founders sizing a market all need the same thing: <strong>every result of a Maps search as a row in a spreadsheet</strong>. This guide shows how to get exactly that in seconds, for $2 per 1,000 places.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>Search for a term in a location — <code>dentist</code> in <code>Austin, TX</code>, <code>restoran</code> in <code>Kadıköy, İstanbul</code> — and every place in the results becomes one row. A real row from a recent run:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run VWhqRLB8OSvl4VKOn · 2026-09-28</span></figcaption><pre><code class="language-json">{
+  &quot;placeId&quot;: &quot;ChIJdd_7e2q5yhQRgTF4--acUDI&quot;,
+  &quot;cid&quot;: &quot;15480742402556248168&quot;,
+  &quot;featureId&quot;: &quot;0x14cab96a7bfbdf75:0x32509ce6fb783181&quot;,
+  &quot;name&quot;: &quot;Işıl Garden Rooftop Restaurant &amp; Turkish Cuisine&quot;,
+  &quot;categories&quot;: [
+    &quot;Restoran&quot;,
+    &quot;Kahvaltı restoranı&quot;,
+    &quot;Kafe&quot;
+  ],
+  &quot;primaryCategory&quot;: &quot;Restoran&quot;,
+  &quot;address&quot;: &quot;Şehsuvar Bey, Işıl Sk. No:2, 34126 Fatih/İstanbul&quot;,
+  &quot;street&quot;: &quot;Şehsuvar Bey&quot;,
+  &quot;neighborhood&quot;: &quot;Şehsuvar Bey&quot;,
+  &quot;city&quot;: &quot;Fatih&quot;,
+  &quot;postalCode&quot;: &quot;34126&quot;,
+  &quot;countryCode&quot;: &quot;TR&quot;,
+  &quot;phone&quot;: &quot;0532 596 60 63&quot;,
+  &quot;phoneInternational&quot;: &quot;05325966063&quot;,
+  &quot;website&quot;: &quot;https://isilgardenrooftoprestaurant.com/&quot;,
+  &quot;rating&quot;: 4.9,
+  &quot;reviewsCount&quot;: 437,
+  &quot;latitude&quot;: 41.0031903,
+  &quot;longitude&quot;: 28.968490499999998,
+  &quot;timeZone&quot;: &quot;Europe/Istanbul&quot;,
+  &quot;hoursToday&quot;: {
+    &quot;day&quot;: &quot;Pazartesi&quot;,
+    &quot;hours&quot;: &quot;08:00–01:30&quot;
+  },
+  &quot;openStatus&quot;: &quot;Açık · Kapanış saati:  01:30&quot;,
+  &quot;permanentlyClosed&quot;: false,
+  &quot;temporarilyClosed&quot;: false,
+  &quot;thumbnail&quot;: &quot;https://lh6.googleusercontent.com/-HJlHh3qgJqY/AAAAAAAAAAI/AAAAAAAAAAA/zftY-aObXHI/s44-p-k-no-ns-nd/photo.jpg&quot;,
+  &quot;kgmid&quot;: &quot;/g/11jskwrgrb&quot;,
+  &quot;googleMapsUrl&quot;: &quot;https://www.google.com/maps?cid=15480742402556248168&quot;,
+  &quot;searchQuery&quot;: &quot;restoran&quot;,
+  &quot;searchLocation&quot;: &quot;Kad�k�y, �stanbul&quot;,
+  &quot;rank&quot;: 15,
+  &quot;scrapedAt&quot;: &quot;2026-09-28T10:25:26.728Z&quot;
+}</code></pre></figure><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>name</code>, <code>primaryCategory</code>, <code>categories</code></td>
+<td>Business name and its Google categories</td>
+</tr>
+<tr>
+<td><code>address</code>, <code>street</code>, <code>neighborhood</code>, <code>city</code>, <code>postalCode</code>, <code>countryCode</code></td>
+<td>Full address and its parts</td>
+</tr>
+<tr>
+<td><code>phone</code>, <code>phoneInternational</code></td>
+<td>Local and E.164 phone number, when the business lists one</td>
+</tr>
+<tr>
+<td><code>website</code></td>
+<td>The business&#39;s own site</td>
+</tr>
+<tr>
+<td><code>rating</code>, <code>reviewsCount</code></td>
+<td>Star rating and number of Google reviews</td>
+</tr>
+<tr>
+<td><code>latitude</code>, <code>longitude</code>, <code>timeZone</code></td>
+<td>Location</td>
+</tr>
+<tr>
+<td><code>hoursToday</code>, <code>openStatus</code></td>
+<td>Today&#39;s opening hours and the live status line (&quot;Closed · Opens 8 AM&quot;)</td>
+</tr>
+<tr>
+<td><code>permanentlyClosed</code>, <code>temporarilyClosed</code></td>
+<td>Closure flags</td>
+</tr>
+<tr>
+<td><code>placeId</code>, <code>cid</code>, <code>kgmid</code>, <code>googleMapsUrl</code></td>
+<td>Google identifiers and a direct Maps link</td>
+</tr>
+<tr>
+<td><code>searchQuery</code>, <code>searchLocation</code>, <code>rank</code></td>
+<td>Which search found the place and its position in the results</td>
+</tr>
+</tbody></table>
+</div><h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and type one or more <strong>Search queries</strong>, separated by semicolons: <code>dentist; orthodontist</code>.</li>
+<li>Enter a <strong>Location</strong> — a city, district, region or country.</li>
+<li>Set <strong>Max places per search</strong>. Google itself stops at about 120 results per search, so 120 is the ceiling.</li>
+<li>Optional: set <strong>Language</strong> and <strong>Country</strong> for local results, a <strong>Minimum rating</strong> such as <code>4.0</code>, or <strong>Skip closed places</strong>. You can also search around <strong>Coordinates</strong> with a radius, or paste Google Maps search URLs into <strong>Start URLs</strong>.</li>
+<li>Click <strong>Start</strong>. A 120-place search finishes in a few seconds; export the results as JSON, CSV or Excel.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/google-maps-scraper?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run Google Maps Scraper on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-google-maps-scraper" id="t-google-maps-scraper-python" checked><label for="t-google-maps-scraper-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/google-maps-scraper&quot;).call(run_input={
+    &quot;searchQueries&quot;: &quot;dentist&quot;,
+    &quot;location&quot;: &quot;Austin, TX&quot;,
+    &quot;maxPlacesPerSearch&quot;: 20
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-google-maps-scraper" id="t-google-maps-scraper-js"><label for="t-google-maps-scraper-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/google-maps-scraper&#39;).call({
+    &quot;searchQueries&quot;: &quot;dentist&quot;,
+    &quot;location&quot;: &quot;Austin, TX&quot;,
+    &quot;maxPlacesPerSearch&quot;: 20
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-google-maps-scraper" id="t-google-maps-scraper-bash"><label for="t-google-maps-scraper-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~google-maps-scraper/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~google-maps-scraper/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;searchQueries&quot;:&quot;dentist&quot;,&quot;location&quot;:&quot;Austin, TX&quot;,&quot;maxPlacesPerSearch&quot;:20}&#39;</code></pre></div></p>
+<h2 id="covering-a-whole-city-or-country">Covering a whole city or country</h2>
+<p>Because Google returns roughly 120 places per search, a single search for &quot;restaurant&quot; in &quot;London&quot; only scratches the surface. Split the area instead: run one search per borough, district or postcode, or list several locations across runs. Every row carries <code>searchQuery</code>, <code>searchLocation</code> and <code>placeId</code>, so merging the results and dropping duplicates (the same place found by two neighbouring searches) is one line in a spreadsheet or a script.</p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="local-lead-list-with-e-mail-addresses">Local lead list with e-mail addresses</h3>
+<p>Google Maps gives you the website but not the e-mail. Run the Maps search, then pass its dataset to <a href="https://apify.com/webdatatools/contact-extractor">Email Extractor — Website Contact &amp; Social Finder</a> with <code>inputDatasetId</code> set to the Maps run&#39;s dataset ID and <code>inputField</code> set to <code>website</code>. It visits each business site and returns e-mails, phone numbers and social profiles you can join back on the website.</p>
+<h3 id="competitor-and-market-map">Competitor and market map</h3>
+<p>Search a category across the cities you care about with a minimum rating, and plot <code>latitude</code>/<code>longitude</code> on a map. <code>rating</code> and <code>reviewsCount</code> show who dominates each area; places with many reviews but a low rating are often the easiest to win customers from.</p>
+<h3 id="keeping-a-place-database-fresh">Keeping a place database fresh</h3>
+<p>Schedule the same searches weekly. <code>permanentlyClosed</code> and <code>temporarilyClosed</code> flag businesses that shut down, and new <code>placeId</code> values show new openings — useful for directories, delivery platforms and field-sales territories.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per place</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.002</td><td class="num">$2</td></tr><tr><td>Starter</td><td class="num">$0.0016</td><td class="num">$1.60</td></tr><tr><td>Scale</td><td class="num">$0.0014</td><td class="num">$1.40</td></tr><tr><td>Business</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise+</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>Searches that fail are recorded in the run&#39;s <code>ERRORS</code> record and cost nothing. Set <strong>Maximum cost per run</strong> in Apify to cap what any single run can spend.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>Fast, low-cost lead lists and place databases; any country and language; no browser, so runs finish in seconds</td>
+<td>Only what the search results carry: today&#39;s hours, not the full week; review count, not review text; no photos or Q&amp;A</td>
+</tr>
+<tr>
+<td>Browser-based Maps scrapers that open each place page</td>
+<td>Full weekly hours, review texts, photos</td>
+<td>Slower and more expensive per place</td>
+</tr>
+<tr>
+<td>Google Places API</td>
+<td>Official, documented access</td>
+<td>Requires a Google Cloud billing account and API key; usage-based pricing and terms on storing results</td>
+</tr>
+<tr>
+<td>Copying results by hand</td>
+<td>A handful of places</td>
+<td>Doesn&#39;t scale past one screen of results</td>
+</tr>
+</tbody></table>
+</div><h2 id="faq">FAQ</h2>
+<h3 id="why-do-i-get-at-most-about-120-places-per-search">Why do I get at most about 120 places per search?</h3>
+<p>That&#39;s Google&#39;s own limit — Maps stops returning results after roughly 120 per search. Split large areas into several smaller locations to collect more.</p>
+<h3 id="does-it-extract-reviews-or-the-full-opening-hours">Does it extract reviews or the full opening hours?</h3>
+<p>No. Search results carry today&#39;s hours and the review count only. The tool stays fast and cheap by not opening every place page. Use a dedicated reviews tool if you need review text.</p>
+<h3 id="why-are-phone-or-website-empty-for-some-places">Why are phone or website empty for some places?</h3>
+<p>Not every business lists them on Google Maps. The fields are null when Google has nothing to show.</p>
+<h3 id="does-it-work-outside-the-us">Does it work outside the US?</h3>
+<p>Yes. Set the location to any city or region, and use <strong>Language</strong> and <strong>Country</strong> to get local names and results, for example <code>tr</code> and <code>tr</code> for Turkey.</p>
+<h3 id="is-it-legal-to-scrape-google-maps">Is it legal to scrape Google Maps?</h3>
+<p>The tool collects publicly visible business listings without logging in. How you use the data is your responsibility — especially privacy and anti-spam rules if you contact businesses.</p>
+<h3 id="can-i-switch-from-another-google-maps-scraper-without-changing-my-code">Can I switch from another Google Maps scraper without changing my code?</h3>
+<p>Often yes. Besides its own input names, the tool accepts <code>searchStringsArray</code>, <code>locationQuery</code>, <code>query</code> and <code>keyword</code>, which many existing workflows and AI agents already use.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-JbHOBsm4uEpF81Kat-TnDpOoel74-google-maps-scraper.png" alt="" width="44" height="44"><h4>Google Maps Scraper</h4></div>
+<dl><dt>Price</dt><dd>$2 / 1k places</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/google-maps-scraper?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#covering-a-whole-city-or-country">Covering a whole city or country</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

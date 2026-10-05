@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LinkedIn Jobs Scraper Without Login — Export Job Listings to JSON, CSV or Excel | ChimeraMiND Data</title>
+<meta name="description" content="Search LinkedIn jobs by keyword, location, date, work type and seniority and export titles, companies, salaries, applicant counts and full descriptions — from LinkedIn&#39;s public guest job pages, no account or cookies needed.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/linkedin-jobs-scraper/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LinkedIn Jobs Scraper Without Login — Export Job Listings to JSON, CSV or Excel | ChimeraMiND Data">
+<meta property="og:description" content="Search LinkedIn jobs by keyword, location, date, work type and seniority and export titles, companies, salaries, applicant counts and full descriptions — from LinkedIn&#39;s public guest job pages, no account or cookies needed.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/linkedin-jobs-scraper/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"LinkedIn Jobs Scraper Without Login — Export Job Listings to JSON, CSV or Excel","description":"Search LinkedIn jobs by keyword, location, date, work type and seniority and export titles, companies, salaries, applicant counts and full descriptions — from LinkedIn's public guest job pages, no account or cookies needed.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/linkedin-jobs-scraper/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LinkedIn Jobs Scraper","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/linkedin-jobs-scraper","offers":{"@type":"Offer","price":"1.00","priceCurrency":"USD","description":"per 1,000 jobs"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"LinkedIn Jobs Scraper Without Login — Export Job Listings to JSON, CSV or Excel","item":"https://data.chimeramind.com/guides/linkedin-jobs-scraper/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a LinkedIn account?","acceptedAnswer":{"@type":"Answer","text":"No. The tool reads LinkedIn's public guest job pages, the same ones you can open in a private browser window without signing in."}},{"@type":"Question","name":"Why do I get fewer than 1,000 jobs for a broad search?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn caps each search at roughly 1,000 results. Split a broad search into narrower ones — by location, date posted or experience level — and run them together in one job: separate keywords with semicolons and list several locations."}},{"@type":"Question","name":"Why are salary and applicants empty on some jobs?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn shows them only for some postings. When it doesn't display them publicly, the fields stay empty."}},{"@type":"Question","name":"What happens if LinkedIn throttles requests?","acceptedAnswer":{"@type":"Answer","text":"In the default `auto` proxy mode the tool starts with direct requests and switches to Apify's residential proxy only when it is blocked. Use `always` to go through the proxy from the start, or `never` to stay direct."}},{"@type":"Question","name":"Is scraping LinkedIn jobs legal?","acceptedAnswer":{"@type":"Answer","text":"The tool collects publicly visible job postings only — no profiles, no private data, no login. You are responsible for how you use the data and for complying with LinkedIn's terms and local data-protection law (GDPR, CCPA) in your jurisdiction."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / LinkedIn Jobs Scraper</div>
+<div class="guide"><div><header><div class="kicker">Jobs</div><h1>Scrape LinkedIn job listings without logging in</h1><p class="lede">Search LinkedIn jobs by keyword, location, date, work type and seniority and export titles, companies, salaries, applicant counts and full descriptions — from LinkedIn&#39;s public guest job pages, no account or cookies needed.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>LinkedIn is the largest job board in the world, but its search results are made for scrolling, not for analysis. If you want to track new roles every day, compare salaries across cities or feed postings into your own job board, you need them as data. This guide shows how to turn any LinkedIn job search into rows of JSON, CSV or Excel — <strong>without a LinkedIn account, cookies or a browser extension</strong> — for $1 per 1,000 jobs.</p>
+<h2 id="how-it-works-and-what-it-doesn-39-t-do">How it works (and what it doesn&#39;t do)</h2>
+<p>The tool uses the same public guest job pages that anyone sees on linkedin.com without signing in. It never logs in, never uses your session and never touches profiles or private data. That keeps your own account out of the picture entirely. The trade-off is that it sees what a logged-out visitor sees: LinkedIn caps any single search at roughly 1,000 results, and some fields (salary, applicant count) appear only when LinkedIn shows them publicly.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>One row per job. A real row from a recent run:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run yYlCsu2WgUqV7VtaS · 2026-10-03</span></figcaption><pre><code class="language-json">{
+  &quot;jobId&quot;: &quot;4459313378&quot;,
+  &quot;url&quot;: &quot;https://www.linkedin.com/jobs/view/senior-software-engineer-flightaware-backend-onsite-at-collins-aerospace-4459313378?position=3&amp;pageNum=1&amp;refId=C2lAEHcunnfNauXoPFLAVg%3D%3D&amp;trackingId=bV2Cu0IqVWxxzwVQNp4bJg%3D%3D&quot;,
+  &quot;title&quot;: &quot;Senior Software Engineer - FlightAware Backend (Onsite)&quot;,
+  &quot;company&quot;: &quot;Collins Aerospace&quot;,
+  &quot;companyUrl&quot;: &quot;https://www.linkedin.com/company/collins-aerospace?trk=public_jobs_jserp-result_job-search-card-subtitle&quot;,
+  &quot;location&quot;: &quot;Houston, TX&quot;,
+  &quot;postedAt&quot;: &quot;2026-09-17&quot;,
+  &quot;postedText&quot;: &quot;2 weeks ago&quot;,
+  &quot;salary&quot;: null,
+  &quot;applicants&quot;: 94,
+  &quot;easyApply&quot;: false,
+  &quot;keyword&quot;: &quot;software engineer&quot;,
+  &quot;searchLocation&quot;: &quot;United States&quot;,
+  &quot;description&quot;: &quot;Date Posted:2026-08-25Country:United States of AmericaLocation:US-TX-HOUSTON-011 ~ 11 Greenway Plz ~ GREENWAY, Ste 2900Position Role Type:OnsiteU.S. Citizen, U.S. Person, or Immigration Status Requirements: This job requires a U.S. Person. A U.S. Person is a lawful permanent r…&quot;,
+  &quot;descriptionHtml&quot;: &quot;\n          &lt;strong&gt;Date Posted:&lt;br&gt;&lt;br&gt;&lt;/strong&gt;2026-08-25&lt;br&gt;&lt;br&gt;&lt;strong&gt;Country:&lt;br&gt;&lt;br&gt;&lt;/strong&gt;United States of America&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location:&lt;br&gt;&lt;br&gt;&lt;/strong&gt;US-TX-HOUSTON-011 ~ 11 Greenway Plz ~ GREENWAY, Ste 2900&lt;br&gt;&lt;br&gt;&lt;strong&gt;Position Role Type:&lt;br&gt;&lt;br&gt;&lt;/strong&gt;Onsi…&quot;,
+  &quot;seniority&quot;: &quot;Seniority level\n          \n          \n            Not Applicable&quot;,
+  &quot;employmentType&quot;: &quot;Employment type\n          \n          \n              Full-time&quot;,
+  &quot;jobFunction&quot;: &quot;Industries\n            \n            \n            Aviation and Aerospace Component Manufacturing&quot;,
+  &quot;industries&quot;: null,
+  &quot;scrapedAt&quot;: &quot;2026-10-03T14:23:35.055Z&quot;
+}</code></pre></figure><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>jobId</code>, <code>url</code></td>
+<td>LinkedIn&#39;s posting ID and the direct job link</td>
+</tr>
+<tr>
+<td><code>title</code>, <code>company</code>, <code>companyUrl</code>, <code>companyLogo</code></td>
+<td>Position, hiring company, its LinkedIn page and logo</td>
+</tr>
+<tr>
+<td><code>location</code>, <code>postedAt</code>, <code>postedText</code></td>
+<td>Job location, ISO posting date and LinkedIn&#39;s relative text (&quot;2 weeks ago&quot;)</td>
+</tr>
+<tr>
+<td><code>salary</code>, <code>applicants</code></td>
+<td>Salary range and applicant count, when LinkedIn displays them</td>
+</tr>
+<tr>
+<td><code>seniority</code>, <code>employmentType</code>, <code>jobFunction</code>, <code>industries</code></td>
+<td>The job criteria LinkedIn lists on the posting</td>
+</tr>
+<tr>
+<td><code>description</code>, <code>descriptionHtml</code></td>
+<td>Full description as plain text and HTML (when <strong>Include job descriptions</strong> is on)</td>
+</tr>
+<tr>
+<td><code>easyApply</code></td>
+<td>Whether the job uses LinkedIn&#39;s Easy Apply</td>
+</tr>
+<tr>
+<td><code>keyword</code>, <code>searchLocation</code></td>
+<td>Which of your searches found the job</td>
+</tr>
+</tbody></table>
+</div><h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and type what you&#39;re looking for in <strong>Keywords</strong> — a title or skill such as <code>data analyst</code>. Run several searches at once by separating them with semicolons: <code>python; golang</code>.</li>
+<li>Set <strong>Location</strong> (<code>Berlin</code>, <code>Austin, TX</code>, <code>Germany</code>) or leave it empty for worldwide. Use <strong>Locations</strong> to repeat the same search in several places.</li>
+<li>Narrow it down with <strong>Date posted</strong> (<code>past24h</code>, <code>pastWeek</code>, <code>pastMonth</code>), <strong>Work type</strong> (onsite, remote, hybrid), <strong>Experience level</strong> (internship, entry_level, associate, mid_level, senior, manager, director, executive) and <strong>Job type</strong> (full-time, part-time, contract, temporary, internship, volunteer).</li>
+<li>Set <strong>Max jobs</strong> — the total for the whole run — and decide whether you need <strong>Include job descriptions</strong>. Descriptions need an extra request per job, so leave them off when titles and companies are enough.</li>
+<li>Click <strong>Start</strong> and export to JSON, CSV or Excel.</li>
+</ol>
+<p>Already have a search set up on linkedin.com with the filters you like? Paste its URL into <strong>Search URLs</strong> and its parameters (keywords, location, date, work type, level, job type, company filter) are applied for you.</p>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/linkedin-jobs-scraper?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run LinkedIn Jobs Scraper on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-linkedin-jobs-scraper" id="t-linkedin-jobs-scraper-python" checked><label for="t-linkedin-jobs-scraper-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/linkedin-jobs-scraper&quot;).call(run_input={
+    &quot;keywords&quot;: &quot;software engineer&quot;,
+    &quot;location&quot;: &quot;United States&quot;,
+    &quot;datePosted&quot;: &quot;&quot;
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-linkedin-jobs-scraper" id="t-linkedin-jobs-scraper-js"><label for="t-linkedin-jobs-scraper-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/linkedin-jobs-scraper&#39;).call({
+    &quot;keywords&quot;: &quot;software engineer&quot;,
+    &quot;location&quot;: &quot;United States&quot;,
+    &quot;datePosted&quot;: &quot;&quot;
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-linkedin-jobs-scraper" id="t-linkedin-jobs-scraper-bash"><label for="t-linkedin-jobs-scraper-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~linkedin-jobs-scraper/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~linkedin-jobs-scraper/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;keywords&quot;:&quot;software engineer&quot;,&quot;location&quot;:&quot;United States&quot;,&quot;datePosted&quot;:&quot;&quot;}&#39;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="daily-alert-for-new-roles">Daily alert for new roles</h3>
+<p>Schedule a run every morning with <strong>Date posted</strong> = <code>past24h</code>, your keywords and locations, and descriptions off. Connect the run to Slack or email through Apify&#39;s integrations (or n8n, Make and Zapier) and you get a short list of yesterday&#39;s new postings — without refreshing LinkedIn.</p>
+<h3 id="compare-a-role-across-cities">Compare a role across cities</h3>
+<p>Search one title with several entries in <strong>Locations</strong> — say London, Manchester, Berlin and Amsterdam — and <strong>Max jobs</strong> high enough to cover them. Group the results by <code>searchLocation</code> to compare volume, <code>seniority</code> mix, <code>applicants</code> (competition) and, where published, <code>salary</code>.</p>
+<h3 id="watch-one-company-39-s-openings">Watch one company&#39;s openings</h3>
+<p>Open LinkedIn&#39;s job search, filter on a company, copy the URL and paste it into <strong>Search URLs</strong> with <strong>Keywords</strong> left empty. Each run returns that company&#39;s current public postings; compare <code>jobId</code> values day to day to spot new and closed roles. For companies that use Greenhouse, Lever, Ashby or Workday, the Hiring Signals tool reads their own careers board, which is often more complete.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per job</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>You pay per job returned; there&#39;s no separate charge for compute or proxies. Set <strong>Maximum cost per run</strong> and the tool stops at what the budget covers.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>No login and no account risk; LinkedIn&#39;s own filters; descriptions, salary and applicant counts when public; pay per job</td>
+<td>Logged-out view only; about 1,000 results per search; region-locked jobs may not appear</td>
+</tr>
+<tr>
+<td>Logged-in scrapers and browser extensions</td>
+<td>Data that only signed-in users see</td>
+<td>Use your account session, which LinkedIn&#39;s terms prohibit and which can get the account restricted</td>
+</tr>
+<tr>
+<td>Copy-paste from linkedin.com</td>
+<td>Small one-off checks</td>
+<td>Doesn&#39;t scale, no history</td>
+</tr>
+<tr>
+<td>Paid job-data APIs</td>
+<td>Large historical datasets</td>
+<td>Subscription pricing, less control over the exact search</td>
+</tr>
+</tbody></table>
+</div><h2 id="faq">FAQ</h2>
+<h3 id="do-i-need-a-linkedin-account">Do I need a LinkedIn account?</h3>
+<p>No. The tool reads LinkedIn&#39;s public guest job pages, the same ones you can open in a private browser window without signing in.</p>
+<h3 id="why-do-i-get-fewer-than-1-000-jobs-for-a-broad-search">Why do I get fewer than 1,000 jobs for a broad search?</h3>
+<p>LinkedIn caps each search at roughly 1,000 results. Split a broad search into narrower ones — by location, date posted or experience level — and run them together in one job: separate keywords with semicolons and list several locations.</p>
+<h3 id="why-are-salary-and-applicants-empty-on-some-jobs">Why are salary and applicants empty on some jobs?</h3>
+<p>LinkedIn shows them only for some postings. When it doesn&#39;t display them publicly, the fields stay empty.</p>
+<h3 id="what-happens-if-linkedin-throttles-requests">What happens if LinkedIn throttles requests?</h3>
+<p>In the default <code>auto</code> proxy mode the tool starts with direct requests and switches to Apify&#39;s residential proxy only when it is blocked. Use <code>always</code> to go through the proxy from the start, or <code>never</code> to stay direct.</p>
+<h3 id="is-scraping-linkedin-jobs-legal">Is scraping LinkedIn jobs legal?</h3>
+<p>The tool collects publicly visible job postings only — no profiles, no private data, no login. You are responsible for how you use the data and for complying with LinkedIn&#39;s terms and local data-protection law (GDPR, CCPA) in your jurisdiction.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-zbmmiZ7MqFBDfvtXC-nk8YUgO3Mj-linkedin-jobs-scraper.png" alt="" width="44" height="44"><h4>LinkedIn Jobs Scraper</h4></div>
+<dl><dt>Price</dt><dd>$1 / 1k jobs</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/linkedin-jobs-scraper?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#how-it-works-and-what-it-doesn-t-do">How it works (and what it doesn&#39;t do)</a></li><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

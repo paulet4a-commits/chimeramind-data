@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zillow Scraper — Export Homes for Sale, Rentals and Recently Sold Listings | ChimeraMiND Data</title>
+<meta name="description" content="Collect Zillow search results for any city, ZIP code, neighborhood or filtered search URL — price, address, coordinates, beds, baths, square feet, Zestimate, rent Zestimate, tax-assessed value, broker, photos and sale date — as JSON, CSV or Excel.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/zillow-scraper/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zillow Scraper — Export Homes for Sale, Rentals and Recently Sold Listings | ChimeraMiND Data">
+<meta property="og:description" content="Collect Zillow search results for any city, ZIP code, neighborhood or filtered search URL — price, address, coordinates, beds, baths, square feet, Zestimate, rent Zestimate, tax-assessed value, broker, photos and sale date — as JSON, CSV or Excel.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/zillow-scraper/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Zillow Scraper — Export Homes for Sale, Rentals and Recently Sold Listings","description":"Collect Zillow search results for any city, ZIP code, neighborhood or filtered search URL — price, address, coordinates, beds, baths, square feet, Zestimate, rent Zestimate, tax-assessed value, broker, photos and sale date — as JSON, CSV or Excel.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/zillow-scraper/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zillow Scraper (Homes for Sale, Rent & Sold, Zestimates)","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/zillow-scraper","offers":{"@type":"Offer","price":"1.00","priceCurrency":"USD","description":"per 1,000 homes"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Zillow Scraper — Export Homes for Sale, Rentals and Recently Sold Listings","item":"https://data.chimeramind.com/guides/zillow-scraper/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is soldPrice empty for some sold homes?","acceptedAnswer":{"@type":"Answer","text":"Texas, Utah and other non-disclosure states don't publish sale prices, so `soldPrice` stays empty there. `dateSold` and the Zestimate are still filled."}},{"@type":"Question","name":"Why is the Zestimate missing on some homes?","acceptedAnswer":{"@type":"Answer","text":"Zillow doesn't publish a Zestimate for every property — new construction and rentals often don't have one."}},{"@type":"Question","name":"How many homes can one search return?","acceptedAnswer":{"@type":"Answer","text":"Up to about 820 (20 pages), which is Zillow's own limit. Split big areas by ZIP code or price range to collect more."}},{"@type":"Question","name":"Why does it need a residential proxy?","acceptedAnswer":{"@type":"Answer","text":"Zillow blocks cloud-server IP addresses, so after its first request the tool switches to a US residential proxy. That cost is already included in the per-home price."}},{"@type":"Question","name":"Is scraping Zillow legal?","acceptedAnswer":{"@type":"Answer","text":"The tool reads public search results that anyone can see without an account. Check that your use is allowed where you are, and respect Zillow's terms if you republish listings."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Zillow Scraper</div>
+<div class="guide"><div><header><div class="kicker">Real estate data</div><h1>Export Zillow listings — for sale, for rent and recently sold — to a spreadsheet</h1><p class="lede">Collect Zillow search results for any city, ZIP code, neighborhood or filtered search URL — price, address, coordinates, beds, baths, square feet, Zestimate, rent Zestimate, tax-assessed value, broker, photos and sale date — as JSON, CSV or Excel.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>Zillow is where most US home searches start, and its search results already hold what an investor or analyst needs for a first pass: price, size, Zestimate, rent estimate, tax-assessed value and, for sold homes, the sale date and price. What Zillow doesn&#39;t offer is an export button. This guide shows how to turn any Zillow search into <strong>one row per home</strong>, for $1 per 1,000 homes.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>A real row from a recent run, trimmed:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run ddClyjEm1t7D2e1vT · 2026-09-29</span></figcaption><pre><code class="language-json">{
+  &quot;position&quot;: 24,
+  &quot;zpid&quot;: &quot;48848917&quot;,
+  &quot;url&quot;: &quot;https://www.zillow.com/homedetails/6008-Oberlin-Ave-NE-Seattle-WA-98115/48848917_zpid/&quot;,
+  &quot;status&quot;: &quot;SOLD&quot;,
+  &quot;statusText&quot;: &quot;Sold&quot;,
+  &quot;price&quot;: 2660000,
+  &quot;priceText&quot;: null,
+  &quot;soldPrice&quot;: 2660000,
+  &quot;dateSold&quot;: &quot;2026-09-25&quot;,
+  &quot;address&quot;: &quot;6008 Oberlin Avenue NE, Seattle, WA 98115&quot;,
+  &quot;street&quot;: &quot;6008 Oberlin Avenue NE&quot;,
+  &quot;city&quot;: &quot;Seattle&quot;,
+  &quot;state&quot;: &quot;WA&quot;,
+  &quot;zipcode&quot;: &quot;98115&quot;,
+  &quot;latitude&quot;: 47.672535,
+  &quot;longitude&quot;: -122.27842,
+  &quot;beds&quot;: 5,
+  &quot;baths&quot;: 4,
+  &quot;livingArea&quot;: 3580,
+  &quot;lotArea&quot;: 6033.06,
+  &quot;lotAreaUnit&quot;: &quot;sqft&quot;,
+  &quot;homeType&quot;: &quot;SINGLE_FAMILY&quot;,
+  &quot;daysOnZillow&quot;: null,
+  &quot;zestimate&quot;: 2387400,
+  &quot;rentZestimate&quot;: 6636,
+  &quot;taxAssessedValue&quot;: 2035000,
+  &quot;brokerName&quot;: null,
+  &quot;isBuilding&quot;: false,
+  &quot;buildingName&quot;: null,
+  &quot;units&quot;: [],
+  &quot;imageUrl&quot;: &quot;https://photos.zillowstatic.com/fp/1be43f35367174578cfdc5d224aa18ef-p_e.jpg&quot;,
+  &quot;photos&quot;: [
+    &quot;https://photos.zillowstatic.com/fp/1be43f35367174578cfdc5d224aa18ef-p_e.jpg&quot;,
+    &quot;https://photos.zillowstatic.com/fp/cb23425a3f5c2b733dd7a0f07119d34f-p_e.jpg&quot;,
+    &quot;https://photos.zillowstatic.com/fp/0d4baa407e66c88336aaf19f0af3c410-p_e.jpg&quot;
+  ],
+  &quot;has3DModel&quot;: false,
+  &quot;hasVideo&quot;: false,
+  &quot;isFeatured&quot;: false,
+  &quot;listingLabel&quot;: &quot;RecentChange&quot;,
+  &quot;searchLocation&quot;: &quot;Seattle, WA&quot;,
+  &quot;searchUrl&quot;: null,
+  &quot;listingType&quot;: &quot;sold&quot;,
+  &quot;region&quot;: &quot;Seattle&quot;,
+  &quot;totalResults&quot;: 28793
+}</code></pre></figure><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>zpid</code>, <code>url</code>, <code>status</code>, <code>statusText</code></td>
+<td>Zillow&#39;s home ID, the listing link and its status</td>
+</tr>
+<tr>
+<td><code>price</code>, <code>priceText</code>, <code>soldPrice</code>, <code>dateSold</code></td>
+<td>Asking price, or sale price and date for sold homes</td>
+</tr>
+<tr>
+<td><code>address</code>, <code>street</code>, <code>city</code>, <code>state</code>, <code>zipcode</code>, <code>latitude</code>, <code>longitude</code></td>
+<td>Location</td>
+</tr>
+<tr>
+<td><code>beds</code>, <code>baths</code>, <code>livingArea</code>, <code>lotArea</code>, <code>lotAreaUnit</code>, <code>homeType</code></td>
+<td>The property</td>
+</tr>
+<tr>
+<td><code>zestimate</code>, <code>rentZestimate</code>, <code>taxAssessedValue</code></td>
+<td>Zillow&#39;s value and rent estimates, and the tax assessment</td>
+</tr>
+<tr>
+<td><code>daysOnZillow</code>, <code>brokerName</code>, <code>listingLabel</code></td>
+<td>Market context</td>
+</tr>
+<tr>
+<td><code>imageUrl</code>, <code>photos</code>, <code>has3DModel</code>, <code>hasVideo</code></td>
+<td>Media</td>
+</tr>
+<tr>
+<td><code>isBuilding</code>, <code>buildingName</code>, <code>units</code></td>
+<td>Apartment buildings with their units and prices (rentals)</td>
+</tr>
+<tr>
+<td><code>searchLocation</code>, <code>searchUrl</code>, <code>listingType</code>, <code>region</code>, <code>totalResults</code></td>
+<td>Which search produced the row</td>
+</tr>
+</tbody></table>
+</div><h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and enter <strong>Locations</strong> — a city, ZIP code, neighborhood or county, several separated by <code>;</code> (<code>Austin, TX; 90210; Brooklyn, NY</code>).</li>
+<li>Choose a <strong>Listing type</strong>: homes for sale, for rent, or recently sold.</li>
+<li>Optional: choose <strong>Sort by</strong> (newest, price low or high, beds, baths, size and more).</li>
+<li>Or paste <strong>Search URLs</strong> copied from zillow.com after you set filters such as price range, beds, home type or a drawn map area — they are paged exactly as they are.</li>
+<li>Set <strong>Max listings</strong> per location or URL and click <strong>Start</strong>. Export as JSON, CSV or Excel.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/zillow-scraper?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run Zillow Scraper (Homes for Sale, Rent &amp; Sold, Zestimates) on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-zillow-scraper" id="t-zillow-scraper-python" checked><label for="t-zillow-scraper-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/zillow-scraper&quot;).call(run_input={
+    &quot;locations&quot;: &quot;Austin, TX&quot;,
+    &quot;listingType&quot;: &quot;sale&quot;,
+    &quot;sortBy&quot;: &quot;relevance&quot;
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-zillow-scraper" id="t-zillow-scraper-js"><label for="t-zillow-scraper-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/zillow-scraper&#39;).call({
+    &quot;locations&quot;: &quot;Austin, TX&quot;,
+    &quot;listingType&quot;: &quot;sale&quot;,
+    &quot;sortBy&quot;: &quot;relevance&quot;
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-zillow-scraper" id="t-zillow-scraper-bash"><label for="t-zillow-scraper-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~zillow-scraper/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~zillow-scraper/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;locations&quot;:&quot;Austin, TX&quot;,&quot;listingType&quot;:&quot;sale&quot;,&quot;sortBy&quot;:&quot;relevance&quot;}&#39;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="sold-comps-for-a-neighborhood">Sold comps for a neighborhood</h3>
+<p>Set <strong>Listing type</strong> to recently sold and <strong>Sort by</strong> to newest for the ZIP codes around a property. <code>soldPrice</code>, <code>dateSold</code>, <code>livingArea</code> and <code>beds</code> give you a comps table; dividing price by living area gives price per square foot. Note the non-disclosure caveat below for states like Texas.</p>
+<h3 id="rental-yield-screening">Rental yield screening</h3>
+<p>Run the same area twice — once for sale, once for rent — or use the <code>rentZestimate</code> that comes with for-sale listings. Comparing <code>price</code> with <code>rentZestimate</code> across hundreds of homes is a fast first filter for investors before anyone looks at a single listing.</p>
+<h3 id="from-search-results-to-full-property-details">From search results to full property details</h3>
+<p>Search results don&#39;t include a home&#39;s full description or price history. Pass this tool&#39;s dataset to <a href="https://apify.com/webdatatools/zillow-detail-scraper">Zillow Home Details Scraper</a> with <code>inputDatasetId</code> set to this run&#39;s dataset ID — it reads the <code>url</code> column and returns description, photos and price history for every home you found.</p>
+<h2 id="covering-a-whole-city">Covering a whole city</h2>
+<p>Zillow shows at most 20 pages — about 820 homes — per search. For a large city, split the area: run ZIP codes or neighborhoods separately, or paste several search URLs that split the market by price range. Each row records the search it came from and its <code>zpid</code>, so duplicates across overlapping searches are easy to remove.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per home</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>The residential proxy Zillow requires from cloud servers is included in the price. Searches that fail or find nothing are listed in the <code>ERRORS</code> record and cost nothing.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>Search results at scale: for sale, rentals and sold; any location or your own filtered search URL; proxy included</td>
+<td>Only what search results show — full descriptions, price history, school ratings and agent phone numbers are on each home&#39;s own page</td>
+</tr>
+<tr>
+<td>Browsing zillow.com</td>
+<td>Looking at a few homes</td>
+<td>No export; copying by hand</td>
+</tr>
+<tr>
+<td>MLS access</td>
+<td>Complete, authoritative listing data</td>
+<td>Requires a licensed agent or a paid data agreement</td>
+</tr>
+<tr>
+<td>Commercial real-estate data providers</td>
+<td>Nationwide coverage, history, APIs</td>
+<td>Contracts and pricing aimed at enterprises</td>
+</tr>
+</tbody></table>
+</div><h2 id="faq">FAQ</h2>
+<h3 id="why-is-soldprice-empty-for-some-sold-homes">Why is soldPrice empty for some sold homes?</h3>
+<p>Texas, Utah and other non-disclosure states don&#39;t publish sale prices, so <code>soldPrice</code> stays empty there. <code>dateSold</code> and the Zestimate are still filled.</p>
+<h3 id="why-is-the-zestimate-missing-on-some-homes">Why is the Zestimate missing on some homes?</h3>
+<p>Zillow doesn&#39;t publish a Zestimate for every property — new construction and rentals often don&#39;t have one.</p>
+<h3 id="how-many-homes-can-one-search-return">How many homes can one search return?</h3>
+<p>Up to about 820 (20 pages), which is Zillow&#39;s own limit. Split big areas by ZIP code or price range to collect more.</p>
+<h3 id="why-does-it-need-a-residential-proxy">Why does it need a residential proxy?</h3>
+<p>Zillow blocks cloud-server IP addresses, so after its first request the tool switches to a US residential proxy. That cost is already included in the per-home price.</p>
+<h3 id="is-scraping-zillow-legal">Is scraping Zillow legal?</h3>
+<p>The tool reads public search results that anyone can see without an account. Check that your use is allowed where you are, and respect Zillow&#39;s terms if you republish listings.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-2lecSB0VaFJRDNcI8-Wtq8qRPtPN-zillow-scraper.png" alt="" width="44" height="44"><h4>Zillow Scraper (Homes for Sale, Rent &amp; Sold, Zestimates)</h4></div>
+<dl><dt>Price</dt><dd>$1 / 1k homes</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/zillow-scraper?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#covering-a-whole-city">Covering a whole city</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

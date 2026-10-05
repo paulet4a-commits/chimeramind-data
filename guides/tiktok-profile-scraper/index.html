@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok Profile Scraper — Followers, Likes and Video Stats in Bulk | ChimeraMiND Data</title>
+<meta name="description" content="Get exact follower, following, like and video counts, bio, verified and business flags for any list of public TikTok accounts — and views, likes, comments, shares and saves for specific videos. No login, no cookies.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/tiktok-profile-scraper/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TikTok Profile Scraper — Followers, Likes and Video Stats in Bulk | ChimeraMiND Data">
+<meta property="og:description" content="Get exact follower, following, like and video counts, bio, verified and business flags for any list of public TikTok accounts — and views, likes, comments, shares and saves for specific videos. No login, no cookies.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/tiktok-profile-scraper/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"TikTok Profile Scraper — Followers, Likes and Video Stats in Bulk","description":"Get exact follower, following, like and video counts, bio, verified and business flags for any list of public TikTok accounts — and views, likes, comments, shares and saves for specific videos. No login, no cookies.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/tiktok-profile-scraper/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TikTok Profile Scraper (Followers, Likes, Bio, Video Stats)","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/tiktok-profile-scraper","offers":{"@type":"Offer","price":"1.00","priceCurrency":"USD","description":"per 1,000 profiles"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"TikTok Profile Scraper — Followers, Likes and Video Stats in Bulk","item":"https://data.chimeramind.com/guides/tiktok-profile-scraper/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a TikTok account or cookies?","acceptedAnswer":{"@type":"Answer","text":"No. The tool reads public profile and video pages that anyone can open without logging in."}},{"@type":"Question","name":"How fresh are the numbers?","acceptedAnswer":{"@type":"Answer","text":"They're read live from TikTok when the run starts. Schedule the run if you want a history."}},{"@type":"Question","name":"Can it scrape comments or a list of followers?","acceptedAnswer":{"@type":"Answer","text":"No. TikTok only serves comment lists and follower lists to its own signed app requests, so the tool returns the comment and follower counts, not the lists themselves."}},{"@type":"Question","name":"What input formats does it accept?","acceptedAnswer":{"@type":"Answer","text":"Usernames with or without `@`, profile URLs, and video URLs. It also accepts the field names `usernames`, `username`, `profileUrls`, `videoUrls`, `url`, `urls` and `startUrls`, which makes it easy to call from existing workflows and AI agents."}},{"@type":"Question","name":"Is scraping TikTok legal?","acceptedAnswer":{"@type":"Answer","text":"The tool only reads pages that are publicly visible without an account. Check that your use of the data is allowed where you operate."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / TikTok Profile Scraper</div>
+<div class="guide"><div><header><div class="kicker">Social media data</div><h1>Check TikTok follower counts and video stats for hundreds of accounts at once</h1><p class="lede">Get exact follower, following, like and video counts, bio, verified and business flags for any list of public TikTok accounts — and views, likes, comments, shares and saves for specific videos. No login, no cookies.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>TikTok shows follower counts rounded (&quot;1.8M&quot;) and one profile at a time. If you&#39;re vetting fifty creators for a campaign, tracking how fast a competitor is growing, or reporting on the videos a brand paid for, you need <strong>exact numbers for many accounts in one table</strong>. This guide shows how to get them from public profile and video pages — no TikTok account, no cookies — for $1 per 1,000 profiles.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>The tool returns two kinds of rows, marked by <code>type</code>. A real row from a recent run:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run lLa7RhbQYBpe9wZDY · 2026-09-29</span></figcaption><pre><code class="language-json">{
+  &quot;type&quot;: &quot;profile&quot;,
+  &quot;username&quot;: &quot;nasa&quot;,
+  &quot;nickname&quot;: &quot;NASA&quot;,
+  &quot;userId&quot;: &quot;7664638705177150477&quot;,
+  &quot;secUid&quot;: &quot;MS4wLjABAAAAU9BRVzC8oCaegVnia8IbqWhPb_-dbU7s00Y3wS1_Nx8g5RUaYvyXrpejgjdxTwd6&quot;,
+  &quot;profileUrl&quot;: &quot;https://www.tiktok.com/@nasa&quot;,
+  &quot;bio&quot;: &quot;Making the seemingly impossible, possible.✨&quot;,
+  &quot;bioLink&quot;: null,
+  &quot;verified&quot;: true,
+  &quot;privateAccount&quot;: false,
+  &quot;isOrganization&quot;: true,
+  &quot;commerceCategory&quot;: null,
+  &quot;isSeller&quot;: false,
+  &quot;language&quot;: &quot;en&quot;,
+  &quot;followers&quot;: 1867259,
+  &quot;following&quot;: 23,
+  &quot;likes&quot;: 9779352,
+  &quot;videos&quot;: 49,
+  &quot;friends&quot;: 17,
+  &quot;avatarUrl&quot;: &quot;https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/e5143212a59c09a008bf50f487d54d1f~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=9640&amp;refresh_token=b9846c01&amp;x-expires=1790859600&amp;x-signature=F1yLr5LXE%2FdpPf1FcGoGXN74aeY%3D&amp;t=4d5b0474&amp;ps=13740610&amp;shp=a5d48078&amp;shcp=81…&quot;,
+  &quot;createdAt&quot;: &quot;2026-07-20T15:55:49.000Z&quot;,
+  &quot;input&quot;: &quot;nasa&quot;,
+  &quot;scrapedAt&quot;: &quot;2026-09-29T13:06:46.982Z&quot;
+}</code></pre></figure><p><strong>Profiles</strong> (<code>type: &quot;profile&quot;</code>)</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>username</code>, <code>nickname</code>, <code>userId</code>, <code>secUid</code>, <code>profileUrl</code></td>
+<td>Who the account is</td>
+</tr>
+<tr>
+<td><code>followers</code>, <code>following</code>, <code>likes</code>, <code>videos</code>, <code>friends</code></td>
+<td>Exact counts, not rounded</td>
+</tr>
+<tr>
+<td><code>bio</code>, <code>bioLink</code>, <code>language</code>, <code>avatarUrl</code>, <code>createdAt</code></td>
+<td>Profile details</td>
+</tr>
+<tr>
+<td><code>verified</code>, <code>privateAccount</code>, <code>isOrganization</code>, <code>commerceCategory</code>, <code>isSeller</code></td>
+<td>Account flags</td>
+</tr>
+</tbody></table>
+</div><p><strong>Videos</strong> (<code>type: &quot;video&quot;</code>)</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>videoId</code>, <code>url</code>, <code>description</code>, <code>createdAt</code></td>
+<td>The video</td>
+</tr>
+<tr>
+<td><code>views</code>, <code>likes</code>, <code>comments</code>, <code>shares</code>, <code>saves</code></td>
+<td>Engagement counts</td>
+</tr>
+<tr>
+<td><code>durationSec</code>, <code>hashtags</code>, <code>musicTitle</code>, <code>musicAuthor</code>, <code>coverUrl</code></td>
+<td>Content details</td>
+</tr>
+<tr>
+<td><code>authorUsername</code>, <code>authorNickname</code>, <code>authorVerified</code>, <code>isAd</code>, <code>locationCreated</code></td>
+<td>Author and context</td>
+</tr>
+</tbody></table>
+</div><h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and add <strong>Profiles</strong> — usernames (<code>nasa</code>), handles (<code>@khaby.lame</code>) or profile URLs, one per line or separated by commas.</li>
+<li>Optional: add <strong>Videos</strong> as <code>https://www.tiktok.com/@user/video/…</code> URLs to get their stats.</li>
+<li>Leave <strong>Proxy mode</strong> on <code>auto</code>: pages are fetched directly, and a residential proxy is used only if TikTok shows a bot check.</li>
+<li>Click <strong>Start</strong>. Items are read three at a time; export the rows as JSON, CSV or Excel.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/tiktok-profile-scraper?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run TikTok Profile Scraper (Followers, Likes, Bio, Video Stats) on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-tiktok-profile-scraper" id="t-tiktok-profile-scraper-python" checked><label for="t-tiktok-profile-scraper-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/tiktok-profile-scraper&quot;).call(run_input={
+    &quot;profiles&quot;: [
+        &quot;nasa&quot;
+    ]
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-tiktok-profile-scraper" id="t-tiktok-profile-scraper-js"><label for="t-tiktok-profile-scraper-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/tiktok-profile-scraper&#39;).call({
+    &quot;profiles&quot;: [
+        &quot;nasa&quot;
+    ]
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-tiktok-profile-scraper" id="t-tiktok-profile-scraper-bash"><label for="t-tiktok-profile-scraper-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~tiktok-profile-scraper/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~tiktok-profile-scraper/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;profiles&quot;:[&quot;nasa&quot;]}&#39;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="influencer-vetting-sheet">Influencer vetting sheet</h3>
+<p>Paste your shortlist of creators and export to a spreadsheet. With exact <code>followers</code>, total <code>likes</code> and the <code>videos</code> count side by side, you can compute likes per video and spot accounts whose audience is large but inactive. <code>verified</code>, <code>isOrganization</code> and <code>commerceCategory</code> help separate creators from brands and shops.</p>
+<h3 id="daily-follower-tracking">Daily follower tracking</h3>
+<p>Schedule the same list to run every day and append the results to a sheet or database. Because the counts are exact, day-over-day differences show real growth — useful for monitoring competitors, your own brand accounts or the creators you sponsor.</p>
+<h3 id="campaign-reporting">Campaign reporting</h3>
+<p>After a campaign goes live, put the campaign&#39;s video URLs into <strong>Videos</strong> and run the tool on a schedule. Each run records <code>views</code>, <code>likes</code>, <code>comments</code>, <code>shares</code> and <code>saves</code> for every video, giving you an engagement curve without asking creators for screenshots.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per profile</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>Accounts or videos that don&#39;t exist, are private or are banned go to the run&#39;s <code>ERRORS</code> record and cost nothing.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>Exact counts for many public profiles and specific videos; no login or cookies; cheap enough to run daily</td>
+<td>Does not list a profile&#39;s videos, followers or comments — TikTok serves those only to its own signed app requests</td>
+</tr>
+<tr>
+<td>Checking profiles in the TikTok app</td>
+<td>A few accounts</td>
+<td>Rounded numbers, manual copying</td>
+</tr>
+<tr>
+<td>Influencer marketing platforms</td>
+<td>Audience demographics, discovery search</td>
+<td>Subscription pricing; you&#39;re limited to their database</td>
+</tr>
+<tr>
+<td>Official TikTok APIs</td>
+<td>Your own account&#39;s analytics</td>
+<td>Access is limited to approved apps and use cases</td>
+</tr>
+</tbody></table>
+</div><h2 id="limits-worth-knowing">Limits worth knowing</h2>
+<ul>
+<li>To get stats for a video, give its URL in <strong>Videos</strong>; the tool does not discover a profile&#39;s videos on its own.</li>
+<li>Private accounts return their profile counts but no videos.</li>
+<li><code>avatarUrl</code> and <code>coverUrl</code> are signed by TikTok and expire after some days — download images soon if you need them.</li>
+<li>View counts are the values TikTok shows publicly and can be rounded for very large videos.</li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<h3 id="do-i-need-a-tiktok-account-or-cookies">Do I need a TikTok account or cookies?</h3>
+<p>No. The tool reads public profile and video pages that anyone can open without logging in.</p>
+<h3 id="how-fresh-are-the-numbers">How fresh are the numbers?</h3>
+<p>They&#39;re read live from TikTok when the run starts. Schedule the run if you want a history.</p>
+<h3 id="can-it-scrape-comments-or-a-list-of-followers">Can it scrape comments or a list of followers?</h3>
+<p>No. TikTok only serves comment lists and follower lists to its own signed app requests, so the tool returns the comment and follower counts, not the lists themselves.</p>
+<h3 id="what-input-formats-does-it-accept">What input formats does it accept?</h3>
+<p>Usernames with or without <code>@</code>, profile URLs, and video URLs. It also accepts the field names <code>usernames</code>, <code>username</code>, <code>profileUrls</code>, <code>videoUrls</code>, <code>url</code>, <code>urls</code> and <code>startUrls</code>, which makes it easy to call from existing workflows and AI agents.</p>
+<h3 id="is-scraping-tiktok-legal">Is scraping TikTok legal?</h3>
+<p>The tool only reads pages that are publicly visible without an account. Check that your use of the data is allowed where you operate.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-dFZaq6bVpU1TIlHjO-SmdMM3i4Lx-tiktok-profile-scraper.png" alt="" width="44" height="44"><h4>TikTok Profile Scraper (Followers, Likes, Bio, Video Stats)</h4></div>
+<dl><dt>Price</dt><dd>$1 / 1k profiles</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/tiktok-profile-scraper?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#limits-worth-knowing">Limits worth knowing</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

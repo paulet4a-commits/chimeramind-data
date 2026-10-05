@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greenhouse, Lever, Ashby and Workday Job Scraper — Company Hiring Data via Official APIs | ChimeraMiND Data</title>
+<meta name="description" content="Get every open job a company publishes on its applicant tracking system — or a one-row hiring summary with job counts, departments, locations and hiring velocity — from the boards&#39; official public data.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/greenhouse-lever-job-board-scraper/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Greenhouse, Lever, Ashby and Workday Job Scraper — Company Hiring Data via Official APIs | ChimeraMiND Data">
+<meta property="og:description" content="Get every open job a company publishes on its applicant tracking system — or a one-row hiring summary with job counts, departments, locations and hiring velocity — from the boards&#39; official public data.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/greenhouse-lever-job-board-scraper/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Greenhouse, Lever, Ashby and Workday Job Scraper — Company Hiring Data via Official APIs","description":"Get every open job a company publishes on its applicant tracking system — or a one-row hiring summary with job counts, departments, locations and hiring velocity — from the boards' official public data.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/greenhouse-lever-job-board-scraper/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Hiring Signals Scraper (Greenhouse, Lever, Ashby, Workable)","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/hiring-signals","offers":{"@type":"Offer","price":"2.00","priceCurrency":"USD","description":"per 1,000 results"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Greenhouse, Lever, Ashby and Workday Job Scraper — Company Hiring Data via Official APIs","item":"https://data.chimeramind.com/guides/greenhouse-lever-job-board-scraper/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which ATS platforms are not supported?","acceptedAnswer":{"@type":"Answer","text":"Boards on SuccessFactors, iCIMS, JazzHR or Taleo aren't covered. For those, the row comes back with an `error` saying which boards were checked."}},{"@type":"Question","name":"Why does a company show zero jobs?","acceptedAnswer":{"@type":"Answer","text":"Its board exists but has nothing published right now. You still get a row, with `error: \"No open jobs found\"`, so you can tell an empty board from a missing one."}},{"@type":"Question","name":"Are salaries included?","acceptedAnswer":{"@type":"Answer","text":"Only where the board publishes them — in practice Ashby's compensation data and occasionally Recruitee. All other boards return empty salary fields."}},{"@type":"Question","name":"Why is the description empty for SmartRecruiters and Workday?","acceptedAnswer":{"@type":"Answer","text":"Their public list endpoints carry job metadata only; the description sits behind a separate per-job request that the tool skips to keep runs fast. All other boards return descriptions when **Include job descriptions** is on."}},{"@type":"Question","name":"Does it collect personal data?","acceptedAnswer":{"@type":"Answer","text":"No. It reads job listings that companies publish for candidates. You remain responsible for following each board's terms and the law where you operate."}},{"@type":"Question","name":"Can I run it on a schedule?","acceptedAnswer":{"@type":"Answer","text":"Yes. Schedule it daily in Apify and compare `jobId` values between runs to detect new and closed roles."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Hiring Signals</div>
+<div class="guide"><div><header><div class="kicker">Jobs</div><h1>Scrape company job boards on Greenhouse, Lever, Ashby, Workday and six more ATS</h1><p class="lede">Get every open job a company publishes on its applicant tracking system — or a one-row hiring summary with job counts, departments, locations and hiring velocity — from the boards&#39; official public data.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>Most fast-growing companies don&#39;t post their jobs primarily on job sites — they publish them on their own careers page, which is almost always powered by an applicant tracking system (ATS) such as Greenhouse, Lever or Ashby. Those boards are the most complete and most current source of a company&#39;s open roles, and they are also one of the best public signals of where a company is growing. This guide shows how to read them for any list of companies, either as <strong>one row per job</strong> or as <strong>one hiring summary per company</strong>, for $2 per 1,000 results.</p>
+<h2 id="supported-job-boards">Supported job boards</h2>
+<p>Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Recruitee, Personio, Teamtailor, BambooHR and Workday. The tool reads each board&#39;s official public job-board data (for Greenhouse, for example, <code>boards-api.greenhouse.io</code>) — no browser, no proxy and no login.</p>
+<p>You don&#39;t need to know which ATS a company uses. Give it a bare slug like <code>stripe</code> and it is checked against every board except Workday in parallel; every board that actually has postings is returned. Workday is the one exception: it identifies a company by a tenant <em>and</em> a site, so paste the full board URL (<code>https://&lt;tenant&gt;.wd&lt;N&gt;.myworkdayjobs.com/&lt;site&gt;</code>).</p>
+<h2 id="what-you-get">What you get</h2>
+<p>In <strong>One row per job</strong> mode, each posting becomes a row. A real row from a recent run:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run iVOtSP7mYoUdXsYbo · 2026-10-03</span></figcaption><pre><code class="language-json">{
+  &quot;company&quot;: &quot;apify&quot;,
+  &quot;companyName&quot;: null,
+  &quot;ats&quot;: &quot;ashby&quot;,
+  &quot;boardUrl&quot;: &quot;https://jobs.ashbyhq.com/apify&quot;,
+  &quot;totalJobs&quot;: 11,
+  &quot;remoteJobs&quot;: 11,
+  &quot;jobsByDepartment&quot;: {
+    &quot;Engineering&quot;: 8,
+    &quot;GTM&quot;: 3
+  },
+  &quot;jobsByLocation&quot;: {
+    &quot;Prague&quot;: 8,
+    &quot;Czechia&quot;: 3
+  },
+  &quot;newestPostedAt&quot;: &quot;2026-10-01T12:40:02.575Z&quot;,
+  &quot;oldestPostedAt&quot;: &quot;2025-12-18T14:24:45.284Z&quot;,
+  &quot;jobsPostedLast30Days&quot;: 2,
+  &quot;topTitles&quot;: [
+    &quot;Senior Backend Engineer, Billing&quot;,
+    &quot;Fullstack Engineer, Store&quot;,
+    &quot;Performance Marketing Lead&quot;
+  ],
+  &quot;hiringVelocity&quot;: &quot;low&quot;,
+  &quot;error&quot;: null,
+  &quot;scrapedAt&quot;: &quot;2026-10-03T15:21:16.160Z&quot;
+}</code></pre></figure><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>company</code>, <code>companyName</code>, <code>ats</code></td>
+<td>Your input, the name the board reports, and which ATS answered</td>
+</tr>
+<tr>
+<td><code>jobId</code>, <code>title</code>, <code>url</code></td>
+<td>The board&#39;s own posting ID, the job title and the public job page</td>
+</tr>
+<tr>
+<td><code>department</code>, <code>team</code>, <code>location</code>, <code>isRemote</code></td>
+<td>Org unit, sub-team, location as published, and a remote flag</td>
+</tr>
+<tr>
+<td><code>employmentType</code>, <code>postedAt</code></td>
+<td>Employment type as each ATS labels it, and the ISO date the posting went live</td>
+</tr>
+<tr>
+<td><code>salaryMin</code>, <code>salaryMax</code>, <code>salaryCurrency</code></td>
+<td>Pay ranges where the board publishes them (in practice Ashby, sometimes Recruitee)</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Plain-text job description, HTML stripped, up to 5,000 characters (optional)</td>
+</tr>
+</tbody></table>
+</div><p>In <strong>One row per company</strong> mode, each company becomes a summary: <code>totalJobs</code>, <code>remoteJobs</code>, <code>jobsByDepartment</code>, <code>jobsByLocation</code> (top 10), <code>newestPostedAt</code>, <code>oldestPostedAt</code>, <code>jobsPostedLast30Days</code>, <code>topTitles</code> (the five newest), <code>boardUrl</code> and <code>hiringVelocity</code> — <code>high</code> for 20+ new jobs in the last 30 days, <code>medium</code> for 5+, <code>low</code> for 1+, otherwise <code>none</code>.</p>
+<h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and add companies to <strong>Companies</strong>: bare slugs (<code>stripe</code>), board URLs (<code>https://jobs.lever.co/spotify</code>) or a mix.</li>
+<li>Choose <strong>Output mode</strong>: <em>One row per job</em> for job aggregators and recruiters, <em>One row per company</em> for sales intelligence and competitor tracking.</li>
+<li>Leave <strong>Max jobs per company</strong> at 200 (it caps cost in job mode and is ignored in company mode, where the summary always counts the whole board).</li>
+<li>Turn on <strong>Include job descriptions</strong> only if you need the full text, then click <strong>Start</strong> and export.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/hiring-signals?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run Hiring Signals Scraper (Greenhouse, Lever, Ashby, Workable) on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-hiring-signals" id="t-hiring-signals-python" checked><label for="t-hiring-signals-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/hiring-signals&quot;).call(run_input={
+    &quot;companies&quot;: [
+        &quot;stripe&quot;,
+        &quot;<a href="https://jobs.lever.co/spotify">https://jobs.lever.co/spotify</a>&quot;,
+        &quot;<a href="https://jobs.ashbyhq.com/ashby">https://jobs.ashbyhq.com/ashby</a>&quot;
+    ],
+    &quot;outputMode&quot;: &quot;jobs&quot;,
+    &quot;maxJobsPerCompany&quot;: 200
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-hiring-signals" id="t-hiring-signals-js"><label for="t-hiring-signals-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/hiring-signals&#39;).call({
+    &quot;companies&quot;: [
+        &quot;stripe&quot;,
+        &quot;<a href="https://jobs.lever.co/spotify">https://jobs.lever.co/spotify</a>&quot;,
+        &quot;<a href="https://jobs.ashbyhq.com/ashby">https://jobs.ashbyhq.com/ashby</a>&quot;
+    ],
+    &quot;outputMode&quot;: &quot;jobs&quot;,
+    &quot;maxJobsPerCompany&quot;: 200
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-hiring-signals" id="t-hiring-signals-bash"><label for="t-hiring-signals-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~hiring-signals/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~hiring-signals/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;companies&quot;:[&quot;stripe&quot;,&quot;<a href="https://jobs.lever.co/spotify&amp;quot;,&amp;quot;https://jobs.ashbyhq.com/ashby&amp;quot;%5D,&amp;quot;outputMode&amp;quot;:&amp;quot;jobs&amp;quot;,&amp;quot;maxJobsPerCompany&amp;quot;:200%7D&amp;#39">https://jobs.lever.co/spotify&amp;quot;,&amp;quot;https://jobs.ashbyhq.com/ashby&amp;quot;],&amp;quot;outputMode&amp;quot;:&amp;quot;jobs&amp;quot;,&amp;quot;maxJobsPerCompany&amp;quot;:200}&amp;#39</a>;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="sales-find-accounts-that-are-scaling-right-now">Sales: find accounts that are scaling right now</h3>
+<p>Put your target-account list in <strong>Companies</strong>, choose <em>One row per company</em> and sort by <code>jobsPostedLast30Days</code>. A company with <code>hiringVelocity: high</code> and twenty new engineering roles is building something and has budget; <code>jobsByDepartment</code> tells you which team to talk to. Re-run monthly to catch accounts as they accelerate.</p>
+<h3 id="track-competitors-39-hiring-every-day">Track competitors&#39; hiring every day</h3>
+<p>Schedule a daily run in job mode for your competitors&#39; boards and compare <code>jobId</code> values with the previous run: new IDs are new roles, missing IDs are closed ones. A sudden cluster of roles in a new city or a new department often shows a strategy move months before any announcement.</p>
+<h3 id="build-a-niche-job-board">Build a niche job board</h3>
+<p>Collect slugs of companies in your niche (climate tech, Rust shops, remote-first startups), run job mode with descriptions on, and filter on <code>isRemote</code> or <code>department</code>. Every row links to the original <code>url</code>, so applicants go straight to the employer&#39;s own page.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.002</td><td class="num">$2</td></tr><tr><td>Starter</td><td class="num">$0.0016</td><td class="num">$1.60</td></tr><tr><td>Scale</td><td class="num">$0.0014</td><td class="num">$1.40</td></tr><tr><td>Business</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise+</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>Most boards answer with all their jobs in a single request (SmartRecruiters and Workday paginate internally for very large boards), and you pay one result per job row or per company summary. Company mode is the cheap way to scan a large list: one row per company regardless of how many jobs it has. Set <strong>Maximum cost per run</strong> and the tool trims its work to fit.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>Ten ATS normalised into one schema; finds the right board from a bare slug; company summaries with hiring velocity</td>
+<td>Only companies that run one of the ten supported boards; salaries only where the board publishes them</td>
+</tr>
+<tr>
+<td>General job-site scrapers</td>
+<td>Broad coverage across many employers by keyword</td>
+<td>Duplicated and reposted listings; less complete per company; job sites often block automated access</td>
+</tr>
+<tr>
+<td>Writing your own ATS clients</td>
+<td>Full control</td>
+<td>Ten payload shapes (JSON, XML, RSS), a dozen date formats, pagination quirks and boards that answer HTTP 200 for empty, merely reserved slugs</td>
+</tr>
+<tr>
+<td>Paid hiring-data providers</td>
+<td>Historical data and huge coverage</td>
+<td>Subscription pricing; you don&#39;t see how the data was collected</td>
+</tr>
+</tbody></table>
+</div><h2 id="faq">FAQ</h2>
+<h3 id="which-ats-platforms-are-not-supported">Which ATS platforms are not supported?</h3>
+<p>Boards on SuccessFactors, iCIMS, JazzHR or Taleo aren&#39;t covered. For those, the row comes back with an <code>error</code> saying which boards were checked.</p>
+<h3 id="why-does-a-company-show-zero-jobs">Why does a company show zero jobs?</h3>
+<p>Its board exists but has nothing published right now. You still get a row, with <code>error: &quot;No open jobs found&quot;</code>, so you can tell an empty board from a missing one.</p>
+<h3 id="are-salaries-included">Are salaries included?</h3>
+<p>Only where the board publishes them — in practice Ashby&#39;s compensation data and occasionally Recruitee. All other boards return empty salary fields.</p>
+<h3 id="why-is-the-description-empty-for-smartrecruiters-and-workday">Why is the description empty for SmartRecruiters and Workday?</h3>
+<p>Their public list endpoints carry job metadata only; the description sits behind a separate per-job request that the tool skips to keep runs fast. All other boards return descriptions when <strong>Include job descriptions</strong> is on.</p>
+<h3 id="does-it-collect-personal-data">Does it collect personal data?</h3>
+<p>No. It reads job listings that companies publish for candidates. You remain responsible for following each board&#39;s terms and the law where you operate.</p>
+<h3 id="can-i-run-it-on-a-schedule">Can I run it on a schedule?</h3>
+<p>Yes. Schedule it daily in Apify and compare <code>jobId</code> values between runs to detect new and closed roles.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-IzYAKYeRydOFJMgJQ-ehmKwB2RIR-hiring-signals.png" alt="" width="44" height="44"><h4>Hiring Signals Scraper (Greenhouse, Lever, Ashby, Workable)</h4></div>
+<dl><dt>Price</dt><dd>$2 / 1k results</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/hiring-signals?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#supported-job-boards">Supported job boards</a></li><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

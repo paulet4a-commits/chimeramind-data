@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Transcript Scraper — Get Video Transcripts as JSON Without an API Key | ChimeraMiND Data</title>
+<meta name="description" content="Pull the full transcript and timestamped caption segments of any public YouTube video or a channel&#39;s latest uploads — manual or auto-generated, in your preferred language — ready for search, summaries and RAG.">
+<link rel="canonical" href="https://data.chimeramind.com/guides/youtube-transcript-api/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YouTube Transcript Scraper — Get Video Transcripts as JSON Without an API Key | ChimeraMiND Data">
+<meta property="og:description" content="Pull the full transcript and timestamped caption segments of any public YouTube video or a channel&#39;s latest uploads — manual or auto-generated, in your preferred language — ready for search, summaries and RAG.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/youtube-transcript-api/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"YouTube Transcript Scraper — Get Video Transcripts as JSON Without an API Key","description":"Pull the full transcript and timestamped caption segments of any public YouTube video or a channel's latest uploads — manual or auto-generated, in your preferred language — ready for search, summaries and RAG.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/youtube-transcript-api/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YouTube Transcript Scraper","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/youtube-transcript-scraper","offers":{"@type":"Offer","price":"4.00","priceCurrency":"USD","description":"per 1,000 videos"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"YouTube Transcript Scraper — Get Video Transcripts as JSON Without an API Key","item":"https://data.chimeramind.com/guides/youtube-transcript-api/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a YouTube API key?","acceptedAnswer":{"@type":"Answer","text":"No. The tool reads the captions YouTube itself serves for public videos. You only need an Apify account."}},{"@type":"Question","name":"What happens if a video has no captions?","acceptedAnswer":{"@type":"Answer","text":"You get a row with `error: \"no captions\"` and no charge. Videos whose uploader turned captions off, and some age-restricted videos, fall into this group."}},{"@type":"Question","name":"Can I get transcripts in another language?","acceptedAnswer":{"@type":"Answer","text":"Set `language` to the two-letter code you want, such as `de` or `es`. If that track doesn't exist, the fallback order above applies, and `availableLanguages` shows every language the video actually offers."}},{"@type":"Question","name":"Does it work on private or unlisted videos?","acceptedAnswer":{"@type":"Answer","text":"Unlisted videos work when you have the URL. Private videos return an error, because their captions aren't public."}},{"@type":"Question","name":"Why do long videos take longer?","acceptedAnswer":{"@type":"Answer","text":"A two-hour video can have thousands of caption segments. Parsing them takes 10–20 seconds per video, which is normal. Split very large lists into several runs if you want results sooner."}},{"@type":"Question","name":"Can an AI assistant use it directly?","acceptedAnswer":{"@type":"Answer","text":"Yes. Through the Apify MCP server, an assistant with MCP support can run the tool on a video link and read the transcript itself — for example to answer questions about a talk you haven't watched yet."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / YouTube Transcript Scraper</div>
+<div class="guide"><div><header><div class="kicker">Video &amp; AI data</div><h1>Download YouTube transcripts in bulk, with timestamps, as clean JSON</h1><p class="lede">Pull the full transcript and timestamped caption segments of any public YouTube video or a channel&#39;s latest uploads — manual or auto-generated, in your preferred language — ready for search, summaries and RAG.</p>
+<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<article class="prose"><p>Transcripts are the most useful part of a YouTube video for anything that isn&#39;t watching it: summarising a talk, searching a course library, quoting a podcast, or feeding an AI model that answers questions about a channel. YouTube shows them one video at a time behind a menu, and the official Data API doesn&#39;t hand caption text to third-party apps without the channel owner&#39;s authorisation. This guide shows how to get <strong>the full transcript of many videos at once</strong> — plain text plus timestamped segments — for $4 per 1,000 videos.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>One row per video: the video and channel identifiers, the title, the duration, which caption track was used, every language the video offers, the complete transcript as one <code>text</code> string and — unless you turn it off — a <code>segments</code> array of <code>{start, dur, text}</code> objects. A real row from a recent run, trimmed:</p>
+<figure class="sample"><figcaption><span>Real output</span><span class="mono">run s27ZjxNT82p91K2d8 · 2026-09-27</span></figcaption><pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;jNQXAC9IVRw&quot;,
+  &quot;url&quot;: &quot;https://www.youtube.com/watch?v=jNQXAC9IVRw&quot;,
+  &quot;title&quot;: &quot;Me at the zoo&quot;,
+  &quot;channelName&quot;: &quot;jawed&quot;,
+  &quot;channelId&quot;: &quot;UC4QobU6STFB0P71PMvOGN5A&quot;,
+  &quot;durationSeconds&quot;: 19,
+  &quot;language&quot;: &quot;en&quot;,
+  &quot;languageName&quot;: &quot;English&quot;,
+  &quot;isAutoGenerated&quot;: false,
+  &quot;availableLanguages&quot;: [
+    &quot;en&quot;,
+    &quot;de&quot;
+  ],
+  &quot;text&quot;: &quot;All right, so here we are, in front of the elephants the cool thing about these guys is that they have really... really really long trunks and that&#39;s cool (baaaaaaaaaaahhh!!) and that&#39;s pretty much all there is to say&quot;,
+  &quot;segments&quot;: [
+    {
+      &quot;start&quot;: 1.2,
+      &quot;dur&quot;: 2.16,
+      &quot;text&quot;: &quot;All right, so here we are, in front of the elephants&quot;
+    },
+    {
+      &quot;start&quot;: 5.318,
+      &quot;dur&quot;: 2.656,
+      &quot;text&quot;: &quot;the cool thing about these guys is that they have really...&quot;
+    },
+    {
+      &quot;start&quot;: 7.974,
+      &quot;dur&quot;: 4.642,
+      &quot;text&quot;: &quot;really really long trunks&quot;
+    }
+  ],
+  &quot;segmentCount&quot;: 6,
+  &quot;scrapedAt&quot;: &quot;2026-09-27T23:02:10.706Z&quot;
+}</code></pre></figure><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>videoId</code>, <code>url</code>, <code>title</code></td>
+<td>The video</td>
+</tr>
+<tr>
+<td><code>channelName</code>, <code>channelId</code></td>
+<td>Who uploaded it</td>
+</tr>
+<tr>
+<td><code>durationSeconds</code></td>
+<td>Length of the video</td>
+</tr>
+<tr>
+<td><code>language</code>, <code>languageName</code>, <code>isAutoGenerated</code></td>
+<td>Which caption track was extracted, and whether YouTube generated it automatically</td>
+</tr>
+<tr>
+<td><code>availableLanguages</code></td>
+<td>Every caption language the video offers</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>The whole transcript as one plain-text string</td>
+</tr>
+<tr>
+<td><code>segments</code>, <code>segmentCount</code></td>
+<td>Timestamped pieces with start time and duration in seconds</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>Why a video had no transcript (for example <code>no captions</code>)</td>
+</tr>
+</tbody></table>
+</div><h2 id="which-caption-track-you-get">Which caption track you get</h2>
+<p>You set a preferred <code>language</code> (two-letter code, <code>en</code> by default). If the video has captions in that language, you get them. If not, the tool falls back in this order: the first manually created track in any language, then the first auto-generated track (when <code>includeAutoGenerated</code> is on, which is the default), then any track at all. The row always tells you what you received through <code>language</code> and <code>isAutoGenerated</code>, so a pipeline can filter out auto-captions or non-English rows if it needs to.</p>
+<h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Open the tool and paste videos into <strong>Video URLs</strong> — full <code>watch?v=</code> links, Shorts links, <code>youtu.be</code> links or bare 11-character IDs all work, one per line.</li>
+<li>Or set <strong>Channel URL</strong> (for example <code>https://www.youtube.com/@channelname</code>) and <strong>Max videos</strong> to take the channel&#39;s latest uploads instead. A channel URL overrides the video list.</li>
+<li>Pick your <strong>Language</strong>, and decide whether to <strong>Include auto-generated captions</strong> and <strong>Include segments</strong>. Turn segments off if you only need the text — the dataset gets much smaller.</li>
+<li>Leave <strong>Proxy mode</strong> on <code>auto</code>: requests go out directly and switch to a residential proxy only if YouTube starts rate-limiting.</li>
+<li>Click <strong>Start</strong> and export as JSON, CSV or Excel, or read the rows through the API.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/youtube-transcript-scraper?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run YouTube Transcript Scraper on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-youtube-transcript-scraper" id="t-youtube-transcript-scraper-python" checked><label for="t-youtube-transcript-scraper-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
+run = client.actor(&quot;webdatatools/youtube-transcript-scraper&quot;).call(run_input={
+    &quot;videoUrls&quot;: [
+        &quot;<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">https://www.youtube.com/watch?v=dQw4w9WgXcQ</a>&quot;
+    ],
+    &quot;maxVideos&quot;: 10,
+    &quot;language&quot;: &quot;en&quot;
+})</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-youtube-transcript-scraper" id="t-youtube-transcript-scraper-js"><label for="t-youtube-transcript-scraper-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/youtube-transcript-scraper&#39;).call({
+    &quot;videoUrls&quot;: [
+        &quot;<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">https://www.youtube.com/watch?v=dQw4w9WgXcQ</a>&quot;
+    ],
+    &quot;maxVideos&quot;: 10,
+    &quot;language&quot;: &quot;en&quot;
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-youtube-transcript-scraper" id="t-youtube-transcript-scraper-bash"><label for="t-youtube-transcript-scraper-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~youtube-transcript-scraper/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~youtube-transcript-scraper/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;videoUrls&quot;:[&quot;<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;quot;%5D,&amp;quot;maxVideos&amp;quot;:10,&amp;quot;language&amp;quot;:&amp;quot;en&amp;quot;%7D&amp;#39">https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;quot;],&amp;quot;maxVideos&amp;quot;:10,&amp;quot;language&amp;quot;:&amp;quot;en&amp;quot;}&amp;#39</a>;</code></pre></div></p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="turn-a-channel-into-a-searchable-knowledge-base">Turn a channel into a searchable knowledge base</h3>
+<p>Run the tool with a <strong>Channel URL</strong> and a generous <strong>Max videos</strong>, then pass the run&#39;s dataset to <a href="https://apify.com/webdatatools/rag-text-chunker">RAG Text Chunker</a> with <code>inputDatasetId</code> set to the transcript run&#39;s dataset ID and <code>textField</code> set to <code>text</code>. You get token-counted chunks with the video URL attached, ready for embeddings and a vector database — the base of a &quot;chat with this channel&quot; bot.</p>
+<h3 id="timestamped-quotes-and-chapter-drafts">Timestamped quotes and chapter drafts</h3>
+<p>Keep <code>includeSegments</code> on. Each segment has a <code>start</code> time in seconds, so a script can find the moment a phrase is said and build a link like <code>https://www.youtube.com/watch?v=VIDEO_ID&amp;t=754s</code>. Grouping segments by minute or by topic gives you a first draft of video chapters.</p>
+<h3 id="summaries-and-content-repurposing">Summaries and content repurposing</h3>
+<p>Send <code>text</code> to the language model of your choice to produce summaries, show notes, blog drafts or social posts. Because the transcript arrives as structured data, it&#39;s easy to schedule: a daily run on a channel URL picks up new uploads and your summariser processes only the new rows.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per video</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.004</td><td class="num">$4</td></tr><tr><td>Starter</td><td class="num">$0.0032</td><td class="num">$3.20</td></tr><tr><td>Scale</td><td class="num">$0.0028</td><td class="num">$2.80</td></tr><tr><td>Business</td><td class="num">$0.0024</td><td class="num">$2.40</td></tr><tr><td>Enterprise</td><td class="num">$0.0024</td><td class="num">$2.40</td></tr><tr><td>Enterprise+</td><td class="num">$0.0024</td><td class="num">$2.40</td></tr></tbody></table></div>
+<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>Videos with no captions return an error row with <code>error: &quot;no captions&quot;</code> and are <strong>not charged</strong> — you pay only for transcripts you actually receive.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This tool</strong></td>
+<td>Bulk extraction from video lists or a whole channel; language fallback; timestamped segments; no API key; scheduling and API access through Apify</td>
+<td>Captions only — no views, likes or comments (use a video-details scraper for those)</td>
+</tr>
+<tr>
+<td>YouTube&#39;s own &quot;Show transcript&quot; panel</td>
+<td>One video, reading by eye</td>
+<td>Manual copy-paste, no export, no bulk</td>
+</tr>
+<tr>
+<td>Official YouTube Data API</td>
+<td>Video metadata and your own channel&#39;s captions</td>
+<td>Caption downloads require the channel owner&#39;s authorisation; quota limits</td>
+</tr>
+<tr>
+<td>Open-source transcript libraries</td>
+<td>Free, local scripts</td>
+<td>Datacenter and home IPs get rate-limited at volume; you maintain retries, proxies and parsing yourself</td>
+</tr>
+<tr>
+<td>Speech-to-text on the audio</td>
+<td>Videos that have no captions at all</td>
+<td>Much slower and more expensive; you need to download the audio first</td>
+</tr>
+</tbody></table>
+</div><h2 id="faq">FAQ</h2>
+<h3 id="do-i-need-a-youtube-api-key">Do I need a YouTube API key?</h3>
+<p>No. The tool reads the captions YouTube itself serves for public videos. You only need an Apify account.</p>
+<h3 id="what-happens-if-a-video-has-no-captions">What happens if a video has no captions?</h3>
+<p>You get a row with <code>error: &quot;no captions&quot;</code> and no charge. Videos whose uploader turned captions off, and some age-restricted videos, fall into this group.</p>
+<h3 id="can-i-get-transcripts-in-another-language">Can I get transcripts in another language?</h3>
+<p>Set <code>language</code> to the two-letter code you want, such as <code>de</code> or <code>es</code>. If that track doesn&#39;t exist, the fallback order above applies, and <code>availableLanguages</code> shows every language the video actually offers.</p>
+<h3 id="does-it-work-on-private-or-unlisted-videos">Does it work on private or unlisted videos?</h3>
+<p>Unlisted videos work when you have the URL. Private videos return an error, because their captions aren&#39;t public.</p>
+<h3 id="why-do-long-videos-take-longer">Why do long videos take longer?</h3>
+<p>A two-hour video can have thousands of caption segments. Parsing them takes 10–20 seconds per video, which is normal. Split very large lists into several runs if you want results sooner.</p>
+<h3 id="can-an-ai-assistant-use-it-directly">Can an AI assistant use it directly?</h3>
+<p>Yes. Through the Apify MCP server, an assistant with MCP support can run the tool on a video link and read the transcript itself — for example to answer questions about a talk you haven&#39;t watched yet.</p>
+</article></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-LHtsuOB3yYwpkLBwb-Eh7c9OIENP-youtube-transcript-scraper.png" alt="" width="44" height="44"><h4>YouTube Transcript Scraper</h4></div>
+<dl><dt>Price</dt><dd>$4 / 1k videos</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/youtube-transcript-scraper?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#which-caption-track-you-get">Which caption track you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>
