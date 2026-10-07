@@ -1,79 +1,56 @@
-// Pulls everything the guides quote from the live Apify API, so no number on the site is typed by hand:
-// actor metadata (title, price, users, icon, input schema prefill) and REAL output rows from our latest
-// successful run of each actor. Writes data/actors.json and data/samples/<actor>.json. Reads only, costs nothing.
-// Usage: node fetch-data.mjs [--run-missing]   (--run-missing: one default-input platform run for a guide actor that has
-// no successful run inside the 7-day retention window, so its sample is still real output; ~$0.001 each)
+// Read-only live catalog + existing run samples. No actor starts, pushes or price updates.
 import fs from 'node:fs';
 import path from 'node:path';
+import { getApifyToken } from './src/credentials.mjs';
+import { createApi, primaryPrice } from './src/apify.mjs';
+import { validateActors, hash } from './src/quality.mjs';
 
+if (process.argv.length > 2) throw new Error('Fetch accepts no run flags. Starting Actors is disabled.');
 const here = import.meta.dirname;
-const actorsDir = path.join(here, '..', 'actors');
-const TOKEN = fs.readFileSync(path.join(actorsDir, '.secrets', 'apify-token.txt'), 'utf8').trim();
-const api = async (p) => (await fetch(`https://api.apify.com/v2/${p}${p.includes('?') ? '&' : '?'}token=${TOKEN}`)).json();
-
-const guides = fs.readdirSync(path.join(here, 'content', 'guides')).filter((f) => f.endsWith('.md'));
-const wanted = new Set(guides.map((f) => /^actor:\s*(\S+)/m.exec(fs.readFileSync(path.join(here, 'content', 'guides', f), 'utf8'))?.[1]).filter(Boolean));
-
-const primaryPrice = (d) => {
-    const ev = (d.pricingInfos ?? []).filter((p) => !p.startedAt || Date.parse(p.startedAt) <= Date.now()).at(-1)?.pricingPerEvent?.actorChargeEvents ?? {};
-    const e = Object.values(ev).find((x) => x.isPrimaryEvent) ?? Object.values(ev).find((x) => x.eventTieredPricingUsd || (x.eventPriceUsd && !x.isOneTimeEvent));
-    if (!e) return null;
-    const tiers = e.eventTieredPricingUsd ? Object.fromEntries(Object.entries(e.eventTieredPricingUsd).map(([k, v]) => [k, v.tieredEventPriceUsd])) : { FREE: e.eventPriceUsd };
-    return { unit: e.eventTitle ?? 'result', usd: tiers.FREE, tiers };
-};
-
+const token = getApifyToken();
+const api = createApi(token);
+const baseline = JSON.parse(fs.readFileSync(path.join(here, 'data/actors.json')));
+const lock = JSON.parse(fs.readFileSync(path.join(here, 'data/catalog-lock.json')));
+const sampleDir = path.join(here, 'data/samples');
+const samples = Object.fromEntries(fs.readdirSync(sampleDir).filter(f => f.endsWith('.json')).map(f => [f, fs.readFileSync(path.join(sampleDir, f), 'utf8')]));
+const wanted = new Set(Object.keys(samples).map(f => f.slice(0, -5)));
+const listing = (await api('acts?my=1&limit=1000')).data;
+if (!Array.isArray(listing?.items) || listing.total > listing.items.length) throw new Error('Incomplete live Actor catalog');
+const out = {};
 const clip = (v, depth = 0) => {
     if (typeof v === 'string') return v.length > 280 ? `${v.slice(0, 277)}…` : v;
-    if (Array.isArray(v)) return v.slice(0, depth ? 3 : 5).map((x) => clip(x, depth + 1));
+    if (Array.isArray(v)) return v.slice(0, depth ? 3 : 5).map(x => clip(x, depth + 1));
     if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, clip(x, depth + 1)]));
     return v;
 };
-
-const acts = (await api('acts?my=1&limit=500')).data.items;
-const out = {};
-fs.mkdirSync(path.join(here, 'data', 'samples'), { recursive: true });
-for (const a of acts) {
+for (const a of listing.items) {
     const d = (await api(`acts/${a.id}`)).data;
     if (!d?.isPublic) continue;
-    let prefill = {};
-    try {
-        const schema = JSON.parse(fs.readFileSync(path.join(actorsDir, d.name, '.actor', 'input_schema.json'), 'utf8'));
-        for (const [k, f] of Object.entries(schema.properties ?? {})) {
-            const v = f.prefill ?? f.default;
-            if (v !== undefined && !f.sectionCaption && Object.keys(prefill).length < 3) prefill[k] = v;
-        }
-    } catch {
-        prefill = {};
-    }
-    out[d.name] = {
-        name: d.name,
-        title: d.title,
-        description: d.description,
-        url: `https://apify.com/webdatatools/${d.name}`,
-        icon: d.pictureUrl ?? null,
-        users30: d.stats?.totalUsers30Days ?? 0,
-        runs: d.stats?.totalRuns ?? 0,
-        categories: d.categories ?? [],
-        price: primaryPrice(d),
-        prefill,
-    };
+    if (!baseline[d.name]) throw new Error(`Unexpected public Actor: ${d.name}; catalog review required`);
+    out[d.name] = { name: d.name, title: d.title, description: d.description, url: baseline[d.name].url, icon: d.pictureUrl ?? null, users30: d.stats?.totalUsers30Days ?? 0, runs: d.stats?.totalRuns ?? 0, categories: d.categories ?? [], price: primaryPrice(d), prefill: baseline[d.name].prefill };
     if (!wanted.has(d.name)) continue;
-    let runs = (await api(`acts/${d.id}/runs?desc=1&limit=20&status=SUCCEEDED`)).data?.items ?? [];
-    if (!runs.length && process.argv.includes('--run-missing')) {
-        const r = await (await fetch(`https://api.apify.com/v2/acts/${d.id}/runs?waitForFinish=240&token=${TOKEN}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' })).json();
-        console.log(`ran ${d.name}: ${r.data?.status}`);
-        if (r.data?.status === 'SUCCEEDED') runs = [r.data];
-    }
+    const runs = (await api(`acts/${d.id}/runs?desc=1&limit=20&status=SUCCEEDED`)).data?.items;
+    if (!Array.isArray(runs)) throw new Error(`Invalid run listing: ${d.name}`);
     for (const r of runs) {
-        const raw = await api(`datasets/${r.defaultDatasetId}/items?limit=25&clean=1`);
-        // The richest row makes the best example: most filled fields, then most content.
-        const filled = (x) => Object.values(x).filter((v) => v !== null && v !== '' && !(Array.isArray(v) && !v.length)).length;
-        const items = Array.isArray(raw) ? raw.filter((x) => !x.error).sort((a, b) => filled(b) - filled(a) || JSON.stringify(b).length - JSON.stringify(a).length).slice(0, 3) : raw;
-        if (Array.isArray(items) && items.length) {
-            fs.writeFileSync(path.join(here, 'data', 'samples', `${d.name}.json`), `${JSON.stringify({ runId: r.id, finishedAt: r.finishedAt, items: items.map((x) => clip(x)) }, null, 2)}\n`);
-            break;
-        }
+        if (!r.defaultDatasetId || !Number.isFinite(Date.parse(r.finishedAt)) || Date.parse(r.finishedAt) > Date.now()) continue;
+        if (Date.parse(r.finishedAt) <= Date.parse(JSON.parse(samples[`${d.name}.json`]).finishedAt)) continue;
+        let raw;
+        try { raw = await api(`datasets/${r.defaultDatasetId}/items?limit=25&clean=1`); }
+        catch (error) { if (error.message.includes('HTTP 404')) continue; throw error; }
+        const filled = x => Object.values(x).filter(v => v !== null && v !== '' && !(Array.isArray(v) && !v.length)).length;
+        if (!Array.isArray(raw)) throw new Error(`Invalid dataset: ${d.name}`);
+        const items = raw.filter(x => x && typeof x === 'object' && !x.error).sort((a, b) => filled(b) - filled(a) || JSON.stringify(b).length - JSON.stringify(a).length).slice(0, 3);
+        if (!items.length) continue;
+        samples[`${d.name}.json`] = `${JSON.stringify({ runId: r.id, finishedAt: r.finishedAt, items: items.map(x => clip(x)) }, null, 2)}\n`;
+        break;
     }
 }
-fs.writeFileSync(path.join(here, 'data', 'actors.json'), `${JSON.stringify(out, null, 1)}\n`);
-console.log(`actors ${Object.keys(out).length}, guides want ${wanted.size}, samples ${fs.readdirSync(path.join(here, 'data', 'samples')).length}`);
+validateActors(out, lock);
+const actorsText = `${JSON.stringify(out, null, 1)}\n`;
+const meta = { fetchedAt: new Date().toISOString(), actorsSha256: hash(actorsText), sampleHashes: Object.fromEntries(Object.keys(samples).sort().map(f => [f, hash(samples[f])])) };
+// Marker written last; an interrupted update fails the release hash check.
+const atomicWrite = (file, text) => { fs.writeFileSync(`${file}.tmp`, text); fs.renameSync(`${file}.tmp`, file); };
+for (const [file, text] of Object.entries(samples)) atomicWrite(path.join(sampleDir, file), text);
+atomicWrite(path.join(here, 'data/actors.json'), actorsText);
+atomicWrite(path.join(here, 'data/fetch-meta.json'), `${JSON.stringify(meta, null, 2)}\n`);
+console.log(`Read-only fetch complete: ${Object.keys(out).length} Actors, ${Object.keys(samples).length} samples. Prices and inputs preserved.`);

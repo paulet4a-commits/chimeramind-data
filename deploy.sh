@@ -1,20 +1,15 @@
 #!/bin/bash
-# Fetch live data, build, and publish dist/ to the gh-pages branch (GitHub Pages → data.chimeramind.com).
-# gh-pages holds generated files only, so it is force-pushed as a single fresh commit each time.
-# Usage: bash deploy.sh [--run-missing]
-set -e
+# Read-only fetch, test, release build, smoke, gh-pages, live verification, IndexNow.
+set -euo pipefail
 cd "$(dirname "$0")"
+: "${APIFY_TOKEN:?APIFY_TOKEN missing: deploy blocked}"
+: "${GH_TOKEN:?GH_TOKEN missing: deploy blocked}"
 node fetch-data.mjs "$@"
-node build.mjs
-cd dist
-rm -rf .git
-git init -q -b gh-pages
-git config user.name "Murat Uzun"
-git config user.email "paulet4a@gmail.com"
-git add -A
-git commit -qm "Deploy $(date -u +%Y-%m-%dT%H:%MZ)"
-git push -qf https://github.com/paulet4a-commits/chimeramind-data.git gh-pages
-rm -rf .git
-echo "deployed $(date -u +%FT%TZ)"
-cd ..
-node indexnow.mjs || true
+npm test
+npm run check:secrets
+npm run build:release
+npm run check:dist
+npm run smoke
+npm run deploy
+npm run verify:live
+npm run indexnow

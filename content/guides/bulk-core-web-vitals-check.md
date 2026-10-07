@@ -17,7 +17,7 @@ Each row combines two kinds of data that PageSpeed Insights reports:
 - **Lab data** — a fresh Lighthouse run on Google's servers: `performanceScore` (0–100), optional `seoScore`, `accessibilityScore` and `bestPracticesScore`, plus `lcpMs`, `cls`, `tbtMs`, `fcpMs`, `speedIndexMs`, `ttiMs` and `ttfbMs`.
 - **Field data** — real Chrome users over the trailing 28 days from the Chrome UX Report, in `fieldData` (`lcpMs`, `cls`, `inpMs`, `fcpMs`, `ttfbMs`, `overallCategory`), when the site has enough traffic to be included.
 
-On top of that you get `passesCoreWebVitals` (field LCP ≤ 2500 ms, CLS ≤ 0.1 and INP ≤ 200 ms), a `labGrade` (`good`, `needs-improvement`, `poor`) and `topOpportunities` — up to five failed Lighthouse audits with their estimated savings, biggest first. A real row from a recent run:
+On top of that you get `passesCoreWebVitals` (field LCP ≤ 2500 ms, CLS ≤ 0.1 and INP ≤ 200 ms), a `labGrade` (`good`, `needs-improvement`, `poor`) and `topOpportunities` — up to five failed Lighthouse audits with their estimated savings, biggest first. A real row from a recorded run:
 
 {{sample}}
 

@@ -21,7 +21,7 @@ Two files in the run's key-value store, plus one dataset row per page:
 | `SUMMARY` | Per site: page and section counts, token counts of both files, download links, and whether the site already publishes its own `/llms.txt` |
 | Dataset rows | `site`, `url`, `title`, `description`, `section`, `wordCount`, `tokens` and (optionally) `markdown` for each page |
 
-A real dataset row from a recent run:
+A real dataset row from a recorded run:
 
 {{sample}}
 

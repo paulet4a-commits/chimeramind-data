@@ -4,7 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test test/*.test.mjs",
+    "fetch": "node fetch-data.mjs",
+    "check:data": "node scripts/check-data.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "build": "node build.mjs",
+    "build:release": "node build.mjs --release",
+    "check:dist": "node scripts/check-dist.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "smoke:live": "node scripts/smoke.mjs --live",
+    "verify:live": "node scripts/verify-live.mjs",
+    "preview": "node serve.mjs",
+    "deploy": "node scripts/deploy.mjs",
+    "indexnow": "node indexnow.mjs"
   },
   "keywords": [],
   "author": "",

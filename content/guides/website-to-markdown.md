@@ -12,7 +12,7 @@ Large language models read Markdown far better than raw HTML. A typical document
 
 ## What you get
 
-Each crawled page becomes one row with the page's `url`, `title`, `description`, `markdown` (or plain `text`), a `wordCount`, the page's heading outline and its outgoing links. Here is a real row from a recent run, trimmed for length:
+Each crawled page becomes one row with the page's `url`, `title`, `description`, `markdown` (or plain `text`), a `wordCount`, the page's heading outline and its outgoing links. Here is a real row from a recorded run, trimmed for length:
 
 {{sample}}
 

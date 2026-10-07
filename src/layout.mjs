@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 
 import { esc, money } from './render.mjs';
+import { attributedUrl } from './growth.mjs';
 
 // Google Search Console HTML-tag verification: put the content= value in data/gsc-verification.txt.
 const gscFile = new URL('../data/gsc-verification.txt', import.meta.url);
@@ -21,11 +22,11 @@ function ticker(actors) {
         .filter((a) => a.price)
         .sort((a, b) => b.runs - a.runs)
         .slice(0, 14);
-    const items = list.map((a) => `<span>${esc(a.name.replace(/-/g, ' ').toUpperCase())} <b>${money(a.price.usd)}</b>/1k <span class="up">● live</span></span>`).join('');
+    const items = list.map((a) => `<span>${esc(a.name.replace(/-/g, ' ').toUpperCase())} <b>${money(a.price.usd)}</b>/1k <span class="up">● catalog</span></span>`).join('');
     return `<div class="ticker" aria-hidden="true"><div class="track">${items}${items}</div></div>`;
 }
 
-export function page({ path, title, description, body, actors, jsonLd = [], ogType = 'website', nav = '' }) {
+export function page({ path, title, description, body, actors, jsonLd = [], ogType = 'website', nav = '', noindex = false }) {
     const url = `${SITE.origin}${path}`;
     const ld = jsonLd.map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`).join('\n');
     // Cloudflare Web Analytics (cookieless). The token is public by design — it ships in every page.
@@ -41,6 +42,7 @@ export function page({ path, title, description, body, actors, jsonLd = [], ogTy
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
+${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
 <link rel="canonical" href="${esc(url)}">
 <meta property="og:type" content="${ogType}">
 <meta property="og:title" content="${esc(title)}">
@@ -55,18 +57,19 @@ ${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">` : ''}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${FONTS}">
 <link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
 ${ld}
 ${beacon}
 </head>
 <body>
 <header class="masthead"><div class="wrap">
 <a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
-<nav class="top"><a href="/#market-data"${cur('market')}>Market data</a><a href="/guides/"${cur('guides')}>Guides</a><a href="/tools/"${cur('tools')}>All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+<nav class="top"><a href="/#market-data"${cur('market')}>Market data</a><a href="/guides/"${cur('guides')}>Guides</a><a href="/tools/"${cur('tools')}>All tools</a><a href="/workflows/"${cur('workflows')}>Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
 </div></header>
 ${ticker(actors)}
 ${body}
 <footer class="site"><div class="wrap">
-<div>© ${new Date().getUTCFullYear()} ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div>© ${new Date().getUTCFullYear()} ChimeraMiND · Tools run on the <a href="${esc(attributedUrl({ url: 'https://apify.com/webdatatools', name: 'catalog' }, { page: path, placement: 'footer' }))}">Apify platform</a> under the webdatatools account.</div>
 <div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
 </div></footer>
 </body>

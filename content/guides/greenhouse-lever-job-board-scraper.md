@@ -18,7 +18,7 @@ You don't need to know which ATS a company uses. Give it a bare slug like `strip
 
 ## What you get
 
-In **One row per job** mode, each posting becomes a row. A real row from a recent run:
+In **One row per job** mode, each posting becomes a row. A real row from a recorded run:
 
 {{sample}}
 

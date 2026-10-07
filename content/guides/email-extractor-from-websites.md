@@ -12,7 +12,7 @@ You have a list of company websites — from a trade-show exhibitor list, a Goog
 
 ## What you get
 
-The tool visits each website's pages (home, about, contact and whatever they link to, up to your page budget), collects every contact channel it finds and merges them into a single row per domain. Two hundred crawled pages still produce one usable lead, not two hundred fragments. A real row from a recent run:
+The tool visits each website's pages (home, about, contact and whatever they link to, up to your page budget), collects every contact channel it finds and merges them into a single row per domain. Two hundred crawled pages still produce one usable lead, not two hundred fragments. A real row from a recorded run:
 
 {{sample}}
 

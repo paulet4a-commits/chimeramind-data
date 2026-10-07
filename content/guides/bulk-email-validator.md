@@ -14,7 +14,7 @@ One thing up front, because it matters: this is **syntax + DNS/MX + list-based v
 
 ## What you get
 
-Each address becomes one row. A real row from a recent run:
+Each address becomes one row. A real row from a recorded run:
 
 {{sample}}
 
