@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAG knowledge pipeline — data tools &amp; steps | ChimeraMiND Data</title>
+<meta name="description" content="Discover pages, extract website content, split text into chunks and prepare an llms.txt entry point.">
+
+<link rel="canonical" href="https://data.chimeramind.com/workflows/rag/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RAG knowledge pipeline — data tools &amp; steps | ChimeraMiND Data">
+<meta property="og:description" content="Discover pages, extract website content, split text into chunks and prepare an llms.txt entry point.">
+<meta property="og:url" content="https://data.chimeramind.com/workflows/rag/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/">Guides</a><a href="/tools/">All tools</a><a href="/workflows/" aria-current="page">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/workflows/">Workflows</a></div><section class="hero" style="grid-template-columns:1fr"><div><div class="kicker">Workflow</div><h1>RAG knowledge pipeline</h1><p class="lede">Discover pages, extract website content, split text into chunks and prepare an llms.txt entry point.</p></div></section><article class="prose"><ol><li><a href="/tools/sitemap-extractor/">Sitemap URL Extractor &amp; Change Monitor</a><p>Sitemap URL extractor that reads robots.txt, sitemap indexes, .xml.gz and plain-text sitemaps and returns one row per URL with lastmod, changefreq, priority — plus a new/removed diff between runs.</p></li><li><a href="/tools/website-to-markdown/">Website to Markdown — Content Crawler for LLM &amp; RAG</a><p>Content Crawler turns any site into clean Markdown per page for LLMs, RAG pipelines and vector DBs — no headless browser, $1 per 1,000 pages.</p></li><li><a href="/tools/rag-text-chunker/">RAG Text Chunker (Markdown to Chunks, Token Counts)</a><p>Split Markdown or text into RAG-ready chunks with exact OpenAI token counts (o200k/cl100k): heading-aware, code blocks kept whole, sentence-boundary overlap, heading path on every chunk. Chunks any dataset from Website to Markdown, PDF to Markdown or your own texts.</p></li><li><a href="/tools/llms-txt-generator/">llms.txt Generator (Website to llms.txt &amp; llms-full.txt)</a><p>Turn any website or docs site into an llms.txt (sectioned links with one-line descriptions) and llms-full.txt (every page as clean Markdown) for AI assistants, RAG and AI search. Plain HTTP, sitemap-aware, robots.txt-friendly.</p></li></ol><p>These are suggested research steps. Review each input schema and map the output fields between steps; each tool is billed separately at its listed price.</p></article><section class="block"><h2>More workflows</h2><ul><li><a href="/workflows/lead/">Lead research</a></li><li><a href="/workflows/seo/">SEO audit workflow</a></li><li><a href="/workflows/hiring/">Hiring research</a></li></ul></section></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fworkflows%2Frag%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fworkflows%2Frag%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

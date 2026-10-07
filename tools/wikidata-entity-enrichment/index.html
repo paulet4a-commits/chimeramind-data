@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wikidata Entity &amp; Company Enrichment (facts, IDs, links) — API, output &amp; pricing | ChimeraMiND Data</title>
+<meta name="description" content="Wikidata Entity &amp; Company Enrichment resolves a QID, company name, or Wikipedia URL to its Wikidata item and returns facts (country, HQ, founders, CEO, employees, revenue), identifiers (ISIN, Crunchbase, LinkedIn) and social/media links — one row per entity.">
+
+<link rel="canonical" href="https://data.chimeramind.com/tools/wikidata-entity-enrichment/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wikidata Entity &amp; Company Enrichment (facts, IDs, links) — API, output &amp; pricing | ChimeraMiND Data">
+<meta property="og:description" content="Wikidata Entity &amp; Company Enrichment resolves a QID, company name, or Wikipedia URL to its Wikidata item and returns facts (country, HQ, founders, CEO, employees, revenue), identifiers (ISIN, Crunchbase, LinkedIn) and social/media links — one row per entity.">
+<meta property="og:url" content="https://data.chimeramind.com/tools/wikidata-entity-enrichment/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wikidata Entity & Company Enrichment (facts, IDs, links)","description":"Wikidata Entity & Company Enrichment resolves a QID, company name, or Wikipedia URL to its Wikidata item and returns facts (country, HQ, founders, CEO, employees, revenue), identifiers (ISIN, Crunchbase, LinkedIn) and social/media links — one row per entity.","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://data.chimeramind.com/tools/wikidata-entity-enrichment/","offers":{"@type":"Offer","price":0.001,"priceCurrency":"USD","description":"Catalog price per result"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://data.chimeramind.com/tools/"},{"@type":"ListItem","position":2,"name":"Wikidata Entity & Company Enrichment (facts, IDs, links)","item":"https://data.chimeramind.com/tools/wikidata-entity-enrichment/"}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/">Guides</a><a href="/tools/" aria-current="page">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Wikidata Entity &amp; Company Enrichment (facts, IDs, links)</div><section class="hero" style="grid-template-columns:1fr"><div><div class="kicker">Business</div><h1>Wikidata Entity &amp; Company Enrichment (facts, IDs, links)</h1><p class="lede">Wikidata Entity &amp; Company Enrichment resolves a QID, company name, or Wikipedia URL to its Wikidata item and returns facts (country, HQ, founders, CEO, employees, revenue), identifiers (ISIN, Crunchbase, LinkedIn) and social/media links — one row per entity.</p><p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/wikidata-entity-enrichment?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Ftools%2Fwikidata-entity-enrichment%2F%3Atool_primary&amp;utm_term=wikidata-entity-enrichment&amp;source_page=%2Ftools%2Fwikidata-entity-enrichment%2F&amp;source_actor=wikidata-entity-enrichment">Run Wikidata Entity &amp; Company Enrichment (facts, IDs, links) on Apify →</a></p></div></section><article class="prose"><h2>Pricing</h2><div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
+<p class="fine">Catalog price snapshot. Check the Apify Store for current prices before running. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><h2>Sample output</h2><p class="fine" data-sample-status="missing">No recorded sample is available yet.</p><h2>Call from code</h2><p>Use the existing catalog input below as a starting point. Review the tool's input form on Apify before running it.</p><div class="tabs"><input type="radio" name="t-wikidata-entity-enrichment" id="t-wikidata-entity-enrichment-python" checked><label for="t-wikidata-entity-enrichment-python">Python</label><pre class="tab-python"><code class="language-python">import json
+import os
+from apify_client import ApifyClient
+
+client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])
+run = client.actor(&quot;webdatatools/wikidata-entity-enrichment&quot;).call(run_input=json.loads(&quot;{\n    \&quot;entities\&quot;: [\n        \&quot;Q95\&quot;,\n        \&quot;Apify\&quot;,\n        \&quot;https://en.wikipedia.org/wiki/Stripe,_Inc.\&quot;\n    ],\n    \&quot;language\&quot;: \&quot;en\&quot;,\n    \&quot;entityType\&quot;: \&quot;any\&quot;\n}&quot;))
+
+for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-wikidata-entity-enrichment" id="t-wikidata-entity-enrichment-js"><label for="t-wikidata-entity-enrichment-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;
+
+const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/wikidata-entity-enrichment&#39;).call({
+    &quot;entities&quot;: [
+        &quot;Q95&quot;,
+        &quot;Apify&quot;,
+        &quot;https://en.wikipedia.org/wiki/Stripe,_Inc.&quot;
+    ],
+    &quot;language&quot;: &quot;en&quot;,
+    &quot;entityType&quot;: &quot;any&quot;
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-wikidata-entity-enrichment" id="t-wikidata-entity-enrichment-bash"><label for="t-wikidata-entity-enrichment-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~wikidata-entity-enrichment/run-sync-get-dataset-items&quot; \
+  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{&quot;entities&quot;:[&quot;Q95&quot;,&quot;Apify&quot;,&quot;https://en.wikipedia.org/wiki/Stripe,_Inc.&quot;],&quot;language&quot;:&quot;en&quot;,&quot;entityType&quot;:&quot;any&quot;}&#39;</code></pre></div></article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/company-360/">Company 360: full company profile from a domain</a></li><li><a href="/tools/yc-companies-scraper/">Y Combinator Companies &amp; Founders Scraper</a></li><li><a href="/tools/contact-extractor/">Email Extractor — Website Contact &amp; Social Finder</a></li><li><a href="/tools/crossref-doi-lookup/">CrossRef DOI &amp; Citation Metadata Lookup</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Ftools%2Fwikidata-entity-enrichment%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Ftools%2Fwikidata-entity-enrichment%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

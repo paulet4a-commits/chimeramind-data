@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bulk Core Web Vitals Check — PageSpeed Insights for Hundreds of URLs | ChimeraMiND Data</title>
 <meta name="description" content="Run Google PageSpeed Insights over a whole URL list and get one flat row per page — Lighthouse scores, LCP, CLS, INP, TBT, real-user field data, a Core Web Vitals pass/fail and the biggest fixes.">
+
 <link rel="canonical" href="https://data.chimeramind.com/guides/bulk-core-web-vitals-check/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bulk Core Web Vitals Check — PageSpeed Insights for Hundreds of URLs | ChimeraMiND Data">
@@ -19,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Bulk Core Web Vitals Check — PageSpeed Insights for Hundreds of URLs","description":"Run Google PageSpeed Insights over a whole URL list and get one flat row per page — Lighthouse scores, LCP, CLS, INP, TBT, real-user field data, a Core Web Vitals pass/fail and the biggest fixes.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/bulk-core-web-vitals-check/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Bulk Core Web Vitals & PageSpeed Audit","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/core-web-vitals-audit","offers":{"@type":"Offer","price":"5.00","priceCurrency":"USD","description":"per 1,000 results"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Bulk Core Web Vitals Check — PageSpeed Insights for Hundreds of URLs","item":"https://data.chimeramind.com/guides/bulk-core-web-vitals-check/"}]}</script>
@@ -28,12 +30,12 @@
 <body>
 <header class="masthead"><div class="wrap">
 <a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
-<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
 </div></header>
-<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● live</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● live</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● live</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● live</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● live</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● live</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● live</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● live</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● live</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● live</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● live</span></span></div></div>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE COMMENTS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>CONTACT EXTRACTOR <b>$10</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span></div></div>
 <div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Bulk Core Web Vitals</div>
 <div class="guide"><div><header><div class="kicker">SEO &amp; site audits</div><h1>Check Core Web Vitals and PageSpeed scores for hundreds of URLs at once</h1><p class="lede">Run Google PageSpeed Insights over a whole URL list and get one flat row per page — Lighthouse scores, LCP, CLS, INP, TBT, real-user field data, a Core Web Vitals pass/fail and the biggest fixes.</p>
-<div class="byline"><span>Updated 2026-10-03</span><span>Prices and sample output pulled live from Apify</span></div></header>
+<div class="byline"><span>Updated 2026-10-03</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
 <article class="prose"><p>pagespeed.web.dev is perfect for one page. It is painful for a site migration with 300 templates, an agency checking 50 client homepages every month, or a sales team that wants to open with &quot;your mobile site fails Core Web Vitals&quot;. This guide shows how to run <strong>Google PageSpeed Insights over an entire list of URLs</strong> and get one flat row per URL and device — the same numbers Google shows you, ready for a spreadsheet — for $5 per 1,000 results.</p>
 <h2 id="what-you-get">What you get</h2>
 <p>Each row combines two kinds of data that PageSpeed Insights reports:</p>
@@ -41,8 +43,8 @@
 <li><strong>Lab data</strong> — a fresh Lighthouse run on Google&#39;s servers: <code>performanceScore</code> (0–100), optional <code>seoScore</code>, <code>accessibilityScore</code> and <code>bestPracticesScore</code>, plus <code>lcpMs</code>, <code>cls</code>, <code>tbtMs</code>, <code>fcpMs</code>, <code>speedIndexMs</code>, <code>ttiMs</code> and <code>ttfbMs</code>.</li>
 <li><strong>Field data</strong> — real Chrome users over the trailing 28 days from the Chrome UX Report, in <code>fieldData</code> (<code>lcpMs</code>, <code>cls</code>, <code>inpMs</code>, <code>fcpMs</code>, <code>ttfbMs</code>, <code>overallCategory</code>), when the site has enough traffic to be included.</li>
 </ul>
-<p>On top of that you get <code>passesCoreWebVitals</code> (field LCP ≤ 2500 ms, CLS ≤ 0.1 and INP ≤ 200 ms), a <code>labGrade</code> (<code>good</code>, <code>needs-improvement</code>, <code>poor</code>) and <code>topOpportunities</code> — up to five failed Lighthouse audits with their estimated savings, biggest first. A real row from a recent run:</p>
-<figure class="sample"><figcaption><span>Real output</span><span class="mono">run s4cvBCaBblPEpy46H · 2026-10-03</span></figcaption><pre><code class="language-json">{
+<p>On top of that you get <code>passesCoreWebVitals</code> (field LCP ≤ 2500 ms, CLS ≤ 0.1 and INP ≤ 200 ms), a <code>labGrade</code> (<code>good</code>, <code>needs-improvement</code>, <code>poor</code>) and <code>topOpportunities</code> — up to five failed Lighthouse audits with their estimated savings, biggest first. A real row from a recorded run:</p>
+<figure class="sample" data-sample-status="recorded" data-sample-finished="2026-10-03T15:19:28.721Z" data-sample-run="y0QLiVliObKZoggWz"><figcaption><span data-sample-label>Recorded example · 4 days old. This is a snapshot, not current data.</span><span class="mono">run y0QLiVliObKZoggWz · 2026-10-03</span></figcaption><pre><code class="language-json">{
   &quot;url&quot;: &quot;https://apify.com/&quot;,
   &quot;finalUrl&quot;: &quot;https://apify.com/&quot;,
   &quot;strategy&quot;: &quot;mobile&quot;,
@@ -74,20 +76,20 @@
       &quot;savingsMs&quot;: 2550
     },
     {
-      &quot;id&quot;: &quot;unminified-css&quot;,
-      &quot;title&quot;: &quot;Minify CSS&quot;,
+      &quot;id&quot;: &quot;unused-css-rules&quot;,
+      &quot;title&quot;: &quot;Reduce unused CSS&quot;,
       &quot;savingsMs&quot;: 0
     },
     {
-      &quot;id&quot;: &quot;unused-css-rules&quot;,
-      &quot;title&quot;: &quot;Reduce unused CSS&quot;,
+      &quot;id&quot;: &quot;unminified-css&quot;,
+      &quot;title&quot;: &quot;Minify CSS&quot;,
       &quot;savingsMs&quot;: 0
     }
   ],
   &quot;lighthouseVersion&quot;: &quot;13.5.0&quot;,
   &quot;fetchedAt&quot;: &quot;2026-10-03T15:18:52.669Z&quot;,
   &quot;error&quot;: null,
-  &quot;scrapedAt&quot;: &quot;2026-10-03T15:19:28.193Z&quot;
+  &quot;scrapedAt&quot;: &quot;2026-10-03T15:19:28.376Z&quot;
 }</code></pre></figure><h2 id="before-you-start-the-free-api-key">Before you start: the free API key</h2>
 <p>PageSpeed Insights has a shared anonymous quota that is almost always exhausted. Runs of <strong>up to 5 URLs work without a key</strong> on a demo quota so you can try the tool immediately. For anything bigger, create a free PageSpeed Insights API key in Google Cloud (no billing required; Google allows 25,000 requests per day) and paste it into <strong>Google PageSpeed Insights API key</strong>. Without one, rows come back with an HTTP 429 in <code>error</code> and empty metrics rather than failing the run.</p>
 <h2 id="step-by-step">Step-by-step</h2>
@@ -98,19 +100,11 @@
 <li>Add extra <strong>Lighthouse categories</strong> (<code>seo</code>, <code>accessibility</code>, <code>best-practices</code>) if you want those scores too.</li>
 <li>Keep <strong>Max concurrency</strong> at 2–3 and click <strong>Start</strong>. Expect roughly 10–30 seconds per URL and device, a few in parallel.</li>
 </ol>
-<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/core-web-vitals-audit?utm_source=data.chimeramind.com&amp;utm_medium=guide">Run Bulk Core Web Vitals &amp; PageSpeed Audit on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
-<div class="tabs"><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-python" checked><label for="t-core-web-vitals-audit-python">Python</label><pre class="tab-python"><code class="language-python">from apify_client import ApifyClient<p>client = ApifyClient(&quot;&lt;YOUR_APIFY_TOKEN&gt;&quot;)
-run = client.actor(&quot;webdatatools/core-web-vitals-audit&quot;).call(run_input={
-    &quot;urls&quot;: [
-        &quot;<a href="https://apify.com">https://apify.com</a>&quot;,
-        &quot;<a href="https://example.com">https://example.com</a>&quot;
-    ],
-    &quot;strategy&quot;: &quot;mobile&quot;,
-    &quot;categories&quot;: [
-        &quot;performance&quot;,
-        &quot;seo&quot;
-    ]
-})</p>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/core-web-vitals-audit?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fbulk-core-web-vitals-check%2F%3Aguide_cta&amp;utm_term=core-web-vitals-audit&amp;source_page=%2Fguides%2Fbulk-core-web-vitals-check%2F&amp;source_actor=core-web-vitals-audit">Run Bulk Core Web Vitals &amp; PageSpeed Audit on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-python" checked><label for="t-core-web-vitals-audit-python">Python</label><pre class="tab-python"><code class="language-python">import json
+import os
+from apify_client import ApifyClient<p>client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])
+run = client.actor(&quot;webdatatools/core-web-vitals-audit&quot;).call(run_input=json.loads(&quot;{\n    &amp;quot;urls&amp;quot;: [\n        &amp;quot;<a href="https://apify.com%5C&amp;quot;,%5Cn">https://apify.com\&amp;quot;,\n</a>        &amp;quot;<a href="https://example.com%5C&amp;quot;%5Cn">https://example.com\&amp;quot;\n</a>    ],\n    &amp;quot;strategy&amp;quot;: &amp;quot;mobile&amp;quot;,\n    &amp;quot;categories&amp;quot;: [\n        &amp;quot;performance&amp;quot;,\n        &amp;quot;seo&amp;quot;\n    ]\n}&quot;))</p>
 <p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
     print(item)</code></pre><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-js"><label for="t-core-web-vitals-audit-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
 <p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
@@ -126,7 +120,7 @@ const run = await client.actor(&#39;webdatatools/core-web-vitals-audit&#39;).cal
     ]
 });
 const { items } = await client.dataset(run.defaultDatasetId).listItems();
-console.log(items);</code></pre><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-bash"><label for="t-core-web-vitals-audit-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~core-web-vitals-audit/run-sync-get-dataset-items?token=$APIFY_TOKEN">https://api.apify.com/v2/acts/webdatatools~core-web-vitals-audit/run-sync-get-dataset-items?token=$APIFY_TOKEN</a>&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;urls&quot;:[&quot;<a href="https://apify.com&amp;quot;,&amp;quot;https://example.com&amp;quot;%5D,&amp;quot;strategy&amp;quot;:&amp;quot;mobile&amp;quot;,&amp;quot;categories&amp;quot;:%5B&amp;quot;performance&amp;quot;,&amp;quot;seo&amp;quot;%5D%7D&amp;#39">https://apify.com&amp;quot;,&amp;quot;https://example.com&amp;quot;],&amp;quot;strategy&amp;quot;:&amp;quot;mobile&amp;quot;,&amp;quot;categories&amp;quot;:[&amp;quot;performance&amp;quot;,&amp;quot;seo&amp;quot;]}&amp;#39</a>;</code></pre></div></p>
+console.log(items);</code></pre><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-bash"><label for="t-core-web-vitals-audit-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~core-web-vitals-audit/run-sync-get-dataset-items">https://api.apify.com/v2/acts/webdatatools~core-web-vitals-audit/run-sync-get-dataset-items</a>&quot; <br>-H &quot;Authorization: Bearer $APIFY_TOKEN&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;urls&quot;:[&quot;<a href="https://apify.com&amp;quot;,&amp;quot;https://example.com&amp;quot;%5D,&amp;quot;strategy&amp;quot;:&amp;quot;mobile&amp;quot;,&amp;quot;categories&amp;quot;:%5B&amp;quot;performance&amp;quot;,&amp;quot;seo&amp;quot;%5D%7D&amp;#39">https://apify.com&amp;quot;,&amp;quot;https://example.com&amp;quot;],&amp;quot;strategy&amp;quot;:&amp;quot;mobile&amp;quot;,&amp;quot;categories&amp;quot;:[&amp;quot;performance&amp;quot;,&amp;quot;seo&amp;quot;]}&amp;#39</a>;</code></pre></div></p>
 <h2 id="recipes">Recipes</h2>
 <h3 id="pre-and-post-migration-comparison">Pre- and post-migration comparison</h3>
 <p>Export one URL per page template (home, category, product, article, landing page) before a redesign and run the audit. Run the same list after launch and diff <code>performanceScore</code>, <code>lcpMs</code> and <code>cls</code> per URL. Regressions show up per template instead of as a vague &quot;the site feels slower&quot;.</p>
@@ -136,7 +130,7 @@ console.log(items);</code></pre><input type="radio" name="t-core-web-vitals-audi
 <p>Agencies run a list of prospect homepages overnight, filter rows where <code>passesCoreWebVitals</code> is <code>false</code>, and quote the first item of <code>topOpportunities</code> (&quot;Reduce unused JavaScript — about 2 s of savings&quot;) in the outreach email. Feeding the list from another tool&#39;s dataset works through <code>inputDatasetId</code>.</p>
 <h2 id="how-much-does-it-cost">How much does it cost?</h2>
 <div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.005</td><td class="num">$5</td></tr><tr><td>Starter</td><td class="num">$0.004</td><td class="num">$4</td></tr><tr><td>Scale</td><td class="num">$0.0035</td><td class="num">$3.50</td></tr><tr><td>Business</td><td class="num">$0.003</td><td class="num">$3</td></tr><tr><td>Enterprise</td><td class="num">$0.003</td><td class="num">$3</td></tr><tr><td>Enterprise+</td><td class="num">$0.003</td><td class="num">$3</td></tr></tbody></table></div>
-<p class="fine">Live prices from the Apify Store, read when this page was built. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>One row is one URL on one device, so <code>strategy: &quot;both&quot;</code> doubles the count. The Lighthouse work happens on Google&#39;s servers, which keeps platform usage tiny. Set <strong>Maximum cost per run</strong> in Apify and the tool trims the list to what the budget covers.</p>
+<p class="fine">Catalog price snapshot. Check the Apify Store for current prices before running. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>One row is one URL on one device, so <code>strategy: &quot;both&quot;</code> doubles the count. The Lighthouse work happens on Google&#39;s servers, which keeps platform usage tiny. Set <strong>Maximum cost per run</strong> in Apify and the tool trims the list to what the budget covers.</p>
 <h2 id="how-it-compares">How it compares</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -178,14 +172,14 @@ console.log(items);</code></pre><input type="radio" name="t-core-web-vitals-audi
 <p>The key field is a secret input in Apify, hidden in the Console and logs. The key only needs the PageSpeed Insights API enabled; restrict it to that API in Google Cloud.</p>
 <h3 id="can-i-check-pages-behind-a-login-or-on-localhost">Can I check pages behind a login or on localhost?</h3>
 <p>No. PageSpeed Insights fetches the URL from Google&#39;s servers, so the page must be publicly reachable.</p>
-</article></div><aside class="spec"><div class="spec-card">
+</article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/seo-page-audit/">On-Page SEO Audit</a></li><li><a href="/tools/sitemap-extractor/">Sitemap URL Extractor &amp; Change Monitor</a></li><li><a href="/tools/structured-data-extractor/">Structured Data &amp; JSON-LD Extractor (Schema.org, Open Graph)</a></li><li><a href="/tools/dns-email-security-checker/">Domain DNS &amp; Email Security Checker</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/seo/">SEO audit workflow</a></li><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div><aside class="spec"><div class="spec-card">
 <div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-FM0Kfh5kY4KVsuHVe-Ebe6jE0AZz-core-web-vitals-audit.png" alt="" width="44" height="44"><h4>Bulk Core Web Vitals &amp; PageSpeed Audit</h4></div>
 <dl><dt>Price</dt><dd>$5 / 1k results</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
-<a class="btn" href="https://apify.com/webdatatools/core-web-vitals-audit?utm_source=data.chimeramind.com&amp;utm_medium=spec">Try it free on Apify</a></div>
+<a class="btn" href="https://apify.com/webdatatools/core-web-vitals-audit?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fbulk-core-web-vitals-check%2F%3Aspec&amp;utm_term=core-web-vitals-audit&amp;source_page=%2Fguides%2Fbulk-core-web-vitals-check%2F&amp;source_actor=core-web-vitals-audit">Try it free on Apify</a><p><a href="/tools/core-web-vitals-audit/">Tool details</a></p></div>
 <nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#before-you-start-the-free-api-key">Before you start: the free API key</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
 </aside></div></div>
 <footer class="site"><div class="wrap">
-<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools">Apify platform</a> under the webdatatools account.</div>
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fbulk-core-web-vitals-check%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fguides%2Fbulk-core-web-vitals-check%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
 <div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
 </div></footer>
 </body>
