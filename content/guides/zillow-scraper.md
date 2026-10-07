@@ -12,7 +12,7 @@ Zillow is where most US home searches start, and its search results already hold
 
 ## What you get
 
-A real row from a recent run, trimmed:
+A real row from a recorded run, trimmed:
 
 {{sample}}
 

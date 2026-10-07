@@ -24,7 +24,7 @@ The tool crawls a few pages per site over plain HTTP and matches them against 7,
 | `technologies`, `byCategory`, `technologyCount` | Every detection with categories, version and confidence (0–100) |
 | `domain`, `title`, `description`, `generator`, `pagesCrawled` | Who the site is and how much was crawled |
 
-A real row from a recent run:
+A real row from a recorded run:
 
 {{sample}}
 

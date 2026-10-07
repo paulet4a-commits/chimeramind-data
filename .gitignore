@@ -1,3 +1,10 @@
 node_modules/
 dist/
 .env*
+.secrets/
+*.tmp
+data/fetch-meta.json
+data/indexnow-state.json
+data/deploy-receipt.json
+data/previous-build-manifest.json
+.deploy/

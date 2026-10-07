@@ -12,7 +12,7 @@ Account research usually means six browser tabs per company: the website for con
 
 ## What you get
 
-Each domain becomes one flat, scored row with up to seven sections. A real row from a recent run:
+Each domain becomes one flat, scored row with up to seven sections. A real row from a recorded run:
 
 {{sample}}
 

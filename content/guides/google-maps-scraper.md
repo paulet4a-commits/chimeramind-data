@@ -12,7 +12,7 @@ Google Maps is the most complete directory of local businesses there is, but it'
 
 ## What you get
 
-Search for a term in a location — `dentist` in `Austin, TX`, `restoran` in `Kadıköy, İstanbul` — and every place in the results becomes one row. A real row from a recent run:
+Search for a term in a location — `dentist` in `Austin, TX`, `restoran` in `Kadıköy, İstanbul` — and every place in the results becomes one row. A real row from a recorded run:
 
 {{sample}}
 

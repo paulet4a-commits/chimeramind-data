@@ -1,0 +1,1589 @@
+{
+  "version": 1,
+  "baselineCommit": "f394eef796ed589cd6a075be0287a7604bc79d23",
+  "actors": {
+    "ai-web-search": {
+      "price": {
+        "unit": "result",
+        "usd": 0.005,
+        "tiers": {
+          "FREE": 0.005,
+          "BRONZE": 0.004,
+          "SILVER": 0.0035,
+          "GOLD": 0.003,
+          "PLATINUM": 0.003,
+          "DIAMOND": 0.003
+        }
+      },
+      "prefill": {
+        "query": "what is web scraping",
+        "queries": [
+          "best crm for startups"
+        ],
+        "maxResults": 3
+      }
+    },
+    "airbnb-scraper": {
+      "price": {
+        "unit": "stay",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "locations": "Lisbon, Portugal",
+        "adults": 2,
+        "children": 0
+      }
+    },
+    "aliexpress-scraper": {
+      "price": {
+        "unit": "product",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "keywords": "wireless earbuds",
+        "sort": "default",
+        "includeAds": true
+      }
+    },
+    "app-store-lookup": {
+      "price": {
+        "unit": "result",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "mode": "lookup",
+        "apps": [
+          "324684580",
+          "com.duolingo.DuolingoMobile",
+          "search:meditation"
+        ],
+        "country": "us"
+      }
+    },
+    "article-extractor": {
+      "price": {
+        "unit": "result",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "urls": [
+          "https://blog.apify.com/best-web-scraping-tools/",
+          "https://techcrunch.com/",
+          "https://www.bbc.com/news"
+        ],
+        "outputFormat": "markdown",
+        "includeImages": true
+      }
+    },
+    "bluesky-scraper": {
+      "price": {
+        "unit": "post",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "mode": "posts",
+        "handles": [
+          "bsky.app",
+          "jay.bsky.team"
+        ],
+        "searchQuery": "web scraping"
+      }
+    },
+    "career-site-jobs-api": {
+      "price": {
+        "unit": "job",
+        "usd": 0.003,
+        "tiers": {
+          "FREE": 0.003,
+          "BRONZE": 0.0024,
+          "SILVER": 0.0021,
+          "GOLD": 0.0018,
+          "PLATINUM": 0.0018,
+          "DIAMOND": 0.0018
+        }
+      },
+      "prefill": {
+        "companies": "stripe.com; ramp.com; palantir.com",
+        "company": "",
+        "keywords": ""
+      }
+    },
+    "chrome-web-store-extensions": {
+      "price": {
+        "unit": "result",
+        "usd": 0.0015,
+        "tiers": {
+          "FREE": 0.0015,
+          "BRONZE": 0.0012,
+          "SILVER": 0.00105,
+          "GOLD": 0.0009,
+          "PLATINUM": 0.0009,
+          "DIAMOND": 0.0009
+        }
+      },
+      "prefill": {
+        "extensions": [
+          "kbfnbcaeplbcioakkpcpgfkobkghlhen",
+          "https://chromewebstore.google.com/detail/grammarly/kbfnbcaeplbcioakkpcpgfkobkghlhen"
+        ],
+        "maxConcurrency": 3
+      }
+    },
+    "company-360": {
+      "price": {
+        "unit": "company",
+        "usd": 0.05,
+        "tiers": {
+          "FREE": 0.05,
+          "BRONZE": 0.04,
+          "SILVER": 0.035,
+          "GOLD": 0.03,
+          "PLATINUM": 0.03,
+          "DIAMOND": 0.03
+        }
+      },
+      "prefill": {
+        "domains": [
+          "apify.com",
+          "stripe.com"
+        ],
+        "includeContacts": true,
+        "includeTechStack": true
+      }
+    },
+    "contact-extractor": {
+      "price": {
+        "unit": "result",
+        "usd": 0.01,
+        "tiers": {
+          "FREE": 0.01,
+          "BRONZE": 0.008,
+          "SILVER": 0.007,
+          "GOLD": 0.006,
+          "PLATINUM": 0.006,
+          "DIAMOND": 0.006
+        }
+      },
+      "prefill": {
+        "startUrls": [
+          {
+            "url": "https://apify.com"
+          }
+        ],
+        "maxPagesPerDomain": 30,
+        "maxDepth": 2
+      }
+    },
+    "core-web-vitals-audit": {
+      "price": {
+        "unit": "result",
+        "usd": 0.005,
+        "tiers": {
+          "FREE": 0.005,
+          "BRONZE": 0.004,
+          "SILVER": 0.0035,
+          "GOLD": 0.003,
+          "PLATINUM": 0.003,
+          "DIAMOND": 0.003
+        }
+      },
+      "prefill": {
+        "urls": [
+          "https://apify.com",
+          "https://example.com"
+        ],
+        "strategy": "mobile",
+        "categories": [
+          "performance",
+          "seo"
+        ]
+      }
+    },
+    "crossref-doi-lookup": {
+      "price": {
+        "unit": "result",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "items": [
+          "10.1038/nature12373",
+          "https://doi.org/10.1145/3292500.3330919",
+          "search:Attention is all you need"
+        ],
+        "mailto": "",
+        "searchRows": 3
+      }
+    },
+    "css-selector-extractor": {
+      "price": {
+        "unit": "Page",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "urls": [
+          "https://example.com",
+          "https://apify.com"
+        ],
+        "selectors": [
+          {
+            "name": "title",
+            "selector": "h1",
+            "type": "text"
+          },
+          {
+            "name": "canonicalUrl",
+            "selector": "link[rel='canonical']",
+            "type": "attr",
+            "attribute": "href"
+          }
+        ],
+        "firstMatchOnly": true
+      }
+    },
+    "dns-email-security-checker": {
+      "price": {
+        "unit": "result",
+        "usd": 0.005,
+        "tiers": {
+          "FREE": 0.005,
+          "BRONZE": 0.004,
+          "SILVER": 0.0035,
+          "GOLD": 0.003,
+          "PLATINUM": 0.003,
+          "DIAMOND": 0.003
+        }
+      },
+      "prefill": {
+        "domains": [
+          "apify.com",
+          "github.com"
+        ],
+        "checkDkim": true,
+        "dkimSelectors": [
+          "google",
+          "selector1",
+          "selector2",
+          "default",
+          "k1",
+          "s1",
+          "zoho",
+          "mail"
+        ]
+      }
+    },
+    "domain-security-audit": {
+      "price": {
+        "unit": "result",
+        "usd": 0.005,
+        "tiers": {
+          "FREE": 0.005,
+          "BRONZE": 0.004,
+          "SILVER": 0.0035,
+          "GOLD": 0.003,
+          "PLATINUM": 0.003,
+          "DIAMOND": 0.003
+        }
+      },
+      "prefill": {
+        "domains": [
+          "apify.com",
+          "example.com"
+        ],
+        "checkTls": true,
+        "checkHeaders": true
+      }
+    },
+    "domain-whois-rdap": {
+      "price": {
+        "unit": "Domain",
+        "usd": 0.003,
+        "tiers": {
+          "FREE": 0.003,
+          "BRONZE": 0.0024,
+          "SILVER": 0.0021,
+          "GOLD": 0.0018,
+          "PLATINUM": 0.0018,
+          "DIAMOND": 0.0018
+        }
+      },
+      "prefill": {
+        "domains": [
+          "github.com",
+          "wikipedia.org",
+          "apify.com"
+        ],
+        "includeNameservers": true,
+        "includeRawEvents": false
+      }
+    },
+    "email-validator": {
+      "price": {
+        "unit": "email",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "emails": [
+          "support@apify.com",
+          "jane.doe@gmail.com",
+          "info@mailinator.com"
+        ],
+        "checkMx": true,
+        "maxConcurrency": 10
+      }
+    },
+    "github-repo-health": {
+      "price": {
+        "unit": "result",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "repos": [
+          "apify/crawlee",
+          "https://github.com/expressjs/express",
+          "org:apify"
+        ],
+        "includeContributors": true,
+        "includeReleases": true
+      }
+    },
+    "github-trending-scraper": {
+      "price": {
+        "unit": "Repository",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "languages": [
+          "",
+          "javascript",
+          "python"
+        ],
+        "since": "daily",
+        "spokenLanguage": ""
+      }
+    },
+    "google-ads-transparency-scraper": {
+      "price": {
+        "unit": "ad",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "advertisers": "nike.com",
+        "region": "US",
+        "format": "all"
+      }
+    },
+    "google-maps-scraper": {
+      "price": {
+        "unit": "place",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "searchQueries": "dentist",
+        "location": "Austin, TX",
+        "maxPlacesPerSearch": 20
+      }
+    },
+    "google-news-scraper": {
+      "price": {
+        "unit": "article",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "queries": [
+          "web scraping",
+          "site:reuters.com AI"
+        ],
+        "topics": [
+          "TECHNOLOGY",
+          "BUSINESS"
+        ],
+        "language": "en"
+      }
+    },
+    "google-play-reviews-scraper": {
+      "price": {
+        "unit": "review",
+        "usd": 0.0002,
+        "tiers": {
+          "FREE": 0.0002,
+          "BRONZE": 0.00016,
+          "SILVER": 0.00014,
+          "GOLD": 0.00012,
+          "PLATINUM": 0.00012,
+          "DIAMOND": 0.00012
+        }
+      },
+      "prefill": {
+        "appIds": [
+          "com.whatsapp"
+        ],
+        "maxReviews": 100,
+        "sort": "newest"
+      }
+    },
+    "google-play-scraper": {
+      "price": {
+        "unit": "app",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "apps": [
+          "com.spotify.music",
+          "com.duolingo",
+          "search:meditation"
+        ],
+        "country": "us",
+        "language": "en"
+      }
+    },
+    "google-search-scraper": {
+      "price": {
+        "unit": "result",
+        "usd": 0.005,
+        "tiers": {
+          "FREE": 0.005,
+          "BRONZE": 0.004,
+          "SILVER": 0.0035,
+          "GOLD": 0.003,
+          "PLATINUM": 0.003,
+          "DIAMOND": 0.003
+        }
+      },
+      "prefill": {
+        "queries": [
+          "apify web scraping",
+          "best crm for startups"
+        ],
+        "countryCode": "us",
+        "languageCode": "en"
+      }
+    },
+    "google-trends-scraper": {
+      "price": {
+        "unit": "keyword",
+        "usd": 0.01,
+        "tiers": {
+          "FREE": 0.01,
+          "BRONZE": 0.008,
+          "SILVER": 0.007,
+          "GOLD": 0.006,
+          "PLATINUM": 0.006,
+          "DIAMOND": 0.006
+        }
+      },
+      "prefill": {
+        "keyword": "",
+        "keywords": [
+          "coffee"
+        ],
+        "geo": ""
+      }
+    },
+    "hacker-news-scraper": {
+      "price": {
+        "unit": "Story",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "queries": [
+          "front_page",
+          "apify"
+        ],
+        "contentType": "story",
+        "sortBy": "relevance"
+      }
+    },
+    "hiring-signals": {
+      "price": {
+        "unit": "result",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "companies": [
+          "stripe",
+          "https://jobs.lever.co/spotify",
+          "https://jobs.ashbyhq.com/ashby"
+        ],
+        "outputMode": "jobs",
+        "maxJobsPerCompany": 200
+      }
+    },
+    "ical-calendar-extractor": {
+      "price": {
+        "unit": "result",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "feeds": [
+          "https://www.officeholidays.com/ics/usa",
+          "https://calendar.google.com/calendar/ical/en.usa%23holiday%40group.v.calendar.google.com/public/basic.ics"
+        ],
+        "from": "2026-01-01",
+        "to": "2026-12-31"
+      }
+    },
+    "linkedin-jobs-scraper": {
+      "price": {
+        "unit": "job",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "keywords": "software engineer",
+        "location": "United States",
+        "datePosted": ""
+      }
+    },
+    "llms-txt-generator": {
+      "price": {
+        "unit": "page",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "startUrls": [
+          {
+            "url": "https://crawlee.dev/js/docs/quick-start"
+          }
+        ],
+        "maxPages": 50,
+        "maxDepth": 3
+      }
+    },
+    "market-quotes": {
+      "price": {
+        "unit": "Quote",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "symbols": [
+          "AAPL",
+          "BTC-USD",
+          "EUR/USD"
+        ],
+        "assetType": "auto",
+        "includeHistory": false
+      }
+    },
+    "naukri-jobs-scraper": {
+      "price": {
+        "unit": "job",
+        "usd": 0.0008,
+        "tiers": {
+          "FREE": 0.0008,
+          "BRONZE": 0.00064,
+          "SILVER": 0.00056,
+          "GOLD": 0.00048,
+          "PLATINUM": 0.00048,
+          "DIAMOND": 0.00048
+        }
+      },
+      "prefill": {
+        "keywords": [
+          "python developer"
+        ],
+        "locations": [
+          "bengaluru"
+        ],
+        "maxJobsPerSearch": 100
+      }
+    },
+    "openfda-recall-monitor": {
+      "price": {
+        "unit": "result",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "dataset": "food-enforcement",
+        "searchQuery": "classification:\"Class I\"",
+        "sinceDays": 30
+      }
+    },
+    "overpass-poi-extractor": {
+      "price": {
+        "unit": "place",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "mode": "radius",
+        "latitude": 50.0755,
+        "longitude": 14.4378
+      }
+    },
+    "package-health-checker": {
+      "price": {
+        "unit": "result",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "packages": [
+          "npm:react",
+          "pypi:requests",
+          "crates:serde"
+        ],
+        "defaultRegistry": "npm",
+        "enrichGithub": true
+      }
+    },
+    "pdf-to-markdown": {
+      "price": {
+        "unit": "pdf",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "pdfUrls": [
+          "https://arxiv.org/pdf/1706.03762"
+        ],
+        "maxPdfsPerPage": 20,
+        "maxPagesPerPdf": 200
+      }
+    },
+    "podcast-lookup": {
+      "price": {
+        "unit": "episode",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "podcasts": [
+          "1200361736",
+          "search:true crime"
+        ],
+        "country": "us",
+        "searchLimit": 25
+      }
+    },
+    "press-release-monitor": {
+      "price": {
+        "unit": "result",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "sources": [
+          "prnewswire",
+          "businesswire",
+          "globenewswire"
+        ],
+        "keywords": [
+          "funding",
+          "acquisition",
+          "partnership"
+        ],
+        "maxItemsPerSource": 100
+      }
+    },
+    "rag-text-chunker": {
+      "price": {
+        "unit": "chunk",
+        "usd": 0.0002,
+        "tiers": {
+          "FREE": 0.0002,
+          "BRONZE": 0.00016,
+          "SILVER": 0.00014,
+          "GOLD": 0.00012,
+          "PLATINUM": 0.00012,
+          "DIAMOND": 0.00012
+        }
+      },
+      "prefill": {
+        "texts": [
+          "# Guide\n\nFirst section text.\n\n## Details\n\nMore text here."
+        ],
+        "chunkSize": 500,
+        "overlap": 50
+      }
+    },
+    "remote-jobs-aggregator": {
+      "price": {
+        "unit": "Job",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "sources": [
+          "remoteok",
+          "weworkremotely",
+          "hackernews"
+        ],
+        "keywords": [
+          "python"
+        ],
+        "maxJobs": 100
+      }
+    },
+    "seek-jobs-scraper": {
+      "price": {
+        "unit": "job",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "keywords": "software engineer",
+        "keywordsList": [],
+        "location": "Sydney"
+      }
+    },
+    "seo-page-audit": {
+      "price": {
+        "unit": "result",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "urls": [
+          "https://apify.com",
+          "https://example.com"
+        ],
+        "checkLinks": false,
+        "maxConcurrency": 5
+      }
+    },
+    "shopify-products-scraper": {
+      "price": {
+        "unit": "result",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "stores": [
+          "https://www.allbirds.com"
+        ],
+        "maxProductsPerStore": 100,
+        "collectionHandles": []
+      }
+    },
+    "sitemap-extractor": {
+      "price": {
+        "unit": "result",
+        "usd": 0.0002,
+        "tiers": {
+          "FREE": 0.0002,
+          "BRONZE": 0.00016,
+          "SILVER": 0.00014,
+          "GOLD": 0.00012,
+          "PLATINUM": 0.00012,
+          "DIAMOND": 0.00012
+        }
+      },
+      "prefill": {
+        "sources": [
+          "https://apify.com",
+          "https://www.allbirds.com/sitemap.xml"
+        ],
+        "maxUrlsPerSource": 1000,
+        "urlFilter": ""
+      }
+    },
+    "stackexchange-scraper": {
+      "price": {
+        "unit": "Question",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "queries": [
+          "web scraping",
+          "playwright timeout"
+        ],
+        "site": "stackoverflow",
+        "tagged": [
+          "python"
+        ]
+      }
+    },
+    "stepstone-scraper": {
+      "price": {
+        "unit": "job",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "keywords": "python",
+        "country": "de",
+        "sortBy": "relevance"
+      }
+    },
+    "structured-data-extractor": {
+      "price": {
+        "unit": "result",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "urls": [
+          "https://www.apify.com",
+          "https://www.allbirds.com/products/mens-tree-dashers"
+        ],
+        "includeRawJsonLd": true,
+        "includeOpenGraph": true
+      }
+    },
+    "subdomain-finder": {
+      "price": {
+        "unit": "result",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "domains": [
+          "apify.com",
+          "github.com"
+        ],
+        "resolveDns": true,
+        "includeWildcards": false
+      }
+    },
+    "substack-scraper": {
+      "price": {
+        "unit": "Post",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "publications": [
+          "bariweiss"
+        ],
+        "maxPosts": 50,
+        "includeBody": false
+      }
+    },
+    "tech-stack-detector": {
+      "price": {
+        "unit": "result",
+        "usd": 0.005,
+        "tiers": {
+          "FREE": 0.005,
+          "BRONZE": 0.004,
+          "SILVER": 0.0035,
+          "GOLD": 0.003,
+          "PLATINUM": 0.003,
+          "DIAMOND": 0.003
+        }
+      },
+      "prefill": {
+        "startUrls": [
+          {
+            "url": "https://apify.com"
+          }
+        ],
+        "maxPagesPerDomain": 3,
+        "categories": []
+      }
+    },
+    "telegram-channel-scraper": {
+      "price": {
+        "unit": "Post",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "channels": [
+          "@telegram",
+          "@durov"
+        ],
+        "maxPosts": 50,
+        "includeText": true
+      }
+    },
+    "tiktok-profile-scraper": {
+      "price": {
+        "unit": "profile",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "profiles": [
+          "nasa"
+        ]
+      }
+    },
+    "trustpilot-reviews-scraper": {
+      "price": {
+        "unit": "review",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "companies": [
+          "www.nordvpn.com"
+        ],
+        "maxReviewsPerCompany": 100,
+        "languages": "all"
+      }
+    },
+    "vscode-marketplace-extensions": {
+      "price": {
+        "unit": "result",
+        "usd": 0.0015,
+        "tiers": {
+          "FREE": 0.0015,
+          "BRONZE": 0.0012,
+          "SILVER": 0.00105,
+          "GOLD": 0.0009,
+          "PLATINUM": 0.0009,
+          "DIAMOND": 0.0009
+        }
+      },
+      "prefill": {
+        "queries": [
+          "ms-python.python",
+          "esbenp.prettier-vscode",
+          "search:markdown"
+        ],
+        "searchLimit": 25,
+        "maxConcurrency": 3
+      }
+    },
+    "wayback-page-diff": {
+      "price": {
+        "unit": "result",
+        "usd": 0.003,
+        "tiers": {
+          "FREE": 0.003,
+          "BRONZE": 0.0024,
+          "SILVER": 0.0021,
+          "GOLD": 0.0018,
+          "PLATINUM": 0.0018,
+          "DIAMOND": 0.0018
+        }
+      },
+      "prefill": {
+        "urls": [
+          "https://apify.com/pricing",
+          "https://example.com"
+        ],
+        "mode": "diff",
+        "maxSnapshots": 50
+      }
+    },
+    "website-screenshot": {
+      "price": {
+        "unit": "screenshot",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "urls": [
+          "https://example.com"
+        ],
+        "fullPage": false,
+        "format": "png"
+      }
+    },
+    "website-to-markdown": {
+      "price": {
+        "unit": "result",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "startUrls": [
+          {
+            "url": "https://docs.apify.com/platform"
+          },
+          {
+            "url": "https://crawlee.dev/docs"
+          }
+        ],
+        "maxPages": 50,
+        "maxDepth": 3
+      }
+    },
+    "wellfound-jobs-scraper": {
+      "price": {
+        "unit": "job",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "roles": "software engineer",
+        "locations": "New York",
+        "remoteOnly": false
+      }
+    },
+    "wikidata-entity-enrichment": {
+      "price": {
+        "unit": "result",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "entities": [
+          "Q95",
+          "Apify",
+          "https://en.wikipedia.org/wiki/Stripe,_Inc."
+        ],
+        "language": "en",
+        "entityType": "any"
+      }
+    },
+    "x-tweet-scraper": {
+      "price": {
+        "unit": "tweet",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "tweets": [
+          "https://x.com/jack/status/20"
+        ],
+        "language": "en"
+      }
+    },
+    "yc-companies-scraper": {
+      "price": {
+        "unit": "result",
+        "usd": 0.002,
+        "tiers": {
+          "FREE": 0.002,
+          "BRONZE": 0.0016,
+          "SILVER": 0.0014,
+          "GOLD": 0.0012,
+          "PLATINUM": 0.0012,
+          "DIAMOND": 0.0012
+        }
+      },
+      "prefill": {
+        "mode": "companies",
+        "query": "AI agents",
+        "batches": [
+          "W25"
+        ]
+      }
+    },
+    "youtube-channel-scraper": {
+      "price": {
+        "unit": "video",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "channels": [
+          "@MrBeast",
+          "@mkbhd"
+        ],
+        "proxyMode": "auto",
+        "proxyConfiguration": {
+          "useApifyProxy": true,
+          "apifyProxyGroups": [
+            "RESIDENTIAL"
+          ]
+        }
+      }
+    },
+    "youtube-channel-videos": {
+      "price": {
+        "unit": "result",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "channels": [
+          "@MrBeast",
+          "https://www.youtube.com/@apify"
+        ],
+        "proxyMode": "auto",
+        "proxyConfiguration": {
+          "useApifyProxy": true,
+          "apifyProxyGroups": [
+            "RESIDENTIAL"
+          ]
+        }
+      }
+    },
+    "youtube-comments-scraper": {
+      "price": {
+        "unit": "result",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "videos": [
+          "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          "jNQXAC9IVRw"
+        ],
+        "proxyConfiguration": {
+          "useApifyProxy": true,
+          "apifyProxyGroups": [
+            "RESIDENTIAL"
+          ]
+        },
+        "maxCommentsPerVideo": 100
+      }
+    },
+    "youtube-search-scraper": {
+      "price": {
+        "unit": "result",
+        "usd": 0.0005,
+        "tiers": {
+          "FREE": 0.0005,
+          "BRONZE": 0.0004,
+          "SILVER": 0.00035,
+          "GOLD": 0.0003,
+          "PLATINUM": 0.0003,
+          "DIAMOND": 0.0003
+        }
+      },
+      "prefill": {
+        "queries": [
+          "web scraping tutorial",
+          "apify"
+        ],
+        "type": "video",
+        "uploadDate": "any"
+      }
+    },
+    "youtube-shorts-scraper": {
+      "price": {
+        "unit": "short",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "channels": [
+          "@MrBeast"
+        ],
+        "hashtags": [],
+        "searchQueries": []
+      }
+    },
+    "youtube-transcript-scraper": {
+      "price": {
+        "unit": "video",
+        "usd": 0.004,
+        "tiers": {
+          "FREE": 0.004,
+          "BRONZE": 0.0032,
+          "SILVER": 0.0028,
+          "GOLD": 0.0024,
+          "PLATINUM": 0.0024,
+          "DIAMOND": 0.0024
+        }
+      },
+      "prefill": {
+        "videoUrls": [
+          "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        ],
+        "maxVideos": 10,
+        "language": "en"
+      }
+    },
+    "youtube-video-details": {
+      "price": {
+        "unit": "video",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "videos": [
+          "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          "jNQXAC9IVRw"
+        ],
+        "proxyMode": "auto",
+        "proxyConfiguration": {
+          "useApifyProxy": true,
+          "apifyProxyGroups": [
+            "RESIDENTIAL"
+          ]
+        }
+      }
+    },
+    "zillow-detail-scraper": {
+      "price": {
+        "unit": "home",
+        "usd": 0.003,
+        "tiers": {
+          "FREE": 0.003,
+          "BRONZE": 0.0024,
+          "SILVER": 0.0021,
+          "GOLD": 0.0018,
+          "PLATINUM": 0.0018,
+          "DIAMOND": 0.0018
+        }
+      },
+      "prefill": {
+        "homes": [
+          "https://www.zillow.com/homedetails/500-Denson-Dr-Austin-TX-78752/29412534_zpid/"
+        ]
+      }
+    },
+    "zillow-scraper": {
+      "price": {
+        "unit": "home",
+        "usd": 0.001,
+        "tiers": {
+          "FREE": 0.001,
+          "BRONZE": 0.0008,
+          "SILVER": 0.0007,
+          "GOLD": 0.0006,
+          "PLATINUM": 0.0006,
+          "DIAMOND": 0.0006
+        }
+      },
+      "prefill": {
+        "locations": "Austin, TX",
+        "listingType": "sale",
+        "sortBy": "relevance"
+      }
+    }
+  }
+}

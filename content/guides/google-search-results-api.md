@@ -12,7 +12,7 @@ You want to know who ranks for a keyword, feed search results into an AI agent, 
 
 ## What you get
 
-One row comes back per query per results page. Each row carries the request that produced it (`query`, `page`, `countryCode`, `languageCode`, `device`, `searchUrl`) and an `organicResults` array where every listing has `position`, `title`, `url`, `displayedUrl`, `snippet`, `date` and `sitelinks`. A real row from a recent run, trimmed:
+One row comes back per query per results page. Each row carries the request that produced it (`query`, `page`, `countryCode`, `languageCode`, `device`, `searchUrl`) and an `organicResults` array where every listing has `position`, `title`, `url`, `displayedUrl`, `snippet`, `date` and `sitelinks`. A real row from a recorded run, trimmed:
 
 {{sample}}
 

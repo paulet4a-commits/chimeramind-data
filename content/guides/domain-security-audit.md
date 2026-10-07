@@ -21,7 +21,7 @@ Each domain returns 40+ fields across four areas:
 | Security headers & cookies | `hasHsts`, `hstsMaxAge`, `hstsPreload`, `hasCsp`, `cspHasUnsafeInline`, `xFrameOptions`, `xContentTypeOptions`, `referrerPolicy`, `permissionsPolicy`, `xPoweredBy`, `cookieCount`, `secureCookieCount`, `httpOnlyCookieCount` |
 | robots.txt / llms.txt | `robotsStatus`, `robotsDisallowAll`, `robotsSitemapCount`, `aiBotsDisallowed`, `llmsTxtExists`, `llmsTxtTitle` |
 
-A real row from a recent run:
+A real row from a recorded run:
 
 {{sample}}
 

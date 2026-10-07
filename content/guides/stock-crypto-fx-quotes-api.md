@@ -12,7 +12,7 @@ A real watchlist is never one asset class. You hold a few stocks, an index ETF, 
 
 ## What you get
 
-Give the tool a mixed list such as `AAPL`, `^GSPC`, `BTC-USD`, `ETH` and `EUR/USD`. It detects each symbol's type, reads it from the right public source and returns the same fields for every row. A real row from a recent run:
+Give the tool a mixed list such as `AAPL`, `^GSPC`, `BTC-USD`, `ETH` and `EUR/USD`. It detects each symbol's type, reads it from the right public source and returns the same fields for every row. A real row from a recorded run:
 
 {{sample}}
 

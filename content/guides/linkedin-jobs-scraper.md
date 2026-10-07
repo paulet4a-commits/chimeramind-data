@@ -16,7 +16,7 @@ The tool uses the same public guest job pages that anyone sees on linkedin.com w
 
 ## What you get
 
-One row per job. A real row from a recent run:
+One row per job. A real row from a recorded run:
 
 {{sample}}
 

@@ -24,7 +24,7 @@ Every audited page returns the raw on-page facts and a verdict:
 | Social & structured data | `openGraphComplete`, `twitterCardPresent`, `schemaTypes` |
 | Verdict | `issues`, `seoScore`, `seoGrade` |
 
-A real row from a recent run:
+A real row from a recorded run:
 
 {{sample}}
 

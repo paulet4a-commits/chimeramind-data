@@ -12,7 +12,7 @@ Transcripts are the most useful part of a YouTube video for anything that isn't 
 
 ## What you get
 
-One row per video: the video and channel identifiers, the title, the duration, which caption track was used, every language the video offers, the complete transcript as one `text` string and — unless you turn it off — a `segments` array of `{start, dur, text}` objects. A real row from a recent run, trimmed:
+One row per video: the video and channel identifiers, the title, the duration, which caption track was used, every language the video offers, the complete transcript as one `text` string and — unless you turn it off — a `segments` array of `{start, dur, text}` objects. A real row from a recorded run, trimmed:
 
 {{sample}}
 

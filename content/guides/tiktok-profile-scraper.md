@@ -12,7 +12,7 @@ TikTok shows follower counts rounded ("1.8M") and one profile at a time. If you'
 
 ## What you get
 
-The tool returns two kinds of rows, marked by `type`. A real row from a recent run:
+The tool returns two kinds of rows, marked by `type`. A real row from a recorded run:
 
 {{sample}}
 
