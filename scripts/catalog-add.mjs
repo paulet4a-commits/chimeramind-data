@@ -1,6 +1,6 @@
 // Catalog review helper: adds newly public Actors to data/catalog-lock.json + data/actors.json with their live
 // price and input-schema prefill, so fetch-data.mjs stops failing with "Unexpected public Actor". Read-only on Apify.
-// Usage: APIFY_TOKEN=… node scripts/catalog-add.mjs [--apply]   (without --apply: prints what would be added)
+// Usage: APIFY_TOKEN=… node scripts/catalog-add.mjs [--sync-prices] [--apply]   (without --apply: prints the changes)
 //        node scripts/catalog-add.mjs --check <actorName>          (compares derived prefill with the locked one)
 import fs from 'node:fs';
 import path from 'node:path';
@@ -35,8 +35,18 @@ if (checkName) {
 
 const listing = (await api('acts?my=1&limit=1000')).data;
 const added = [];
+// --sync-prices: a scheduled price change (reprice.mjs, 15 days out) becomes live → move the locked price with it.
+const syncPrices = process.argv.includes('--sync-prices');
 for (const a of listing.items) {
     const d = (await api(`acts/${a.id}`)).data;
+    if (syncPrices && d?.isPublic && lock.actors[d.name]) {
+        const live = primaryPrice(d);
+        if (live && JSON.stringify(live) !== JSON.stringify(lock.actors[d.name].price)) {
+            lock.actors[d.name].price = live;
+            if (actors[d.name]) actors[d.name].price = live;
+            added.push(`${d.name} price -> ${live.usd}/${live.unit}`);
+        }
+    }
     if (!d?.isPublic || lock.actors[d.name]) continue;
     const price = primaryPrice(d);
     if (!price) throw new Error(`No live price: ${d.name}`);
@@ -49,7 +59,7 @@ for (const a of listing.items) {
     };
     added.push(`${d.name} (${price.usd}/${price.unit})`);
 }
-console.log(`${added.length} new public Actor(s):\n  ${added.join('\n  ')}`);
+console.log(`${added.length} catalog change(s):\n  ${added.join('\n  ')}`);
 if (!process.argv.includes('--apply') || !added.length) process.exit(0);
 const sorted = (o) => Object.fromEntries(Object.keys(o).sort().map((k) => [k, o[k]]));
 lock.actors = sorted(lock.actors);
