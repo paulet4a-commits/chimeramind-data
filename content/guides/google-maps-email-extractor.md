@@ -101,7 +101,7 @@ Use **Locations** with postal codes, one search term and `maxPlacesPerSearch` se
 
 {{pricing}}
 
-Two events are charged, as the Actor's listing describes: one for each place returned, and one for each returned place where an e-mail was found. With **Only places with an e-mail** on, a place without an e-mail is not returned and not charged. Places removed by the category, review or rating filters are not charged either. Set **Maximum cost per run** to cap a run; the Actor stops once the next place would exceed the cap.
+Two events are charged, as the Actor's listing describes: one for each place returned (table above), and one for each returned place where an e-mail was found: **$0.003 on the free plan** ($0.0024 Starter, $0.0021 Scale, $0.0018 Business and above). On the free plan a place with an e-mail therefore costs $0.005 and a place without one $0.002. With **Only places with an e-mail** on, a place without an e-mail is not returned and not charged. Places removed by the category, review or rating filters are not charged either. Set **Maximum cost per run** to cap a run; the Actor stops once the next place would exceed the cap.
 
 In the Actor's own test on 2026-10-09 ("dentist" in "Austin, TX"), an e-mail was found on 12 of 19 unique websites (63 %). A site that offers only a contact form will usually have no address to read.
 
