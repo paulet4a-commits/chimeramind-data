@@ -39,8 +39,9 @@ test('duplicate titles, missing pages and sitemap duplicates are rejected',()=>{
     mutate('dist/sitemap.xml',s=>s.replace('</urlset>','<url><loc>https://data.chimeramind.com/</loc></url></urlset>'),/Duplicate sitemap/);
 });
 test('stale label lies and broken internal links are rejected',()=>{
-    mutate('dist/tools/google-maps-scraper/index.html',s=>s.replace('data-sample-status="archived"','data-sample-status="recorded"'),/Incorrect sample age/);
-    mutate('dist/tools/google-maps-scraper/index.html',s=>s.replace('Archived example','Real output from a recent run'),/Unverified sample freshness/);
+    // The live fetch can refresh this sample, so flip whichever label it has instead of assuming "archived".
+    mutate('dist/tools/google-maps-scraper/index.html',s=>s.replace(/data-sample-status="(archived|recorded)"/,(m,v)=>`data-sample-status="${v==='archived'?'recorded':'archived'}"`),/Incorrect sample age/);
+    mutate('dist/tools/google-maps-scraper/index.html',s=>s.replace('</h1>',' Real output from a recent run</h1>'),/Unverified sample freshness/);
     mutate('dist/tools/google-maps-scraper/index.html',s=>s.replace('href="/tools/contact-extractor/"','href="/tools/nonexistent/"'),/Broken internal link/);
 });
 test('CTA attribution and build artifact tampering are rejected',()=>{
