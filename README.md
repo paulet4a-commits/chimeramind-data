@@ -1,6 +1,6 @@
 # ChimeraMiND Data — data.chimeramind.com
 
-71 webdatatools Actor için statik katalog, 17 rehber ve Lead/RAG/SEO/Hiring workflow sayfaları.
+91 webdatatools Actor için statik katalog, 20 rehber ve Lead/RAG/SEO/Hiring workflow sayfaları.
 Fiyat ve örnek çıktılar katalog snapshot'ıdır; yayın öncesinde Apify'dan salt okunur olarak doğrulanır.
 
 ## Yerel kontrol

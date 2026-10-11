@@ -6,8 +6,12 @@ import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { validateData, validateDist, hash } from '../src/quality.mjs';
+import { WORKFLOWS } from '../src/growth.mjs';
 const root = fileURLToPath(new URL('..', import.meta.url));
 const ACTORS = Object.keys(JSON.parse(fs.readFileSync(new URL('../data/catalog-lock.json', import.meta.url))).actors).length;
+const GUIDES = fs.readdirSync(new URL('../content/guides/', import.meta.url)).filter(f => f.endsWith('.md')).length;
+// Index pages: home, /guides/, /tools/ and /workflows/.
+const INDEX_PAGES = 4;
 let fixture;
 before(() => {
     fixture = fs.mkdtempSync(path.join(os.tmpdir(),'chimeramind-data-quality-'));
@@ -25,8 +29,8 @@ function mutate(file, edit, expected) {
     try { assert.throws(()=>validateDist(fixture),expected); }
     finally { fs.writeFileSync(p,original); }
 }
-test('generated pages cover every locked tool, 17 guides, 4 workflows and indexes',()=>{
-    assert.deepEqual(validateDist(fixture),{pages:ACTORS+25,tools:ACTORS,workflows:4});
+test('generated pages cover every locked tool, every guide file, every workflow and indexes',()=>{
+    assert.deepEqual(validateDist(fixture),{pages:ACTORS+GUIDES+WORKFLOWS.length+INDEX_PAGES,tools:ACTORS,workflows:WORKFLOWS.length});
 });
 test('wrong canonical and noindex landing are rejected',()=>{
     mutate('dist/tools/google-maps-scraper/index.html',s=>s.replace('rel="canonical" href="https://data.chimeramind.com/tools/google-maps-scraper/"','rel="canonical" href="https://wrong.invalid/"'),/Wrong canonical/);

@@ -1,0 +1,61 @@
+{
+  "name": "YouTube Shorts Scraper via Apify API (n8n)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/webdatatools~youtube-shorts-scraper/run-sync-get-dataset-items",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_TOKEN"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channels\": [\n    \"@MrBeast\"\n  ],\n  \"hashtags\": [\n    \"cooking\"\n  ],\n  \"searchQueries\": [\n    \"iphone tips\"\n  ],\n  \"maxShortsPerSource\": 20,\n  \"publishedAfter\": \"2026-10-01\",\n  \"includeDetails\": false\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "run-apify-actor",
+      "name": "Run Apify actor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Manual trigger": {
+      "main": [
+        [
+          {
+            "node": "Run Apify actor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "pinData": {}
+}
