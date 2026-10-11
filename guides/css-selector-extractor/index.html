@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extract Data from a Website with CSS Selectors — No Scraper Code Needed | ChimeraMiND Data</title>
+<meta name="description" content="Describe the fields once as CSS selectors and get one row per page — text, attributes, HTML tables, list items, pagination, sitemaps and page metadata — over plain HTTP, with headers and cookies for pages that need them.">
+
+<link rel="canonical" href="https://data.chimeramind.com/guides/css-selector-extractor/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Extract Data from a Website with CSS Selectors — No Scraper Code Needed | ChimeraMiND Data">
+<meta property="og:description" content="Describe the fields once as CSS selectors and get one row per page — text, attributes, HTML tables, list items, pagination, sitemaps and page metadata — over plain HTTP, with headers and cookies for pages that need them.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/css-selector-extractor/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Extract Data from a Website with CSS Selectors — No Scraper Code Needed","description":"Describe the fields once as CSS selectors and get one row per page — text, attributes, HTML tables, list items, pagination, sitemaps and page metadata — over plain HTTP, with headers and cookies for pages that need them.","dateModified":"2026-10-11","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/css-selector-extractor/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Web Scraper — CSS Selector & Data Extractor","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/css-selector-extractor","offers":{"@type":"Offer","price":"2.00","priceCurrency":"USD","description":"per 1,000 Pages"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Extract Data from a Website with CSS Selectors — No Scraper Code Needed","item":"https://data.chimeramind.com/guides/css-selector-extractor/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it use a headless browser?","acceptedAnswer":{"@type":"Answer","text":"No. It fetches the HTML with plain HTTP requests and parses it. That is much faster and cheaper than a browser, but it cannot see content that only appears after client-side JavaScript runs."}},{"@type":"Question","name":"Why is a field empty?","acceptedAnswer":{"@type":"Answer","text":"Check `matchCounts` first. Zero means the selector matched nothing on that page. Open the page, confirm the element exists in the HTML source (not only in the rendered page), and test the selector in your browser's developer tools. A typo in the selector is the most common cause."}},{"@type":"Question","name":"Why is a page missing from the dataset?","acceptedAnswer":{"@type":"Answer","text":"Each page you give gets one row, even when the fetch fails. A page missing from the output was not reached, which happens when a link or sitemap limit or the run timeout stops the run. The run's status message says how many pages were done."}},{"@type":"Question","name":"How do I scrape a whole site?","acceptedAnswer":{"@type":"Answer","text":"Use the sitemap, or a link selector with `maxPages` raised to the number of pages you expect. Keep `sameDomainOnly` on unless you have a reason to follow other domains."}},{"@type":"Question","name":"Is it legal?","acceptedAnswer":{"@type":"Answer","text":"The tool reads pages you ask it to fetch. You are responsible for checking a site's terms and robots rules, and for how you use the data."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / CSS Selector Extractor</div>
+<div class="guide"><div><header><div class="kicker">Web data</div><h1>Extract data from any static page with CSS selectors</h1><p class="lede">Describe the fields once as CSS selectors and get one row per page — text, attributes, HTML tables, list items, pagination, sitemaps and page metadata — over plain HTTP, with headers and cookies for pages that need them.</p>
+<div class="byline"><span>Updated 2026-10-11</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
+<article class="prose"><p>Most product pages, articles, directories and documentation sites are plain HTML. If you need one value from each page, such as a price, a title or a download link, writing a custom scraper is overkill. This guide shows how to turn a list of URLs and a short list of CSS selectors into structured rows, with no code to write and no browser to set up. The tool makes plain HTTP requests, so it is fast and cheap: $2 per 1,000 Pages.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>For every URL the tool fetches, it returns exactly one row. Each selector you define becomes one key in <code>fields</code>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>url</code>, <code>finalUrl</code></td>
+<td>The URL you gave and the URL after redirects</td>
+</tr>
+<tr>
+<td><code>statusCode</code>, <code>contentType</code></td>
+<td>HTTP status and content type of the response</td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td>One key per selector name: a string, an array of strings, a number for <code>count</code>, or row objects for <code>table</code></td>
+</tr>
+<tr>
+<td><code>matchCounts</code></td>
+<td>How many elements each selector matched. Zero means the selector found nothing</td>
+</tr>
+<tr>
+<td><code>items</code>, <code>itemCount</code></td>
+<td>List mode only: one object per repeated element, and the total count</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>With <code>includeMetadata</code>: title, description, canonical URL, language, Open Graph tags and JSON-LD blocks</td>
+</tr>
+<tr>
+<td><code>foundOn</code></td>
+<td>When the page was reached by following a link, the page that linked to it</td>
+</tr>
+<tr>
+<td><code>htmlSizeBytes</code>, <code>usedProxy</code>, <code>error</code>, <code>scrapedAt</code></td>
+<td>Size of the HTML, whether a proxy was needed, the error if the page failed, and the fetch time</td>
+</tr>
+</tbody></table>
+</div><p>A URL that fails to load still gets a row, with <code>error</code> set and the other fields empty. A typo in one selector never stops the run.</p>
+<h2 id="selector-types">Selector types</h2>
+<p>Each selector is an object with a <code>name</code>, a CSS <code>selector</code> and a <code>type</code>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>text</code></td>
+<td>The element&#39;s text</td>
+</tr>
+<tr>
+<td><code>html</code></td>
+<td>The element&#39;s outer HTML</td>
+</tr>
+<tr>
+<td><code>attr</code></td>
+<td>An attribute value. Add <code>&quot;attribute&quot;: &quot;href&quot;</code> or similar</td>
+</tr>
+<tr>
+<td><code>count</code></td>
+<td>How many elements matched, with no value</td>
+</tr>
+<tr>
+<td><code>table</code></td>
+<td>The matched <code>&lt;table&gt;</code> as an array of row objects keyed by its header row</td>
+</tr>
+</tbody></table>
+</div><h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Fill <code>urls</code> with one page per line.</li>
+<li>Fill <code>selectors</code> with a JSON array. Up to 25 selectors per run.</li>
+<li>Leave <code>firstMatchOnly</code> on to get one value per selector. Turn it off to get every match as an array, capped by <code>maxMatchesPerSelector</code>.</li>
+<li>Set <code>trimWhitespace</code> on to collapse spacing in text and attribute values.</li>
+<li>Click <strong>Start</strong> and export the dataset as JSON, CSV, Excel or HTML, one row per page.</li>
+</ol>
+<pre><code class="language-json">{
+    &quot;urls&quot;: [&quot;https://example.com&quot;, &quot;https://apify.com&quot;],
+    &quot;selectors&quot;: [
+        { &quot;name&quot;: &quot;title&quot;, &quot;selector&quot;: &quot;h1&quot;, &quot;type&quot;: &quot;text&quot; },
+        { &quot;name&quot;: &quot;canonicalUrl&quot;, &quot;selector&quot;: &quot;link[rel=&#39;canonical&#39;]&quot;, &quot;type&quot;: &quot;attr&quot;, &quot;attribute&quot;: &quot;href&quot; }
+    ],
+    &quot;firstMatchOnly&quot;: true,
+    &quot;trimWhitespace&quot;: true
+}
+</code></pre>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/css-selector-extractor?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fcss-selector-extractor%2F%3Aguide_cta&amp;utm_term=css-selector-extractor&amp;source_page=%2Fguides%2Fcss-selector-extractor%2F&amp;source_actor=css-selector-extractor">Run Web Scraper — CSS Selector &amp; Data Extractor on Apify →</a></p><h2 id="scrape-lists-follow-pagination-and-read-sitemaps">Scrape lists, follow pagination and read sitemaps</h2>
+<p><strong>List pages.</strong> Set <code>itemSelector</code> to the repeated element, such as <code>article.product_pod</code>. Every other selector is then searched inside each item, and the row gets an <code>items</code> array with one object per product, post or listing. A page with 200 products is still one billed page.</p>
+<pre><code class="language-json">{
+    &quot;urls&quot;: [&quot;https://books.toscrape.com/&quot;],
+    &quot;itemSelector&quot;: &quot;article.product_pod&quot;,
+    &quot;selectors&quot;: [
+        { &quot;name&quot;: &quot;title&quot;, &quot;selector&quot;: &quot;h3 a&quot;, &quot;type&quot;: &quot;attr&quot;, &quot;attribute&quot;: &quot;title&quot; },
+        { &quot;name&quot;: &quot;price&quot;, &quot;selector&quot;: &quot;.price_color&quot;, &quot;type&quot;: &quot;text&quot; }
+    ],
+    &quot;linkSelector&quot;: &quot;li.next a&quot;,
+    &quot;maxPages&quot;: 3
+}
+</code></pre>
+<p><strong>Pagination and detail pages.</strong> <code>linkSelector</code> follows the links you point it at: <code>li.next a</code> for the next page of a list, or <code>a.product-link</code> for detail pages. Followed pages get the same extraction, and each one is a row with <code>foundOn</code> set. The tool stays on the same domain unless <code>sameDomainOnly</code> is switched off, can be narrowed with a <code>urlPattern</code> regular expression, and stops at <code>maxPages</code> (default 100).</p>
+<p><strong>Whole sites from a sitemap.</strong> Give <code>sitemapUrls</code>, such as <code>https://example.com/sitemap.xml</code>, instead of or with the URL list. Sitemap indexes, nested sitemaps and <code>.xml.gz</code> files are expanded automatically. Add a URL pattern such as <code>/products/</code> to keep only the pages you want.</p>
+<p><strong>Numbered pages without a next link.</strong> Use <code>urlTemplate</code> with a <code>{page}</code> placeholder and a <code>pageRange</code>. For example, <code>https://books.toscrape.com/catalogue/page-{page}.html</code> with <code>{&quot;from&quot;: 1, &quot;to&quot;: 2}</code> fetches two pages. For offset-style URLs such as <code>?start={page}</code>, add a <code>step</code>: <code>{&quot;from&quot;: 0, &quot;to&quot;: 100, &quot;step&quot;: 20}</code>. Generated URLs are capped by the 10,000 limit and your cost cap, not by <code>maxPages</code>.</p>
+<p><strong>HTML tables.</strong> A selector with <code>&quot;type&quot;: &quot;table&quot;</code> returns the table as rows. Blank headers become <code>column_N</code>, repeated headers get a <code>_2</code> suffix, and cells that span several columns are repeated so the columns stay aligned. Up to 1,000 rows per table.</p>
+<pre><code class="language-json">{ &quot;name&quot;: &quot;customers&quot;, &quot;selector&quot;: &quot;#customers&quot;, &quot;type&quot;: &quot;table&quot; }
+</code></pre>
+<p><strong>Headers and cookies.</strong> Use <code>headers</code> for things such as <code>{&quot;Accept-Language&quot;: &quot;de-DE&quot;}</code>, and <code>cookies</code> for pages that sit behind a session or a locale switch. Cookies can be given as <code>[&quot;name=value&quot;]</code> or as the list a browser cookie-export extension produces. Values are never written to the run log, but they are stored in the run input like any other field. Use short-lived or test credentials, and do not paste a live account session into a shared or scheduled run.</p>
+<p><strong>Metadata and JSON-LD.</strong> Turn on <code>includeMetadata</code> to get the page title, description, canonical URL, language, Open Graph tags and every schema.org JSON-LD block. Product prices, ratings, article dates and organisation details come out without writing a selector.</p>
+<h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-css-selector-extractor" id="t-css-selector-extractor-python" checked><label for="t-css-selector-extractor-python">Python</label><pre class="tab-python"><code class="language-python">import json
+import os
+from apify_client import ApifyClient<p>client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])
+run = client.actor(&quot;webdatatools/css-selector-extractor&quot;).call(run_input=json.loads(&quot;{\n    &amp;quot;urls&amp;quot;: [\n        &amp;quot;<a href="https://example.com%5C&amp;quot;,%5Cn">https://example.com\&amp;quot;,\n</a>        &amp;quot;<a href="https://apify.com%5C&amp;quot;%5Cn">https://apify.com\&amp;quot;\n</a>    ],\n    &amp;quot;selectors&amp;quot;: [\n        {\n            &amp;quot;name&amp;quot;: &amp;quot;title&amp;quot;,\n            &amp;quot;selector&amp;quot;: &amp;quot;h1&amp;quot;,\n            &amp;quot;type&amp;quot;: &amp;quot;text&amp;quot;\n        },\n        {\n            &amp;quot;name&amp;quot;: &amp;quot;canonicalUrl&amp;quot;,\n            &amp;quot;selector&amp;quot;: &amp;quot;link[rel=&#39;canonical&#39;]&amp;quot;,\n            &amp;quot;type&amp;quot;: &amp;quot;attr&amp;quot;,\n            &amp;quot;attribute&amp;quot;: &amp;quot;href&amp;quot;\n        }\n    ],\n    &amp;quot;firstMatchOnly&amp;quot;: true\n}&quot;))</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-css-selector-extractor" id="t-css-selector-extractor-js"><label for="t-css-selector-extractor-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/css-selector-extractor&#39;).call({
+    &quot;urls&quot;: [
+        &quot;<a href="https://example.com">https://example.com</a>&quot;,
+        &quot;<a href="https://apify.com">https://apify.com</a>&quot;
+    ],
+    &quot;selectors&quot;: [
+        {
+            &quot;name&quot;: &quot;title&quot;,
+            &quot;selector&quot;: &quot;h1&quot;,
+            &quot;type&quot;: &quot;text&quot;
+        },
+        {
+            &quot;name&quot;: &quot;canonicalUrl&quot;,
+            &quot;selector&quot;: &quot;link[rel=&#39;canonical&#39;]&quot;,
+            &quot;type&quot;: &quot;attr&quot;,
+            &quot;attribute&quot;: &quot;href&quot;
+        }
+    ],
+    &quot;firstMatchOnly&quot;: true
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-css-selector-extractor" id="t-css-selector-extractor-bash"><label for="t-css-selector-extractor-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~css-selector-extractor/run-sync-get-dataset-items">https://api.apify.com/v2/acts/webdatatools~css-selector-extractor/run-sync-get-dataset-items</a>&quot; <br>-H &quot;Authorization: Bearer $APIFY_TOKEN&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;urls&quot;:[&quot;<a href="https://example.com&amp;quot;,&amp;quot;https://apify.com&amp;quot;%5D,&amp;quot;selectors&amp;quot;:%5B%7B&amp;quot;name&amp;quot;:&amp;quot;title&amp;quot;,&amp;quot;selector&amp;quot;:&amp;quot;h1&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;%7D,%7B&amp;quot;name&amp;quot;:&amp;quot;canonicalUrl&amp;quot;,&amp;quot;selector&amp;quot;:&amp;quot;link%5Brel=&amp;#39;canonical&amp;#39;%5D&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;attr&amp;quot;,&amp;quot;attribute&amp;quot;:&amp;quot;href&amp;quot;%7D%5D,&amp;quot;firstMatchOnly&amp;quot;:true%7D&amp;#39">https://example.com&amp;quot;,&amp;quot;https://apify.com&amp;quot;],&amp;quot;selectors&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;title&amp;quot;,&amp;quot;selector&amp;quot;:&amp;quot;h1&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;},{&amp;quot;name&amp;quot;:&amp;quot;canonicalUrl&amp;quot;,&amp;quot;selector&amp;quot;:&amp;quot;link[rel=&amp;#39;canonical&amp;#39;]&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;attr&amp;quot;,&amp;quot;attribute&amp;quot;:&amp;quot;href&amp;quot;}],&amp;quot;firstMatchOnly&amp;quot;:true}&amp;#39</a>;</code></pre></div></p>
+<h2 id="use-it-in-n8n-or-make">Use it in n8n or Make</h2>
+<p>In <strong>n8n</strong>, add an <strong>HTTP Request</strong> node: method <code>POST</code>, URL <code>https://api.apify.com/v2/acts/webdatatools~css-selector-extractor/run-sync-get-dataset-items</code>, a header <code>Authorization</code> with the value <code>Bearer YOUR_APIFY_TOKEN</code>, and a JSON body. The response is an array with one row per page, ready for the next step. In <strong>Make</strong>, use <strong>HTTP &gt; Make a request</strong> with the same method, URL and header, body type Raw with JSON content, and <strong>Parse response</strong> on.</p>
+<p>Keep the token in the header. Do not put it in the URL, where it can end up in logs and history.</p>
+<p>Body example:</p>
+<pre><code class="language-json">{
+    &quot;urls&quot;: [&quot;https://books.toscrape.com/&quot;],
+    &quot;selectors&quot;: [{ &quot;name&quot;: &quot;title&quot;, &quot;selector&quot;: &quot;h1&quot;, &quot;type&quot;: &quot;text&quot; }]
+}
+</code></pre>
+<p><a href="/templates/css-selector-extractor.n8n.json">Download the n8n workflow (JSON)</a> — a manual trigger, the HTTP Request node above and a placeholder for your token.</p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="price-and-availability-watch">Price and availability watch</h3>
+<p>Put your product URLs in <code>urls</code> with one <code>text</code> selector for the price and one for the stock status. Schedule the run daily and compare rows by <code>url</code>. A row with a non-empty <code>error</code> means that page could not be read, so check it before you act on a missing price.</p>
+<h3 id="product-catalogue-from-a-category">Product catalogue from a category</h3>
+<p>Set <code>itemSelector</code> to the product card, add a <code>linkSelector</code> for the next page, and map name, price and link inside each item. You get one <code>items</code> array per listing page, which you can flatten into a table.</p>
+<h3 id="site-inventory-from-a-sitemap">Site inventory from a sitemap</h3>
+<p>Give the sitemap URL, leave the selectors to <code>title</code> and <code>h1</code>, turn on <code>includeMetadata</code> and filter with a URL pattern. You get the title, canonical URL and JSON-LD for every page in one run.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per Page</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.002</td><td class="num">$2</td></tr><tr><td>Starter</td><td class="num">$0.0016</td><td class="num">$1.60</td></tr><tr><td>Scale</td><td class="num">$0.0014</td><td class="num">$1.40</td></tr><tr><td>Business</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise+</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr></tbody></table></div>
+<p class="fine">Catalog price snapshot. Check the Apify Store for current prices before running. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>The price is per page, not per field. Five selectors on 100 URLs cost the same as one selector on 100 URLs. In list mode, a page with 200 items is still one page. Pages found by following links or reading sitemaps are billed the same way. Set <strong>Maximum cost per run</strong> to stop at a budget.</p>
+<h2 id="limits">Limits</h2>
+<ul>
+<li>Plain HTTP only. Content added by JavaScript after the page loads is not visible, so a <code>matchCounts</code> of 0 can mean the content is rendered client-side.</li>
+<li>Up to 25 selectors per run, 1 to 500 matches per selector, and 1 to 20 parallel page fetches.</li>
+<li><code>proxyMode</code> <code>auto</code> requests each page directly first and switches to Apify&#39;s residential proxy only after a block. <code>always</code> and <code>never</code> force one path.</li>
+<li>If a run reaches its timeout, pages already processed keep their rows, and the run ends with a status message listing how many pages were completed.</li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<h3 id="does-it-use-a-headless-browser">Does it use a headless browser?</h3>
+<p>No. It fetches the HTML with plain HTTP requests and parses it. That is much faster and cheaper than a browser, but it cannot see content that only appears after client-side JavaScript runs.</p>
+<h3 id="why-is-a-field-empty">Why is a field empty?</h3>
+<p>Check <code>matchCounts</code> first. Zero means the selector matched nothing on that page. Open the page, confirm the element exists in the HTML source (not only in the rendered page), and test the selector in your browser&#39;s developer tools. A typo in the selector is the most common cause.</p>
+<h3 id="why-is-a-page-missing-from-the-dataset">Why is a page missing from the dataset?</h3>
+<p>Each page you give gets one row, even when the fetch fails. A page missing from the output was not reached, which happens when a link or sitemap limit or the run timeout stops the run. The run&#39;s status message says how many pages were done.</p>
+<h3 id="how-do-i-scrape-a-whole-site">How do I scrape a whole site?</h3>
+<p>Use the sitemap, or a link selector with <code>maxPages</code> raised to the number of pages you expect. Keep <code>sameDomainOnly</code> on unless you have a reason to follow other domains.</p>
+<h3 id="is-it-legal">Is it legal?</h3>
+<p>The tool reads pages you ask it to fetch. You are responsible for checking a site&#39;s terms and robots rules, and for how you use the data.</p>
+</article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/app-store-reviews-scraper/">App Store Reviews Scraper</a></li><li><a href="/tools/ashby-jobs-scraper/">Ashby Jobs Scraper</a></li><li><a href="/tools/crypto-fear-greed-index/">Crypto Fear &amp; Greed Index (Daily History, Bitcoin Sentiment)</a></li><li><a href="/tools/dexscreener-scraper/">DexScreener Scraper (DEX Pairs, Prices, Liquidity, Boosts)</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-c705gmJYJNPuwewQI-aCgy3k2b5L-css-selector-extractor.png" alt="" width="44" height="44"><h4>Web Scraper — CSS Selector &amp; Data Extractor</h4></div>
+<dl><dt>Price</dt><dd>$2 / 1k Pages</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/css-selector-extractor?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fcss-selector-extractor%2F%3Aspec&amp;utm_term=css-selector-extractor&amp;source_page=%2Fguides%2Fcss-selector-extractor%2F&amp;source_actor=css-selector-extractor">Try it free on Apify</a><p><a href="/tools/css-selector-extractor/">Tool details</a></p></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#selector-types">Selector types</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#scrape-lists-follow-pagination-and-read-sitemaps">Scrape lists, follow pagination and read sitemaps</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#use-it-in-n8n-or-make">Use it in n8n or Make</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#limits">Limits</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fcss-selector-extractor%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fguides%2Fcss-selector-extractor%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

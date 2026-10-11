@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Get Emails from Google Maps — Export Business Leads to CSV or JSON | ChimeraMiND Data</title>
+<meta name="description" content="Search Google Maps by business type and city, then read each business&#39;s own website for e-mail addresses, phones and social profiles. Filter by category, reviews or rating and export one row per place.">
+
+<link rel="canonical" href="https://data.chimeramind.com/guides/google-maps-email-extractor/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Get Emails from Google Maps — Export Business Leads to CSV or JSON | ChimeraMiND Data">
+<meta property="og:description" content="Search Google Maps by business type and city, then read each business&#39;s own website for e-mail addresses, phones and social profiles. Filter by category, reviews or rating and export one row per place.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/google-maps-email-extractor/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to Get Emails from Google Maps — Export Business Leads to CSV or JSON","description":"Search Google Maps by business type and city, then read each business's own website for e-mail addresses, phones and social profiles. Filter by category, reviews or rating and export one row per place.","dateModified":"2026-10-11","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/google-maps-email-extractor/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google Maps Email Extractor: Only Places With E-mail","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/google-maps-email-extractor","offers":{"@type":"Offer","price":"2.00","priceCurrency":"USD","description":"per 1,000 Places"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"How to Get Emails from Google Maps — Export Business Leads to CSV or JSON","item":"https://data.chimeramind.com/guides/google-maps-email-extractor/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it legal to extract e-mails from Google Maps businesses?","acceptedAnswer":{"@type":"Answer","text":"The tool reads publicly visible business listings and each business's public website, without logging in. You are responsible for how you use the data, especially under privacy and anti-spam rules such as GDPR and CAN-SPAM when you contact people."}},{"@type":"Question","name":"Why do some places have no e-mail?","acceptedAnswer":{"@type":"Answer","text":"Many small businesses publish only a contact form, or load the address with JavaScript after the page opens. `contactPagesChecked` shows which pages were read, and `enrichmentError` says when a site could not be read at all."}},{"@type":"Question","name":"Does it verify the e-mails?","acceptedAnswer":{"@type":"Answer","text":"No. It returns addresses as published on the website. Check them with an [email validator](https://apify.com/webdatatools/email-validator) for syntax, mail-server and disposable-address checks."}},{"@type":"Question","name":"Why do two places share the same e-mail?","acceptedAnswer":{"@type":"Answer","text":"They share one website, such as a chain or a shared office. The site is read once, so the same address can appear on both rows."}},{"@type":"Question","name":"Why are there at most about 120 places per search?","acceptedAnswer":{"@type":"Answer","text":"Google stops returning results after about 120 per search. For bigger areas, turn on **Split the map area** with **Max places per query**, list several postal codes or districts in **Locations**, or run one job per city."}},{"@type":"Question","name":"Can I use it from n8n, Make or Zapier?","acceptedAnswer":{"@type":"Answer","text":"Yes. Start a run through the Apify integrations or the HTTP API, then read the dataset. The section above shows the exact request."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Google Maps Email Extractor</div>
+<div class="guide"><div><header><div class="kicker">Leads</div><h1>Get emails from Google Maps businesses, one row per place</h1><p class="lede">Search Google Maps by business type and city, then read each business&#39;s own website for e-mail addresses, phones and social profiles. Filter by category, reviews or rating and export one row per place.</p>
+<div class="byline"><span>Updated 2026-10-11</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
+<article class="prose"><p>Google Maps is the easiest place to find local businesses, but it shows a phone number and a website, not the e-mail address you need for outreach. The address usually sits on the business&#39;s own website, on a contact or imprint page. This guide shows how to run both steps in one job: search Google Maps for a business type in a city, then read each website for e-mail addresses — and export the result as CSV, Excel or JSON. It needs no Google account, no API key and no browser extension. Pricing is $2 per 1,000 Places, and the cost section below explains how places without an e-mail are handled.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>The Actor runs a Google Maps search for each search term and location you give it. For every place that has a website, it opens the homepage and then the pages most likely to list an address, in this order: contact, imprint or legal notice, about, team and appointments. It reads <code>mailto:</code> links, protected addresses and simple obfuscations such as <code>jane [at] clinic [dot] com</code>, then drops placeholders, image file names and <code>noreply</code> boxes. Most sites take two or three page requests.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>One row per place. The Google Maps fields come from the search itself; the e-mail fields come from the website.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>name</code>, <code>primaryCategory</code>, <code>categories</code></td>
+<td>Business name and its Google categories</td>
+</tr>
+<tr>
+<td><code>address</code>, <code>phone</code>, <code>website</code>, <code>googleMapsUrl</code></td>
+<td>Address, phone and links as Google Maps shows them</td>
+</tr>
+<tr>
+<td><code>rating</code>, <code>reviewsCount</code></td>
+<td>Star rating and number of Google reviews</td>
+</tr>
+<tr>
+<td><code>primaryEmail</code></td>
+<td>The address to contact first (the business&#39;s own domain is preferred)</td>
+</tr>
+<tr>
+<td><code>emails</code>, <code>emailSource</code></td>
+<td>Every address found on the site, and the page where the primary one was read</td>
+</tr>
+<tr>
+<td><code>sitePhones</code>, <code>socials</code></td>
+<td>Phone numbers and social profile links found on the website</td>
+</tr>
+<tr>
+<td><code>contactPagesChecked</code>, <code>enrichmentError</code></td>
+<td>Which pages were read, and why a site could not be read</td>
+</tr>
+<tr>
+<td><code>searchQuery</code>, <code>searchLocation</code>, <code>rank</code></td>
+<td>Which search found the place and where it ranked</td>
+</tr>
+</tbody></table>
+</div><p>The tool returns addresses as the website publishes them. It does not verify that a mailbox exists. Run the list through an <a href="/tools/email-validator/">email validator</a> before a campaign.</p>
+<h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Enter the business types in <strong>Search terms</strong>: one term (<code>dentist</code>), several separated by semicolons (<code>dentist; orthodontist</code>), or a JSON array.</li>
+<li>Set <strong>Location</strong> to a city, district or country (<code>Austin, TX</code>). Leave it empty if the term already contains the place, such as <code>plumber in Chicago</code>.</li>
+<li>Set <strong>Max places per search term</strong> (1 to 120). Google returns about 120 places per search, so 120 is the ceiling for one search.</li>
+<li>Turn on <strong>Only places with an e-mail</strong> if you want only contactable rows. Places without an e-mail are still searched and their websites read, but they are not returned and not charged.</li>
+<li>Narrow the list before it is charged: <strong>Category filter</strong> keeps only exact Google category names (<code>Dentist</code> matches &quot;Dentist&quot;, not &quot;Pediatric dentist&quot;), <strong>Minimum reviews</strong> and <strong>Minimum rating</strong> drop weak listings, and <strong>Skip closed places</strong> removes places Google marks as closed.</li>
+<li>Click <strong>Start</strong> and export as CSV, Excel or JSON.</li>
+</ol>
+<p>Already have a list of Google Maps links? Put them in <strong>Google Maps links</strong>. A search link runs its text, and a place link returns that one place. Clear the search term and location to run only your links.</p>
+<h2 id="going-past-120-places">Going past 120 places</h2>
+<p>A single search stops at about 120 places. You have three ways to cover more ground:</p>
+<ul>
+<li><strong>Several locations.</strong> Fill <strong>Locations</strong> with postal codes or districts (<code>[&quot;78701&quot;, &quot;78704&quot;, &quot;78745&quot;]</code>). Every search term runs in every location, and each place is returned once.</li>
+<li><strong>Split the map area.</strong> Turn on <strong>Split the map area</strong> and set <strong>Max places per query</strong> (up to 1,000). The area of each search is divided into smaller cells, up to three levels deep, and duplicates are removed. Searches take longer, but you pay only for places returned.</li>
+<li><strong>One run per city.</strong> For a national list, one run per city is easier to check and to schedule.</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;searchQueries&quot;: [&quot;dentist&quot;],
+    &quot;locations&quot;: [&quot;78701&quot;, &quot;78704&quot;, &quot;78745&quot;],
+    &quot;maxPlacesPerSearch&quot;: 120,
+    &quot;categoryFilter&quot;: [&quot;Dentist&quot;],
+    &quot;minReviews&quot;: 20,
+    &quot;onlyWithEmail&quot;: true
+}
+</code></pre>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/google-maps-email-extractor?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fgoogle-maps-email-extractor%2F%3Aguide_cta&amp;utm_term=google-maps-email-extractor&amp;source_page=%2Fguides%2Fgoogle-maps-email-extractor%2F&amp;source_actor=google-maps-email-extractor">Run Google Maps Email Extractor: Only Places With E-mail on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-google-maps-email-extractor" id="t-google-maps-email-extractor-python" checked><label for="t-google-maps-email-extractor-python">Python</label><pre class="tab-python"><code class="language-python">import json
+import os
+from apify_client import ApifyClient<p>client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])
+run = client.actor(&quot;webdatatools/google-maps-email-extractor&quot;).call(run_input=json.loads(&quot;{\n    &amp;quot;searchQueries&amp;quot;: &amp;quot;dentist&amp;quot;,\n    &amp;quot;location&amp;quot;: &amp;quot;Austin, TX&amp;quot;,\n    &amp;quot;maxPlacesPerSearch&amp;quot;: 10,\n    &amp;quot;maxPagesPerSite&amp;quot;: 5,\n    &amp;quot;language&amp;quot;: &amp;quot;en&amp;quot;,\n    &amp;quot;country&amp;quot;: &amp;quot;us&amp;quot;,\n    &amp;quot;minRating&amp;quot;: 0\n}&quot;))</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-google-maps-email-extractor" id="t-google-maps-email-extractor-js"><label for="t-google-maps-email-extractor-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/google-maps-email-extractor&#39;).call({
+    &quot;searchQueries&quot;: &quot;dentist&quot;,
+    &quot;location&quot;: &quot;Austin, TX&quot;,
+    &quot;maxPlacesPerSearch&quot;: 10,
+    &quot;maxPagesPerSite&quot;: 5,
+    &quot;language&quot;: &quot;en&quot;,
+    &quot;country&quot;: &quot;us&quot;,
+    &quot;minRating&quot;: 0
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-google-maps-email-extractor" id="t-google-maps-email-extractor-bash"><label for="t-google-maps-email-extractor-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~google-maps-email-extractor/run-sync-get-dataset-items">https://api.apify.com/v2/acts/webdatatools~google-maps-email-extractor/run-sync-get-dataset-items</a>&quot; <br>-H &quot;Authorization: Bearer $APIFY_TOKEN&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;searchQueries&quot;:&quot;dentist&quot;,&quot;location&quot;:&quot;Austin, TX&quot;,&quot;maxPlacesPerSearch&quot;:10,&quot;maxPagesPerSite&quot;:5,&quot;language&quot;:&quot;en&quot;,&quot;country&quot;:&quot;us&quot;,&quot;minRating&quot;:0}&#39;</code></pre></div></p>
+<h2 id="use-it-in-n8n-or-make">Use it in n8n or Make</h2>
+<p>The Actor can be started over the Apify API from any workflow tool. In <strong>n8n</strong>, add an <strong>HTTP Request</strong> node: method <code>POST</code>, URL <code>https://api.apify.com/v2/acts/webdatatools~google-maps-email-extractor/run-sync-get-dataset-items</code>, a header <code>Authorization</code> with the value <code>Bearer YOUR_APIFY_TOKEN</code>, and a JSON body. The response is an array with one item per place, ready for the next node. In <strong>Make</strong>, use the <strong>HTTP &gt; Make a request</strong> module with the same method, URL and header, body type Raw with JSON content, and <strong>Parse response</strong> switched on; then iterate over the returned array.</p>
+<p>Synchronous calls wait for the run to finish, so keep the body small for quick tests. For large lists, start the run asynchronously and read its dataset when it completes.</p>
+<p>Body example for this guide:</p>
+<pre><code class="language-json">{
+    &quot;searchQueries&quot;: [&quot;dentist&quot;],
+    &quot;location&quot;: &quot;Austin, TX&quot;,
+    &quot;maxPlacesPerSearch&quot;: 50,
+    &quot;onlyWithEmail&quot;: true
+}
+</code></pre>
+<p><a href="/templates/google-maps-email-extractor.n8n.json">Download the n8n workflow (JSON)</a> — a manual trigger, the HTTP Request node above and a placeholder for your token.</p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="outreach-list-for-one-city-and-one-trade">Outreach list for one city and one trade</h3>
+<p>Run one search term in one city with <strong>Only places with an e-mail</strong> on and <strong>Minimum reviews</strong> at 10 or more. Sort by <code>reviewsCount</code> and send the top rows to your validator, then to your CRM.</p>
+<h3 id="weekly-refresh-of-a-lead-list">Weekly refresh of a lead list</h3>
+<p>Schedule the run weekly with the same input. Compare <code>googleMapsUrl</code> or <code>website</code> between runs to find new businesses, and keep the previous rows for businesses that have since closed.</p>
+<h3 id="cover-a-region-in-postal-codes">Cover a region in postal codes</h3>
+<p>Use <strong>Locations</strong> with postal codes, one search term and <code>maxPlacesPerSearch</code> set to 120. Each place appears once in the output even when two postal-code searches overlap, so the total is easier to read than separate runs.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per Place</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.002</td><td class="num">$2</td></tr><tr><td>Starter</td><td class="num">$0.0016</td><td class="num">$1.60</td></tr><tr><td>Scale</td><td class="num">$0.0014</td><td class="num">$1.40</td></tr><tr><td>Business</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise+</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr></tbody></table></div>
+<p class="fine">Catalog price snapshot. Check the Apify Store for current prices before running. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>Two events are charged, as the Actor&#39;s listing describes: one for each place returned, and one for each returned place where an e-mail was found. With <strong>Only places with an e-mail</strong> on, a place without an e-mail is not returned and not charged. Places removed by the category, review or rating filters are not charged either. Set <strong>Maximum cost per run</strong> to cap a run; the Actor stops once the next place would exceed the cap.</p>
+<p>In the Actor&#39;s own test on 2026-10-09 (&quot;dentist&quot; in &quot;Austin, TX&quot;), an e-mail was found on 12 of 19 unique websites (63 %). A site that offers only a contact form will usually have no address to read.</p>
+<h2 id="limits-to-plan-for">Limits to plan for</h2>
+<ul>
+<li>Websites behind strong bot protection, such as challenge pages or CAPTCHAs, are reported in <code>enrichmentError</code> and not retried through a proxy.</li>
+<li>E-mail addresses that only appear after JavaScript runs, or that a browser plugin decodes, are not found.</li>
+<li>Google Maps results carry today&#39;s opening hours only, with no review text or photos.</li>
+<li>Place IDs are not accepted as input. Paste the place&#39;s full Google Maps link instead.</li>
+<li>Short <code>maps.app.goo.gl</code> links are not followed. Copy the full <code>google.com/maps/…</code> link from the address bar.</li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<h3 id="is-it-legal-to-extract-e-mails-from-google-maps-businesses">Is it legal to extract e-mails from Google Maps businesses?</h3>
+<p>The tool reads publicly visible business listings and each business&#39;s public website, without logging in. You are responsible for how you use the data, especially under privacy and anti-spam rules such as GDPR and CAN-SPAM when you contact people.</p>
+<h3 id="why-do-some-places-have-no-e-mail">Why do some places have no e-mail?</h3>
+<p>Many small businesses publish only a contact form, or load the address with JavaScript after the page opens. <code>contactPagesChecked</code> shows which pages were read, and <code>enrichmentError</code> says when a site could not be read at all.</p>
+<h3 id="does-it-verify-the-e-mails">Does it verify the e-mails?</h3>
+<p>No. It returns addresses as published on the website. Check them with an <a href="/tools/email-validator/">email validator</a> for syntax, mail-server and disposable-address checks.</p>
+<h3 id="why-do-two-places-share-the-same-e-mail">Why do two places share the same e-mail?</h3>
+<p>They share one website, such as a chain or a shared office. The site is read once, so the same address can appear on both rows.</p>
+<h3 id="why-are-there-at-most-about-120-places-per-search">Why are there at most about 120 places per search?</h3>
+<p>Google stops returning results after about 120 per search. For bigger areas, turn on <strong>Split the map area</strong> with <strong>Max places per query</strong>, list several postal codes or districts in <strong>Locations</strong>, or run one job per city.</p>
+<h3 id="can-i-use-it-from-n8n-make-or-zapier">Can I use it from n8n, Make or Zapier?</h3>
+<p>Yes. Start a run through the Apify integrations or the HTTP API, then read the dataset. The section above shows the exact request.</p>
+</article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/email-validator/">Email Validator &amp; Verifier — Bulk Email Check</a></li><li><a href="/tools/2gis-places-scraper/">2GIS Places Scraper (Phones, Websites, Ratings, Hours)</a></li><li><a href="/tools/app-store-lookup/">App Store (iOS) App Metadata, Ratings &amp; Top Charts Lookup</a></li><li><a href="/tools/ashby-jobs-scraper/">Ashby Jobs Scraper</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div><aside class="spec"><div class="spec-card">
+<div class="row"><h4>Google Maps Email Extractor: Only Places With E-mail</h4></div>
+<dl><dt>Price</dt><dd>$2 / 1k Places</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/google-maps-email-extractor?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fgoogle-maps-email-extractor%2F%3Aspec&amp;utm_term=google-maps-email-extractor&amp;source_page=%2Fguides%2Fgoogle-maps-email-extractor%2F&amp;source_actor=google-maps-email-extractor">Try it free on Apify</a><p><a href="/tools/google-maps-email-extractor/">Tool details</a></p></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#how-it-works">How it works</a></li><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#going-past-120-places">Going past 120 places</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#use-it-in-n8n-or-make">Use it in n8n or Make</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#limits-to-plan-for">Limits to plan for</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fgoogle-maps-email-extractor%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fguides%2Fgoogle-maps-email-extractor%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>

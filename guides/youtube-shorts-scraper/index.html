@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Scrape YouTube Shorts — Channels, Hashtags and Search to JSON | ChimeraMiND Data</title>
+<meta name="description" content="Collect YouTube Shorts from a channel&#39;s Shorts tab, a hashtag feed or search results — titles, views, hashtags and thumbnails, plus exact publish dates and descriptions on request. No YouTube API key and no quota.">
+
+<link rel="canonical" href="https://data.chimeramind.com/guides/youtube-shorts-scraper/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Scrape YouTube Shorts — Channels, Hashtags and Search to JSON | ChimeraMiND Data">
+<meta property="og:description" content="Collect YouTube Shorts from a channel&#39;s Shorts tab, a hashtag feed or search results — titles, views, hashtags and thumbnails, plus exact publish dates and descriptions on request. No YouTube API key and no quota.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/youtube-shorts-scraper/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to Scrape YouTube Shorts — Channels, Hashtags and Search to JSON","description":"Collect YouTube Shorts from a channel's Shorts tab, a hashtag feed or search results — titles, views, hashtags and thumbnails, plus exact publish dates and descriptions on request. No YouTube API key and no quota.","dateModified":"2026-10-11","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/youtube-shorts-scraper/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YouTube Shorts Scraper","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/youtube-shorts-scraper","offers":{"@type":"Offer","price":"1.00","priceCurrency":"USD","description":"per 1,000 shorts"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"How to Scrape YouTube Shorts — Channels, Hashtags and Search to JSON","item":"https://data.chimeramind.com/guides/youtube-shorts-scraper/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is scraping YouTube Shorts legal?","acceptedAnswer":{"@type":"Answer","text":"The Actor reads only public pages and does not log in. You are responsible for how you use the data, including YouTube's terms, privacy law and the copyright of the videos."}},{"@type":"Question","name":"Why is `channelName` empty on hashtag or search rows?","acceptedAnswer":{"@type":"Answer","text":"Those feeds do not show the creator on the card. Turn on **Include details** to fill it from the video's own page data."}},{"@type":"Question","name":"Why is `description` empty on some Shorts?","acceptedAnswer":{"@type":"Answer","text":"Many Shorts have no description. `descriptionStatus` set to `empty` means YouTube returned none. `unavailable` means YouTube did not answer for that Short, so the text is unknown."}},{"@type":"Question","name":"Does **Published after** cost more?","acceptedAnswer":{"@type":"Answer","text":"There is no extra Apify charge. The filter adds one YouTube request per Short to read its date. Filtered Shorts are not returned and not charged. The limit applies to the candidates each source fetches (up to **Max Shorts per source**), so a filter can return fewer Shorts than you asked for."}},{"@type":"Question","name":"Why do I get fewer Shorts than I asked for?","acceptedAnswer":{"@type":"Answer","text":"A hashtag or search feed ends when YouTube stops returning new Shorts, and some channels have only a few."}},{"@type":"Question","name":"Can I get the same data from the YouTube Data API?","acceptedAnswer":{"@type":"Answer","text":"Not as a Shorts feed. The Data API has no Shorts-only endpoint, and a single search call costs 100 of your 10,000 daily quota units. This Actor reads the public pages used by the YouTube app, with no key and no quota."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$5</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>AI WEB SEARCH <b>$5</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>WIKIDATA ENTITY ENRICHMENT <b>$1</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE SCREENSHOT <b>$2</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / YouTube Shorts Scraper</div>
+<div class="guide"><div><header><div class="kicker">Social &amp; video</div><h1>Scrape YouTube Shorts from channels, hashtags and search</h1><p class="lede">Collect YouTube Shorts from a channel&#39;s Shorts tab, a hashtag feed or search results — titles, views, hashtags and thumbnails, plus exact publish dates and descriptions on request. No YouTube API key and no quota.</p>
+<div class="byline"><span>Updated 2026-10-11</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
+<article class="prose"><p>Shorts are where many channels now test ideas, so tracking them tells you what is working: which hashtags are growing, which creators post every day, which search terms bring short videos up. YouTube&#39;s official Data API has no Shorts-only feed or hashtag endpoint, and a single search call costs 100 of the 10,000 daily quota units. This guide shows how to collect Shorts from three sources — a channel, a hashtag or a search — as one clean JSON row per Short, for $1 per 1,000 shorts.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>One row per Short. Fields marked &quot;with details&quot; appear only when <strong>Include details</strong> is on, or, for dates, when <strong>Published after</strong> is set.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>videoId</code>, <code>url</code></td>
+<td>The Short&#39;s 11-character ID and its <code>youtube.com/shorts/…</code> link</td>
+</tr>
+<tr>
+<td><code>title</code>, <code>thumbnail</code></td>
+<td>Title as shown on the card, and the vertical thumbnail URL</td>
+</tr>
+<tr>
+<td><code>viewCount</code>, <code>viewCountText</code></td>
+<td>Views as a number and as YouTube displays them (&quot;650K views&quot;)</td>
+</tr>
+<tr>
+<td><code>channelName</code>, <code>channelId</code>, <code>channelHandle</code></td>
+<td>The creator and their <code>@handle</code>. Always filled for channel rows; for hashtag and search rows, with details or a date filter</td>
+</tr>
+<tr>
+<td><code>publishDate</code></td>
+<td>Exact publish time in ISO 8601 UTC (with details or a date filter)</td>
+</tr>
+<tr>
+<td><code>hashtags</code></td>
+<td>Words after <code>#</code> in the title, plus the description with details</td>
+</tr>
+<tr>
+<td><code>source</code>, <code>sourceType</code></td>
+<td>Which channel, hashtag or search query produced the row, and its type</td>
+</tr>
+<tr>
+<td><code>description</code>, <code>descriptionStatus</code>, <code>lengthSeconds</code>, <code>keywords</code></td>
+<td>With details: the description, its length and tags. <code>descriptionStatus</code> is <code>present</code>, <code>empty</code> (YouTube has none) or <code>unavailable</code> (YouTube did not answer)</td>
+</tr>
+<tr>
+<td><code>scrapedAt</code></td>
+<td>When the row was collected</td>
+</tr>
+</tbody></table>
+</div><h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Add <strong>channels</strong> in any of three forms: a handle (<code>@MrBeast</code>), a channel URL, or a <code>UC…</code> channel ID.</li>
+<li>Add <strong>hashtags</strong> without the <code>#</code> symbol (<code>cooking</code>), and <strong>search queries</strong> such as <code>iphone tips</code>, which return Shorts only.</li>
+<li>Set <strong>Max Shorts per source</strong> (default 30, up to 500). The limit applies to each channel, hashtag or query separately.</li>
+<li>Optional: turn on <strong>Include details</strong> for descriptions, tags, length, exact views and the exact publish date. Each Short then needs extra requests, so runs are slower.</li>
+<li>Optional: set <strong>Published after</strong> (ISO format, such as <code>2026-10-01</code>) to keep only newer Shorts. Older ones are dropped before they are charged.</li>
+<li>Keep <strong>Max concurrency</strong> at 2 to 4 for large lists to avoid HTTP 429 rate limits.</li>
+<li>Click <strong>Start</strong> and export as JSON, CSV, Excel or HTML, or read the rows through the API.</li>
+</ol>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/youtube-shorts-scraper?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fyoutube-shorts-scraper%2F%3Aguide_cta&amp;utm_term=youtube-shorts-scraper&amp;source_page=%2Fguides%2Fyoutube-shorts-scraper%2F&amp;source_actor=youtube-shorts-scraper">Run YouTube Shorts Scraper on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-youtube-shorts-scraper" id="t-youtube-shorts-scraper-python" checked><label for="t-youtube-shorts-scraper-python">Python</label><pre class="tab-python"><code class="language-python">import json
+import os
+from apify_client import ApifyClient<p>client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])
+run = client.actor(&quot;webdatatools/youtube-shorts-scraper&quot;).call(run_input=json.loads(&quot;{\n    &amp;quot;channels&amp;quot;: [\n        &amp;quot;@MrBeast&amp;quot;\n    ],\n    &amp;quot;hashtags&amp;quot;: [],\n    &amp;quot;searchQueries&amp;quot;: []\n}&quot;))</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-youtube-shorts-scraper" id="t-youtube-shorts-scraper-js"><label for="t-youtube-shorts-scraper-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/youtube-shorts-scraper&#39;).call({
+    &quot;channels&quot;: [
+        &quot;@MrBeast&quot;
+    ],
+    &quot;hashtags&quot;: [],
+    &quot;searchQueries&quot;: []
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-youtube-shorts-scraper" id="t-youtube-shorts-scraper-bash"><label for="t-youtube-shorts-scraper-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~youtube-shorts-scraper/run-sync-get-dataset-items">https://api.apify.com/v2/acts/webdatatools~youtube-shorts-scraper/run-sync-get-dataset-items</a>&quot; <br>-H &quot;Authorization: Bearer $APIFY_TOKEN&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;channels&quot;:[&quot;@MrBeast&quot;],&quot;hashtags&quot;:[],&quot;searchQueries&quot;:[]}&#39;</code></pre></div></p>
+<h2 id="use-it-in-n8n-or-make">Use it in n8n or Make</h2>
+<p>In <strong>n8n</strong>, add an <strong>HTTP Request</strong> node: method <code>POST</code>, URL <code>https://api.apify.com/v2/acts/webdatatools~youtube-shorts-scraper/run-sync-get-dataset-items</code>, a header <code>Authorization</code> with the value <code>Bearer YOUR_APIFY_TOKEN</code>, and a JSON body. The response is an array with one item per Short. In <strong>Make</strong>, use <strong>HTTP &gt; Make a request</strong> with the same method, URL and header, body type Raw with JSON content, and <strong>Parse response</strong> on, then iterate over the array.</p>
+<p>Synchronous calls wait for the run to finish. For a long list of sources, start the run asynchronously and read the dataset when it completes.</p>
+<p>Body example:</p>
+<pre><code class="language-json">{
+    &quot;channels&quot;: [&quot;@MrBeast&quot;],
+    &quot;hashtags&quot;: [&quot;cooking&quot;],
+    &quot;searchQueries&quot;: [&quot;iphone tips&quot;],
+    &quot;maxShortsPerSource&quot;: 20,
+    &quot;publishedAfter&quot;: &quot;2026-10-01&quot;,
+    &quot;includeDetails&quot;: false
+}
+</code></pre>
+<p><a href="/templates/youtube-shorts-scraper.n8n.json">Download the n8n workflow (JSON)</a> — a manual trigger, the HTTP Request node above and a placeholder for your token.</p>
+<h2 id="recipes">Recipes</h2>
+<h3 id="track-a-channel-39-s-new-shorts-every-day">Track a channel&#39;s new Shorts every day</h3>
+<p>Schedule a run with the channel in <strong>Channels</strong> and <strong>Published after</strong> set to yesterday&#39;s date. Each run returns only the Shorts published since the last check, and the rows are easy to append to a sheet or database.</p>
+<h3 id="find-the-hashtags-that-are-growing">Find the hashtags that are growing</h3>
+<p>Run a list of hashtags with <strong>Include details</strong> on, so every row has an exact <code>publishDate</code> and <code>viewCount</code>. Group the rows by hashtag and compare the views per Short across the dates you collected.</p>
+<h3 id="compare-creators-in-one-niche">Compare creators in one niche</h3>
+<p>Put several channels in one run and group the rows by <code>source</code>. Compare the number of Shorts, the median <code>viewCount</code> and how often each channel posted in the window you chose.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per short</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
+<p class="fine">Catalog price snapshot. Check the Apify Store for current prices before running. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p><p>You pay per Short that lands in your dataset. A channel, hashtag or query that fails is recorded in the run log and costs nothing. Shorts removed by <strong>Published after</strong> are not charged. Set <strong>Maximum cost per run</strong> to cap a run.</p>
+<h2 id="limits">Limits</h2>
+<ul>
+<li>Public Shorts only. There are no like or comment counts.</li>
+<li>View counts on cards are rounded (&quot;650K&quot;) unless <strong>Include details</strong> is on.</li>
+<li>Exact publish dates need <strong>Include details</strong> or <strong>Published after</strong>, and YouTube omits them for some Shorts. Those Shorts are kept when a date filter is active.</li>
+<li>A hashtag or search feed ends when YouTube stops returning new Shorts, so some channels and tags return fewer rows than you asked for.</li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<h3 id="is-scraping-youtube-shorts-legal">Is scraping YouTube Shorts legal?</h3>
+<p>The Actor reads only public pages and does not log in. You are responsible for how you use the data, including YouTube&#39;s terms, privacy law and the copyright of the videos.</p>
+<h3 id="why-is-channelname-empty-on-hashtag-or-search-rows">Why is <code>channelName</code> empty on hashtag or search rows?</h3>
+<p>Those feeds do not show the creator on the card. Turn on <strong>Include details</strong> to fill it from the video&#39;s own page data.</p>
+<h3 id="why-is-description-empty-on-some-shorts">Why is <code>description</code> empty on some Shorts?</h3>
+<p>Many Shorts have no description. <code>descriptionStatus</code> set to <code>empty</code> means YouTube returned none. <code>unavailable</code> means YouTube did not answer for that Short, so the text is unknown.</p>
+<h3 id="does-published-after-cost-more">Does <strong>Published after</strong> cost more?</h3>
+<p>There is no extra Apify charge. The filter adds one YouTube request per Short to read its date. Filtered Shorts are not returned and not charged. The limit applies to the candidates each source fetches (up to <strong>Max Shorts per source</strong>), so a filter can return fewer Shorts than you asked for.</p>
+<h3 id="why-do-i-get-fewer-shorts-than-i-asked-for">Why do I get fewer Shorts than I asked for?</h3>
+<p>A hashtag or search feed ends when YouTube stops returning new Shorts, and some channels have only a few.</p>
+<h3 id="can-i-get-the-same-data-from-the-youtube-data-api">Can I get the same data from the YouTube Data API?</h3>
+<p>Not as a Shorts feed. The Data API has no Shorts-only endpoint, and a single search call costs 100 of your 10,000 daily quota units. This Actor reads the public pages used by the YouTube app, with no key and no quota.</p>
+</article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/bilibili-scraper/">Bilibili Scraper (Videos, Search, Popular)</a></li><li><a href="/tools/youtube-channel-scraper/">YouTube Channel Scraper (videos, shorts, live)</a></li><li><a href="/tools/youtube-comments-scraper/">YouTube Comments Scraper — Comments &amp; Replies</a></li><li><a href="/tools/bluesky-scraper/">Bluesky Post, Search &amp; Profile Scraper</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-Gv0WPIWUcBGqWi4mx-6wIAcBc2Bt-youtube-shorts-scraper.png" alt="" width="44" height="44"><h4>YouTube Shorts Scraper</h4></div>
+<dl><dt>Price</dt><dd>$1 / 1k shorts</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/youtube-shorts-scraper?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fyoutube-shorts-scraper%2F%3Aspec&amp;utm_term=youtube-shorts-scraper&amp;source_page=%2Fguides%2Fyoutube-shorts-scraper%2F&amp;source_actor=youtube-shorts-scraper">Try it free on Apify</a><p><a href="/tools/youtube-shorts-scraper/">Tool details</a></p></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#use-it-in-n8n-or-make">Use it in n8n or Make</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#limits">Limits</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fyoutube-shorts-scraper%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fguides%2Fyoutube-shorts-scraper%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+</div></footer>
+</body>
+</html>
