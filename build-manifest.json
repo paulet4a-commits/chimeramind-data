@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-10-11T16:32:26.635Z",
-  "sourceCommit": "cfc4b2803de806806d230daf32cd573511cbb1af",
+  "builtAt": "2026-10-11T16:35:42.258Z",
+  "sourceCommit": "30bc44e8e62be577fc0e37d6713df8032c66649e",
   "pages": [
     {
       "file": "guides/bulk-core-web-vitals-check/index.html",
@@ -35,7 +35,7 @@
     {
       "file": "guides/google-maps-email-extractor/index.html",
       "url": "https://data.chimeramind.com/guides/google-maps-email-extractor/",
-      "sha256": "53b78d835d01017797304abca9cad58f88635ae602c0fa21750c77d64a9760b4"
+      "sha256": "68359f19bfccada2e4eb25206d4fd33395a0fd024d05b34556c4da0fd2ffe953"
     },
     {
       "file": "guides/google-maps-scraper/index.html",
