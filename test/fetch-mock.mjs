@@ -8,7 +8,7 @@ globalThis.fetch = async (url, options) => {
     fs.appendFileSync('./requests.jsonl',JSON.stringify({url,method:options.method??'GET'})+'\n');
     const p = new URL(url).pathname.replace('/v2/','');
     let data;
-    if (p==='acts') data={items:Object.keys(actors).map(id=>({id})),total:71};
+    if (p==='acts') data={items:Object.keys(actors).map(id=>({id})),total:Object.keys(actors).length};
     else if(p.endsWith('/runs')) data={items:[]};
     else if(p.startsWith('acts/')) {
         const a = actors[p.slice(5)];

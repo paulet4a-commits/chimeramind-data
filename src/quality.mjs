@@ -9,7 +9,7 @@ import { parseFrontmatter } from './render.mjs';
 export const hash = value => createHash('sha256').update(value).digest('hex');
 export function validateActors(actors, lock) {
     const keys = Object.keys(actors).sort();
-    assert.equal(keys.length, 71, 'Expected exactly 71 public actors');
+    assert.ok(keys.length >= 71, 'Catalog shrank below the reviewed 71 public actors');
     assert.deepEqual(keys, Object.keys(lock.actors).sort(), 'Actor catalog drift: missing or unexpected actor');
     for (const name of keys) {
         const a = actors[name];

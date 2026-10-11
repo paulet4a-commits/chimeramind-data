@@ -2429,5 +2429,655 @@
    ],
    "maxJobsPerSearch": 100
   }
+ },
+ "app-store-reviews-scraper": {
+  "name": "app-store-reviews-scraper",
+  "title": "App Store Reviews Scraper",
+  "description": "App Store Reviews Scraper returns customer reviews from Apple's App Store by app ID. Scrape up to 500 reviews per app per country from the public RSS feed.",
+  "url": "https://apify.com/webdatatools/app-store-reviews-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-mXyyjzlnfDSfmvaxA-3fwqgSSPJq-app-store-reviews-scraper.png",
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "ECOMMERCE",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "review",
+   "usd": 0.0001,
+   "tiers": {
+    "FREE": 0.0001,
+    "BRONZE": 0.00008,
+    "SILVER": 0.00007,
+    "GOLD": 0.00006,
+    "PLATINUM": 0.00006,
+    "DIAMOND": 0.00006
+   }
+  },
+  "prefill": {
+   "appIds": [
+    "284882215"
+   ],
+   "countries": [
+    "us"
+   ],
+   "maxReviews": 100,
+   "ratings": []
+  }
+ },
+ "pinterest-pins-scraper": {
+  "name": "pinterest-pins-scraper",
+  "title": "Pinterest Pins Scraper",
+  "description": "Pinterest Pins Scraper extracts the latest pins from public Pinterest profiles and boards. Get up to 25 recent pins per profile or board from Pinterest's public RSS feeds, no login required.",
+  "url": "https://apify.com/webdatatools/pinterest-pins-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-k65G2lJrkNY1ii0If-mIugWYFN3k-pinterest-pins-scraper.png",
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "MARKETING",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "pin",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "profiles": [
+    "nasa"
+   ],
+   "boards": [],
+   "maxPinsPerSource": 25,
+   "profile": "",
+   "username": "",
+   "url": "",
+   "urls": [],
+   "startUrls": []
+  }
+ },
+ "workday-jobs-scraper": {
+  "name": "workday-jobs-scraper",
+  "title": "Workday Jobs Scraper",
+  "description": "Scrape job postings from Workday career sites",
+  "url": "https://apify.com/webdatatools/workday-jobs-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-g0EtLzO1YM1VGut3a-miX81LWXIz-workday-jobs-scraper.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "careerSiteUrls": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite",
+   "urls": "",
+   "keywords": "",
+   "location": "",
+   "includeDescription": false,
+   "maxJobs": 50
+  }
+ },
+ "greenhouse-jobs-scraper": {
+  "name": "greenhouse-jobs-scraper",
+  "title": "Greenhouse Jobs Scraper",
+  "description": "Greenhouse Jobs Scraper extracts job listings from Greenhouse job boards via the public boards API. Scrape job titles, descriptions, locations, compensation, and more from any Greenhouse-powered careers page.",
+  "url": "https://apify.com/webdatatools/greenhouse-jobs-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-sfYuR92xP4ASyu074-yd7H6abJxW-greenhouse-jobs-scraper.png",
+  "users30": 1,
+  "runs": 12,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "companies": "stripe"
+  }
+ },
+ "lever-jobs-scraper": {
+  "name": "lever-jobs-scraper",
+  "title": "Lever Jobs Scraper",
+  "description": "Lever Jobs Scraper extracts job listings from Lever job boards via the public API. Lever powers careers pages for companies like Palantir, Figma, and many others. Extract job titles, descriptions, locations, and more from any Lever-powered careers page without authentication.",
+  "url": "https://apify.com/webdatatools/lever-jobs-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-Lwq2Q3Gs3NnB74kAy-9tKAoQA5Hj-lever-jobs-scraper.png",
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "companies": "palantir"
+  }
+ },
+ "ashby-jobs-scraper": {
+  "name": "ashby-jobs-scraper",
+  "title": "Ashby Jobs Scraper",
+  "description": "Ashby Jobs Scraper extracts job listings from Ashby job boards. Ashby powers careers pages for companies like Ramp, Scale AI, and others. Get job titles, descriptions, locations, compensation, and more from any Ashby-powered careers page.",
+  "url": "https://apify.com/webdatatools/ashby-jobs-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-rtbLnLo3fTKHlQQeh-2rBugvcMWO-ashby-jobs-scraper.png",
+  "users30": 1,
+  "runs": 8,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "companies": "ramp"
+  }
+ },
+ "keyword-suggestions-scraper": {
+  "name": "keyword-suggestions-scraper",
+  "title": "Keyword Suggestions Scraper (Google, YouTube, Amazon, Bing)",
+  "description": "Scrape keyword suggestions from Google, YouTube, Amazon, and Bing search autocomplete APIs. Get related keywords, expansion options (A–Z alphabet, common questions), and multi-source deduplication.",
+  "url": "https://apify.com/webdatatools/keyword-suggestions-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-r4MYyFgXdk5NQipbv-6shth5mdxD-keyword-suggestions-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "MARKETING",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "keyword",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "keywords": "running shoes",
+   "sources": [
+    "google"
+   ],
+   "language": "en",
+   "country": "US",
+   "expand": "none",
+   "maxDepth": 1,
+   "maxKeywords": 200
+  }
+ },
+ "autoscout24-scraper": {
+  "name": "autoscout24-scraper",
+  "title": "AutoScout24 Scraper",
+  "description": "AutoScout24 Scraper extracts car listings from any AutoScout24 country site: make, model, price, mileage, registration, fuel, power, seller and location,  per 1,000 listings.",
+  "url": "https://apify.com/webdatatools/autoscout24-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-EVhXprQgQT5J6I6sf-qrbJzhVnVy-autoscout24-scraper.png",
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "ECOMMERCE",
+   "AUTOMATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "listing",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "searchUrls": [],
+   "urls": [],
+   "make": "",
+   "model": "",
+   "priceFrom": 0,
+   "priceTo": 999999,
+   "yearFrom": 2000,
+   "yearTo": 2026,
+   "mileageTo": 999999,
+   "fuel": "",
+   "country": "de",
+   "zip": "",
+   "radius": 50,
+   "maxListings": 40
+  }
+ },
+ "rightmove-scraper": {
+  "name": "rightmove-scraper",
+  "title": "Rightmove Scraper",
+  "description": "Rightmove Scraper extracts UK property listings for sale or to rent: address, price, bedrooms, type, tenure, coordinates, agent and phone, from a place name or search URL, $1 per 1,000.",
+  "url": "https://apify.com/webdatatools/rightmove-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-qSiGEi4purprMgSTj-j2Vhf3WIl7-rightmove-scraper.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "ECOMMERCE",
+   "AUTOMATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "property",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "searchUrls": [],
+   "urls": [],
+   "location": "",
+   "channel": "buy",
+   "minPrice": 0,
+   "maxPrice": 9999999,
+   "minBedrooms": 0,
+   "radius": 1,
+   "maxProperties": 50
+  }
+ },
+ "bilibili-scraper": {
+  "name": "bilibili-scraper",
+  "title": "Bilibili Scraper (Videos, Search, Popular)",
+  "description": "Scrape Bilibili (哔哩哔哩) videos by keyword, video URL or the popular list: title, uploader, category, views, likes, coins, favorites, danmaku, comments, duration, tags. No login.",
+  "url": "https://apify.com/webdatatools/bilibili-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-n29baZQ3gRgqsDHTn-DIdjEYfZkb-bilibili-scraper.png",
+  "users30": 2,
+  "runs": 7,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "VIDEOS",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "video",
+   "usd": 0.003,
+   "tiers": {
+    "FREE": 0.003,
+    "BRONZE": 0.0024,
+    "SILVER": 0.0021,
+    "GOLD": 0.0018,
+    "PLATINUM": 0.0018,
+    "DIAMOND": 0.0018
+   }
+  },
+  "prefill": {
+   "searchKeywords": "python tutorial",
+   "keywords": [],
+   "videoUrls": [],
+   "popular": false,
+   "maxVideos": 30,
+   "proxyMode": "auto"
+  }
+ },
+ "google-flights-scraper": {
+  "name": "google-flights-scraper",
+  "title": "Google Flights Scraper (Prices, Airlines, Stops)",
+  "description": "Scrape Google Flights for any route and date: price, airlines, flight numbers, departure and arrival times, duration, stops and layovers, aircraft, legroom and CO2. One-way or round trip, any cabin. No login.",
+  "url": "https://apify.com/webdatatools/google-flights-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-dGWvRayZAWrrQmmJ7-b8FRLFZ7al-google-flights-scraper.png",
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "TRAVEL",
+   "ECOMMERCE",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "flight",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "from": "JFK",
+   "to": "LHR; CDG",
+   "departureDates": "2026-11-12"
+  }
+ },
+ "google-hotels-scraper": {
+  "name": "google-hotels-scraper",
+  "title": "Google Hotels Scraper (Prices, Ratings, Reviews)",
+  "description": "Scrape Google Hotels for any city and dates: nightly and total price, hotel class, rating, review count, coordinates, website, check-in times, description, nearby places and photo. No login.",
+  "url": "https://apify.com/webdatatools/google-hotels-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-mros0mflen6KuCq0y-mBEqDY839r-google-hotels-scraper.png",
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "TRAVEL",
+   "ECOMMERCE",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "hotel",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "locations": "Paris; London",
+   "checkIn": "2026-11-12",
+   "checkOut": "2026-11-15"
+  }
+ },
+ "2gis-places-scraper": {
+  "name": "2gis-places-scraper",
+  "title": "2GIS Places Scraper (Phones, Websites, Ratings, Hours)",
+  "description": "Scrape businesses from 2GIS search results in Russia, Kazakhstan, UAE and 9 more countries: name, category, address, coordinates, rating, reviews, opening hours, phones, website and social links. Contacts included in the price, no login.",
+  "url": "https://apify.com/webdatatools/2gis-places-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 7,
+  "categories": [
+   "LEAD_GENERATION",
+   "TRAVEL",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "place",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "queries": [
+    "кафе"
+   ],
+   "cities": [
+    "moscow"
+   ]
+  }
+ },
+ "crypto-fear-greed-index": {
+  "name": "crypto-fear-greed-index",
+  "title": "Crypto Fear & Greed Index (Daily History, Bitcoin Sentiment)",
+  "description": "Get the Crypto Fear & Greed Index — today's value and daily history back to 2018 — as clean rows: date, 0-100 value, sentiment (Extreme Fear to Extreme Greed) and day-over-day change. For trading bots, dashboards and backtests. No API key.",
+  "url": "https://apify.com/webdatatools/crypto-fear-greed-index",
+  "icon": null,
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "AUTOMATION",
+   "DEVELOPER_TOOLS",
+   "NEWS"
+  ],
+  "price": {
+   "unit": "day",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {}
+ },
+ "dexscreener-scraper": {
+  "name": "dexscreener-scraper",
+  "title": "DexScreener Scraper (DEX Pairs, Prices, Liquidity, Boosts)",
+  "description": "Get DEX pair data from DexScreener's official public API: price, 5m-24h price change, volume, buys/sells, liquidity, FDV, market cap and creation date for any token or pair on Solana, Ethereum, Base, BSC and 80+ chains — plus the latest token profiles and top boosted tokens.",
+  "url": "https://apify.com/webdatatools/dexscreener-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 14,
+  "categories": [
+   "AUTOMATION",
+   "DEVELOPER_TOOLS",
+   "AI"
+  ],
+  "price": {
+   "unit": "row",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "queries": [
+    "PEPE"
+   ]
+  }
+ },
+ "yahoo-finance-scraper": {
+  "name": "yahoo-finance-scraper",
+  "title": "Yahoo Finance Scraper (Quotes, Fundamentals, Financials, News)",
+  "description": "Scrape Yahoo Finance for any ticker: live-delayed price, market cap, P/E, EPS, dividends, sector, employees, analyst targets and ratings, plus optional income statements, balance sheet, cash flow, ownership, insider trades, news and price history. No API key.",
+  "url": "https://apify.com/webdatatools/yahoo-finance-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "BUSINESS",
+   "AI",
+   "DEVELOPER_TOOLS"
+  ],
+  "price": {
+   "unit": "symbol",
+   "usd": 0.0015,
+   "tiers": {
+    "FREE": 0.0015,
+    "BRONZE": 0.0012,
+    "SILVER": 0.00105,
+    "GOLD": 0.0009,
+    "PLATINUM": 0.0009,
+    "DIAMOND": 0.0009
+   }
+  },
+  "prefill": {
+   "symbols": [
+    "AAPL",
+    "MSFT"
+   ]
+  }
+ },
+ "polymarket-scraper": {
+  "name": "polymarket-scraper",
+  "title": "Polymarket Scraper (Prediction Markets, Odds, Volume)",
+  "description": "Scrape Polymarket prediction markets: question, outcomes with live prices (implied probabilities), 24h and total volume, liquidity, bid/ask, end date and event. Rank by volume or liquidity, filter by tag, or search by text. No API key.",
+  "url": "https://apify.com/webdatatools/polymarket-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 14,
+  "categories": [
+   "NEWS",
+   "AUTOMATION",
+   "DEVELOPER_TOOLS"
+  ],
+  "price": {
+   "unit": "market",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {}
+ },
+ "stocktwits-scraper": {
+  "name": "stocktwits-scraper",
+  "title": "StockTwits Scraper (Messages, Sentiment, Trending)",
+  "description": "Scrape StockTwits messages for any stock or crypto ticker with Bullish/Bearish sentiment, likes, author stats and the price at posting time — or the current trending symbols with watchlist counts. Public API, no login.",
+  "url": "https://apify.com/webdatatools/stocktwits-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 9,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "NEWS",
+   "AI"
+  ],
+  "price": {
+   "unit": "message",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "symbols": [
+    "AAPL"
+   ]
+  }
+ },
+ "economic-calendar-scraper": {
+  "name": "economic-calendar-scraper",
+  "title": "Economic Calendar Scraper (Forex Events, Impact, Forecasts)",
+  "description": "This week's macro-economic calendar as clean JSON: event, currency, time in UTC, High/Medium/Low impact, forecast and previous figures as text and numbers. Filter by currency and impact. For traders, bots and dashboards.",
+  "url": "https://apify.com/webdatatools/economic-calendar-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 7,
+  "categories": [
+   "NEWS",
+   "AUTOMATION",
+   "AI"
+  ],
+  "price": {
+   "unit": "event",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {}
+ },
+ "google-maps-email-extractor": {
+  "name": "google-maps-email-extractor",
+  "title": "Google Maps Email Extractor",
+  "description": "Google Maps Email Extractor finds businesses on Google Maps and the e-mails, phones and social profiles on their websites: one row per place, no browser, $4 per 1,000 places.",
+  "url": "https://apify.com/webdatatools/google-maps-email-extractor",
+  "icon": null,
+  "users30": 1,
+  "runs": 7,
+  "categories": [
+   "LEAD_GENERATION",
+   "AUTOMATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "Place",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "searchQueries": "dentist",
+   "location": "Austin, TX",
+   "maxPlacesPerSearch": 10,
+   "maxPagesPerSite": 5,
+   "language": "en",
+   "country": "us",
+   "minRating": 0
+  }
  }
 }

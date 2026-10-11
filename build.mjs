@@ -1,4 +1,4 @@
-// Builds dist/: home, guides, 71 tool landings, workflows, sitemap, robots, CNAME.
+// Builds dist/: home, guides, one landing per locked tool, workflows, sitemap, robots, CNAME.
 // Inputs: content/guides/*.md (authored), data/actors.json + data/samples/*.json (from fetch-data.mjs).
 // Usage: node build.mjs
 import fs from 'node:fs';

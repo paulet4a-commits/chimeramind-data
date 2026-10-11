@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { validateData, validateDist, hash } from '../src/quality.mjs';
 const root = fileURLToPath(new URL('..', import.meta.url));
+const ACTORS = Object.keys(JSON.parse(fs.readFileSync(new URL('../data/catalog-lock.json', import.meta.url))).actors).length;
 let fixture;
 before(() => {
     fixture = fs.mkdtempSync(path.join(os.tmpdir(),'chimeramind-data-quality-'));
@@ -24,8 +25,8 @@ function mutate(file, edit, expected) {
     try { assert.throws(()=>validateDist(fixture),expected); }
     finally { fs.writeFileSync(p,original); }
 }
-test('generated pages cover exactly 71 tools, 17 guides, 4 workflows and indexes',()=>{
-    assert.deepEqual(validateDist(fixture),{pages:96,tools:71,workflows:4});
+test('generated pages cover every locked tool, 17 guides, 4 workflows and indexes',()=>{
+    assert.deepEqual(validateDist(fixture),{pages:ACTORS+25,tools:ACTORS,workflows:4});
 });
 test('wrong canonical and noindex landing are rejected',()=>{
     mutate('dist/tools/google-maps-scraper/index.html',s=>s.replace('rel="canonical" href="https://data.chimeramind.com/tools/google-maps-scraper/"','rel="canonical" href="https://wrong.invalid/"'),/Wrong canonical/);
@@ -52,7 +53,7 @@ test('live release blocks missing, old or mismatched fetch marker and accepts ve
     assert.throws(()=>validateData(fixture,{release:true}),/fetch-meta/);
     const marker={fetchedAt:new Date().toISOString(),actorsSha256:hash(fs.readFileSync(path.join(fixture,'data/actors.json'))),sampleHashes:Object.fromEntries(fs.readdirSync(path.join(fixture,'data/samples')).sort().filter(f=>f.endsWith('.json')).map(f=>[f,hash(fs.readFileSync(path.join(fixture,'data/samples',f)))]))};
     fs.writeFileSync(p,JSON.stringify(marker));
-    assert.equal(validateData(fixture,{release:true}).actors,71);
+    assert.equal(validateData(fixture,{release:true}).actors,ACTORS);
     fs.writeFileSync(p,JSON.stringify({...marker,fetchedAt:'2020-01-01T00:00:00Z'}));
     assert.throws(()=>validateData(fixture,{release:true}),/within 24 hours/);
     fs.writeFileSync(p,JSON.stringify({...marker,actorsSha256:'wrong'}));

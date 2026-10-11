@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { validateData } from '../src/quality.mjs';
 const root = fileURLToPath(new URL('..', import.meta.url));
+const ACTORS = Object.keys(JSON.parse(fs.readFileSync(new URL('../data/catalog-lock.json', import.meta.url))).actors).length;
 test('read-only fetch preserves prices, input and samples; drift fails before any snapshot write',()=>{
     const fixture=fs.mkdtempSync(path.join(os.tmpdir(),'chimeramind-data-fetch-'));
     try {
@@ -19,11 +20,11 @@ test('read-only fetch preserves prices, input and samples; drift fails before an
         assert.equal(fs.readFileSync(path.join(fixture,'data/actors.json'),'utf8'),before);
         const result=run(false);
         assert.equal(result.status,0,result.stderr);
-        assert.equal(validateData(fixture,{release:true}).actors,71);
+        assert.equal(validateData(fixture,{release:true}).actors,ACTORS);
         assert.deepEqual(JSON.parse(fs.readFileSync(path.join(fixture,'data/actors.json'))),JSON.parse(before));
         for(const f of fs.readdirSync(path.join(root,'data/samples')))assert.deepEqual(fs.readFileSync(path.join(root,'data/samples',f)),fs.readFileSync(path.join(fixture,'data/samples',f)));
         const requests=fs.readFileSync(path.join(fixture,'requests.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
-        assert.ok(requests.length>71 && requests.every(r=>r.method==='GET' && !r.url.includes('token=')));
+        assert.ok(requests.length>ACTORS && requests.every(r=>r.method==='GET' && !r.url.includes('token=')));
     } finally {
         assert.equal(path.dirname(fixture),path.resolve(os.tmpdir()));
         assert.ok(path.basename(fixture).startsWith('chimeramind-data-fetch-'));

@@ -40,7 +40,7 @@ test('guide samples, pricing, FAQ and code stay functional; related links stay i
     assert.ok(!result.html.includes('{{'));
 });
 
-test('71 catalog prices and prefills are unchanged; missing actors, null prices and drift block', () => {
+test('catalog prices and prefills are unchanged; missing actors, null prices and drift block', () => {
     validateActors(actors,lock);
     for (const mutate of [a => delete a['email-validator'], a => a['email-validator'].price=null, a => a['email-validator'].price.usd+=0.01, a => a['email-validator'].price.tiers.GOLD+=0.01, a => a['email-validator'].prefill={changed:true}]) {
         const copy = structuredClone(actors); mutate(copy); assert.throws(()=>validateActors(copy,lock));
