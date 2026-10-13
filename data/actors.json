@@ -49,14 +49,14 @@
   ],
   "price": {
    "unit": "result",
-   "usd": 0.005,
+   "usd": 0.02,
    "tiers": {
-    "FREE": 0.005,
-    "BRONZE": 0.004,
-    "SILVER": 0.0035,
-    "GOLD": 0.003,
-    "PLATINUM": 0.003,
-    "DIAMOND": 0.003
+    "FREE": 0.02,
+    "BRONZE": 0.016,
+    "SILVER": 0.014,
+    "GOLD": 0.012,
+    "PLATINUM": 0.012,
+    "DIAMOND": 0.012
    }
   },
   "prefill": {
@@ -3078,6 +3078,200 @@
    "language": "en",
    "country": "us",
    "minRating": 0
+  }
+ },
+ "dice-jobs-scraper": {
+  "name": "dice-jobs-scraper",
+  "title": "Dice Jobs Scraper",
+  "description": "Scrape job listings from Dice.com. Extract job details including title, company, location, salary, employment type, remote status, and description.",
+  "url": "https://apify.com/webdatatools/dice-jobs-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-DabPGhHN2NRpWeWal-eikhdaC6ia-dice-jobs-scraper.png",
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "BUSINESS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "python",
+   "keywordsList": [],
+   "location": "New York",
+   "employmentType": "",
+   "postedDate": 30,
+   "isRemote": false,
+   "maxJobs": 50
+  }
+ },
+ "smartrecruiters-jobs-scraper": {
+  "name": "smartrecruiters-jobs-scraper",
+  "title": "SmartRecruiters Jobs Scraper",
+  "description": "SmartRecruiters Jobs Scraper extracts job listings from SmartRecruiters job boards. SmartRecruiters powers careers pages for companies like Bosch, Visa, and many others. Get job titles, locations, employment types, and more from any SmartRecruiters-powered careers page.",
+  "url": "https://apify.com/webdatatools/smartrecruiters-jobs-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-eSH3UJi7oSazTFC83-QC7iUx7876-smartrecruiters-jobs-scraper.png",
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "companies": "BoschGroup"
+  }
+ },
+ "bulk-image-downloader": {
+  "name": "bulk-image-downloader",
+  "title": "Bulk Image Downloader",
+  "description": "Download images from URLs and store them in the key-value store with metadata including dimensions, file size, and SHA256 hash. Supports bulk input from URLs or from another Actor's dataset.",
+  "url": "https://apify.com/webdatatools/bulk-image-downloader",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-dZREOWv9lpp8pVdAP-9zdNIgBBZz-bulk-image-downloader.png",
+  "users30": 1,
+  "runs": 8,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION",
+   "ECOMMERCE"
+  ],
+  "price": {
+   "unit": "image",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "imageUrls": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Cat03.jpg"
+   ],
+   "datasetId": "",
+   "urlField": "url",
+   "maxImages": 50,
+   "maxFileSizeMb": 20,
+   "timeoutSecs": 30,
+   "createZip": false
+  }
+ },
+ "meetup-events-scraper": {
+  "name": "meetup-events-scraper",
+  "title": "Meetup Events Scraper (Search by Keyword & City)",
+  "description": "Scrape upcoming Meetup.com events by keyword and city: date, in-person/online type, RSVPs, fee, venue address and coordinates, group and its rating. All pages, no login.",
+  "url": "https://apify.com/webdatatools/meetup-events-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-bd1KgOxG7QQfzd9gn-k6cgw3hP6w-meetup-events-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "LEAD_GENERATION",
+   "SOCIAL_MEDIA",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "event",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "python",
+   "location": "New York"
+  }
+ },
+ "css-selector-extractor-js": {
+  "name": "css-selector-extractor-js",
+  "title": "CSS Selector Extractor for JavaScript Sites (Browser)",
+  "description": "Extract any CSS selector from pages that need JavaScript: a real Chromium browser renders each page, waits for content, scrolls or clicks \"load more\", then returns text, HTML, attributes, tables or counts. One row per page, pay per page. For static pages use the cheaper CSS Selector Extractor.",
+  "url": "https://apify.com/webdatatools/css-selector-extractor-js",
+  "icon": null,
+  "users30": 1,
+  "runs": 9,
+  "categories": [
+   "DEVELOPER_TOOLS",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "page",
+   "usd": 0.003,
+   "tiers": {
+    "FREE": 0.003,
+    "BRONZE": 0.0024,
+    "SILVER": 0.0021,
+    "GOLD": 0.0018,
+    "PLATINUM": 0.0018,
+    "DIAMOND": 0.0018
+   }
+  },
+  "prefill": {
+   "urls": [
+    "https://quotes.toscrape.com/js/"
+   ],
+   "selectors": [
+    {
+     "name": "text",
+     "selector": ".text",
+     "type": "text"
+    },
+    {
+     "name": "author",
+     "selector": ".author",
+     "type": "text"
+    }
+   ],
+   "firstMatchOnly": true,
+   "maxMatchesPerSelector": 20,
+   "trimWhitespace": true,
+   "maxConcurrency": 3,
+   "waitTimeoutSecs": 15,
+   "waitUntil": "load",
+   "maxScrolls": 10,
+   "maxClicks": 5,
+   "blockResources": true,
+   "itemSelector": ".quote",
+   "pageRange": {
+    "from": 1,
+    "to": 3
+   },
+   "proxyMode": "auto",
+   "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": [
+     "RESIDENTIAL"
+    ]
+   }
   }
  }
 }
