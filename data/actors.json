@@ -3273,5 +3273,154 @@
     ]
    }
   }
+ },
+ "mastodon-scraper": {
+  "name": "mastodon-scraper",
+  "title": "Mastodon Scraper (Hashtags, Accounts, Trending)",
+  "description": "Scrape public Mastodon posts by hashtag, account or trending list on any instance: text, author, favourites, boosts, replies, hashtags, media, links. No login or API key.",
+  "url": "https://apify.com/webdatatools/mastodon-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-AFq6rBfFmu5hHshLq-UKU1axgr5V-mastodon-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "MARKETING",
+   "NEWS"
+  ],
+  "price": {
+   "unit": "post",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "hashtags": "python"
+  }
+ },
+ "yandex-maps-scraper": {
+  "name": "yandex-maps-scraper",
+  "title": "Yandex Maps Scraper (Places, Ratings, Phones)",
+  "description": "Scrape businesses from Yandex Maps by search term and city: name, categories, address, coordinates, rating, reviews, phones, website, social links, opening hours. No login.",
+  "url": "https://apify.com/webdatatools/yandex-maps-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-xdygL4B56Ubm6n22O-NCit84LB1t-yandex-maps-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "LEAD_GENERATION",
+   "TRAVEL",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "place",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "queries": "cafe",
+   "locations": "Moscow"
+  }
+ },
+ "craigslist-scraper": {
+  "name": "craigslist-scraper",
+  "title": "Craigslist Scraper (Listings, Prices, Locations)",
+  "description": "Scrape Craigslist search results in any area and category: title, price, posted date, neighborhood, coordinates, images and link. For sale, housing, cars, jobs. No login.",
+  "url": "https://apify.com/webdatatools/craigslist-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-cEaq6gDW5oIZLtdZw-2r4wGY3v1g-craigslist-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "REAL_ESTATE"
+  ],
+  "price": {
+   "unit": "listing",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "queries": "road bike",
+   "areas": "sfbay; newyork"
+  }
+ },
+ "eventbrite-scraper": {
+  "name": "eventbrite-scraper",
+  "title": "Eventbrite Scraper (Events by Keyword & City)",
+  "description": "Scrape Eventbrite events by keyword and city or online: name, date and time, venue, address, coordinates, category, format, tags, organizer, summary and ticket link. All result pages, no login.",
+  "url": "https://apify.com/webdatatools/eventbrite-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-lmZvCCVeEhKeEFW2a-1PXkonc4mb-eventbrite-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "LEAD_GENERATION",
+   "MARKETING",
+   "TRAVEL"
+  ],
+  "price": {
+   "unit": "event",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "python",
+   "locations": "New York; London"
+  }
+ },
+ "jobstreet-scraper": {
+  "name": "jobstreet-scraper",
+  "title": "JobStreet Scraper (Malaysia, Singapore, PH, ID + JobsDB)",
+  "description": "Scrape JobStreet (Malaysia, Singapore, Philippines, Indonesia) and JobsDB (Hong Kong, Thailand) jobs by keyword and location: title, company, salary range, work type, classification, teaser, bullet points, date.",
+  "url": "https://apify.com/webdatatools/jobstreet-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-vbLdIyiPsk35NQsRI-aKuUFKBuO2-jobstreet-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "developer",
+   "countries": "MY; SG"
+  }
  }
 }
