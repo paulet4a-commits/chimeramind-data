@@ -64,11 +64,11 @@
 </tr>
 </tbody></table>
 </div><p>A real row from a recorded run:</p>
-<figure class="sample" data-sample-status="recorded" data-sample-finished="2026-10-14T12:01:05.265Z" data-sample-run="ZwOUWJ4XsRTKRHZRl"><figcaption><span data-sample-label>Recorded example · 1 day old. This is a snapshot, not current data.</span><span class="mono">run ZwOUWJ4XsRTKRHZRl · 2026-10-14</span></figcaption><pre><code class="language-json">{
+<figure class="sample" data-sample-status="recorded" data-sample-finished="2026-10-15T14:00:55.178Z" data-sample-run="FTai6uhGrRX9G1vKs"><figcaption><span data-sample-label>Recorded example · 0 days old. This is a snapshot, not current data.</span><span class="mono">run FTai6uhGrRX9G1vKs · 2026-10-15</span></figcaption><pre><code class="language-json">{
   &quot;domain&quot;: &quot;nginx.org&quot;,
   &quot;certValidFrom&quot;: &quot;2026-07-19T09:12:14.000Z&quot;,
   &quot;certValidTo&quot;: &quot;2026-10-17T09:12:13.000Z&quot;,
-  &quot;certDaysUntilExpiry&quot;: 2,
+  &quot;certDaysUntilExpiry&quot;: 1,
   &quot;certIssuerOrg&quot;: &quot;Let&#39;s Encrypt&quot;,
   &quot;certIssuerCN&quot;: &quot;YE2&quot;,
   &quot;certSubjectCN&quot;: &quot;nginx.org&quot;,
@@ -114,11 +114,11 @@
   &quot;securityGrade&quot;: &quot;D&quot;,
   &quot;issues&quot;: [
     &quot;HTTP does not redirect to HTTPS&quot;,
-    &quot;TLS certificate expires in 2 day(s)&quot;,
+    &quot;TLS certificate expires in 1 day(s)&quot;,
     &quot;No Content-Security-Policy header&quot;
   ],
   &quot;error&quot;: null,
-  &quot;scrapedAt&quot;: &quot;2026-10-14T12:01:04.383Z&quot;
+  &quot;scrapedAt&quot;: &quot;2026-10-15T14:00:54.127Z&quot;
 }</code></pre></figure><p>The certificate data comes from a direct TLS handshake on port 443; the rest is ordinary HTTP requests — the same public information any browser receives when it connects.</p>
 <h2 id="how-the-score-works">How the score works</h2>
 <p>Points are earned for: HTTPS redirect (+20), a valid, trusted certificate (+20) with more than 14 days left (+5), HSTS (+15), Content-Security-Policy (+10), X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy (+5 each), no <code>X-Powered-By</code> leak (+5) and all cookies carrying the <code>Secure</code> flag (+5). Grades: A ≥ 85, B ≥ 70, C ≥ 50, D ≥ 30, otherwise F. Every missed point is spelled out in <code>issues</code>, e.g. &quot;No HSTS header&quot; or &quot;TLS certificate expires in 9 day(s)&quot;.</p>
