@@ -60,7 +60,7 @@ for (const g of guides) {
     const a = g.actor;
     const spec = `<aside class="spec"><div class="spec-card">
 <div class="row">${a.icon ? `<img src="${esc(a.icon)}" alt="" width="44" height="44">` : ''}<h4>${esc(a.title)}</h4></div>
-<dl><dt>Price</dt><dd>${a.price ? `${money(a.price.usd)} / 1k ${esc(a.price.unit)}s` : '—'}</dd><dt>Billing</dt><dd>per result</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<dl><dt>Primary event rate</dt><dd>${a.price ? `${money(a.price.usd)} / 1k ${esc(a.price.unit)}s` : '—'}</dd><dt>Billing</dt><dd>Event rates; additional fees may apply</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
 <a class="btn" href="${esc(attributedUrl(a, { page: `/guides/${g.slug}/`, placement: 'spec' }))}">Try it free on Apify</a><p><a href="/tools/${a.name}/">Tool details</a></p></div>
 ${toc.length > 2 ? `<nav class="toc"><b>On this page</b><ol>${toc.map((t) => `<li><a href="#${t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}">${esc(t)}</a></li>`).join('')}</ol></nav>` : ''}
 </aside>`;
@@ -84,7 +84,7 @@ const cheapest = Math.min(...all.filter((a) => a.price).map((a) => a.price.usd))
 // ---- home
 const home = `<div class="wrap"><section class="hero"><div><div class="kicker">ChimeraMiND · Data desk</div>
 <h1>Data feeds for traders, analysts and <em>AI agents</em>.</h1>
-<p class="lede">Market quotes, company signals, search results, jobs and whole websites — returned as clean JSON by ${all.length} maintained tools. Pay per result, call them from Python, JavaScript, no-code tools or an MCP-enabled AI assistant.</p></div>
+<p class="lede">Market quotes, company signals, search results, jobs and whole websites — returned as clean JSON by ${all.length} maintained tools. Call them from Python, JavaScript, no-code tools or an MCP-enabled AI assistant; each Actor lists its own billing events.</p><p class="cta-row"><a class="btn" href="/tools/">Find a data tool →</a> <a href="/workflows/">Explore workflows</a></p></div>
 <div class="stat-board"><div><b>${all.length}</b><span>catalog tools</span></div><div><b>API</b><span>REST · MCP · no-code</span></div><div><b>${money(cheapest)}</b><span>from, per 1k results</span></div><div><b>$0</b><span>to start · $5 free credit</span></div></div></section>
 <section class="block" id="market-data"><div class="block-head"><h2>Market data</h2><p>Stocks, crypto and FX — public sources, no API key.</p></div><div class="grid">${market.map(card).join('')}</div></section>
 <section class="block"><div class="block-head"><h2>Guides</h2><p>Step-by-step, with dated output and catalog pricing.</p></div><div class="grid">${guides.map((g, i) => card(g.actor, i, true)).join('')}</div></section>
@@ -101,7 +101,7 @@ const catalog = Object.entries(byCat)
     .sort((x, y) => y[1].length - x[1].length)
     .map(([c, list]) => `<section class="block"><div class="block-head"><h2>${esc(CAT_LABEL[c] ?? c)}</h2><p>${list.length} tools</p></div><div class="grid">${list.map(card).join('')}</div></section>`)
     .join('');
-write('tools/index.html', page({ path: '/tools/', title: `All ${all.length} data tools | ${SITE.name}`, description: `Catalog of ${all.length} pay-per-result data extraction tools: market data, search, leads, jobs, social, real estate and AI-ready website content.`, nav: 'tools', actors, body: `<div class="wrap"><section class="hero" style="grid-template-columns:1fr"><div><div class="kicker">Catalog</div><h1>All tools</h1><p class="lede">Grouped by what they return. Each runs in the cloud and bills per result.</p></div></section>${catalog}</div>` }));
+write('tools/index.html', page({ path: '/tools/', title: `All ${all.length} data tools | ${SITE.name}`, description: `Catalog of ${all.length} data extraction tools: market data, search, leads, jobs, social, real estate and AI-ready website content.`, nav: 'tools', actors, body: `<div class="wrap"><section class="hero" style="grid-template-columns:1fr"><div><div class="kicker">Catalog</div><h1>All tools</h1><p class="lede">Grouped by what they return. Cards show the primary event rate per 1,000 events from a catalog snapshot; additional charge events and start fees may apply. Check each Actor's Pricing tab for its full rates and conditions.</p><p><a href="https://paulet4a-commits.github.io/webdatatools/#catalog">Search tools by name or task →</a></p></div></section>${catalog}</div>` }));
 
 // ---- individual tool pages and workflow pages
 for (const a of all) {

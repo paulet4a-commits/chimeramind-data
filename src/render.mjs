@@ -31,7 +31,7 @@ export function pricingTable(actor) {
         .map(([k, v]) => `<tr><td>${esc(TIER_NAMES[k] ?? k)}</td><td class="num">$${v}</td><td class="num">${money(v)}</td></tr>`)
         .join('');
     return `<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per ${esc(p.unit)}</th><th>Per 1,000</th></tr></thead><tbody>${rows}</tbody></table></div>
-<p class="fine">Catalog price snapshot. Check the Apify Store for current prices before running. Platform usage is included — you pay per result only, never for compute or proxies. Apify's free plan includes $5 of monthly credit.</p>`;
+<p class="fine">Primary event rates from a catalog snapshot; this is not the total price of a run. Additional charge events and Actor Start fees may apply; start fees can scale with memory. Check the Actor's Pricing tab on Apify for all events, conditions and current plan-specific rates, and set a maximum run budget before starting.</p>`;
 }
 
 export function sampleBlock(sample, now = Date.now()) {
