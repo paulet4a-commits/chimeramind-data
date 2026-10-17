@@ -3422,5 +3422,154 @@
    "keywords": "developer",
    "countries": "MY; SG"
   }
+ },
+ "lazada-scraper": {
+  "name": "lazada-scraper",
+  "title": "Lazada Scraper (Products, Prices, Sold, Ratings)",
+  "description": "Scrape Lazada search results in Malaysia, Singapore, Thailand, Philippines, Indonesia and Vietnam: price, original price, discount, rating, reviews, units sold, seller, brand, stock and ship-from.",
+  "url": "https://apify.com/webdatatools/lazada-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-hWRLEcYedHEnjtwog-HRkhZf01Xa-lazada-scraper.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "product",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "phone case",
+   "countries": "MY; SG"
+  }
+ },
+ "kleinanzeigen-scraper": {
+  "name": "kleinanzeigen-scraper",
+  "title": "Kleinanzeigen Scraper (Ads, Prices, Locations)",
+  "description": "Scrape Kleinanzeigen.de (formerly eBay Kleinanzeigen) ads by keyword or search URL: title, price, negotiable/free flag, description, ZIP code, city, date, shipping, commercial seller and photos.",
+  "url": "https://apify.com/webdatatools/kleinanzeigen-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-9xFPS4hVamfRRSfuw-Yix30cd0ga-kleinanzeigen-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "REAL_ESTATE"
+  ],
+  "price": {
+   "unit": "ad",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "e-bike"
+  }
+ },
+ "redfin-scraper": {
+  "name": "redfin-scraper",
+  "title": "Redfin Scraper (Homes for Sale, Prices, Details)",
+  "description": "Scrape Redfin homes for sale from any search URL or ZIP code, filters included: price, beds, baths, sq ft, price per sq ft, lot, year built, HOA, days on market, address, coordinates, broker and remarks.",
+  "url": "https://apify.com/webdatatools/redfin-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-YNFFZBvosCdymWbWj-bhBMfNGaAI-redfin-scraper.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "REAL_ESTATE",
+   "LEAD_GENERATION",
+   "ECOMMERCE"
+  ],
+  "price": {
+   "unit": "home",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "searchUrls": [
+    "https://www.redfin.com/city/30818/TX/Austin",
+    "78701"
+   ]
+  }
+ },
+ "infojobs-scraper": {
+  "name": "infojobs-scraper",
+  "title": "InfoJobs Scraper (Spain Jobs, Salaries, Companies)",
+  "description": "Scrape InfoJobs.net, Spain’s leading job board, by keyword or search URL: job title, company, city, contract type, workday, remote/on-site, salary range, publish date and the full job description.",
+  "url": "https://apify.com/webdatatools/infojobs-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-hCiyZOxiwvZYrPY0o-MZc3ofVNn3-infojobs-scraper.png",
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "desarrollador"
+  }
+ },
+ "booking-scraper": {
+  "name": "booking-scraper",
+  "title": "Booking.com Scraper (Hotel Prices, Ratings, Availability)",
+  "description": "Scrape Booking.com hotel search results for any destination and dates: property name, area, distance, review score and count, stars, price with taxes, discount, room type, free cancellation, breakfast and deals. Real browser, no login.",
+  "url": "https://apify.com/webdatatools/booking-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-BVd0mfJEg8rhqw2Ln-X1GCDMUukk-booking-scraper.png",
+  "users30": 1,
+  "runs": 8,
+  "categories": [
+   "TRAVEL",
+   "ECOMMERCE",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "property",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "destinations": "Lisbon"
+  }
  }
 }
