@@ -71,6 +71,7 @@ ${body}
 <footer class="site"><div class="wrap">
 <div>© ${new Date().getUTCFullYear()} ChimeraMiND · Tools run on the <a href="${esc(attributedUrl({ url: 'https://apify.com/webdatatools', name: 'catalog' }, { page: path, placement: 'footer' }))}">Apify platform</a> under the webdatatools account.</div>
 <div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+<div>Monitoring tools by ChimeraMiND: <a href="https://watch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Domain Watch</a> · <a href="https://pagewatch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Page &amp; Price Watch</a> · <a href="https://watch.chimeramind.com/domain-health-check?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Free domain health check</a></div>
 </div></footer>
 </body>
 </html>
