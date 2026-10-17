@@ -70,6 +70,10 @@ Each domain is one TLS handshake, up to 10 redirect hops, one headers fetch and 
 | Single-site header graders | Detailed explanation for one site | One domain at a time, no export |
 | Certificate monitoring services | Expiry alerts | Usually certificates only, often per-domain pricing tiers |
 
+## Monitor it every day
+
+An audit is a snapshot. If you look after many domains, [Domain Watch](https://watch.chimeramind.com/?utm_source=data-site&utm_medium=guide&utm_campaign=crosslink&utm_content=domain-security-audit) re-checks them every 24 hours and alerts you by email, webhook or Telegram before domain or TLS certificate expiry (30, 14, 7 and 1 days ahead), and when SPF, DMARC or nameservers change or a new hostname appears in certificate-transparency logs. To try one domain first, use the [free instant domain check](https://watch.chimeramind.com/domain-health-check?utm_source=data-site&utm_medium=guide&utm_campaign=crosslink&utm_content=domain-security-audit), no sign-up.
+
 ## FAQ
 
 ### Is this a penetration test?

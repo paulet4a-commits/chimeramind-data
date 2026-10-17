@@ -81,6 +81,10 @@ The honest summary: DNS and list checks catch most real-world problems — typos
 
 Validating addresses you already hold is routine list hygiene. If those addresses belong to people, data-protection law (GDPR, UK GDPR, KVKK) and anti-spam rules (CAN-SPAM, PECR) still apply to how you collected and use them: keep a lawful basis, honour unsubscribes and suppress opted-out addresses before every send. The tool only reads public DNS records — it never sends a message or reads any mailbox.
 
+## Check your own sending domain
+
+Validating addresses tells you who you can reach; your own domain's SPF and DMARC decide whether that mail lands in the inbox. The [free instant domain check](https://watch.chimeramind.com/domain-health-check?utm_source=data-site&utm_medium=guide&utm_campaign=crosslink&utm_content=bulk-email-validator) shows a domain's SPF, DMARC, MX records and registration expiry in seconds, without signing up.
+
 ## FAQ
 
 ### Does it confirm that a mailbox actually exists?

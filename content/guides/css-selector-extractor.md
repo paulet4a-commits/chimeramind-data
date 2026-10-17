@@ -139,6 +139,10 @@ The price is per page, not per field. Five selectors on 100 URLs cost the same a
 - `proxyMode` `auto` requests each page directly first and switches to Apify's residential proxy only after a block. `always` and `never` force one path.
 - If a run reaches its timeout, pages already processed keep their rows, and the run ends with a status message listing how many pages were completed.
 
+## Get alerted when a section changes
+
+Extraction answers what a page says today. To be told when a price, a block of text or one CSS-selected section changes, [Page & Price Watch](https://pagewatch.chimeramind.com/?utm_source=data-site&utm_medium=guide&utm_campaign=crosslink&utm_content=css-selector-extractor) checks it on a schedule, ignores banners and timestamps, and emails you only when the value you care about changes.
+
 ## FAQ
 
 ### Does it use a headless browser?
