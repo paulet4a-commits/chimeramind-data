@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-10-17T17:35:52.524Z",
-  "sourceCommit": "137ad9d0a25c8966b32492a6ca7bf08a4740bdfe",
+  "builtAt": "2026-10-17T18:59:05.921Z",
+  "sourceCommit": "e88a3625993a8d0f7765ec267f275d9eae3d91bc",
   "pages": [
     {
       "file": "guides/bulk-core-web-vitals-check/index.html",
@@ -10,7 +10,7 @@
     {
       "file": "guides/bulk-email-validator/index.html",
       "url": "https://data.chimeramind.com/guides/bulk-email-validator/",
-      "sha256": "defb59b70266f8ab4232f12ea7813a4224e57e8edfafcd05e9f136701acd4328"
+      "sha256": "f8d2010f3dd9494feb3c4ada96aa5c9aaf4d97b5bb7c8897635b0455408f7523"
     },
     {
       "file": "guides/company-data-from-domain/index.html",
@@ -20,12 +20,12 @@
     {
       "file": "guides/css-selector-extractor/index.html",
       "url": "https://data.chimeramind.com/guides/css-selector-extractor/",
-      "sha256": "84f192b6cecfbbdfa0384867b485cc2383b6d86003606744c40bbee7a49c0e7f"
+      "sha256": "7ef77117a0e0d1e3e822370f316f48ec25d2dadf1e2aab4827f3f46b277548f9"
     },
     {
       "file": "guides/domain-security-audit/index.html",
       "url": "https://data.chimeramind.com/guides/domain-security-audit/",
-      "sha256": "3af4710b1b444501102ac6c44ead66984fce45f07b90d5398678ce3e9e06c18a"
+      "sha256": "392d105e2e53b76ddff88c911a72ace179e320ba596c5f28612265dfc32bc355"
     },
     {
       "file": "guides/email-extractor-from-websites/index.html",
@@ -208,14 +208,14 @@
       "sha256": "64f8abea7932b76e448b9ba4d8729168f548e4b7e88b8b575a372352f1a5746c"
     },
     {
-      "file": "tools/wikidata-entity-enrichment/index.html",
-      "url": "https://data.chimeramind.com/tools/wikidata-entity-enrichment/",
-      "sha256": "ecc8a7e7e6ca9f753f94f8bc68189b3fbf9c73d1e39e19c9daf46a2c77390a82"
-    },
-    {
       "file": "tools/shopify-products-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/shopify-products-scraper/",
       "sha256": "9e4b9ce436b95acd5e05fbe052c8f54448095739f1860958d4f8620275b5648a"
+    },
+    {
+      "file": "tools/wikidata-entity-enrichment/index.html",
+      "url": "https://data.chimeramind.com/tools/wikidata-entity-enrichment/",
+      "sha256": "ecc8a7e7e6ca9f753f94f8bc68189b3fbf9c73d1e39e19c9daf46a2c77390a82"
     },
     {
       "file": "tools/youtube-video-details/index.html",
@@ -373,6 +373,11 @@
       "sha256": "86721f65668804725f494d0c1ff4b554dd00669dfa6f0157e3b9724ea2e4b0a8"
     },
     {
+      "file": "tools/rag-text-chunker/index.html",
+      "url": "https://data.chimeramind.com/tools/rag-text-chunker/",
+      "sha256": "f171b75f698f472c0445a1c073dc6385a9d4412ef69d6cb31c5cbee10cb69fb0"
+    },
+    {
       "file": "tools/stepstone-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/stepstone-scraper/",
       "sha256": "ca3e96bece17278303e3fe1a8d2cab303cd68faefff7e65cb5deff808f4abbab"
@@ -381,11 +386,6 @@
       "file": "tools/css-selector-extractor-js/index.html",
       "url": "https://data.chimeramind.com/tools/css-selector-extractor-js/",
       "sha256": "ea8d24125b560dfdad398feb17ab0ed3e55b82fc3f380c0a5274c6fc29beaa4f"
-    },
-    {
-      "file": "tools/rag-text-chunker/index.html",
-      "url": "https://data.chimeramind.com/tools/rag-text-chunker/",
-      "sha256": "f171b75f698f472c0445a1c073dc6385a9d4412ef69d6cb31c5cbee10cb69fb0"
     },
     {
       "file": "tools/naukri-jobs-scraper/index.html",
