@@ -870,11 +870,11 @@
    "usd": 0.005,
    "tiers": {
     "FREE": 0.005,
-    "BRONZE": 0.004,
-    "SILVER": 0.0035,
-    "GOLD": 0.003,
-    "PLATINUM": 0.003,
-    "DIAMOND": 0.003
+    "BRONZE": 0.0045,
+    "SILVER": 0.0045,
+    "GOLD": 0.0045,
+    "PLATINUM": 0.0045,
+    "DIAMOND": 0.0045
    }
   },
   "prefill": {
@@ -3570,6 +3570,35 @@
   },
   "prefill": {
    "destinations": "Lisbon"
+  }
+ },
+ "trendyol-scraper": {
+  "name": "trendyol-scraper",
+  "title": "Trendyol Scraper (Turkey Products, Prices, Ratings)",
+  "description": "Scrape Trendyol, Turkey’s biggest online marketplace, by keyword or search URL: product name, brand, category, price, basket discount price, rating and rating count, favourites, promotions, free shipping, fast delivery and images.",
+  "url": "https://apify.com/webdatatools/trendyol-scraper",
+  "icon": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-Q1mvxdi6Jg5qOgnuC-9uOyQkouj5-trendyol-scraper.png",
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "product",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "kulaklık"
   }
  }
 }
