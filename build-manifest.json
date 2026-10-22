@@ -1,681 +1,681 @@
 {
-  "builtAt": "2026-10-21T17:35:01.508Z",
+  "builtAt": "2026-10-22T17:34:35.476Z",
   "sourceCommit": "8072444682e47bfc7eaf91949bda67e4532315f3",
   "pages": [
     {
       "file": "guides/bulk-core-web-vitals-check/index.html",
       "url": "https://data.chimeramind.com/guides/bulk-core-web-vitals-check/",
-      "sha256": "9826da818e57e860d27238861095d8e6a271e51fafc7294c9bb3718ed5c6c035"
+      "sha256": "172d18d2062df9f932c47460e37d291358d5628525e8e3e878f4b8e9f2b9d09f"
     },
     {
       "file": "guides/bulk-email-validator/index.html",
       "url": "https://data.chimeramind.com/guides/bulk-email-validator/",
-      "sha256": "5cce9a66f64d6e7e82f10cfcca956f45e2600e979c2a4fdd10c17af1b67a3b7b"
+      "sha256": "fde7235d8337ba4497bd00f28d8c751b4f3fbf710128a5c40f5236f3bc9feb52"
     },
     {
       "file": "guides/company-data-from-domain/index.html",
       "url": "https://data.chimeramind.com/guides/company-data-from-domain/",
-      "sha256": "681788c0a276dbf318a05f26ebb74f8a80e1f09128417483480c822307aebe4f"
+      "sha256": "ffc9ec614b746034074a24e74da65d3a1b618d2bc2783558cf455c047e70e970"
     },
     {
       "file": "guides/css-selector-extractor/index.html",
       "url": "https://data.chimeramind.com/guides/css-selector-extractor/",
-      "sha256": "589adfff9bf79dbfe336d07a3b25d7cec02d83c9bff09d3f633f7c9c6a8078f7"
+      "sha256": "fde385fe78cdb11c32850cb0368c93062c83d56536bc96df45bee5e1fb852f52"
     },
     {
       "file": "guides/domain-security-audit/index.html",
       "url": "https://data.chimeramind.com/guides/domain-security-audit/",
-      "sha256": "c12e9daec3126eba9bb730b9d687eb39fce05987bdfa78a02b9f2647fe168d6e"
+      "sha256": "94b4a2d008e50af47592cde345ba0e2dcbbde1724691bcf016801e9a9f6e44a0"
     },
     {
       "file": "guides/email-extractor-from-websites/index.html",
       "url": "https://data.chimeramind.com/guides/email-extractor-from-websites/",
-      "sha256": "f9980244a2d22b519394372e63db21c6031cc50ea6782ab8c03e58c79d82ee4a"
+      "sha256": "552f51db05bbe61e501f001bf0fc191dd36ef49a25d31547f7027ce6e5b318f8"
     },
     {
       "file": "guides/google-maps-email-extractor/index.html",
       "url": "https://data.chimeramind.com/guides/google-maps-email-extractor/",
-      "sha256": "b77fd62cd8f8515bb2e4ceeda2480d56d7930304b16a878bda95e7a6f6496b7d"
+      "sha256": "e087c57e24d7784eef8eed5b83ac00ba768aa0ed954fdc804080a8cac7576ee3"
     },
     {
       "file": "guides/google-maps-scraper/index.html",
       "url": "https://data.chimeramind.com/guides/google-maps-scraper/",
-      "sha256": "b52ffb0534a20f98271222a141d7e3ce716b21f8061e459c30499e9a34be2edb"
+      "sha256": "f2acc7f31f73a1fe06c7fc8264dfa2488b55a7813ae03af6c1b1094b334adff2"
     },
     {
       "file": "guides/google-search-results-api/index.html",
       "url": "https://data.chimeramind.com/guides/google-search-results-api/",
-      "sha256": "5e8e7d392d3e40346b4c56ea86f10ed85705a7c93be78f66c958858a3ed96dae"
+      "sha256": "c21eee7d15bdc61f4aa2ff8606cf30670a3627b4e5b403716f4916b3751863d3"
     },
     {
       "file": "guides/greenhouse-lever-job-board-scraper/index.html",
       "url": "https://data.chimeramind.com/guides/greenhouse-lever-job-board-scraper/",
-      "sha256": "ecea5cf1be5f138fb19b7b9b0c456bb1d6a8b0dbb4a6ba39268f51b4e0d2d53f"
+      "sha256": "3a00d3e4f03665a73c21be468d3ce23d25079c0b288aa6246683e399576181ff"
     },
     {
       "file": "guides/linkedin-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/guides/linkedin-jobs-scraper/",
-      "sha256": "fa5be1b97faa2b5fd7dddc56e540fe026f636c7bcea1e87944bca738cebcd166"
+      "sha256": "4f482ecf7693c883d57a097859b301f3b0d73a7409a842defddb7ff6d7ba6534"
     },
     {
       "file": "guides/llms-txt-generator/index.html",
       "url": "https://data.chimeramind.com/guides/llms-txt-generator/",
-      "sha256": "8dcfff8ea39d62877f4fe48e52c552b9d3b7394accda63b26a0658e352a378e6"
+      "sha256": "221137b3b127bd6ac4e81a73864256c80fcc356c0f0f46286232c0eb21a95db1"
     },
     {
       "file": "guides/on-page-seo-audit/index.html",
       "url": "https://data.chimeramind.com/guides/on-page-seo-audit/",
-      "sha256": "d072a16c72a24f70a3aa31fc8242c01cfdae2b6d53fcad093d290b774b37ec21"
+      "sha256": "711cdbaacd6741534e7e4e6edfaebb3c72c4b426776fa718521282501c60274b"
     },
     {
       "file": "guides/stock-crypto-fx-quotes-api/index.html",
       "url": "https://data.chimeramind.com/guides/stock-crypto-fx-quotes-api/",
-      "sha256": "37126122d70bf3a3a5b866b116d34f64aa915781147ad1578fedf603f64a5267"
+      "sha256": "79702de64decd5132dc7017cc84e1b81a75ccdb9b7dfe96cd8d7c842e8ea0528"
     },
     {
       "file": "guides/tiktok-profile-scraper/index.html",
       "url": "https://data.chimeramind.com/guides/tiktok-profile-scraper/",
-      "sha256": "3ba2d778b2d8ed2e69a954928b563937760b0d1f7b87a68b34835d49976a6bef"
+      "sha256": "8d179111233cf2c27b379775bdc9f1402b428442b842fb88b2cef9b00499fed2"
     },
     {
       "file": "guides/website-tech-stack-lookup/index.html",
       "url": "https://data.chimeramind.com/guides/website-tech-stack-lookup/",
-      "sha256": "cdfd7b9c3cdd3b89d247f1ba2a573f33056cb3736eb3a5fc498716123b907a94"
+      "sha256": "a824e38ca8655302630cb3b8c948a76a1e626459a2681be45738844b235ac12c"
     },
     {
       "file": "guides/website-to-markdown/index.html",
       "url": "https://data.chimeramind.com/guides/website-to-markdown/",
-      "sha256": "35b440f1e904741c87154e105b2008466b4dbffbfa222fb892a394376de8800a"
+      "sha256": "0ffe381ba8d086a1b8861307f2c945aac21e2c2b486e7aea15c7dbd99f184ce1"
     },
     {
       "file": "guides/youtube-shorts-scraper/index.html",
       "url": "https://data.chimeramind.com/guides/youtube-shorts-scraper/",
-      "sha256": "883672d420268aad2a33b402dec73cd149a2d834afea913b770f73eaca15d930"
+      "sha256": "0ea5536848e34e4079e1994313ae8fa8cb9c397c4907c2743a88b36c685b9c31"
     },
     {
       "file": "guides/youtube-transcript-api/index.html",
       "url": "https://data.chimeramind.com/guides/youtube-transcript-api/",
-      "sha256": "92e98550989506be3874d9547d50320f69d47f32d7b0ff22a683fc36243c7896"
+      "sha256": "f262ebe8b422018917e0028637430eec6328ef771f555c768d82758a415148b3"
     },
     {
       "file": "guides/zillow-scraper/index.html",
       "url": "https://data.chimeramind.com/guides/zillow-scraper/",
-      "sha256": "f2f358321743c3d4f3e525293a10e130a2d8df6989911ec11c083f9fc6bcc1bb"
+      "sha256": "32f56b17eb373e90ba27b0631939ecc86e1c06cb8e3d0cd720585bc271b55d4d"
     },
     {
       "file": "index.html",
       "url": "https://data.chimeramind.com/",
-      "sha256": "f2f7e812c886c3346b7c11afd1fd5a10b67fec8b957e474ba226f10c7138a9e9"
+      "sha256": "88086ed9e8c3d88b65a95c9c2b60a46b27225b286090451f1fdd74959b281aa6"
     },
     {
       "file": "guides/index.html",
       "url": "https://data.chimeramind.com/guides/",
-      "sha256": "102e38c73b3640e5c8cae77995bf4a33b142faae0bf3657a109abfd38d0d0979"
+      "sha256": "acd8ef625cf34e492ebcc2b443139234f7019652171cc0b2146393fc2b80992c"
     },
     {
       "file": "tools/index.html",
       "url": "https://data.chimeramind.com/tools/",
-      "sha256": "0d3e800ce54eafd8703e48746efb4a841e92292be288d3867a8cb812915c9320"
+      "sha256": "f5156834a6094fb145a72e758aff66750e48098bed113ac1c26db5055f228ca5"
     },
     {
       "file": "tools/youtube-channel-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/youtube-channel-scraper/",
-      "sha256": "268a7c84a93bdfa60dbd91bbc1eb8588194944846ca11069cdb136dc2b1587b9"
+      "sha256": "d2691b52fd8bee6490416a1bd742fcc9f6290b845dd3636a72f2589c3b87cd0c"
     },
     {
       "file": "tools/google-search-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/google-search-scraper/",
-      "sha256": "1b44e8d73d7b3d74b4727b2a6281d34e1d69777232f7178cfafee8d503d94e0c"
+      "sha256": "796ac02bc4f55ecc33c81b4dc39e04acca7f7de1756bb64dbb6f4bfcb47818c5"
     },
     {
       "file": "tools/website-to-markdown/index.html",
       "url": "https://data.chimeramind.com/tools/website-to-markdown/",
-      "sha256": "c33012a6da37dbec5b098f18e6e1c57a987268faa40ff620c3353bb8ee5951ea"
+      "sha256": "4ad1a9cdd793063fb95113c208e9887ec1bdd1f45546fce27b3403975da39a3c"
     },
     {
       "file": "tools/domain-security-audit/index.html",
       "url": "https://data.chimeramind.com/tools/domain-security-audit/",
-      "sha256": "d245cd05d37fc13f657534738b22dbdb51cb572c377270dca0e3e2cd1d14bf99"
+      "sha256": "d4caea1fc3d7adf75ba3271cb5016f8ef6aa375a08119e0973d47d807a542c5b"
     },
     {
       "file": "tools/google-news-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/google-news-scraper/",
-      "sha256": "f7db51a94de82dc1281973989ef9f1e826f91858344243acdf39d8d26ef10605"
+      "sha256": "eeb4cb9775b75550c12ca11b4a14c489a10a9afa53551dd0c53e6c71e5e0599a"
     },
     {
       "file": "tools/css-selector-extractor/index.html",
       "url": "https://data.chimeramind.com/tools/css-selector-extractor/",
-      "sha256": "1b44b3e5deaef77e6ed5d87e98d9203df379b2a25f78485bd754f098590719a1"
+      "sha256": "d513c089d635ace43b9dab5178a981cdbf913699887ab777af2b8d57fc06f50e"
     },
     {
       "file": "tools/subdomain-finder/index.html",
       "url": "https://data.chimeramind.com/tools/subdomain-finder/",
-      "sha256": "e65db0e2d1d9efc3c5c5224ec6c673a9aceeb94820a0c1cf05e0e53c66ec8376"
+      "sha256": "e905fe1229d8230ec22ee93456434bf65803301d6ed81acfa7925cff99741373"
     },
     {
       "file": "tools/domain-whois-rdap/index.html",
       "url": "https://data.chimeramind.com/tools/domain-whois-rdap/",
-      "sha256": "1875dc0babac9b0a1651d816f46ff36b1a9b1569e1eef895f4586d999837d870"
+      "sha256": "16a4ffc5836ce7f4928d2e50c7208a73aea8f8eb2a20750d2bdcc9ed3cbfdf74"
     },
     {
       "file": "tools/dns-email-security-checker/index.html",
       "url": "https://data.chimeramind.com/tools/dns-email-security-checker/",
-      "sha256": "f06120b494ed86931e0b2aac9de1f084bc1c1474e0df5e4a84a302e73e6b06b2"
+      "sha256": "fc17ed9f2fa7d5da9cea68fd472aa6aa40dfb42cc49a3f2ca7abfdb07fbb19ee"
     },
     {
       "file": "tools/tech-stack-detector/index.html",
       "url": "https://data.chimeramind.com/tools/tech-stack-detector/",
-      "sha256": "53090f8d64fb951aa58b5616909a3bf883d05a03d9a1380be664cce1eac9564a"
+      "sha256": "9ec18f49057eab308f434e059c79a19b706513763c44d3b22025638beb10f1f2"
     },
     {
       "file": "tools/hiring-signals/index.html",
       "url": "https://data.chimeramind.com/tools/hiring-signals/",
-      "sha256": "82f96a005c34000ed76256adac704a4ece6c520068437a0ac9d78bd2c87d3089"
-    },
-    {
-      "file": "tools/seo-page-audit/index.html",
-      "url": "https://data.chimeramind.com/tools/seo-page-audit/",
-      "sha256": "60718e3af4d5354a5ce8fe0a8c42370360b403f5f84eac49370d5e0314519553"
-    },
-    {
-      "file": "tools/core-web-vitals-audit/index.html",
-      "url": "https://data.chimeramind.com/tools/core-web-vitals-audit/",
-      "sha256": "e21de5b06055456a61e2f15d89ea961ea03f1e02dab62a67ed5582cdd4ceb111"
+      "sha256": "c377c194e6c6608ac63f8815271af3a6068378538b71108c4505fb3398728fdc"
     },
     {
       "file": "tools/youtube-channel-videos/index.html",
       "url": "https://data.chimeramind.com/tools/youtube-channel-videos/",
-      "sha256": "aa04604e874f0e71cd13635d755c10ff0111960dd3e6ab6ed7741d43029d6783"
+      "sha256": "5a69e59d9c3cb385f02a96d31f735b81d709c0aedc962a3edd0438bf74b05f03"
+    },
+    {
+      "file": "tools/seo-page-audit/index.html",
+      "url": "https://data.chimeramind.com/tools/seo-page-audit/",
+      "sha256": "c9ac9a5691de5e8eecafb91416bcd334942d0321bd41446097b0f7f8f9d102b6"
+    },
+    {
+      "file": "tools/core-web-vitals-audit/index.html",
+      "url": "https://data.chimeramind.com/tools/core-web-vitals-audit/",
+      "sha256": "2ab49c564c333cd3653170ed8fae8e3c4744d1e5178312fcddf03277a7110211"
     },
     {
       "file": "tools/shopify-products-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/shopify-products-scraper/",
-      "sha256": "2248d7b64ba47e7f7f08b6e39873d0690a232b6f47e7d7a6f835138153697a26"
+      "sha256": "a2f3823eb17a64efa6311fc3e7603c85d4d238ffe0de0dcad76f886d9466618e"
     },
     {
       "file": "tools/website-screenshot/index.html",
       "url": "https://data.chimeramind.com/tools/website-screenshot/",
-      "sha256": "c6e65d94f4e83feb5980d53e78d00cbf6bbba54191789efe45be35bca920387e"
+      "sha256": "43747766b2472d0fdf40150d6acd46a3f21c2458b670b392afdc1489ee0f5c36"
     },
     {
       "file": "tools/ai-web-search/index.html",
       "url": "https://data.chimeramind.com/tools/ai-web-search/",
-      "sha256": "94066df423618358ba18421ebc5b09b50b3ea57121377a557ca4ce10469d9808"
+      "sha256": "606687926f1efca61af39e55e0749ced6f6187dc64a530dce804be334898a3c0"
     },
     {
       "file": "tools/contact-extractor/index.html",
       "url": "https://data.chimeramind.com/tools/contact-extractor/",
-      "sha256": "37afccae1be2d8f55b5aa3cee0935899002428eb9ed811c3ad50811ab999864c"
+      "sha256": "ca8d917e8bb581d65d5fc572e9e662964228e44794a8a1a2e9e3ad9f045c0a2b"
     },
     {
       "file": "tools/youtube-comments-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/youtube-comments-scraper/",
-      "sha256": "e9be49da709b79db003e72cdfede153e0ea7d90a69835dbc661683d721482634"
+      "sha256": "66f06d0e58baf75b621b057c00905f63de81beb06de93c763aab23a22542a280"
     },
     {
       "file": "tools/press-release-monitor/index.html",
       "url": "https://data.chimeramind.com/tools/press-release-monitor/",
-      "sha256": "a1d5b2113685a9f4bef1dbc5aa20cc1acd0226bfbe592debb7f6c76879f6abc1"
+      "sha256": "2e589ca66313bd23d5442a13b04c8aa2ba1647068dfe01d263a0895589d86676"
     },
     {
       "file": "tools/youtube-video-details/index.html",
       "url": "https://data.chimeramind.com/tools/youtube-video-details/",
-      "sha256": "cbec9e588de73cb815040eb11ecb65d03dcfb4070815d8930d879b9edec05c00"
+      "sha256": "b99ce7772ef22abd692f64b244219f36c6ca56d7a065c366ec68ed86f102b81b"
     },
     {
       "file": "tools/structured-data-extractor/index.html",
       "url": "https://data.chimeramind.com/tools/structured-data-extractor/",
-      "sha256": "52e809243eeb0753e9af508b994d03abdfde8b1e062f4b85ab37c47990ed26b7"
-    },
-    {
-      "file": "tools/wikidata-entity-enrichment/index.html",
-      "url": "https://data.chimeramind.com/tools/wikidata-entity-enrichment/",
-      "sha256": "a8df1fbb0d4d95afc14b9e72e9631b330be0d5d0d67fed3b67e0e8d17cc9a800"
+      "sha256": "a4f00d63e138467a3748cd9ce474dcfb8fa38e16e5c8b63bdf14636b42546092"
     },
     {
       "file": "tools/bluesky-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/bluesky-scraper/",
-      "sha256": "5c3af29f206d01ee3eadd042ae540d413c825f695eb57b441aedf52155c22035"
+      "sha256": "c0f2bd32e5cd6d5941b7511127f49b03a48879f8a7a33432423c6a67bff3a736"
     },
     {
-      "file": "tools/company-360/index.html",
-      "url": "https://data.chimeramind.com/tools/company-360/",
-      "sha256": "4c33a7c165c575b46298347dbb4c4de97af75267e41e3b09e2856e2cf7241d61"
-    },
-    {
-      "file": "tools/google-play-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/google-play-scraper/",
-      "sha256": "70cd934cdb6e076f8be3756e003af8cf7e39011a09a39dfd2b252c88b12c7235"
-    },
-    {
-      "file": "tools/yc-companies-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/yc-companies-scraper/",
-      "sha256": "9cca1f337017280badfa01352ea72fec11854160f4ae8b2f4ba442269ea673a1"
+      "file": "tools/wikidata-entity-enrichment/index.html",
+      "url": "https://data.chimeramind.com/tools/wikidata-entity-enrichment/",
+      "sha256": "112f489f7d92234d144b8e6af42ba5511c0c4314ce06d0b74824e8d0b6964b88"
     },
     {
       "file": "tools/article-extractor/index.html",
       "url": "https://data.chimeramind.com/tools/article-extractor/",
-      "sha256": "3fb9cf7e9202a286f402f601036653c87ffb0a19bab58f3abfa519fa497ecfcd"
+      "sha256": "faeaad1cdd8f5e1d35e125f847307ee2fda42be7e4c01c8d502ac005265773ac"
+    },
+    {
+      "file": "tools/company-360/index.html",
+      "url": "https://data.chimeramind.com/tools/company-360/",
+      "sha256": "0b7a639946fd4518f9f2a87c09062d78fa0e8ae552eb7005f12237930905941e"
+    },
+    {
+      "file": "tools/google-play-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/google-play-scraper/",
+      "sha256": "884d6d4e60e8176cea70e50e6e5ad5ccc1b126005b182ce37ffc37bed549151b"
+    },
+    {
+      "file": "tools/yc-companies-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/yc-companies-scraper/",
+      "sha256": "4318376011df3e01137ba6a1581b3ef53ec73119122bba029e5a948471bf83b2"
     },
     {
       "file": "tools/ical-calendar-extractor/index.html",
       "url": "https://data.chimeramind.com/tools/ical-calendar-extractor/",
-      "sha256": "0f37042bf18c831bc0eaf2a53d88c3b56977686e57daca9408d95b9e3a30f22e"
+      "sha256": "997ea2fb9f8c2c13f0c51835409917de28744d3c67b1d0bcb8edf155e0b80139"
     },
     {
       "file": "tools/youtube-search-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/youtube-search-scraper/",
-      "sha256": "0beb71e5ff0db650f95246b52fd3e6de3a5dd0ddbdb1aa4f88f47170005130d4"
+      "sha256": "51caff5aad55d851c8e2cba813fc8e315b16e2f8e0de502ef3ea353800883256"
     },
     {
       "file": "tools/linkedin-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/linkedin-jobs-scraper/",
-      "sha256": "9b9be554785e1e0478d3480ccbb72ccfa204fc9b27e9c817fc036ef0827d39c5"
+      "sha256": "a3a232a54ee418f6ce3a89d5626518062fd80738bee88ed228e4ac68239aa30c"
     },
     {
       "file": "tools/youtube-shorts-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/youtube-shorts-scraper/",
-      "sha256": "4a2d0bb488aec8aa05d5acebbe0f8804f3b2d4305a1e3798343623009329f644"
+      "sha256": "988518d0e08240ba207512e41b0e866157dad28526baf9564f366bf3bc085eb8"
     },
     {
       "file": "tools/google-maps-email-extractor/index.html",
       "url": "https://data.chimeramind.com/tools/google-maps-email-extractor/",
-      "sha256": "dabb307a72e7b3b6cc7b04f8f52e04c6b29b87aa5ff93df3c9cf713d4e03022a"
+      "sha256": "c55dcf6db596535c0e0f3bf6c30637044a7e150703e3b5bc7c023caf2442ae20"
     },
     {
       "file": "tools/sitemap-extractor/index.html",
       "url": "https://data.chimeramind.com/tools/sitemap-extractor/",
-      "sha256": "8322e706482ada21cfcd3081791c40e0ea4c6ef59f0d4a2e542e84a054408832"
+      "sha256": "f714ba6c34dfa2ae17c2db809d99b642f2b6918a0c1635b8123fda2975599193"
     },
     {
       "file": "tools/wayback-page-diff/index.html",
       "url": "https://data.chimeramind.com/tools/wayback-page-diff/",
-      "sha256": "bd53a70ec5198cec053b6a5598bb41e037a9a8d335d1b443d6815dfe61f49b6f"
+      "sha256": "b03b34581306aabb9c5d7cb2817ce30bc2aae611b50cb7dd88b702ada67db1b4"
     },
     {
       "file": "tools/app-store-lookup/index.html",
       "url": "https://data.chimeramind.com/tools/app-store-lookup/",
-      "sha256": "a2d3016201f83c48ab67108a11483c2c0c8b95e699cbce643c9c69487c098654"
+      "sha256": "16ca7442f8dc23011a68555236f46946063de112e6d875966733e712c6b08bfe"
     },
     {
       "file": "tools/github-repo-health/index.html",
       "url": "https://data.chimeramind.com/tools/github-repo-health/",
-      "sha256": "a7e11e5e5f41a8359106a930ddbb6dc82b9eb49eccc1110764d9d7564a7f5696"
+      "sha256": "e52fa2e9230ac787686c7c289d1391a033e603d0740a2a0ebe829d34f43062aa"
     },
     {
       "file": "tools/overpass-poi-extractor/index.html",
       "url": "https://data.chimeramind.com/tools/overpass-poi-extractor/",
-      "sha256": "dc5fd7271f899db0e56c082f1fc764e0893d00a87152f89e8617a955860621fb"
+      "sha256": "85fe1faff5cc55a65f4098da07f0c3e691cdd05f634c5205d5813409a03ac3fd"
     },
     {
       "file": "tools/tiktok-profile-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/tiktok-profile-scraper/",
-      "sha256": "dbf8054f4e156e66a729553836cc8aeb572238f37a781dc3dcccb10c39184d61"
+      "sha256": "646e33be59eee7da01a85903a3054afa282d21b8c283d32b348bb7be2cba3e0a"
     },
     {
       "file": "tools/vscode-marketplace-extensions/index.html",
       "url": "https://data.chimeramind.com/tools/vscode-marketplace-extensions/",
-      "sha256": "bb3c5e0584871b299167a80fa74cdacfc7520b370f3b78a23846382e5272ac4f"
+      "sha256": "d8a07be3cfdc09f1cd143297fb9879d139044601b3ec97d0549149e6a77a1647"
     },
     {
       "file": "tools/chrome-web-store-extensions/index.html",
       "url": "https://data.chimeramind.com/tools/chrome-web-store-extensions/",
-      "sha256": "379592067b1320d4d63eb6aa51e83ea731e6ae642d327efe736452a1640711d3"
+      "sha256": "0d8b734cdc86c2fa0e9c406015d006f7fddcd18a6fe0376bcf4f4e77f01364e2"
     },
     {
       "file": "tools/openfda-recall-monitor/index.html",
       "url": "https://data.chimeramind.com/tools/openfda-recall-monitor/",
-      "sha256": "9506458e8a45d1a7654d494c455766f7bd10648adeef123447b54a89f6be471c"
+      "sha256": "5c18518a68f08e7f9435dc68f3b73b6784b96503d36900dc208daaa17567fd98"
     },
     {
       "file": "tools/podcast-lookup/index.html",
       "url": "https://data.chimeramind.com/tools/podcast-lookup/",
-      "sha256": "971c35a061b16d93b3eb4ab28ef16530bf4a2c4d09542af9c555a6fa769e5f8d"
+      "sha256": "8c5fea458eeccde7d2ac4eb8f9eb3a2afff49cf1b363575200c9d73e75dee112"
     },
     {
       "file": "tools/substack-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/substack-scraper/",
-      "sha256": "35b5080a3ab149dd1dc6b993b273426140516bec013eb467205c53e9dce28de0"
+      "sha256": "39a4b55aece97e4dd3f53ffd912a2fbbf088c508f99698b20c627ee1128089f5"
     },
     {
       "file": "tools/telegram-channel-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/telegram-channel-scraper/",
-      "sha256": "d95e952437ab2d8c8b98226d18c198e2a0f201bdc60936dbdd9bfccfbeb29b48"
+      "sha256": "98c5a09522e86f6088f6b86a5427729cdb6419cdbb5324d64ce3d1ba294ff041"
     },
     {
       "file": "tools/google-maps-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/google-maps-scraper/",
-      "sha256": "7ef317537961d3dc867bb4e0cea45769e2f84512cd26d09f7519fb3a6d5fc433"
+      "sha256": "00c947ea39be60820ccbfefe13eeedd6e07bc560cce3a6ff489fc502f6a47697"
     },
     {
       "file": "tools/stepstone-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/stepstone-scraper/",
-      "sha256": "d1ecaecc5cb2e1cccbcf159f201215eac2e86f4e1d6e8c7248e5922a0a808054"
+      "sha256": "cd4c035af00891f4b164f6dcac9253ebd5f6ee34316770bc156e4d05d173299a"
     },
     {
       "file": "tools/market-quotes/index.html",
       "url": "https://data.chimeramind.com/tools/market-quotes/",
-      "sha256": "6eb1426d7b70b4130f75a7edbf237fba7618631b55eb613d612d61efa684b000"
+      "sha256": "b9d9e6e820a83d45e097f58b304c00fd35f58e502c0e1627756c4ff592e1e3de"
     },
     {
       "file": "tools/bulk-image-downloader/index.html",
       "url": "https://data.chimeramind.com/tools/bulk-image-downloader/",
-      "sha256": "d7984e92e5f9e7d7b482cb43353e17c9b2b779785b5a1cb5f5a3b841b801e731"
+      "sha256": "7c53a807cc7679d6b1880584e767034226522e5c88c230c6dd276bdfeb7268fe"
     },
     {
       "file": "tools/airbnb-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/airbnb-scraper/",
-      "sha256": "b835c6dd30262cd11c900bd0e05e7c6d809a906eec2c65ce6d8024b6ba4d2b5d"
+      "sha256": "3fcdc79ae03e29b096e0d96e8d51ac496fdc7aac7d8ebabf5b4958b28cd84501"
     },
     {
       "file": "tools/github-trending-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/github-trending-scraper/",
-      "sha256": "259c84a8296cce3f6385774a50ca78fd2ae4f3f696f8ccc3df7e900fb9e978be"
+      "sha256": "5a4d8d6e1c26379fe2b1e92831180bbe89cc1feff836fac56e7f236d1834a717"
     },
     {
       "file": "tools/hacker-news-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/hacker-news-scraper/",
-      "sha256": "f8d59cc9314442dcf3784f308576bed2e19a80108bef37914160eeb8973ccf35"
-    },
-    {
-      "file": "tools/youtube-transcript-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/youtube-transcript-scraper/",
-      "sha256": "2c697f5200122c24ae4c55fecb949022b6a697a3a77b3553cd0fb1a816f33c3a"
+      "sha256": "0ab71f26be8ecef91ef6f76a1ce7e9bb33131ce5170f7daddaae7fa88eef6254"
     },
     {
       "file": "tools/css-selector-extractor-js/index.html",
       "url": "https://data.chimeramind.com/tools/css-selector-extractor-js/",
-      "sha256": "c2881cdf96286fc42f5a67c35ff15b98b1cdbfcec0411b1ed50ddc607bb91c50"
+      "sha256": "a8e280ede0bf1a25cf8d7eeff5d1217423adc6e638ac163554767ca5309c6b3e"
+    },
+    {
+      "file": "tools/youtube-transcript-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/youtube-transcript-scraper/",
+      "sha256": "4a212d8c8696d33b1eb84d464a1410bc5cb0ddd4143ec48add15435e64fdf697"
     },
     {
       "file": "tools/rag-text-chunker/index.html",
       "url": "https://data.chimeramind.com/tools/rag-text-chunker/",
-      "sha256": "34c4d73db19b4ff6e13681575bd8a344c28605ea8e70d1bfb982966516f51593"
+      "sha256": "7bd2345183e08438a2a1836d9c839389a591ae8ab01d585218131186110779ce"
     },
     {
       "file": "tools/naukri-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/naukri-jobs-scraper/",
-      "sha256": "7437e89e751be19901ca6012da1ebe7e0c1d725522f923bca1991aed204de367"
+      "sha256": "bdd8e044f92b8a794239df0e48d260dc0f23ab0331aa3027854cb257bd9e9839"
     },
     {
       "file": "tools/dexscreener-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/dexscreener-scraper/",
-      "sha256": "513fa2bd5fc06e68cd0705757bb995cd4ed5c7f1387f5172cc8a0016b0ef682d"
+      "sha256": "189ebb9916e7a935f69c42f55a89e1c9073df4069c93be2cab53affe8553a604"
     },
     {
       "file": "tools/polymarket-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/polymarket-scraper/",
-      "sha256": "88cf0d6c3d1ce995523cdac931e75d828285502f76c12d9be550d98fa2a55ea7"
+      "sha256": "23b28bdd0099051b9cc119de406fd80300afcf9a4f7f056d5849ce3482d32aae"
     },
     {
       "file": "tools/stackexchange-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/stackexchange-scraper/",
-      "sha256": "98d983b1ecbe86675e4d68ef8df0db91ca0fbb22aa8debd0f067ee5e1be7549e"
+      "sha256": "1c0f3c7b52b92c0b8dcc085646431668a04e13fb450e6ee3ac630191986500ac"
     },
     {
       "file": "tools/remote-jobs-aggregator/index.html",
       "url": "https://data.chimeramind.com/tools/remote-jobs-aggregator/",
-      "sha256": "2673c725ed51542af5d2753523f2e381e7169ec2c4e9bdf5a972930b91346ec1"
+      "sha256": "8c7a9361507a18722b4c0cfdca151fa5dd2ae213e392218e496535da79bd68eb"
     },
     {
       "file": "tools/google-play-reviews-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/google-play-reviews-scraper/",
-      "sha256": "9e6c5fdd666664d422fb4201484c82522a641472f0406c6e5b10feb5eb9276fe"
+      "sha256": "9ab6cd8b6fa1ba75dce629a3475c9b751ea23b63cbf3f367fadf9e9cf27da5ef"
     },
     {
       "file": "tools/greenhouse-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/greenhouse-jobs-scraper/",
-      "sha256": "96a1f5f47964b9149909f57e792ca72323c1c4d170bf35fa0f1efd7423e821ff"
+      "sha256": "cf93bd29fc2018d86565f0fed679ce666a3c00abf11065b5538156526a81ecd2"
     },
     {
       "file": "tools/google-ads-transparency-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/google-ads-transparency-scraper/",
-      "sha256": "01403524631bab28e5a2ecd053a132cda0edb6f8cf10a50507fb32123fb737ee"
-    },
-    {
-      "file": "tools/llms-txt-generator/index.html",
-      "url": "https://data.chimeramind.com/tools/llms-txt-generator/",
-      "sha256": "ab92bfa10ce8a1c8efe0ed9b6aa28880d70ad52b946ae049a342018eef95a852"
-    },
-    {
-      "file": "tools/zillow-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/zillow-scraper/",
-      "sha256": "7cc4046d5f73c62d5c56f235be0ab3119d98635a66453d3e8410b5f80f87e9e3"
-    },
-    {
-      "file": "tools/zillow-detail-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/zillow-detail-scraper/",
-      "sha256": "535c65bf1b4e58120217c36e142b9c199b3151ab66a8aa5addec3d8f2d8e2660"
-    },
-    {
-      "file": "tools/google-trends-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/google-trends-scraper/",
-      "sha256": "a6b8ab10c2812a244872cad07c070ba414aa7d53826b5854ffe0387f7db7973c"
-    },
-    {
-      "file": "tools/seek-jobs-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/seek-jobs-scraper/",
-      "sha256": "cdba4760390099848c2ce9c40e8b5f30fd90a25a48bbab3d4c95de636c95d7b1"
-    },
-    {
-      "file": "tools/aliexpress-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/aliexpress-scraper/",
-      "sha256": "8cecdfc09210e2d3a69c958ed38ff3e8589835ff4afae29240dfed9d175a732f"
-    },
-    {
-      "file": "tools/pdf-to-markdown/index.html",
-      "url": "https://data.chimeramind.com/tools/pdf-to-markdown/",
-      "sha256": "77f4a30f0818de5c2f05e7efae97904401c7b72ab3245e3075ca27585b0a53e9"
-    },
-    {
-      "file": "tools/career-site-jobs-api/index.html",
-      "url": "https://data.chimeramind.com/tools/career-site-jobs-api/",
-      "sha256": "acf6c2aad6e1e042759d1ffff7ab0503b5d32e4f3d94ad4549f0c3c2e4db0508"
+      "sha256": "2618b38259605de104814aa2659db2bb2a5156bcf932b69bc7e3d5b2c7f852e2"
     },
     {
       "file": "tools/wellfound-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/wellfound-jobs-scraper/",
-      "sha256": "9afdb05dddc1ad7e75bb8f0fd23007a023ffbe8de2b1b7d51d189b52f6621b54"
+      "sha256": "72742502f88288586d6f50a387b49b4b1b0fc9b9fa0d2bae0679448d9f5e3352"
+    },
+    {
+      "file": "tools/llms-txt-generator/index.html",
+      "url": "https://data.chimeramind.com/tools/llms-txt-generator/",
+      "sha256": "c00392ca4101498076d7bdd6240d99fce29814479033b6394bc5e96d4afb16e8"
+    },
+    {
+      "file": "tools/zillow-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/zillow-scraper/",
+      "sha256": "b5ee4be620d20bdc902fb466c17a1292518d6db63ea27c8a3e82f9eb59f43620"
+    },
+    {
+      "file": "tools/zillow-detail-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/zillow-detail-scraper/",
+      "sha256": "cdc7325f356e92ef986429a680244edc28f0a157443c0e38021438f79d839ba6"
+    },
+    {
+      "file": "tools/google-trends-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/google-trends-scraper/",
+      "sha256": "c7e078ea38b48d495c1f2c0dd6482a6aafde089cee37edf91d4443edd3b289b9"
+    },
+    {
+      "file": "tools/seek-jobs-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/seek-jobs-scraper/",
+      "sha256": "0370637d55d0ae735093a640d32516e6fdaffa32c96dc213af6254fc9040572e"
+    },
+    {
+      "file": "tools/aliexpress-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/aliexpress-scraper/",
+      "sha256": "133ce82f8b8142b7cdeee69e9231b8d3a735633ac5124c12785c711f2eb64ce9"
+    },
+    {
+      "file": "tools/pdf-to-markdown/index.html",
+      "url": "https://data.chimeramind.com/tools/pdf-to-markdown/",
+      "sha256": "431b0ea79f2a8b9388536be3291dd37648a6bb4b26516e01a2ca1e39db6ea5f1"
+    },
+    {
+      "file": "tools/career-site-jobs-api/index.html",
+      "url": "https://data.chimeramind.com/tools/career-site-jobs-api/",
+      "sha256": "b2d9b298ece04ed7b6184cc6226c6bf63d711203b8d60661aa3545e042114749"
     },
     {
       "file": "tools/x-tweet-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/x-tweet-scraper/",
-      "sha256": "390c1bf015d5ba626ad380f5d52b72c8b559c576b794b93c5100196ba4450c45"
+      "sha256": "0cfe42e842e0c0849f6f7b3346826335b657c51a26329cc2ff4127024c5a837e"
     },
     {
       "file": "tools/stocktwits-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/stocktwits-scraper/",
-      "sha256": "60919a6638fadc7bb6cb58931858391d26de131e491474e13f30437a61de7240"
+      "sha256": "f3191bcf6b72e081b981437b4342e6af160a0b29ea6b03e8aa1957a620226b0d"
     },
     {
       "file": "tools/ashby-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/ashby-jobs-scraper/",
-      "sha256": "822d1f4b679696f2088b91ac770f794d25973f557b0e7081c78185db4eacd8b0"
+      "sha256": "8244a386249479be76c94cb7f48ccb34cf6ef18c339bf5570211931e38cbb4d0"
     },
     {
       "file": "tools/trustpilot-reviews-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/trustpilot-reviews-scraper/",
-      "sha256": "791e0764e700f5d4ee4159e623efe7c30454b088cf4cf149933ab2cea2ea3437"
+      "sha256": "8d6e8465c535a03b8f112d957d328c19409788e1779f4e08207ee551cd2ab9f1"
     },
     {
       "file": "tools/bilibili-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/bilibili-scraper/",
-      "sha256": "b32afba0e8edc2ed389c208f5a2d4074267f3bb8ab7baaae8c882fe08f3eb321"
+      "sha256": "6a5db546220f055c90fbbc34dea901a757097772ea86707d8c1660f3fdcda0f9"
     },
     {
       "file": "tools/2gis-places-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/2gis-places-scraper/",
-      "sha256": "fb32f42fe186eff9253cd18181a1e4235a320963f62136cde4e7c061d36b00ce"
+      "sha256": "1cbd5ace1df88063b2ddee90c99e306350b179db40943754fbf346976c883482"
     },
     {
       "file": "tools/yahoo-finance-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/yahoo-finance-scraper/",
-      "sha256": "fdadc7593ccf0799610c0ba3e07bb14302efb9a05ecf65d2c07bc00cb09a8719"
+      "sha256": "9fedf0028dcd87915de4db51c7e90bf93a877db18ab2c238ec7974a3cde5010f"
     },
     {
       "file": "tools/economic-calendar-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/economic-calendar-scraper/",
-      "sha256": "b26a9fd2d8172316b15ed647c01475714f431dd78886a8db9558dbdb310c9c1d"
+      "sha256": "a8686fd791b9a324b165d3fbdbac0a58b9c8a6481397cdd212c2b1496d453491"
     },
     {
       "file": "tools/lever-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/lever-jobs-scraper/",
-      "sha256": "6dcee15366e7aa27ee4b509c53941be46dd0cbf0c80faf38d12e3a570ce37132"
+      "sha256": "a0f980053309e9bf536f8036207352becad42ccab8928d6ee2c5a5734af26ce2"
     },
     {
       "file": "tools/google-hotels-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/google-hotels-scraper/",
-      "sha256": "13f9a106ff7e7f674f1b449f633491fbdac26b0f409ffc7e577f12aa1599faae"
+      "sha256": "21d424059c503cb79eb1abf4f2fd7c5e8036c5288326d599bcd05aa9dbcbe38d"
     },
     {
       "file": "tools/crypto-fear-greed-index/index.html",
       "url": "https://data.chimeramind.com/tools/crypto-fear-greed-index/",
-      "sha256": "fd53f69decf24d7dc298ab57b48409ef6a0bc8f534ba7b9ad2bcb7a08be53ea0"
+      "sha256": "814efb99fe579f8066413a05ca69be6cf6e5fa41f0f29c398b4a073e7b9c11ed"
     },
     {
       "file": "tools/app-store-reviews-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/app-store-reviews-scraper/",
-      "sha256": "457af3dfbf72901d4c348c9cccd964ce91c5330b8ed2df6f83c0763a52abb41c"
+      "sha256": "c7085898de71626129953cb20985b1bacb78d69f90ec08e53bb86759a95b7352"
     },
     {
       "file": "tools/pinterest-pins-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/pinterest-pins-scraper/",
-      "sha256": "b391273b681adde7b47c8609decb520492874c8f36b3d30ba106f01dccc8185a"
+      "sha256": "87f825880f76a9b1738cf2b05e6c774e32a87fc98044dd8c02a7516a796a70d3"
     },
     {
       "file": "tools/autoscout24-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/autoscout24-scraper/",
-      "sha256": "62b7333717d678ce69e202d68515ff2f15e7739b7d9b6fee395227d83e34d737"
+      "sha256": "c55c28b771c5a23141b9ba5f5e311781c67facb59e38c76036cdb1a5580f10a8"
     },
     {
       "file": "tools/google-flights-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/google-flights-scraper/",
-      "sha256": "1652d0d80bddcdba86259e154064ed2384c1da3904417ae51dd816bbcb7778e8"
+      "sha256": "4ea94805b4c1a03397bf8a6ae2eeefc5b7c1d91e0536a39a435064a715405bcc"
     },
     {
       "file": "tools/workday-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/workday-jobs-scraper/",
-      "sha256": "9ac586d9e5c5b226c8ee83c0503dcae6cad43dc4920b46befe3787de05932fc3"
+      "sha256": "55b683f5a8d65ea04d42976fedf894365e45a88b4fa8c027b44f8be4a6214153"
     },
     {
       "file": "tools/smartrecruiters-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/smartrecruiters-jobs-scraper/",
-      "sha256": "d596dc066b63d70b8556ac29e5140cb43e22a9c2e140fedc9843b8c9fcaf872b"
+      "sha256": "41370faec9854a4036f1ac26c167000d9521e5776ccf38cd6b2c9f2b2d62cae0"
     },
     {
       "file": "tools/rightmove-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/rightmove-scraper/",
-      "sha256": "2237ceb25fcc5ab66232aefaffd8d7e8632fa573872231ef8ac40c3f11676efe"
+      "sha256": "eae1f149b331359785479f96ecc1c1ee1b2845a1434d9399bf39dd740895ad4b"
     },
     {
       "file": "tools/dice-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/dice-jobs-scraper/",
-      "sha256": "53317aa14263dc8d6b929e23d84d9cf8fe29f16906e6fd4793f33ae7a1ff84b7"
+      "sha256": "527cbb7edbc9865ab77133e11f700239ec27e440c4fd515a9f1f17e9d7feec18"
     },
     {
       "file": "tools/keyword-suggestions-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/keyword-suggestions-scraper/",
-      "sha256": "ddd9203ff7695d4efa76de9bd38217a734e256bbe63deafad8309e1e80e79870"
+      "sha256": "ec19b0e08ea4667cb5c7923736778a431ce046e4bb453441e2ce16eda0b9dea4"
     },
     {
       "file": "tools/booking-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/booking-scraper/",
-      "sha256": "c68ea321607b286c4e05525779f46939b60d4f68b7ea4acc4a6daa7fc2c9a0d6"
+      "sha256": "4c634e7aa781434e89f24e9897b1f151b14912d662fda060174e74dd89f1de62"
     },
     {
       "file": "tools/meetup-events-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/meetup-events-scraper/",
-      "sha256": "d11fa162c4341a45f331041fe54db96779a44c9ed30776e08d2e26290a40a862"
-    },
-    {
-      "file": "tools/package-health-checker/index.html",
-      "url": "https://data.chimeramind.com/tools/package-health-checker/",
-      "sha256": "a267fc4f00164ac9c6538360a2f21c820af64f820b100888d602aebff80c5a85"
-    },
-    {
-      "file": "tools/crossref-doi-lookup/index.html",
-      "url": "https://data.chimeramind.com/tools/crossref-doi-lookup/",
-      "sha256": "fbf8476f19295c76842f5f9212fb61775da230b3fde5ff77c900cbb4c2d090d1"
-    },
-    {
-      "file": "tools/mastodon-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/mastodon-scraper/",
-      "sha256": "6c0cb265d17b15bc9847ccd4a6d1b6cf3376b3c711d6478893bdac3ed7cf4af3"
-    },
-    {
-      "file": "tools/yandex-maps-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/yandex-maps-scraper/",
-      "sha256": "b5dc39e33d1e546ac3413daa68de90b5c83d1fd8ee60af6f48a7ed3292d8f8f0"
-    },
-    {
-      "file": "tools/jobstreet-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/jobstreet-scraper/",
-      "sha256": "f47796b93acba36f14dd0b50feb29719567009b8988c1d053d3cd0438575aa02"
-    },
-    {
-      "file": "tools/craigslist-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/craigslist-scraper/",
-      "sha256": "65b78162bfc42c31b7515c20a432a354523242775049938e0233e4b9d58ab1bb"
-    },
-    {
-      "file": "tools/eventbrite-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/eventbrite-scraper/",
-      "sha256": "e412660c2db98a139573d4f1cfc4ac11e8d7c5fbb80b283acc9e104767e069f9"
+      "sha256": "eb303f48dea2cb6323b6f2e1cfea45d6a707728cc62f688a6d268ac2c862db75"
     },
     {
       "file": "tools/lazada-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/lazada-scraper/",
-      "sha256": "0897f06d7c775ba62933e40df948c7b18404cfc76ddc8ae4e955f5ac85fa1ae9"
+      "sha256": "df284782b1b0a039c79e91999431505d53d533d27c62a15b113b5b375f9b92b6"
+    },
+    {
+      "file": "tools/package-health-checker/index.html",
+      "url": "https://data.chimeramind.com/tools/package-health-checker/",
+      "sha256": "8d6c6e9f994b25f3371330a73a6efa217398e9beefca58b63ffe736d0d57fa80"
+    },
+    {
+      "file": "tools/crossref-doi-lookup/index.html",
+      "url": "https://data.chimeramind.com/tools/crossref-doi-lookup/",
+      "sha256": "913c5c2ea0141a57b29b1ec1e983cdf4932bafb96a86c5af880af517c30cee78"
+    },
+    {
+      "file": "tools/mastodon-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/mastodon-scraper/",
+      "sha256": "a4d3428f4c2fe0a84d8b68152a9d991894223769574ac6b20a4e667219342921"
+    },
+    {
+      "file": "tools/yandex-maps-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/yandex-maps-scraper/",
+      "sha256": "8c8392394fed90b844127ec28d19f4fef509fb71c758db398a4001be86520877"
+    },
+    {
+      "file": "tools/craigslist-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/craigslist-scraper/",
+      "sha256": "d8bbabe6d4ee83cbe714d8df381373531821e8023c62a3661e6daf463094676c"
+    },
+    {
+      "file": "tools/eventbrite-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/eventbrite-scraper/",
+      "sha256": "d17146267ef39273c1126dc0dc31f4db21e6d2d5c45aa122c12d4cb10369993c"
+    },
+    {
+      "file": "tools/jobstreet-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/jobstreet-scraper/",
+      "sha256": "e335a0bfb61e8a9b153b1fef8377880606be7d2458eab222810422c50ae630ca"
     },
     {
       "file": "tools/redfin-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/redfin-scraper/",
-      "sha256": "3d1625a77335fa0e24f120070664f24e89d65d6efbe835cecc3c46627aa6969a"
-    },
-    {
-      "file": "tools/email-validator/index.html",
-      "url": "https://data.chimeramind.com/tools/email-validator/",
-      "sha256": "fd3ce99147df0a1d85d844741d5aab137565fd018242806ed50918407d2e4fe1"
+      "sha256": "6e358f93e11608a3414df107a34e92cc7d86dceb21096705a5bea8b073b646cb"
     },
     {
       "file": "tools/kleinanzeigen-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/kleinanzeigen-scraper/",
-      "sha256": "48840c72ebafabdd56d65b1e3b1a43ea76792aabcf52819791552e2ed600d262"
+      "sha256": "f18f070ad59dcc0e7d0cd49e9157124121efc9d391a2d8080052315bac2ca829"
     },
     {
       "file": "tools/infojobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/infojobs-scraper/",
-      "sha256": "91f55a90ca238a8154add4e1e45c2f8f4973f1aefbebd98e9307bdf92b4ca80f"
+      "sha256": "d48bc40f9b82e6d091ed6e9d615333e52823099dc53e7c47bdf03d73a241027c"
+    },
+    {
+      "file": "tools/email-validator/index.html",
+      "url": "https://data.chimeramind.com/tools/email-validator/",
+      "sha256": "44269033d464b1dbcdedc557b4f64326d783e0a37cdf784234bd7970ec1ca69a"
     },
     {
       "file": "tools/trendyol-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/trendyol-scraper/",
-      "sha256": "18f0a7b824a569046d17ba01dd7f7a16e2a21546184c0b3780bab5dfa455d128"
+      "sha256": "2b879971eeaadeac236cc8a19adc42a33cb2de97b3c6a80dc9e416144a110d37"
     },
     {
       "file": "workflows/lead/index.html",
       "url": "https://data.chimeramind.com/workflows/lead/",
-      "sha256": "9e06ed364e099b678aa5aef7f6ac1b3380f8c28dd6ba03f5d880852eb6ab6e81"
+      "sha256": "2b960246629a7ba628a57c5002560427e66febc3ded45077326c8d9b66f40999"
     },
     {
       "file": "workflows/rag/index.html",
       "url": "https://data.chimeramind.com/workflows/rag/",
-      "sha256": "7b7c94056e125440d736b563674e814235b427dc86cb325ef61d2e5ee905c120"
+      "sha256": "85df29d8940765e23982d46416086aa95ec2718420814e9da182850ea1511173"
     },
     {
       "file": "workflows/seo/index.html",
       "url": "https://data.chimeramind.com/workflows/seo/",
-      "sha256": "236c80b7f6f4c9efc2026989ae3099ec32df9a639a1584f5d5b5a7e786191850"
+      "sha256": "ec0fd36bf59f01da11b99e48e16937ed8e4a2abd17ade79252355dc769c801f7"
     },
     {
       "file": "workflows/hiring/index.html",
       "url": "https://data.chimeramind.com/workflows/hiring/",
-      "sha256": "001d979ab8b55f5d16decb5ade549901aac64318b31c48c7024ece768bb70042"
+      "sha256": "f44e4fcbadbf6b44a7a8d51344c9c4430c064a13a8d6f58b4d4fd3d07d88a69d"
     },
     {
       "file": "workflows/index.html",
       "url": "https://data.chimeramind.com/workflows/",
-      "sha256": "ca6643a4b824c7b5f1b6fa4440ccae7cac35bf85f0081895decd37f092471be9"
+      "sha256": "e641b389c88e2a6c0b99d15455f2c489dad425bcf78bea7072409e681eea135b"
     }
   ]
 }
