@@ -3600,5 +3600,159 @@
   "prefill": {
    "keywords": "kulaklık"
   }
+ },
+ "tiktok-comments-scraper": {
+  "name": "tiktok-comments-scraper",
+  "title": "TikTok Comments Scraper (Video Comments & Replies)",
+  "description": "Scrape public comments of TikTok videos: text, author, likes, reply count and date, with optional replies. No login. Give video URLs; get one row per comment.",
+  "url": "https://apify.com/webdatatools/tiktok-comments-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "comment",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "videos": [
+    "https://www.tiktok.com/@nasa/video/7665075736742530317"
+   ]
+  }
+ },
+ "tiktok-video-scraper": {
+  "name": "tiktok-video-scraper",
+  "title": "TikTok Video Scraper (Views, Likes, Caption, Music)",
+  "description": "Get public TikTok video details in bulk: views, likes, comments, shares and saves, caption, hashtags, music, duration, cover image, author and posting country. No login. Video files are not downloaded.",
+  "url": "https://apify.com/webdatatools/tiktok-video-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "video",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "videos": [
+    "https://www.tiktok.com/@nasa/video/7665075736742530317"
+   ]
+  }
+ },
+ "amazon-search-scraper": {
+  "name": "amazon-search-scraper",
+  "title": "Amazon Search Scraper (Results, Prices, Ratings, Ads)",
+  "description": "Scrape Amazon search results by keyword or search URL: position, ASIN, title, price, list price, rating, rating count, badge, sponsored flag and Prime, with pagination. Works for 19 Amazon marketplaces. No login.",
+  "url": "https://apify.com/webdatatools/amazon-search-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "search result",
+   "usd": 0.004,
+   "tiers": {
+    "FREE": 0.004,
+    "BRONZE": 0.0032,
+    "SILVER": 0.0028,
+    "GOLD": 0.0024,
+    "PLATINUM": 0.0024,
+    "DIAMOND": 0.0024
+   }
+  },
+  "prefill": {
+   "keywords": [
+    "usb c cable"
+   ]
+  }
+ },
+ "linkedin-company-scraper": {
+  "name": "linkedin-company-scraper",
+  "title": "LinkedIn Company Scraper (Public Company Pages)",
+  "description": "Scrape public LinkedIn company pages without login: name, tagline, description, industry, company size, headquarters, founded year, website, specialties, follower count, logo and locations. Company pages only, no people profiles.",
+  "url": "https://apify.com/webdatatools/linkedin-company-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "LEAD_GENERATION",
+   "MARKETING",
+   "JOBS"
+  ],
+  "price": {
+   "unit": "company",
+   "usd": 0.0035,
+   "tiers": {
+    "FREE": 0.0035,
+    "BRONZE": 0.0028,
+    "SILVER": 0.00245,
+    "GOLD": 0.0021,
+    "PLATINUM": 0.0021,
+    "DIAMOND": 0.0021
+   }
+  },
+  "prefill": {
+   "companies": [
+    "microsoft"
+   ]
+  }
+ },
+ "reddit-scraper": {
+  "name": "reddit-scraper",
+  "title": "Reddit Subreddit & Search Scraper (Posts, Scores)",
+  "description": "Scrape Reddit posts from any subreddit listing (hot, new, top, rising, controversial) or Reddit-wide search: title, author, score, comment count, flair, time, domain and link. Comment bodies are not included.",
+  "url": "https://apify.com/webdatatools/reddit-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 10,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "post",
+   "usd": 0.0014,
+   "tiers": {
+    "FREE": 0.0014,
+    "BRONZE": 0.00112,
+    "SILVER": 0.00098,
+    "GOLD": 0.00084,
+    "PLATINUM": 0.00084,
+    "DIAMOND": 0.00084
+   }
+  },
+  "prefill": {
+   "subreddits": [
+    "webscraping"
+   ],
+   "searchQueries": []
+  }
  }
 }
