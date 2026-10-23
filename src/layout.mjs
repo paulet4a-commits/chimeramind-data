@@ -11,7 +11,7 @@ const GSC = fs.existsSync(gscFile) ? fs.readFileSync(gscFile, 'utf8').trim() : '
 export const SITE = {
     origin: 'https://data.chimeramind.com',
     name: 'ChimeraMiND Data',
-    tagline: 'Market & web data, delivered as clean JSON',
+    tagline: 'Website extraction & YouTube data workflows',
 };
 
 const FONTS =

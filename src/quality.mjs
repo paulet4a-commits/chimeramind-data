@@ -3,6 +3,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { WORKFLOWS } from './growth.mjs';
+import { QUICKSTARTS } from './quickstarts.mjs';
 import { sampleStatus } from './freshness.mjs';
 import { parseFrontmatter } from './render.mjs';
 
@@ -113,6 +114,7 @@ export function validateDist(root) {
     assert.equal(seen.size, urls.length, 'Sitemap points to missing pages');
     for (const a of Object.values(actors)) assert.ok(seen.has(`https://data.chimeramind.com/tools/${a.name}/`), `Missing actor landing: ${a.name}`);
     for (const w of WORKFLOWS) assert.ok(seen.has(`https://data.chimeramind.com/workflows/${w.slug}/`), `Missing workflow page: ${w.slug}`);
+    for (const r of QUICKSTARTS) assert.ok(seen.has(`https://data.chimeramind.com/start/${r.slug}/`), `Missing starter page: ${r.slug}`);
     assert.equal(fs.readFileSync(path.join(dist, 'CNAME'), 'utf8').trim(), 'data.chimeramind.com');
     assert.ok(fs.readFileSync(path.join(dist, 'robots.txt'), 'utf8').includes('Sitemap: https://data.chimeramind.com/sitemap.xml'));
     const manifest = JSON.parse(fs.readFileSync(path.join(dist, 'build-manifest.json')));

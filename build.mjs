@@ -8,6 +8,7 @@ import { page, SITE } from './src/layout.mjs';
 import { esc, money, parseFrontmatter, renderGuide, sampleBlock, pricingTable, codeTabs } from './src/render.mjs';
 import { WORKFLOWS, relatedActors, attributedUrl } from './src/growth.mjs';
 import { validateData, hash } from './src/quality.mjs';
+import { QUICKSTARTS, n8nStarter } from './src/quickstarts.mjs';
 
 const here = import.meta.dirname;
 const dist = path.join(here, 'dist');
@@ -28,7 +29,7 @@ fs.rmSync(dist, { recursive: true, force: true });
 fs.cpSync(path.join(here, 'public'), dist, { recursive: true });
 fs.copyFileSync(path.join(here, 'src/freshness.mjs'), path.join(dist, 'assets/freshness.mjs'));
 
-// Finance actors lead the site (it lives on a trading brand); everything else is "web data".
+// Keep market data available while leading with focused extraction workflows.
 const MARKET = new Set(['market-quotes', 'yahoo-finance-scraper', 'polymarket-scraper', 'stocktwits-scraper', 'economic-calendar-scraper', 'dexscreener-scraper', 'crypto-fear-greed-index']);
 const CAT_LABEL = { AI: 'AI & LLM data', LEAD_GENERATION: 'Leads & company data', SEO_TOOLS: 'SEO & site audits', JOBS: 'Jobs', SOCIAL_MEDIA: 'Social media', VIDEOS: 'Video', ECOMMERCE: 'E-commerce', REAL_ESTATE: 'Real estate', TRAVEL: 'Travel', DEVELOPER_TOOLS: 'Developer tools', NEWS: 'News', BUSINESS: 'Business', MARKETING: 'Marketing', OPEN_SOURCE: 'Open source', AUTOMATION: 'Automation', OTHER: 'Other' };
 
@@ -82,14 +83,36 @@ const market = all.filter((a) => MARKET.has(a.name));
 const cheapest = Math.min(...all.filter((a) => a.price).map((a) => a.price.usd));
 
 // ---- home
+const startCards = QUICKSTARTS.map(r => `<a class="card" href="/start/${r.slug}/"><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p><div class="meta"><span>Small input · output checks</span><span>Get started →</span></div></a>`).join('');
 const home = `<div class="wrap"><section class="hero"><div><div class="kicker">ChimeraMiND · Data desk</div>
-<h1>Data feeds for traders, analysts and <em>AI agents</em>.</h1>
-<p class="lede">Market quotes, company signals, search results, jobs and whole websites — returned as clean JSON by ${all.length} maintained tools. Call them from Python, JavaScript, no-code tools or an MCP-enabled AI assistant; each Actor lists its own billing events.</p><p class="cta-row"><a class="btn" href="/tools/">Find a data tool →</a> <a href="/workflows/">Explore workflows</a></p></div>
+<h1>Website fields and YouTube videos, <em>ready for your workflow</em>.</h1>
+<p class="lede">Turn pages into structured fields, export a channel inventory, or build a repeatable upload check. Start with a small input, check the output, then scale with your budget. Explore ${all.length} tools for web, market and company data.</p><p class="cta-row"><a class="btn" href="#start">Choose a starting point →</a> <a href="/tools/">Browse all tools</a></p></div>
 <div class="stat-board"><div><b>${all.length}</b><span>catalog tools</span></div><div><b>API</b><span>REST · MCP · no-code</span></div><div><b>${money(cheapest)}</b><span>from, per 1k results</span></div><div><b>$0</b><span>to start · $5 free credit</span></div></div></section>
+<section class="block" id="start"><div class="block-head"><h2>Get your first useful result</h2><p>Ready-to-copy input, limits and a checklist before you scale.</p></div><div class="grid">${startCards}</div></section>
 <section class="block" id="market-data"><div class="block-head"><h2>Market data</h2><p>Stocks, crypto and FX — public sources, no API key.</p></div><div class="grid">${market.map(card).join('')}</div></section>
 <section class="block"><div class="block-head"><h2>Guides</h2><p>Step-by-step, with dated output and catalog pricing.</p></div><div class="grid">${guides.map((g, i) => card(g.actor, i, true)).join('')}</div></section>
 <section class="block"><div class="block-head"><h2>Most used tools</h2><p><a href="/tools/">See all ${all.length} →</a></p></div><div class="grid">${all.slice(0, 9).map(card).join('')}</div></section></div>`;
-write('index.html', page({ path: '/', title: `${SITE.name} — ${SITE.tagline}`, description: `${all.length} data tools for market quotes, company signals, Google results, jobs and website content. Clean JSON, pay per result, API and MCP ready.`, body: home, actors, jsonLd: [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: SITE.origin }] }));
+write('index.html', page({ path: '/', title: `${SITE.name} — ${SITE.tagline}`, description: 'Extract website fields, export YouTube channel videos and build repeatable data workflows. Small starter inputs, output checks and transparent event pricing.', body: home, actors, jsonLd: [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: SITE.origin }] }));
+
+// Intent-specific pages provide a stable path for acquisition measurement.
+for (const r of QUICKSTARTS) {
+    const a = actors[r.actor];
+    if (!a) throw new Error(`Missing starter Actor: ${r.actor}`);
+    const route = `/start/${r.slug}/`;
+    write(`templates/${r.slug}.input.json`, JSON.stringify(r.input, null, 2) + '\n');
+    write(`templates/${r.slug}.n8n.json`, JSON.stringify(n8nStarter(r), null, 2) + '\n');
+    const destination = attributedUrl(a, { page: route, placement: 'starter', campaign: 'flagship_20261023' });
+    write(`start/${r.slug}/index.html`, page({ path: route, title: `${r.title} | ${SITE.name}`, description: r.description, actors,
+        body: `<main class="wrap"><div class="crumbs"><a href="/">Home</a> / Get started</div><section class="hero" style="grid-template-columns:1fr"><div><div class="kicker">Small first run</div><h1>${esc(r.title)}</h1><p class="lede">${esc(r.description)}</p></div></section><article class="prose">
+<h2>1. Copy the starter input</h2><p>Use this bounded input for your first run. It is a recipe, not recorded output. <a href="/templates/${r.slug}.input.json" download>Download input JSON</a></p><pre id="starter-input"><code>${esc(JSON.stringify(r.input, null, 2))}</code></pre><p><button class="btn" type="button" data-copy-input hidden>Copy input JSON</button> <span data-copy-status role="status"></span></p>
+<h2>2. Open the Actor and review your budget</h2><p>Open the Actor, switch Input to JSON and paste the input above. Review the Pricing tab and set Maximum cost per run before you start. The link does not start a paid run.</p><p class="cta-row"><a class="btn" href="${esc(destination)}">Open ${esc(a.title)} →</a></p>
+<h2>3. Check the result before exporting</h2><p>${esc(r.check)}</p><p>Export the successful dataset as JSON, CSV or Excel. <a href="/guides/${r.guide}/">Read the full guide</a> for field meanings and the next step.</p>
+<h2>Know the limits</h2><p>${esc(r.limit)}</p>
+<h2>Pricing</h2>${pricingTable(a)}
+<h2>Use the input in n8n</h2><p><a href="/templates/${r.slug}.n8n.json" download>Download the manual n8n starter</a>. Import it and select an HTTP Header Auth credential in the HTTP Request node: name <code>Authorization</code>, value <code>Bearer</code> followed by your Apify token. Store it in n8n credentials, never in the exported JSON.</p><p>The workflow is inactive and extracts data only. It does not schedule, compare results or send alerts. Import and a live run must be checked in your n8n installation. If the synchronous request times out, check Apify before retrying to avoid duplicate work and charges.</p>
+<h2>Need a different task?</h2><ul>${QUICKSTARTS.filter(x => x.slug !== r.slug).map(x => `<li><a href="/start/${x.slug}/">${esc(x.title)}</a></li>`).join('')}<li><a href="/guides/website-to-markdown/">Prepare website content for an LLM or RAG pipeline</a></li></ul>
+</article></main><script type="module" src="/assets/starter.js"></script>` }));
+}
 
 // ---- guides index
 write('guides/index.html', page({ path: '/guides/', title: `Data scraping guides | ${SITE.name}`, description: 'Practical guides to extracting market, search, company and website data — with dated output, code in Python and JavaScript, and catalog pricing.', nav: 'guides', actors, body: `<div class="wrap"><section class="hero" style="grid-template-columns:1fr"><div><div class="kicker">Guides</div><h1>How to get the data, <em>step by step</em>.</h1><p class="lede">Guides show dated sample snapshots, copy-paste code and catalog prices. Archived examples are labeled with their age.</p></div></section><section class="block"><div class="grid">${guides.map((g, i) => card(g.actor, i, true)).join('')}</div></section></div>` }));
