@@ -28,10 +28,9 @@ snapshots are not a user cohort; run counts are not paying-user counts. Cross-Ac
 counts cannot be summed. Retention and channel-paid attribution remain unknown until the
 provider supplies matching evidence. Do not manufacture conversion rates across the two systems.
 
-Baseline on 23 October 2026: all-Actor October acquisition 9,370 detail / 458 input / 172 starts;
-provisional profit $131.825479. CSS: 3 paying users, $111.79 rounded profit. YouTube Channel:
-1 paying user, $13.77 rounded profit. Canonical private audit: Yan PC reports,
-`2026-10-23-apify-growth-audit.json`; this document contains no customer records.
+The dated financial and acquisition baseline belongs in the private operations record,
+alongside the source timestamp and filters. Do not put account revenue, paying-user counts,
+customer records or access credentials in public site content or campaign documents.
 
 Review after 7 and 14 complete days of exposure. Record the exact measurement timestamp and
 filters, the source and missing fields. Compare CSS and YouTube separately, and preserve
@@ -44,8 +43,8 @@ Decide whether to keep the new entry points from useful/paid use, not the number
 2. Show the CSS recipe in a focused website-to-CSV guide and the YouTube recipe in a channel
    inventory guide. Use the dated recorded sample if available; never invent output.
 3. Record one short screen demo per recipe when a real run is available. The owner's free
-   credit limit is exhausted as of October 23; no new cloud run or paid plan is authorized by
-   this implementation. Do not present a local preview as cloud execution.
+   testing budget must permit it; this implementation starts no cloud runs and changes no
+   paid plan. Do not present a local preview as cloud execution.
 4. Share each guide only on a relevant authorized channel, with its campaign URL. Publication
    and independently verified public URL must be recorded; prepared text is not a published post.
 
