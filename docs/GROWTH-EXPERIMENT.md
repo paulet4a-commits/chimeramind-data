@@ -37,6 +37,20 @@ filters, the source and missing fields. Compare CSS and YouTube separately, and 
 calendar-month boundaries at November 1. An increase is an observation, not causal proof.
 Decide whether to keep the new entry points from useful/paid use, not the number of pages built.
 
+## Usable output and repeat workflow
+
+The starter pages provide `/templates/check-results.mjs`, a local-only Node.js helper for
+dataset JSON array exports. CSS acceptance requires all explicitly selected fields to have
+values and positive match counts. YouTube acceptance requires channel/video IDs, title,
+HTTP URL, no error row and no duplicate channel/video pair. Empty data requires review.
+These are structural checks, not proof of source accuracy, complete extraction or payment.
+
+The YouTube comparison accepts two checked snapshots with matching channel sets. It reports
+newly observed IDs only; it never infers deletion from a bounded latest-video window. Users
+must retain the same input settings and preserve the last successful snapshot on failure.
+The helper does not schedule runs, send notifications, upload files or collect telemetry.
+No central usable-output count or paid attribution is implied by providing this download.
+
 ## Distribution order
 
 1. Link the existing catalog and Actor descriptions to the relevant recipe.
