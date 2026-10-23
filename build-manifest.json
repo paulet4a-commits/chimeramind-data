@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-10-23T17:45:37.870Z",
-  "sourceCommit": "0a7f8facb028ffbc5139a8852d303cd22aaa00b1",
+  "builtAt": "2026-10-23T18:37:39.273Z",
+  "sourceCommit": "7402a605b10a80a1ff3c2e0c33224718064879d4",
   "pages": [
     {
       "file": "guides/bulk-core-web-vitals-check/index.html",
@@ -20,7 +20,7 @@
     {
       "file": "guides/css-selector-extractor/index.html",
       "url": "https://data.chimeramind.com/guides/css-selector-extractor/",
-      "sha256": "fde385fe78cdb11c32850cb0368c93062c83d56536bc96df45bee5e1fb852f52"
+      "sha256": "24eb05970f404dbf1a8965e79039751119ae7cfd1009acdb7947e42bfe01ed41"
     },
     {
       "file": "guides/domain-security-audit/index.html",
@@ -88,6 +88,11 @@
       "sha256": "c39d9c47067648fbfe511bf26aea4377bf11bda8a3d45dcc6d35839814520c5e"
     },
     {
+      "file": "guides/youtube-channel-inventory/index.html",
+      "url": "https://data.chimeramind.com/guides/youtube-channel-inventory/",
+      "sha256": "49e6e6437f36d8a58c51005b9df6c4d8d5b5191b4a275559b6ce312f191f6cc7"
+    },
+    {
       "file": "guides/youtube-shorts-scraper/index.html",
       "url": "https://data.chimeramind.com/guides/youtube-shorts-scraper/",
       "sha256": "0ea5536848e34e4079e1994313ae8fa8cb9c397c4907c2743a88b36c685b9c31"
@@ -105,12 +110,27 @@
     {
       "file": "index.html",
       "url": "https://data.chimeramind.com/",
-      "sha256": "3bcc33c456fb8519c660fc4677a55a225b8a3a8ceb3ee18c4dc1fc4094a6e681"
+      "sha256": "961311303c859ef18de8e2d5a85f913870a567232e477d07c7e1abbcecb16d26"
+    },
+    {
+      "file": "start/website-fields/index.html",
+      "url": "https://data.chimeramind.com/start/website-fields/",
+      "sha256": "c76eac03457a0c8fa3bf35a056530691417d3a33df979cb80b8c97a92e945db9"
+    },
+    {
+      "file": "start/youtube-channel-inventory/index.html",
+      "url": "https://data.chimeramind.com/start/youtube-channel-inventory/",
+      "sha256": "4d8e0b8bf4de087a139c1e0d14268080861508a88e0ee5cd6e5e14144089134e"
+    },
+    {
+      "file": "start/youtube-upload-monitor/index.html",
+      "url": "https://data.chimeramind.com/start/youtube-upload-monitor/",
+      "sha256": "82651ab59562635d87b3570e292c1b0e6eb2e1cd9dfb0f018ba98fede82dff58"
     },
     {
       "file": "guides/index.html",
       "url": "https://data.chimeramind.com/guides/",
-      "sha256": "acd8ef625cf34e492ebcc2b443139234f7019652171cc0b2146393fc2b80992c"
+      "sha256": "6c87ae7c904ea3cb72fb3ac055e53ead5c5ed2ecbfb42406255c69206059208e"
     },
     {
       "file": "tools/index.html",
@@ -120,7 +140,7 @@
     {
       "file": "tools/youtube-channel-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/youtube-channel-scraper/",
-      "sha256": "d2691b52fd8bee6490416a1bd742fcc9f6290b845dd3636a72f2589c3b87cd0c"
+      "sha256": "ed1759d7cacd3d643e5ac6adef549e6b5538e7668e756a1c31329110410dc3e7"
     },
     {
       "file": "tools/google-search-scraper/index.html",

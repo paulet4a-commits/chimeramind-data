@@ -1,0 +1,16 @@
+{
+  "urls": [
+    "https://example.com/"
+  ],
+  "selectors": [
+    {
+      "name": "title",
+      "selector": "title",
+      "type": "text"
+    }
+  ],
+  "firstMatchOnly": true,
+  "maxConcurrency": 1,
+  "maxPages": 1,
+  "proxyMode": "never"
+}

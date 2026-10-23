@@ -1,0 +1,54 @@
+{
+  "name": "Build a repeatable upload check",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/webdatatools~youtube-channel-scraper/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channels\": [\n    \"@apify\"\n  ],\n  \"tab\": \"videos\",\n  \"sortBy\": \"newest\",\n  \"maxVideosPerChannel\": 20,\n  \"maxConcurrency\": 1,\n  \"proxyMode\": \"auto\"\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "run-apify-actor",
+      "name": "Run Apify actor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Manual trigger": {
+      "main": [
+        [
+          {
+            "node": "Run Apify actor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "pinData": {}
+}

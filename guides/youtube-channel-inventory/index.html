@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Export YouTube Channel Videos to CSV and Track New Uploads | ChimeraMiND Data</title>
+<meta name="description" content="Start with 10 public videos, export titles and URLs to CSV, and compare saved runs by video ID to find newly observed uploads.">
+
+<link rel="canonical" href="https://data.chimeramind.com/guides/youtube-channel-inventory/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Export YouTube Channel Videos to CSV and Track New Uploads | ChimeraMiND Data">
+<meta property="og:description" content="Start with 10 public videos, export titles and URLs to CSV, and compare saved runs by video ID to find newly observed uploads.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/youtube-channel-inventory/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Export YouTube Channel Videos to CSV and Track New Uploads","description":"Start with 10 public videos, export titles and URLs to CSV, and compare saved runs by video ID to find newly observed uploads.","dateModified":"2026-10-23","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/youtube-channel-inventory/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YouTube Channel Scraper (videos, shorts, live)","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/youtube-channel-scraper","offers":{"@type":"Offer","price":"0.50","priceCurrency":"USD","description":"per 1,000 videos"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Export YouTube Channel Videos to CSV and Track New Uploads","item":"https://data.chimeramind.com/guides/youtube-channel-inventory/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I export all videos?","acceptedAnswer":{"@type":"Answer","text":"Increase maxVideosPerChannel gradually, up to the Actor's documented limit of 5,000 per channel. The channel must expose the requested videos publicly, and the run must have enough budget and time."}},{"@type":"Question","name":"Can I use this to monitor views?","acceptedAnswer":{"@type":"Answer","text":"You can compare viewCount across successful observations of the same video ID. Channel-grid counts can be rounded, so this is not a replacement for exact owner analytics."}},{"@type":"Question","name":"Does the upload-check recipe send alerts automatically?","acceptedAnswer":{"@type":"Answer","text":"No. It supplies a bounded extraction input. Save and schedule a task, retain the previous successful dataset, compare video IDs and connect your own notification step."}},{"@type":"Question","name":"What should I do with an error row?","acceptedAnswer":{"@type":"Answer","text":"Keep it out of your video inventory and inspect the error. Do not overwrite a previous successful inventory with an error or assume the channel has no videos. \u003cp class=\"cta-row\">\u003ca class=\"btn\" href=\"https://apify.com/webdatatools/youtube-channel-scraper?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fyoutube-channel-inventory%2F%3Aguide_cta&amp;utm_term=youtube-channel-scraper&amp;source_page=%2Fguides%2Fyoutube-channel-inventory%2F&amp;source_actor=youtube-channel-scraper\">Run YouTube Channel Scraper (videos, shorts, live) on Apify →\u003c/a>\u003c/p>"}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / YouTube channel inventory</div>
+<div class="guide"><div><header><div class="kicker">Video research</div><h1>A YouTube channel inventory you can use again</h1><p class="lede">Start with 10 public videos, export titles and URLs to CSV, and compare saved runs by video ID to find newly observed uploads.</p>
+<div class="byline"><span>Updated 2026-10-23</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
+<article class="prose"><p>Use this workflow for content research, a channel inventory or a recurring upload check. You get one row per public video, with its URL, title and available public metrics. You do not need a YouTube API key; you do need an Apify account with enough credit to run the Actor.</p>
+<h2 id="start-with-10-videos">Start with 10 videos</h2>
+<p><a href="/start/youtube-channel-inventory/">Open the small channel-inventory recipe</a>. Download its input, open the Actor, switch Input to JSON and paste it. Review <strong>Pricing</strong> and set <strong>Maximum cost per run</strong> before starting. The recipe uses one channel, a 10-video cap and concurrency 1.</p>
+<p>After the run completes, open the dataset. Confirm each usable row has <code>videoId</code>, <code>title</code> and <code>url</code>, and that <code>error</code> is empty. Then export CSV, JSON or Excel. Fewer than 10 rows can be correct when the channel has fewer public videos.</p>
+<p>For multiple channels, increase the list gradually. <code>maxVideosPerChannel</code> is a per-channel cap, not a total-run cap. Five channels with a cap of 100 can produce up to 500 video rows.</p>
+<h2 id="what-the-fields-mean">What the fields mean</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>How to use it</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>channelId</code>, <code>videoId</code></td>
+<td>Stable keys for comparing successful runs</td>
+</tr>
+<tr>
+<td><code>title</code>, <code>url</code></td>
+<td>Human-readable inventory and a link to the video</td>
+</tr>
+<tr>
+<td><code>viewCount</code>, <code>viewCountText</code></td>
+<td>Public counts; abbreviated labels can yield approximate numbers</td>
+</tr>
+<tr>
+<td><code>publishedAtApprox</code></td>
+<td>Estimated from a relative label, not an exact publication timestamp</td>
+</tr>
+<tr>
+<td><code>scrapedAt</code></td>
+<td>When this observation was collected</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>Check this before importing a row or comparing datasets</td>
+</tr>
+</tbody></table>
+</div><p>Descriptions may be absent from the channel grid. This Actor does not return transcripts, watch time, audience demographics or private channel analytics.</p>
+<h2 id="repeat-the-check-without-duplicating-rows">Repeat the check without duplicating rows</h2>
+<p><a href="/start/youtube-upload-monitor/">Use the upload-check recipe</a> and save it as an Apify task. Run it manually first. After verifying the output and cost, configure a schedule that suits the channel&#39;s upload frequency and your budget.</p>
+<p>Store rows keyed by <code>channelId</code> and <code>videoId</code>. A video ID absent from the previous successful dataset is <strong>newly observed</strong>; it is not necessarily newly published. Preserve your previous dataset when a run fails or returns an error. Compare only successful observations.</p>
+<p>The starter checks the newest 20 videos. If more than 20 videos can appear between checks, increase the cap or shorten the interval. Scheduling alone does not send alerts or compare datasets: configure storage, comparison and notifications in your automation tool.</p>
+<h2 id="connect-n8n-python-or-javascript">Connect n8n, Python or JavaScript</h2>
+<p>The recipe includes an inactive, manual-trigger n8n starter. Import it and select an <strong>HTTP Header Auth</strong> credential on the HTTP Request node: header name <code>Authorization</code>, value <code>Bearer</code> followed by your Apify token. Keep the credential in n8n&#39;s credential store, not in the workflow JSON. The starter runs the extraction only; it does not include scheduling, comparison or notifications.</p>
+<p>For larger jobs, use Apify&#39;s asynchronous run endpoint and fetch the dataset after completion. If a synchronous request times out, check the run in Apify before retrying: a disconnected request does not prove the run stopped, and retrying can duplicate work and charges.</p>
+<p>The API examples below use the catalog&#39;s existing input. Replace it with the small recipe input when testing.</p>
+<div class="tabs"><input type="radio" name="t-youtube-channel-scraper" id="t-youtube-channel-scraper-python" checked><label for="t-youtube-channel-scraper-python">Python</label><pre class="tab-python"><code class="language-python">import json
+import os
+from apify_client import ApifyClient<p>client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])
+run = client.actor(&quot;webdatatools/youtube-channel-scraper&quot;).call(run_input=json.loads(&quot;{\n    &amp;quot;channels&amp;quot;: [\n        &amp;quot;@MrBeast&amp;quot;,\n        &amp;quot;@mkbhd&amp;quot;\n    ],\n    &amp;quot;proxyMode&amp;quot;: &amp;quot;auto&amp;quot;,\n    &amp;quot;proxyConfiguration&amp;quot;: {\n        &amp;quot;useApifyProxy&amp;quot;: true,\n        &amp;quot;apifyProxyGroups&amp;quot;: [\n            &amp;quot;RESIDENTIAL&amp;quot;\n        ]\n    }\n}&quot;))</p>
+<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)</code></pre><input type="radio" name="t-youtube-channel-scraper" id="t-youtube-channel-scraper-js"><label for="t-youtube-channel-scraper-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
+<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+const run = await client.actor(&#39;webdatatools/youtube-channel-scraper&#39;).call({
+    &quot;channels&quot;: [
+        &quot;@MrBeast&quot;,
+        &quot;@mkbhd&quot;
+    ],
+    &quot;proxyMode&quot;: &quot;auto&quot;,
+    &quot;proxyConfiguration&quot;: {
+        &quot;useApifyProxy&quot;: true,
+        &quot;apifyProxyGroups&quot;: [
+            &quot;RESIDENTIAL&quot;
+        ]
+    }
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);</code></pre><input type="radio" name="t-youtube-channel-scraper" id="t-youtube-channel-scraper-bash"><label for="t-youtube-channel-scraper-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~youtube-channel-scraper/run-sync-get-dataset-items">https://api.apify.com/v2/acts/webdatatools~youtube-channel-scraper/run-sync-get-dataset-items</a>&quot; <br>-H &quot;Authorization: Bearer $APIFY_TOKEN&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;channels&quot;:[&quot;@MrBeast&quot;,&quot;@mkbhd&quot;],&quot;proxyMode&quot;:&quot;auto&quot;,&quot;proxyConfiguration&quot;:{&quot;useApifyProxy&quot;:true,&quot;apifyProxyGroups&quot;:[&quot;RESIDENTIAL&quot;]}}&#39;</code></pre></div></p>
+<h2 id="pricing-and-limits">Pricing and limits</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per video</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.0005</td><td class="num">$0.50</td></tr><tr><td>Starter</td><td class="num">$0.0004</td><td class="num">$0.40</td></tr><tr><td>Scale</td><td class="num">$0.00035</td><td class="num">$0.35</td></tr><tr><td>Business</td><td class="num">$0.0003</td><td class="num">$0.30</td></tr><tr><td>Enterprise</td><td class="num">$0.0003</td><td class="num">$0.30</td></tr><tr><td>Enterprise+</td><td class="num">$0.0003</td><td class="num">$0.30</td></tr></tbody></table></div>
+<p class="fine">Primary event rates from a catalog snapshot; this is not the total price of a run. Additional charge events and Actor Start fees may apply; start fees can scale with memory. Check the Actor's Pricing tab on Apify for all events, conditions and current plan-specific rates, and set a maximum run budget before starting.</p><p>A cap of 10 means up to 10 video rows <strong>per channel</strong>, plus any applicable start or other charges. Handle resolution may need proxy access. A known channel ID avoids resolving a handle. Check your selected plan&#39;s current rates and use a maximum run budget.</p>
+<p><code>videos</code>, <code>shorts</code> and <code>streams</code> select different tabs. A missing tab can produce an error row. Popular sorting is best-effort and may fall back to newest; Shorts use newest order. Changes to YouTube or blocking can affect availability.</p>
+<h2 id="recorded-output">Recorded output</h2>
+<p>The following block is a dated saved observation when available, not a promise that today&#39;s channel contains the same videos. The recipe inputs above are instructions, not measured output.</p>
+<p class="fine" data-sample-status="missing">No recorded sample is available yet.</p><h2 id="faq">FAQ</h2>
+<h3 id="can-i-export-all-videos">Can I export all videos?</h3>
+<p>Increase maxVideosPerChannel gradually, up to the Actor&#39;s documented limit of 5,000 per channel. The channel must expose the requested videos publicly, and the run must have enough budget and time.</p>
+<h3 id="can-i-use-this-to-monitor-views">Can I use this to monitor views?</h3>
+<p>You can compare viewCount across successful observations of the same video ID. Channel-grid counts can be rounded, so this is not a replacement for exact owner analytics.</p>
+<h3 id="does-the-upload-check-recipe-send-alerts-automatically">Does the upload-check recipe send alerts automatically?</h3>
+<p>No. It supplies a bounded extraction input. Save and schedule a task, retain the previous successful dataset, compare video IDs and connect your own notification step.</p>
+<h3 id="what-should-i-do-with-an-error-row">What should I do with an error row?</h3>
+<p>Keep it out of your video inventory and inspect the error. Do not overwrite a previous successful inventory with an error or assume the channel has no videos.</p>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/youtube-channel-scraper?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fyoutube-channel-inventory%2F%3Aguide_cta&amp;utm_term=youtube-channel-scraper&amp;source_page=%2Fguides%2Fyoutube-channel-inventory%2F&amp;source_actor=youtube-channel-scraper">Run YouTube Channel Scraper (videos, shorts, live) on Apify →</a></p></article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/bilibili-scraper/">Bilibili Scraper (Videos, Search, Popular)</a></li><li><a href="/tools/youtube-comments-scraper/">YouTube Comments Scraper — Comments &amp; Replies</a></li><li><a href="/tools/youtube-shorts-scraper/">YouTube Shorts Scraper</a></li><li><a href="/tools/bluesky-scraper/">Bluesky Post, Search &amp; Profile Scraper</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-eD9eBySeqkeqryITV-AMPbwLut0e-youtube-channel-scraper.png" alt="" width="44" height="44"><h4>YouTube Channel Scraper (videos, shorts, live)</h4></div>
+<dl><dt>Primary event rate</dt><dd>$0.50 / 1k videos</dd><dt>Billing</dt><dd>Event rates; additional fees may apply</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/youtube-channel-scraper?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fyoutube-channel-inventory%2F%3Aspec&amp;utm_term=youtube-channel-scraper&amp;source_page=%2Fguides%2Fyoutube-channel-inventory%2F&amp;source_actor=youtube-channel-scraper">Try it free on Apify</a><p><a href="/tools/youtube-channel-scraper/">Tool details</a></p></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#start-with-10-videos">Start with 10 videos</a></li><li><a href="#what-the-fields-mean">What the fields mean</a></li><li><a href="#repeat-the-check-without-duplicating-rows">Repeat the check without duplicating rows</a></li><li><a href="#connect-n8n-python-or-javascript">Connect n8n, Python or JavaScript</a></li><li><a href="#pricing-and-limits">Pricing and limits</a></li><li><a href="#recorded-output">Recorded output</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fyoutube-channel-inventory%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fguides%2Fyoutube-channel-inventory%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+<div>Monitoring tools by ChimeraMiND: <a href="https://watch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Domain Watch</a> · <a href="https://pagewatch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Page &amp; Price Watch</a> · <a href="https://watch.chimeramind.com/domain-health-check?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Free domain health check</a></div>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turn website fields into a spreadsheet | ChimeraMiND Data</title>
+<meta name="description" content="Start with one page and one field. Then replace the URL and selector with a product title, price or stock status.">
+
+<link rel="canonical" href="https://data.chimeramind.com/start/website-fields/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Turn website fields into a spreadsheet | ChimeraMiND Data">
+<meta property="og:description" content="Start with one page and one field. Then replace the URL and selector with a product title, price or stock status.">
+<meta property="og:url" content="https://data.chimeramind.com/start/website-fields/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>SEO PAGE AUDIT <b>$2</b>/1k <span class="up">● catalog</span></span><span>CORE WEB VITALS AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span></div></div>
+<main class="wrap"><div class="crumbs"><a href="/">Home</a> / Get started</div><section class="hero" style="grid-template-columns:1fr"><div><div class="kicker">Small first run</div><h1>Turn website fields into a spreadsheet</h1><p class="lede">Start with one page and one field. Then replace the URL and selector with a product title, price or stock status.</p></div></section><article class="prose">
+<h2>1. Copy the starter input</h2><p>Use this bounded input for your first run. It is a recipe, not recorded output. <a href="/templates/website-fields.input.json" download>Download input JSON</a></p><pre id="starter-input"><code>{
+  &quot;urls&quot;: [
+    &quot;https://example.com/&quot;
+  ],
+  &quot;selectors&quot;: [
+    {
+      &quot;name&quot;: &quot;title&quot;,
+      &quot;selector&quot;: &quot;title&quot;,
+      &quot;type&quot;: &quot;text&quot;
+    }
+  ],
+  &quot;firstMatchOnly&quot;: true,
+  &quot;maxConcurrency&quot;: 1,
+  &quot;maxPages&quot;: 1,
+  &quot;proxyMode&quot;: &quot;never&quot;
+}</code></pre><p><button class="btn" type="button" data-copy-input hidden>Copy input JSON</button> <span data-copy-status role="status"></span></p>
+<h2>2. Open the Actor and review your budget</h2><p>Open the Actor, switch Input to JSON and paste the input above. Review the Pricing tab and set Maximum cost per run before you start. The link does not start a paid run.</p><p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/css-selector-extractor?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=flagship_20261023&amp;utm_content=%2Fstart%2Fwebsite-fields%2F%3Astarter&amp;utm_term=css-selector-extractor&amp;source_page=%2Fstart%2Fwebsite-fields%2F&amp;source_actor=css-selector-extractor">Open Web Scraper — CSS Selector &amp; Data Extractor →</a></p>
+<h2>3. Check the result before exporting</h2><p>Check error is empty and matchCounts.title is greater than zero. The title field is inside fields. A successful run with a null field is not a successful extraction.</p><p>Export the successful dataset as JSON, CSV or Excel. <a href="/guides/css-selector-extractor/">Read the full guide</a> for field meanings and the next step.</p>
+<h2>Know the limits</h2><p>Reads static HTML only. Use the browser version for fields inserted by JavaScript. This starter does not follow links or use a proxy.</p>
+<h2>Pricing</h2><div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per Page</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.002</td><td class="num">$2</td></tr><tr><td>Starter</td><td class="num">$0.0016</td><td class="num">$1.60</td></tr><tr><td>Scale</td><td class="num">$0.0014</td><td class="num">$1.40</td></tr><tr><td>Business</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise+</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr></tbody></table></div>
+<p class="fine">Primary event rates from a catalog snapshot; this is not the total price of a run. Additional charge events and Actor Start fees may apply; start fees can scale with memory. Check the Actor's Pricing tab on Apify for all events, conditions and current plan-specific rates, and set a maximum run budget before starting.</p>
+<h2>Use the input in n8n</h2><p><a href="/templates/website-fields.n8n.json" download>Download the manual n8n starter</a>. Import it and select an HTTP Header Auth credential in the HTTP Request node: name <code>Authorization</code>, value <code>Bearer</code> followed by your Apify token. Store it in n8n credentials, never in the exported JSON.</p><p>The workflow is inactive and extracts data only. It does not schedule, compare results or send alerts. Import and a live run must be checked in your n8n installation. If the synchronous request times out, check Apify before retrying to avoid duplicate work and charges.</p>
+<h2>Need a different task?</h2><ul><li><a href="/start/youtube-channel-inventory/">Export a YouTube channel inventory</a></li><li><a href="/start/youtube-upload-monitor/">Build a repeatable upload check</a></li><li><a href="/guides/website-to-markdown/">Prepare website content for an LLM or RAG pipeline</a></li></ul>
+</article></main><script type="module" src="/assets/starter.js"></script>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fstart%2Fwebsite-fields%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fstart%2Fwebsite-fields%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+<div>Monitoring tools by ChimeraMiND: <a href="https://watch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Domain Watch</a> · <a href="https://pagewatch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Page &amp; Price Watch</a> · <a href="https://watch.chimeramind.com/domain-health-check?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Free domain health check</a></div>
+</div></footer>
+</body>
+</html>

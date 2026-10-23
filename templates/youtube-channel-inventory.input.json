@@ -1,0 +1,10 @@
+{
+  "channels": [
+    "@apify"
+  ],
+  "tab": "videos",
+  "sortBy": "newest",
+  "maxVideosPerChannel": 10,
+  "maxConcurrency": 1,
+  "proxyMode": "auto"
+}
