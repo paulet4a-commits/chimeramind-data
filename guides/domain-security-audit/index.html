@@ -64,11 +64,11 @@
 </tr>
 </tbody></table>
 </div><p>A real row from a recorded run:</p>
-<figure class="sample" data-sample-status="recorded" data-sample-finished="2026-10-22T00:00:57.596Z" data-sample-run="xFjIkZ2fjBXaCFeJ4"><figcaption><span data-sample-label>Recorded example · 0 days old. This is a snapshot, not current data.</span><span class="mono">run xFjIkZ2fjBXaCFeJ4 · 2026-10-22</span></figcaption><pre><code class="language-json">{
+<figure class="sample" data-sample-status="recorded" data-sample-finished="2026-10-23T01:01:01.104Z" data-sample-run="YWFd7w6DfO0R84Rlp"><figcaption><span data-sample-label>Recorded example · 0 days old. This is a snapshot, not current data.</span><span class="mono">run YWFd7w6DfO0R84Rlp · 2026-10-23</span></figcaption><pre><code class="language-json">{
   &quot;domain&quot;: &quot;nginx.org&quot;,
   &quot;certValidFrom&quot;: &quot;2026-10-15T12:15:39.000Z&quot;,
   &quot;certValidTo&quot;: &quot;2027-01-13T12:15:38.000Z&quot;,
-  &quot;certDaysUntilExpiry&quot;: 83,
+  &quot;certDaysUntilExpiry&quot;: 82,
   &quot;certIssuerOrg&quot;: &quot;Let&#39;s Encrypt&quot;,
   &quot;certIssuerCN&quot;: &quot;YE1&quot;,
   &quot;certSubjectCN&quot;: &quot;nginx.org&quot;,
@@ -118,7 +118,7 @@
     &quot;No X-Frame-Options header&quot;
   ],
   &quot;error&quot;: null,
-  &quot;scrapedAt&quot;: &quot;2026-10-22T00:00:56.851Z&quot;
+  &quot;scrapedAt&quot;: &quot;2026-10-23T01:01:00.044Z&quot;
 }</code></pre></figure><p>The certificate data comes from a direct TLS handshake on port 443; the rest is ordinary HTTP requests — the same public information any browser receives when it connects.</p>
 <h2 id="how-the-score-works">How the score works</h2>
 <p>Points are earned for: HTTPS redirect (+20), a valid, trusted certificate (+20) with more than 14 days left (+5), HSTS (+15), Content-Security-Policy (+10), X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy (+5 each), no <code>X-Powered-By</code> leak (+5) and all cookies carrying the <code>Secure</code> flag (+5). Grades: A ≥ 85, B ≥ 70, C ≥ 50, D ≥ 30, otherwise F. Every missed point is spelled out in <code>issues</code>, e.g. &quot;No HSTS header&quot; or &quot;TLS certificate expires in 9 day(s)&quot;.</p>
