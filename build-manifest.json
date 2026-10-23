@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-10-23T18:47:49.235Z",
-  "sourceCommit": "c2b5d7ec8907fae97bd251854502f0ecb981715c",
+  "builtAt": "2026-10-23T20:35:58.935Z",
+  "sourceCommit": "a34cbd7b94006aef5273e8e5c8f033a25a626019",
   "pages": [
     {
       "file": "guides/bulk-core-web-vitals-check/index.html",
@@ -15,7 +15,7 @@
     {
       "file": "guides/company-data-from-domain/index.html",
       "url": "https://data.chimeramind.com/guides/company-data-from-domain/",
-      "sha256": "7dfd0456985929ae1f4424c4195a4f7bfbb40ec809f366e52f480cd45d3b22ce"
+      "sha256": "34a530a4bd929f269c00461735abe09e50e438839772766c0913efcdd9a36f33"
     },
     {
       "file": "guides/css-selector-extractor/index.html",
@@ -115,17 +115,17 @@
     {
       "file": "start/website-fields/index.html",
       "url": "https://data.chimeramind.com/start/website-fields/",
-      "sha256": "c76eac03457a0c8fa3bf35a056530691417d3a33df979cb80b8c97a92e945db9"
+      "sha256": "0324c9c857acce28fe2878ca9ffa57a5f48dc873e6bb431421b7bcc8b67c3bf7"
     },
     {
       "file": "start/youtube-channel-inventory/index.html",
       "url": "https://data.chimeramind.com/start/youtube-channel-inventory/",
-      "sha256": "4d8e0b8bf4de087a139c1e0d14268080861508a88e0ee5cd6e5e14144089134e"
+      "sha256": "fee69b5839f966f5c3043dcf2085e54ff4210274f75e3acb6c34a872542ad92b"
     },
     {
       "file": "start/youtube-upload-monitor/index.html",
       "url": "https://data.chimeramind.com/start/youtube-upload-monitor/",
-      "sha256": "82651ab59562635d87b3570e292c1b0e6eb2e1cd9dfb0f018ba98fede82dff58"
+      "sha256": "b6733bb3226d8dffb4f0f51e9326a5bee27e90654c483b893e50efb3a12b1483"
     },
     {
       "file": "guides/index.html",
@@ -265,7 +265,7 @@
     {
       "file": "tools/company-360/index.html",
       "url": "https://data.chimeramind.com/tools/company-360/",
-      "sha256": "324b32bf32f154fa4b26031bcb6d0d3e2e07f38ce2c653b4ae5bfba224f16fc1"
+      "sha256": "f2975d66b08dea5d723fc7c4af91aee4a6a67dbac6bcd353faf8321383b66aaf"
     },
     {
       "file": "tools/google-play-scraper/index.html",
@@ -573,6 +573,11 @@
       "sha256": "4ea94805b4c1a03397bf8a6ae2eeefc5b7c1d91e0536a39a435064a715405bcc"
     },
     {
+      "file": "tools/booking-scraper/index.html",
+      "url": "https://data.chimeramind.com/tools/booking-scraper/",
+      "sha256": "4c634e7aa781434e89f24e9897b1f151b14912d662fda060174e74dd89f1de62"
+    },
+    {
       "file": "tools/workday-jobs-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/workday-jobs-scraper/",
       "sha256": "55b683f5a8d65ea04d42976fedf894365e45a88b4fa8c027b44f8be4a6214153"
@@ -596,11 +601,6 @@
       "file": "tools/keyword-suggestions-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/keyword-suggestions-scraper/",
       "sha256": "ec19b0e08ea4667cb5c7923736778a431ce046e4bb453441e2ce16eda0b9dea4"
-    },
-    {
-      "file": "tools/booking-scraper/index.html",
-      "url": "https://data.chimeramind.com/tools/booking-scraper/",
-      "sha256": "4c634e7aa781434e89f24e9897b1f151b14912d662fda060174e74dd89f1de62"
     },
     {
       "file": "tools/meetup-events-scraper/index.html",
