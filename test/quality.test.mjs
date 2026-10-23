@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { validateData, validateDist, hash } from '../src/quality.mjs';
 import { WORKFLOWS } from '../src/growth.mjs';
+import { QUICKSTARTS } from '../src/quickstarts.mjs';
 const root = fileURLToPath(new URL('..', import.meta.url));
 const ACTORS = Object.keys(JSON.parse(fs.readFileSync(new URL('../data/catalog-lock.json', import.meta.url))).actors).length;
 const GUIDES = fs.readdirSync(new URL('../content/guides/', import.meta.url)).filter(f => f.endsWith('.md')).length;
@@ -30,7 +31,14 @@ function mutate(file, edit, expected) {
     finally { fs.writeFileSync(p,original); }
 }
 test('generated pages cover every locked tool, every guide file, every workflow and indexes',()=>{
-    assert.deepEqual(validateDist(fixture),{pages:ACTORS+GUIDES+WORKFLOWS.length+INDEX_PAGES,tools:ACTORS,workflows:WORKFLOWS.length});
+    assert.deepEqual(validateDist(fixture),{pages:ACTORS+GUIDES+WORKFLOWS.length+QUICKSTARTS.length+INDEX_PAGES,tools:ACTORS,workflows:WORKFLOWS.length});
+    for (const recipe of QUICKSTARTS) {
+        const input = JSON.parse(fs.readFileSync(path.join(fixture, 'dist/templates', `${recipe.slug}.input.json`)));
+        assert.deepEqual(input, recipe.input);
+        const html = fs.readFileSync(path.join(fixture, 'dist/start', recipe.slug, 'index.html'), 'utf8');
+        assert.ok(html.includes('flagship_20261023'));
+        assert.ok(html.includes('not recorded output'));
+    }
 });
 test('wrong canonical and noindex landing are rejected',()=>{
     mutate('dist/tools/google-maps-scraper/index.html',s=>s.replace('rel="canonical" href="https://data.chimeramind.com/tools/google-maps-scraper/"','rel="canonical" href="https://wrong.invalid/"'),/Wrong canonical/);

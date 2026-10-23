@@ -5,10 +5,18 @@ short: CSS Selector Extractor
 kicker: Web data
 actor: css-selector-extractor
 description: Describe the fields once as CSS selectors and get one row per page — text, attributes, HTML tables, list items, pagination, sitemaps and page metadata — over plain HTTP, with headers and cookies for pages that need them.
-updated: 2026-10-11
+updated: 2026-10-23
 ---
 
 Most product pages, articles, directories and documentation sites are plain HTML. If you need one value from each page, such as a price, a title or a download link, writing a custom scraper is overkill. This guide shows how to turn a list of URLs and a short list of CSS selectors into structured rows, with no code to write and no browser to set up. The tool makes plain HTTP requests, so it is fast and cheap: {{price}}.
+
+## Start with one useful field
+
+[Open the small website-fields recipe](/start/website-fields/). Copy its input into the Actor's JSON editor, review Pricing and set Maximum cost per run. It reads the `title` element on one page, with concurrency 1 and no proxy or link following.
+
+Before exporting, check that `error` is empty and `matchCounts.title` is greater than zero. A run marked SUCCEEDED can still contain empty or failed rows: confirm the field you need is present. Export the dataset as JSON, CSV or Excel.
+
+To extract a product price, replace the URL with a product detail page and the selector with that site's price selector. Add a separate selector for availability. Test one page before expanding the list; selectors are site-specific, and JavaScript-rendered prices need the browser Actor.
 
 ## What you get
 
