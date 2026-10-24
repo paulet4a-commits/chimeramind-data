@@ -3754,5 +3754,160 @@
    ],
    "searchQueries": []
   }
+ },
+ "amazon-product-scraper": {
+  "name": "amazon-product-scraper",
+  "title": "Amazon Product Scraper (Price, Rating, BSR, Stock)",
+  "description": "Scrape Amazon product pages by ASIN or URL: title, brand, price and list price, rating and rating count, best sellers rank, availability, seller, images, feature bullets and variants. Works for 19 Amazon marketplaces. No login.",
+  "url": "https://apify.com/webdatatools/amazon-product-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 12,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "product",
+   "usd": 0.004,
+   "tiers": {
+    "FREE": 0.004,
+    "BRONZE": 0.004,
+    "SILVER": 0.004,
+    "GOLD": 0.004,
+    "PLATINUM": 0.004,
+    "DIAMOND": 0.004
+   }
+  },
+  "prefill": {
+   "products": [
+    "B0BSHF7WHW"
+   ]
+  }
+ },
+ "amazon-bestsellers-scraper": {
+  "name": "amazon-bestsellers-scraper",
+  "title": "Amazon Best Sellers Scraper (Ranks, Prices, Ratings)",
+  "description": "Scrape Amazon Best Sellers category lists: rank, ASIN, product title, price, rating and rating count, with the category name. Works for 19 Amazon marketplaces. No login.",
+  "url": "https://apify.com/webdatatools/amazon-bestsellers-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "best-seller item",
+   "usd": 0.004,
+   "tiers": {
+    "FREE": 0.004,
+    "BRONZE": 0.0032,
+    "SILVER": 0.0028,
+    "GOLD": 0.0024,
+    "PLATINUM": 0.0024,
+    "DIAMOND": 0.0024
+   }
+  },
+  "prefill": {
+   "categoryUrls": [
+    "https://www.amazon.com/Best-Sellers-Electronics/zgbs/electronics"
+   ]
+  }
+ },
+ "google-images-scraper": {
+  "name": "google-images-scraper",
+  "title": "Google Images Scraper (Image Search Results)",
+  "description": "Google Images Scraper returns image search results for keywords: title, image URL, source page and domain. Uses the Apify GOOGLE_SERP proxy, no browser.",
+  "url": "https://apify.com/webdatatools/google-images-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "SEO_TOOLS",
+   "LEAD_GENERATION",
+   "AI"
+  ],
+  "price": {
+   "unit": "image",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0019,
+    "SILVER": 0.0018,
+    "GOLD": 0.0017,
+    "PLATINUM": 0.0017,
+    "DIAMOND": 0.0017
+   }
+  },
+  "prefill": {
+   "queries": [
+    "red running shoes"
+   ]
+  }
+ },
+ "google-jobs-scraper": {
+  "name": "google-jobs-scraper",
+  "title": "Google Jobs Scraper (Job Listings, Companies, Sources)",
+  "description": "Google Jobs Scraper returns Google Jobs listings for a search: title, company, location, posting date, description and source links. Uses the Apify GOOGLE_SERP proxy, no browser.",
+  "url": "https://apify.com/webdatatools/google-jobs-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 7,
+  "categories": [
+   "AUTOMATION",
+   "LEAD_GENERATION",
+   "OTHER"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.004,
+   "tiers": {
+    "FREE": 0.004,
+    "BRONZE": 0.0036,
+    "SILVER": 0.0034,
+    "GOLD": 0.0032,
+    "PLATINUM": 0.0032,
+    "DIAMOND": 0.0032
+   }
+  },
+  "prefill": {
+   "queries": [
+    "data analyst in New York"
+   ]
+  }
+ },
+ "linkedin-company-posts-scraper": {
+  "name": "linkedin-company-posts-scraper",
+  "title": "LinkedIn Company Posts Scraper (Public Company Feed)",
+  "description": "Scrape the recent posts on public LinkedIn company pages without login: post text, posted time, reactions, comments, media, external links and post URL. Company feed only, no people profiles or commenters.",
+  "url": "https://apify.com/webdatatools/linkedin-company-posts-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "MARKETING",
+   "LEAD_GENERATION",
+   "OTHER"
+  ],
+  "price": {
+   "unit": "post",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0018,
+    "SILVER": 0.0016,
+    "GOLD": 0.0015,
+    "PLATINUM": 0.0015,
+    "DIAMOND": 0.0015
+   }
+  },
+  "prefill": {
+   "companies": [
+    "microsoft"
+   ]
+  }
  }
 }
