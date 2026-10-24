@@ -1,7 +1,11 @@
 # ChimeraMiND Data — data.chimeramind.com
 
-91 webdatatools Actor için statik katalog, 20 rehber ve Lead/RAG/SEO/Hiring workflow sayfaları.
+WebDataTools Actor'ları için statik katalog, rehberler ve Lead/RAG/SEO/Hiring workflow sayfaları. Güncel sayılar canlı sitemap ve build çıktısından alınır; burada sabit tutulmaz.
 Fiyat ve örnek çıktılar katalog snapshot'ıdır; yayın öncesinde Apify'dan salt okunur olarak doğrulanır.
+
+Yönetici/kanal/yol kaydı: [TAM-KONTROL.md](TAM-KONTROL.md). `/distribution-manifest.json` mevcut içerikten üretilen Actor → starter/guide/tool eşlemesidir. Yeni Actor veya içerik normal build ile bu listeye girer.
+
+Kampanya etiketleri çerez/depolama kullanmadan izinli site içi linklerde korunur; Apify çıkışında `acquisition_source/medium/campaign/content` eklenir, mevcut sayfa/yerleşim UTM kaydı korunur. Yalnız sınırlı etiketler taşınır; keyfi query parametreleri taşınmaz. Bu mekanizma tıklama veya satış sayacı değildir; Apify raporlama desteği ayrıca doğrulanmalıdır. 1200×630 sosyal kartlar `public/assets/social` altında sürümlenir; `scripts/render-social-covers.py` bunları yeniden üretir.
 
 ## Yerel kontrol
 

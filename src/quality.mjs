@@ -82,6 +82,9 @@ export function validateDist(root) {
         titles.add(title);
         assert.equal([...html.matchAll(/<link rel="canonical" href="([^"]+)">/g)].length, 1, `Missing/duplicate canonical: ${rel}`);
         assert.ok(html.includes(`<link rel="canonical" href="${canonical}">`), `Wrong canonical: ${rel}`);
+        const og = /<meta property="og:image" content="https:\/\/data\.chimeramind\.com(\/assets\/social\/[a-z-]+\.png)">/.exec(html)?.[1];
+        assert.ok(og && fs.existsSync(path.join(dist, og)), `Missing social cover: ${rel}`);
+        assert.ok(html.includes('/assets/attribution.mjs'), `Missing campaign propagation: ${rel}`);
         if (rel !== '404.html') {
             assert.ok(urls.includes(canonical), `Page absent from sitemap: ${rel}`);
             assert.ok(!/<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html), `Page is not indexable: ${rel}`);
@@ -120,5 +123,11 @@ export function validateDist(root) {
     const manifest = JSON.parse(fs.readFileSync(path.join(dist, 'build-manifest.json')));
     assert.deepEqual(manifest.pages.map(p => p.url).sort(), [...urls].sort(), 'Manifest/sitemap mismatch');
     for (const p of manifest.pages) assert.equal(p.sha256, hash(fs.readFileSync(path.join(dist, p.file))), `Manifest content hash mismatch: ${p.file}`);
+    const distribution = JSON.parse(fs.readFileSync(path.join(dist, 'distribution-manifest.json')));
+    assert.deepEqual(distribution.products.map(p => p.actor).sort(), Object.keys(actors).sort(), 'Distribution/catalog mismatch');
+    for (const p of distribution.products) {
+        assert.equal(p.product, `apify--${p.actor}`);
+        for (const url of [p.toolUrl,p.preferredUrl,...p.starters.map(x=>x.url),...p.guides.map(x=>x.url),...p.workflows.map(x=>x.url)]) assert.ok(seen.has(url), `Unpublished distribution route: ${url}`);
+    }
     return { pages: urls.length, tools: Object.keys(actors).length, workflows: WORKFLOWS.length };
 }

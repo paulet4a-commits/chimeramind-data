@@ -28,6 +28,7 @@ function ticker(actors) {
 
 export function page({ path, title, description, body, actors, jsonLd = [], ogType = 'website', nav = '', noindex = false }) {
     const url = `${SITE.origin}${path}`;
+    const cover = /youtube/.test(path) ? 'youtube' : /css-selector|website-fields/.test(path) ? 'website-fields' : path.startsWith('/workflows/') ? 'workflows' : 'catalog';
     const ld = jsonLd.map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`).join('\n');
     // Cloudflare Web Analytics (cookieless). The token is public by design — it ships in every page.
     const beaconToken = process.env.CF_BEACON_TOKEN ?? "fadbc13040624319a834f09c5b167e36";
@@ -49,7 +50,11 @@ ${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${esc(url)}">
 <meta property="og:site_name" content="${SITE.name}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="${SITE.origin}/assets/social/${cover}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(title)} — ChimeraMiND Data">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b8f6a">
 ${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">` : ''}
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -58,6 +63,7 @@ ${GSC ? `<meta name="google-site-verification" content="${esc(GSC)}">` : ''}
 <link rel="stylesheet" href="${FONTS}">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="module" src="/assets/sample-status.js"></script>
+<script type="module" src="/assets/attribution.mjs"></script>
 ${ld}
 ${beacon}
 </head>
