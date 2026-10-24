@@ -64,7 +64,7 @@ console.log(items);`;
   -H "Content-Type: application/json" \\
   -d '${JSON.stringify(actor?.prefill ?? {})}'`;
     const tab = (name, lang, code, on) =>
-        `<input type="radio" name="t-${esc(actor?.name)}" id="t-${esc(actor?.name)}-${lang}"${on ? ' checked' : ''}><label for="t-${esc(actor?.name)}-${lang}">${name}</label><pre class="tab-${lang}"><code class="language-${lang}">${esc(code)}</code></pre>`;
+        `<input type="radio" name="t-${esc(actor?.name)}" id="t-${esc(actor?.name)}-${lang}"${on ? ' checked' : ''}><label for="t-${esc(actor?.name)}-${lang}">${name}</label><pre class="tab-${lang}"><code class="language-${lang}">${esc(code).replace(/\r?\n/g, '&#10;')}</code></pre>`;
     return `<div class="tabs">${tab('Python', 'python', py, true)}${tab('JavaScript', 'js', js)}${tab('cURL', 'bash', curl)}</div>`;
 }
 
