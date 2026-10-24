@@ -1,8 +1,8 @@
 {
   "version": 1,
   "origin": "https://data.chimeramind.com",
-  "generatedAt": "2026-10-24T14:00:58.495Z",
-  "sourceCommit": "3094612802671849aca6bd65a117c30d148b2c37",
+  "generatedAt": "2026-10-24T17:38:09.145Z",
+  "sourceCommit": "909ab08215ce28e454e047646912cb5e21f22d4f",
   "products": [
     {
       "product": "apify--contact-extractor",
@@ -1402,12 +1402,56 @@
       "workflows": []
     },
     {
+      "product": "apify--amazon-product-scraper",
+      "actor": "amazon-product-scraper",
+      "title": "Amazon Product Scraper (Price, Rating, BSR, Stock)",
+      "storeUrl": "https://apify.com/webdatatools/amazon-product-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/amazon-product-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/amazon-product-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
       "product": "apify--amazon-search-scraper",
       "actor": "amazon-search-scraper",
       "title": "Amazon Search Scraper (Results, Prices, Ratings, Ads)",
       "storeUrl": "https://apify.com/webdatatools/amazon-search-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/amazon-search-scraper/",
       "preferredUrl": "https://data.chimeramind.com/tools/amazon-search-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--amazon-bestsellers-scraper",
+      "actor": "amazon-bestsellers-scraper",
+      "title": "Amazon Best Sellers Scraper (Ranks, Prices, Ratings)",
+      "storeUrl": "https://apify.com/webdatatools/amazon-bestsellers-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/amazon-bestsellers-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/amazon-bestsellers-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-images-scraper",
+      "actor": "google-images-scraper",
+      "title": "Google Images Scraper (Image Search Results)",
+      "storeUrl": "https://apify.com/webdatatools/google-images-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-images-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-images-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-jobs-scraper",
+      "actor": "google-jobs-scraper",
+      "title": "Google Jobs Scraper (Job Listings, Companies, Sources)",
+      "storeUrl": "https://apify.com/webdatatools/google-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-jobs-scraper/",
       "starters": [],
       "guides": [],
       "workflows": []
@@ -1430,6 +1474,17 @@
       "storeUrl": "https://apify.com/webdatatools/reddit-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/reddit-scraper/",
       "preferredUrl": "https://data.chimeramind.com/tools/reddit-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--linkedin-company-posts-scraper",
+      "actor": "linkedin-company-posts-scraper",
+      "title": "LinkedIn Company Posts Scraper (Public Company Feed)",
+      "storeUrl": "https://apify.com/webdatatools/linkedin-company-posts-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/linkedin-company-posts-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/linkedin-company-posts-scraper/",
       "starters": [],
       "guides": [],
       "workflows": []
