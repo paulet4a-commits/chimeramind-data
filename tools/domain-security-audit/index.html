@@ -92,30 +92,7 @@
   ],
   &quot;error&quot;: null,
   &quot;scrapedAt&quot;: &quot;2026-10-23T01:01:00.044Z&quot;
-}</code></pre></figure><h2>Call from code</h2><p>Use the existing catalog input below as a starting point. Review the tool's input form on Apify before running it.</p><div class="tabs"><input type="radio" name="t-domain-security-audit" id="t-domain-security-audit-python" checked><label for="t-domain-security-audit-python">Python</label><pre class="tab-python"><code class="language-python">import json
-import os
-from apify_client import ApifyClient
-
-client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])
-run = client.actor(&quot;webdatatools/domain-security-audit&quot;).call(run_input=json.loads(&quot;{\n    \&quot;domains\&quot;: [\n        \&quot;apify.com\&quot;,\n        \&quot;example.com\&quot;\n    ],\n    \&quot;checkTls\&quot;: true,\n    \&quot;checkHeaders\&quot;: true\n}&quot;))
-
-for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
-    print(item)</code></pre><input type="radio" name="t-domain-security-audit" id="t-domain-security-audit-js"><label for="t-domain-security-audit-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;
-
-const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
-const run = await client.actor(&#39;webdatatools/domain-security-audit&#39;).call({
-    &quot;domains&quot;: [
-        &quot;apify.com&quot;,
-        &quot;example.com&quot;
-    ],
-    &quot;checkTls&quot;: true,
-    &quot;checkHeaders&quot;: true
-});
-const { items } = await client.dataset(run.defaultDatasetId).listItems();
-console.log(items);</code></pre><input type="radio" name="t-domain-security-audit" id="t-domain-security-audit-bash"><label for="t-domain-security-audit-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~domain-security-audit/run-sync-get-dataset-items&quot; \
-  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \
-  -H &quot;Content-Type: application/json&quot; \
-  -d &#39;{&quot;domains&quot;:[&quot;apify.com&quot;,&quot;example.com&quot;],&quot;checkTls&quot;:true,&quot;checkHeaders&quot;:true}&#39;</code></pre></div></article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/career-site-jobs-api/">Career Site Jobs API (Greenhouse, Lever, Ashby, Workday +1)</a></li><li><a href="/tools/chrome-web-store-extensions/">Chrome Web Store Extension Scraper (installs, ratings)</a></li><li><a href="/tools/core-web-vitals-audit/">Bulk Core Web Vitals &amp; PageSpeed Audit</a></li><li><a href="/tools/dice-jobs-scraper/">Dice Jobs Scraper</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div>
+}</code></pre></figure><h2>Call from code</h2><p>Use the existing catalog input below as a starting point. Review the tool's input form on Apify before running it.</p><div class="tabs"><input type="radio" name="t-domain-security-audit" id="t-domain-security-audit-python" checked><label for="t-domain-security-audit-python">Python</label><pre class="tab-python"><code class="language-python">import json&#10;import os&#10;from apify_client import ApifyClient&#10;&#10;client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])&#10;run = client.actor(&quot;webdatatools/domain-security-audit&quot;).call(run_input=json.loads(&quot;{\n    \&quot;domains\&quot;: [\n        \&quot;apify.com\&quot;,\n        \&quot;example.com\&quot;\n    ],\n    \&quot;checkTls\&quot;: true,\n    \&quot;checkHeaders\&quot;: true\n}&quot;))&#10;&#10;for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():&#10;    print(item)</code></pre><input type="radio" name="t-domain-security-audit" id="t-domain-security-audit-js"><label for="t-domain-security-audit-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;&#10;&#10;const client = new ApifyClient({ token: process.env.APIFY_TOKEN });&#10;const run = await client.actor(&#39;webdatatools/domain-security-audit&#39;).call({&#10;    &quot;domains&quot;: [&#10;        &quot;apify.com&quot;,&#10;        &quot;example.com&quot;&#10;    ],&#10;    &quot;checkTls&quot;: true,&#10;    &quot;checkHeaders&quot;: true&#10;});&#10;const { items } = await client.dataset(run.defaultDatasetId).listItems();&#10;console.log(items);</code></pre><input type="radio" name="t-domain-security-audit" id="t-domain-security-audit-bash"><label for="t-domain-security-audit-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~domain-security-audit/run-sync-get-dataset-items&quot; \&#10;  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \&#10;  -H &quot;Content-Type: application/json&quot; \&#10;  -d &#39;{&quot;domains&quot;:[&quot;apify.com&quot;,&quot;example.com&quot;],&quot;checkTls&quot;:true,&quot;checkHeaders&quot;:true}&#39;</code></pre></div></article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/career-site-jobs-api/">Career Site Jobs API (Greenhouse, Lever, Ashby, Workday +1)</a></li><li><a href="/tools/chrome-web-store-extensions/">Chrome Web Store Extension Scraper (installs, ratings)</a></li><li><a href="/tools/core-web-vitals-audit/">Bulk Core Web Vitals &amp; PageSpeed Audit</a></li><li><a href="/tools/dice-jobs-scraper/">Dice Jobs Scraper</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div>
 <footer class="site"><div class="wrap">
 <div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Ftools%2Fdomain-security-audit%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Ftools%2Fdomain-security-audit%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
 <div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>

@@ -83,33 +83,7 @@
   &quot;fetchedAt&quot;: &quot;2026-10-03T15:18:52.669Z&quot;,
   &quot;error&quot;: null,
   &quot;scrapedAt&quot;: &quot;2026-10-03T15:19:28.193Z&quot;
-}</code></pre></figure><h2>Call from code</h2><p>Use the existing catalog input below as a starting point. Review the tool's input form on Apify before running it.</p><div class="tabs"><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-python" checked><label for="t-core-web-vitals-audit-python">Python</label><pre class="tab-python"><code class="language-python">import json
-import os
-from apify_client import ApifyClient
-
-client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])
-run = client.actor(&quot;webdatatools/core-web-vitals-audit&quot;).call(run_input=json.loads(&quot;{\n    \&quot;urls\&quot;: [\n        \&quot;https://apify.com\&quot;,\n        \&quot;https://example.com\&quot;\n    ],\n    \&quot;strategy\&quot;: \&quot;mobile\&quot;,\n    \&quot;categories\&quot;: [\n        \&quot;performance\&quot;,\n        \&quot;seo\&quot;\n    ]\n}&quot;))
-
-for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
-    print(item)</code></pre><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-js"><label for="t-core-web-vitals-audit-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;
-
-const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
-const run = await client.actor(&#39;webdatatools/core-web-vitals-audit&#39;).call({
-    &quot;urls&quot;: [
-        &quot;https://apify.com&quot;,
-        &quot;https://example.com&quot;
-    ],
-    &quot;strategy&quot;: &quot;mobile&quot;,
-    &quot;categories&quot;: [
-        &quot;performance&quot;,
-        &quot;seo&quot;
-    ]
-});
-const { items } = await client.dataset(run.defaultDatasetId).listItems();
-console.log(items);</code></pre><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-bash"><label for="t-core-web-vitals-audit-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~core-web-vitals-audit/run-sync-get-dataset-items&quot; \
-  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \
-  -H &quot;Content-Type: application/json&quot; \
-  -d &#39;{&quot;urls&quot;:[&quot;https://apify.com&quot;,&quot;https://example.com&quot;],&quot;strategy&quot;:&quot;mobile&quot;,&quot;categories&quot;:[&quot;performance&quot;,&quot;seo&quot;]}&#39;</code></pre></div></article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/seo-page-audit/">On-Page SEO Audit</a></li><li><a href="/tools/sitemap-extractor/">Sitemap URL Extractor &amp; Change Monitor</a></li><li><a href="/tools/structured-data-extractor/">Structured Data &amp; JSON-LD Extractor (Schema.org, Open Graph)</a></li><li><a href="/tools/dns-email-security-checker/">Domain DNS &amp; Email Security Checker</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/seo/">SEO audit workflow</a></li><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div>
+}</code></pre></figure><h2>Call from code</h2><p>Use the existing catalog input below as a starting point. Review the tool's input form on Apify before running it.</p><div class="tabs"><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-python" checked><label for="t-core-web-vitals-audit-python">Python</label><pre class="tab-python"><code class="language-python">import json&#10;import os&#10;from apify_client import ApifyClient&#10;&#10;client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])&#10;run = client.actor(&quot;webdatatools/core-web-vitals-audit&quot;).call(run_input=json.loads(&quot;{\n    \&quot;urls\&quot;: [\n        \&quot;https://apify.com\&quot;,\n        \&quot;https://example.com\&quot;\n    ],\n    \&quot;strategy\&quot;: \&quot;mobile\&quot;,\n    \&quot;categories\&quot;: [\n        \&quot;performance\&quot;,\n        \&quot;seo\&quot;\n    ]\n}&quot;))&#10;&#10;for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():&#10;    print(item)</code></pre><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-js"><label for="t-core-web-vitals-audit-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;&#10;&#10;const client = new ApifyClient({ token: process.env.APIFY_TOKEN });&#10;const run = await client.actor(&#39;webdatatools/core-web-vitals-audit&#39;).call({&#10;    &quot;urls&quot;: [&#10;        &quot;https://apify.com&quot;,&#10;        &quot;https://example.com&quot;&#10;    ],&#10;    &quot;strategy&quot;: &quot;mobile&quot;,&#10;    &quot;categories&quot;: [&#10;        &quot;performance&quot;,&#10;        &quot;seo&quot;&#10;    ]&#10;});&#10;const { items } = await client.dataset(run.defaultDatasetId).listItems();&#10;console.log(items);</code></pre><input type="radio" name="t-core-web-vitals-audit" id="t-core-web-vitals-audit-bash"><label for="t-core-web-vitals-audit-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~core-web-vitals-audit/run-sync-get-dataset-items&quot; \&#10;  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \&#10;  -H &quot;Content-Type: application/json&quot; \&#10;  -d &#39;{&quot;urls&quot;:[&quot;https://apify.com&quot;,&quot;https://example.com&quot;],&quot;strategy&quot;:&quot;mobile&quot;,&quot;categories&quot;:[&quot;performance&quot;,&quot;seo&quot;]}&#39;</code></pre></div></article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/seo-page-audit/">On-Page SEO Audit</a></li><li><a href="/tools/sitemap-extractor/">Sitemap URL Extractor &amp; Change Monitor</a></li><li><a href="/tools/structured-data-extractor/">Structured Data &amp; JSON-LD Extractor (Schema.org, Open Graph)</a></li><li><a href="/tools/dns-email-security-checker/">Domain DNS &amp; Email Security Checker</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/seo/">SEO audit workflow</a></li><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div>
 <footer class="site"><div class="wrap">
 <div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Ftools%2Fcore-web-vitals-audit%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Ftools%2Fcore-web-vitals-audit%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
 <div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>

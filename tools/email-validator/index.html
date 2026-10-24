@@ -63,31 +63,7 @@
   ],
   &quot;error&quot;: null,
   &quot;scrapedAt&quot;: &quot;2026-09-28T10:50:28.149Z&quot;
-}</code></pre></figure><h2>Call from code</h2><p>Use the existing catalog input below as a starting point. Review the tool's input form on Apify before running it.</p><div class="tabs"><input type="radio" name="t-email-validator" id="t-email-validator-python" checked><label for="t-email-validator-python">Python</label><pre class="tab-python"><code class="language-python">import json
-import os
-from apify_client import ApifyClient
-
-client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])
-run = client.actor(&quot;webdatatools/email-validator&quot;).call(run_input=json.loads(&quot;{\n    \&quot;emails\&quot;: [\n        \&quot;support@apify.com\&quot;,\n        \&quot;jane.doe@gmail.com\&quot;,\n        \&quot;info@mailinator.com\&quot;\n    ],\n    \&quot;checkMx\&quot;: true,\n    \&quot;maxConcurrency\&quot;: 10\n}&quot;))
-
-for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
-    print(item)</code></pre><input type="radio" name="t-email-validator" id="t-email-validator-js"><label for="t-email-validator-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;
-
-const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
-const run = await client.actor(&#39;webdatatools/email-validator&#39;).call({
-    &quot;emails&quot;: [
-        &quot;support@apify.com&quot;,
-        &quot;jane.doe@gmail.com&quot;,
-        &quot;info@mailinator.com&quot;
-    ],
-    &quot;checkMx&quot;: true,
-    &quot;maxConcurrency&quot;: 10
-});
-const { items } = await client.dataset(run.defaultDatasetId).listItems();
-console.log(items);</code></pre><input type="radio" name="t-email-validator" id="t-email-validator-bash"><label for="t-email-validator-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~email-validator/run-sync-get-dataset-items&quot; \
-  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \
-  -H &quot;Content-Type: application/json&quot; \
-  -d &#39;{&quot;emails&quot;:[&quot;support@apify.com&quot;,&quot;jane.doe@gmail.com&quot;,&quot;info@mailinator.com&quot;],&quot;checkMx&quot;:true,&quot;maxConcurrency&quot;:10}&#39;</code></pre></div></article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/company-360/">Company 360: full company profile from a domain</a></li><li><a href="/tools/contact-extractor/">Email Extractor — Website Contact &amp; Social Finder</a></li><li><a href="/tools/google-maps-scraper/">Google Maps Scraper</a></li><li><a href="/tools/google-maps-email-extractor/">Google Maps Email Extractor: Only Places With E-mail</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/lead/">Lead research</a></li><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div>
+}</code></pre></figure><h2>Call from code</h2><p>Use the existing catalog input below as a starting point. Review the tool's input form on Apify before running it.</p><div class="tabs"><input type="radio" name="t-email-validator" id="t-email-validator-python" checked><label for="t-email-validator-python">Python</label><pre class="tab-python"><code class="language-python">import json&#10;import os&#10;from apify_client import ApifyClient&#10;&#10;client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])&#10;run = client.actor(&quot;webdatatools/email-validator&quot;).call(run_input=json.loads(&quot;{\n    \&quot;emails\&quot;: [\n        \&quot;support@apify.com\&quot;,\n        \&quot;jane.doe@gmail.com\&quot;,\n        \&quot;info@mailinator.com\&quot;\n    ],\n    \&quot;checkMx\&quot;: true,\n    \&quot;maxConcurrency\&quot;: 10\n}&quot;))&#10;&#10;for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():&#10;    print(item)</code></pre><input type="radio" name="t-email-validator" id="t-email-validator-js"><label for="t-email-validator-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;&#10;&#10;const client = new ApifyClient({ token: process.env.APIFY_TOKEN });&#10;const run = await client.actor(&#39;webdatatools/email-validator&#39;).call({&#10;    &quot;emails&quot;: [&#10;        &quot;support@apify.com&quot;,&#10;        &quot;jane.doe@gmail.com&quot;,&#10;        &quot;info@mailinator.com&quot;&#10;    ],&#10;    &quot;checkMx&quot;: true,&#10;    &quot;maxConcurrency&quot;: 10&#10;});&#10;const { items } = await client.dataset(run.defaultDatasetId).listItems();&#10;console.log(items);</code></pre><input type="radio" name="t-email-validator" id="t-email-validator-bash"><label for="t-email-validator-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~email-validator/run-sync-get-dataset-items&quot; \&#10;  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \&#10;  -H &quot;Content-Type: application/json&quot; \&#10;  -d &#39;{&quot;emails&quot;:[&quot;support@apify.com&quot;,&quot;jane.doe@gmail.com&quot;,&quot;info@mailinator.com&quot;],&quot;checkMx&quot;:true,&quot;maxConcurrency&quot;:10}&#39;</code></pre></div></article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/company-360/">Company 360: full company profile from a domain</a></li><li><a href="/tools/contact-extractor/">Email Extractor — Website Contact &amp; Social Finder</a></li><li><a href="/tools/google-maps-scraper/">Google Maps Scraper</a></li><li><a href="/tools/google-maps-email-extractor/">Google Maps Email Extractor: Only Places With E-mail</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/lead/">Lead research</a></li><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div>
 <footer class="site"><div class="wrap">
 <div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Ftools%2Femail-validator%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Ftools%2Femail-validator%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
 <div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>

@@ -130,25 +130,7 @@
 <li>Click <strong>Start</strong>, then export to JSON, CSV or Excel — or schedule the run to snapshot your watchlist every day.</li>
 </ol>
 <p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/market-quotes?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fstock-crypto-fx-quotes-api%2F%3Aguide_cta&amp;utm_term=market-quotes&amp;source_page=%2Fguides%2Fstock-crypto-fx-quotes-api%2F&amp;source_actor=market-quotes">Run Stock, Crypto &amp; FX Quotes on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
-<div class="tabs"><input type="radio" name="t-market-quotes" id="t-market-quotes-python" checked><label for="t-market-quotes-python">Python</label><pre class="tab-python"><code class="language-python">import json
-import os
-from apify_client import ApifyClient<p>client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])
-run = client.actor(&quot;webdatatools/market-quotes&quot;).call(run_input=json.loads(&quot;{\n    &amp;quot;symbols&amp;quot;: [\n        &amp;quot;AAPL&amp;quot;,\n        &amp;quot;BTC-USD&amp;quot;,\n        &amp;quot;EUR/USD&amp;quot;\n    ],\n    &amp;quot;assetType&amp;quot;: &amp;quot;auto&amp;quot;,\n    &amp;quot;includeHistory&amp;quot;: false\n}&quot;))</p>
-<p>for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
-    print(item)</code></pre><input type="radio" name="t-market-quotes" id="t-market-quotes-js"><label for="t-market-quotes-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;</p>
-<p>const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
-const run = await client.actor(&#39;webdatatools/market-quotes&#39;).call({
-    &quot;symbols&quot;: [
-        &quot;AAPL&quot;,
-        &quot;BTC-USD&quot;,
-        &quot;EUR/USD&quot;
-    ],
-    &quot;assetType&quot;: &quot;auto&quot;,
-    &quot;includeHistory&quot;: false
-});
-const { items } = await client.dataset(run.defaultDatasetId).listItems();
-console.log(items);</code></pre><input type="radio" name="t-market-quotes" id="t-market-quotes-bash"><label for="t-market-quotes-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;<a href="https://api.apify.com/v2/acts/webdatatools~market-quotes/run-sync-get-dataset-items">https://api.apify.com/v2/acts/webdatatools~market-quotes/run-sync-get-dataset-items</a>&quot; <br>-H &quot;Authorization: Bearer $APIFY_TOKEN&quot; <br>-H &quot;Content-Type: application/json&quot; <br>-d &#39;{&quot;symbols&quot;:[&quot;AAPL&quot;,&quot;BTC-USD&quot;,&quot;EUR/USD&quot;],&quot;assetType&quot;:&quot;auto&quot;,&quot;includeHistory&quot;:false}&#39;</code></pre></div></p>
-<h2 id="recipes">Recipes</h2>
+<div class="tabs"><input type="radio" name="t-market-quotes" id="t-market-quotes-python" checked><label for="t-market-quotes-python">Python</label><pre class="tab-python"><code class="language-python">import json&#10;import os&#10;from apify_client import ApifyClient&#10;&#10;client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])&#10;run = client.actor(&quot;webdatatools/market-quotes&quot;).call(run_input=json.loads(&quot;{\n    \&quot;symbols\&quot;: [\n        \&quot;AAPL\&quot;,\n        \&quot;BTC-USD\&quot;,\n        \&quot;EUR/USD\&quot;\n    ],\n    \&quot;assetType\&quot;: \&quot;auto\&quot;,\n    \&quot;includeHistory\&quot;: false\n}&quot;))&#10;&#10;for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():&#10;    print(item)</code></pre><input type="radio" name="t-market-quotes" id="t-market-quotes-js"><label for="t-market-quotes-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;&#10;&#10;const client = new ApifyClient({ token: process.env.APIFY_TOKEN });&#10;const run = await client.actor(&#39;webdatatools/market-quotes&#39;).call({&#10;    &quot;symbols&quot;: [&#10;        &quot;AAPL&quot;,&#10;        &quot;BTC-USD&quot;,&#10;        &quot;EUR/USD&quot;&#10;    ],&#10;    &quot;assetType&quot;: &quot;auto&quot;,&#10;    &quot;includeHistory&quot;: false&#10;});&#10;const { items } = await client.dataset(run.defaultDatasetId).listItems();&#10;console.log(items);</code></pre><input type="radio" name="t-market-quotes" id="t-market-quotes-bash"><label for="t-market-quotes-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~market-quotes/run-sync-get-dataset-items&quot; \&#10;  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \&#10;  -H &quot;Content-Type: application/json&quot; \&#10;  -d &#39;{&quot;symbols&quot;:[&quot;AAPL&quot;,&quot;BTC-USD&quot;,&quot;EUR/USD&quot;],&quot;assetType&quot;:&quot;auto&quot;,&quot;includeHistory&quot;:false}&#39;</code></pre></div><h2 id="recipes">Recipes</h2>
 <h3 id="daily-portfolio-snapshot-into-a-spreadsheet">Daily portfolio snapshot into a spreadsheet</h3>
 <p>Create a schedule in Apify that runs the tool every weekday after the US close, and connect the Google Sheets integration to the run&#39;s dataset. Each day appends one row per holding with price and daily change — a free, always-updating portfolio log.</p>
 <h3 id="price-alerts">Price alerts</h3>
