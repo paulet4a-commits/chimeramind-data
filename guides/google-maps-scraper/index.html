@@ -12,7 +12,11 @@
 <meta property="og:description" content="Search Google Maps for any business type in any city or country and get one row per place — name, category, address, phone, website, rating, review count, coordinates and today&#39;s opening hours — as JSON, CSV or Excel.">
 <meta property="og:url" content="https://data.chimeramind.com/guides/google-maps-scraper/">
 <meta property="og:site_name" content="ChimeraMiND Data">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://data.chimeramind.com/assets/social/catalog.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Google Maps Scraper — Export Businesses, Phones, Websites and Ratings to CSV | ChimeraMiND Data — ChimeraMiND Data">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b8f6a">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -21,6 +25,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="module" src="/assets/sample-status.js"></script>
+<script type="module" src="/assets/attribution.mjs"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Google Maps Scraper — Export Businesses, Phones, Websites and Ratings to CSV","description":"Search Google Maps for any business type in any city or country and get one row per place — name, category, address, phone, website, rating, review count, coordinates and today's opening hours — as JSON, CSV or Excel.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/google-maps-scraper/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google Maps Scraper","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/google-maps-scraper","offers":{"@type":"Offer","price":"2.00","priceCurrency":"USD","description":"per 1,000 places"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Google Maps Scraper — Export Businesses, Phones, Websites and Ratings to CSV","item":"https://data.chimeramind.com/guides/google-maps-scraper/"}]}</script>
@@ -39,7 +44,7 @@
 <article class="prose"><p>Google Maps is the most complete directory of local businesses there is, but it&#39;s built for finding one coffee shop, not for exporting five hundred of them. Sales teams building lead lists, agencies auditing local SEO, analysts mapping competitors and founders sizing a market all need the same thing: <strong>every result of a Maps search as a row in a spreadsheet</strong>. This guide shows how to get exactly that in seconds, for $2 per 1,000 places.</p>
 <h2 id="what-you-get">What you get</h2>
 <p>Search for a term in a location — <code>dentist</code> in <code>Austin, TX</code>, <code>restoran</code> in <code>Kadıköy, İstanbul</code> — and every place in the results becomes one row. A real row from a recorded run:</p>
-<figure class="sample" data-sample-status="archived" data-sample-finished="2026-09-28T10:25:27.140Z" data-sample-run="VWhqRLB8OSvl4VKOn"><figcaption><span data-sample-label>Archived example · 25 days old. This is a snapshot, not current data.</span><span class="mono">run VWhqRLB8OSvl4VKOn · 2026-09-28</span></figcaption><pre><code class="language-json">{
+<figure class="sample" data-sample-status="archived" data-sample-finished="2026-09-28T10:25:27.140Z" data-sample-run="VWhqRLB8OSvl4VKOn"><figcaption><span data-sample-label>Archived example · 26 days old. This is a snapshot, not current data.</span><span class="mono">run VWhqRLB8OSvl4VKOn · 2026-09-28</span></figcaption><pre><code class="language-json">{
   &quot;placeId&quot;: &quot;ChIJdd_7e2q5yhQRgTF4--acUDI&quot;,
   &quot;cid&quot;: &quot;15480742402556248168&quot;,
   &quot;featureId&quot;: &quot;0x14cab96a7bfbdf75:0x32509ce6fb783181&quot;,

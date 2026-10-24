@@ -12,7 +12,11 @@
 <meta property="og:description" content="Turn any list of Google queries into structured organic results — position, title, real URL, snippet — localised by country and language, priced per results page with the proxy included.">
 <meta property="og:url" content="https://data.chimeramind.com/guides/google-search-results-api/">
 <meta property="og:site_name" content="ChimeraMiND Data">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://data.chimeramind.com/assets/social/catalog.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Google Search Results API — Scrape Google SERPs to JSON | ChimeraMiND Data — ChimeraMiND Data">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b8f6a">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -21,6 +25,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="module" src="/assets/sample-status.js"></script>
+<script type="module" src="/assets/attribution.mjs"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Google Search Results API — Scrape Google SERPs to JSON","description":"Turn any list of Google queries into structured organic results — position, title, real URL, snippet — localised by country and language, priced per results page with the proxy included.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/google-search-results-api/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google Search Results Scraper — SERP API","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/google-search-scraper","offers":{"@type":"Offer","price":"5.00","priceCurrency":"USD","description":"per 1,000 results"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Google Search Results API — Scrape Google SERPs to JSON","item":"https://data.chimeramind.com/guides/google-search-results-api/"}]}</script>
@@ -39,57 +44,70 @@
 <article class="prose"><p>You want to know who ranks for a keyword, feed search results into an AI agent, or build a list of websites from a set of queries. Copying results out of a browser doesn&#39;t scale, Google&#39;s official Custom Search API only searches sites you configure, and running your own scraper means fighting CAPTCHAs and proxy bans. This guide shows how to send a list of queries and get back <strong>clean JSON rows of organic results</strong>, each with a real, clickable destination URL, for $5 per 1,000 results.</p>
 <h2 id="what-you-get">What you get</h2>
 <p>One row comes back per query per results page. Each row carries the request that produced it (<code>query</code>, <code>page</code>, <code>countryCode</code>, <code>languageCode</code>, <code>device</code>, <code>searchUrl</code>) and an <code>organicResults</code> array where every listing has <code>position</code>, <code>title</code>, <code>url</code>, <code>displayedUrl</code>, <code>snippet</code>, <code>date</code> and <code>sitelinks</code>. A real row from a recorded run, trimmed:</p>
-<figure class="sample" data-sample-status="archived" data-sample-finished="2026-10-15T16:08:37.082Z" data-sample-run="aRvLonfMW0wDf3Ze9"><figcaption><span data-sample-label>Archived example · 8 days old. This is a snapshot, not current data.</span><span class="mono">run aRvLonfMW0wDf3Ze9 · 2026-10-15</span></figcaption><pre><code class="language-json">{
-  &quot;query&quot;: &quot;apify alternatives&quot;,
+<figure class="sample" data-sample-status="archived" data-sample-finished="2026-10-03T14:23:53.351Z" data-sample-run="gHUEmM0jhZBGQ1fWG"><figcaption><span data-sample-label>Archived example · 20 days old. This is a snapshot, not current data.</span><span class="mono">run gHUEmM0jhZBGQ1fWG · 2026-10-03</span></figcaption><pre><code class="language-json">{
+  &quot;query&quot;: &quot;apify web scraping&quot;,
   &quot;page&quot;: 1,
   &quot;countryCode&quot;: &quot;us&quot;,
   &quot;languageCode&quot;: &quot;en&quot;,
   &quot;device&quot;: &quot;desktop&quot;,
-  &quot;searchUrl&quot;: &quot;http://www.google.com/search?q=apify+alternatives&amp;hl=en&amp;gl=us&amp;num=10&amp;gbv=1&quot;,
-  &quot;totalResultsText&quot;: &quot;About 123 results&quot;,
+  &quot;searchUrl&quot;: &quot;http://www.google.com/search?q=apify+web+scraping&amp;hl=en&amp;gl=us&amp;num=10&amp;gbv=1&quot;,
+  &quot;totalResultsText&quot;: &quot;About 111 results&quot;,
   &quot;organicResults&quot;: [
     {
       &quot;position&quot;: 1,
-      &quot;title&quot;: &quot;apify free alterntive : r/n8n&quot;,
-      &quot;url&quot;: &quot;https://www.reddit.com/r/n8n/comments/1qu4fdg/apify_free_alterntive/&quot;,
-      &quot;displayedUrl&quot;: &quot;20+ comments  ·  8 months ago&quot;,
-      &quot;snippet&quot;: &quot;try Unipile or linkedapi.io. Another site similar to Apify is Rapid. Or you can use Python to write your own scraper.&quot;,
+      &quot;title&quot;: &quot;Apify: Marketplace of ready-to-run tools for AI&quot;,
+      &quot;url&quot;: &quot;https://apify.com&quot;,
+      &quot;displayedUrl&quot;: &quot;https://apify.com&quot;,
+      &quot;snippet&quot;: &quot;79,599 tools for your AI ... Apify is a marketplace of ready-to-run tools for AI. Get real-time web data, track competitors, generate leads, monitor social media, ...&quot;,
       &quot;date&quot;: null,
-      &quot;sitelinks&quot;: []
+      &quot;sitelinks&quot;: [
+        {
+          &quot;title&quot;: &quot;Web Scraper&quot;,
+          &quot;url&quot;: null
+        },
+        {
+          &quot;title&quot;: &quot;Pricing&quot;,
+          &quot;url&quot;: null
+        },
+        {
+          &quot;title&quot;: &quot;Apify Store&quot;,
+          &quot;url&quot;: null
+        }
+      ]
     },
     {
       &quot;position&quot;: 2,
-      &quot;title&quot;: &quot;7 best Apify alternatives I&#39;m using in 2026 (free + paid)&quot;,
-      &quot;url&quot;: &quot;https://www.gumloop.com/blog/apify-alternatives&quot;,
-      &quot;displayedUrl&quot;: &quot;https://www.gumloop.com › blog › apify-alternatives&quot;,
-      &quot;snippet&quot;: &quot;7 best Apify alternatives and competitors in 2026 · 1. Gumloop · 2. Octoparse · 3. n8n · 4. Relay.app · 5. Thunderbit · 6. Browse AI · 7. Claude.Read more&quot;,
-      &quot;date&quot;: &quot;Jan 16, 2026&quot;,
+      &quot;title&quot;: &quot;Apify&quot;,
+      &quot;url&quot;: &quot;https://github.com&quot;,
+      &quot;displayedUrl&quot;: &quot;https://github.com › apify&quot;,
+      &quot;snippet&quot;: &quot;Apify is the largest marketplace of tools for AI. Learn web scraping and automation with the free courses at Apify Academy. handle complex web crawling and  ...&quot;,
+      &quot;date&quot;: null,
       &quot;sitelinks&quot;: []
     },
     {
       &quot;position&quot;: 3,
-      &quot;title&quot;: &quot;The 12 Best Apify Alternatives for Web Scraping in 2026&quot;,
-      &quot;url&quot;: &quot;https://www.scraperapi.com/blog/apify-alternatives/&quot;,
-      &quot;displayedUrl&quot;: &quot;https://www.scraperapi.com › Blog&quot;,
-      &quot;snippet&quot;: &quot;ScraperAPI is an all-in-one solution for web scraping, offering unmatched features and ease of use compared to Apify. Automated Data Pipelines:&quot;,
+      &quot;title&quot;: &quot;From Scrapy to Apify: how a retail data agency saved 90 ...&quot;,
+      &quot;url&quot;: null,
+      &quot;displayedUrl&quot;: &quot;10+ comments  ·  4 years ago&quot;,
+      &quot;snippet&quot;: &quot;data agency saved 90% costs on web scraping. Apify Website Scraper Makes Web Scraping Way Easier With AI … scrapers convert better than popular ...&quot;,
       &quot;date&quot;: null,
       &quot;sitelinks&quot;: []
     }
   ],
-  &quot;organicCount&quot;: 9,
+  &quot;organicCount&quot;: 6,
   &quot;peopleAlsoAsk&quot;: [
     {
-      &quot;question&quot;: &quot;Which is better, Firecrawl or Apify?&quot;,
+      &quot;question&quot;: &quot;Is Apify illegal?&quot;,
       &quot;answerSnippet&quot;: null,
       &quot;url&quot;: null
     },
     {
-      &quot;question&quot;: &quot;Is it legal to use Apify?&quot;,
+      &quot;question&quot;: &quot;Is Apify a good scraper?&quot;,
       &quot;answerSnippet&quot;: null,
       &quot;url&quot;: null
     },
     {
-      &quot;question&quot;: &quot;Is there a free version of Apify?&quot;,
+      &quot;question&quot;: &quot;Is AI scraping illegal?&quot;,
       &quot;answerSnippet&quot;: null,
       &quot;url&quot;: null
     }
@@ -99,8 +117,8 @@
   &quot;ads&quot;: [],
   &quot;adCount&quot;: 0,
   &quot;knowledgePanelTitle&quot;: null,
-  &quot;htmlLength&quot;: 755768,
-  &quot;scrapedAt&quot;: &quot;2026-10-15T16:08:13.058Z&quot;,
+  &quot;htmlLength&quot;: 566853,
+  &quot;scrapedAt&quot;: &quot;2026-10-03T14:23:39.997Z&quot;,
   &quot;error&quot;: null
 }</code></pre></figure><h3 id="why-quot-real-urls-quot-matters">Why &quot;real URLs&quot; matters</h3>
 <p>Google&#39;s modern results page wraps organic links in an opaque click tracker that most scrapers pass through unresolved — you get a link you can&#39;t crawl or deduplicate. This tool deliberately requests Google&#39;s lightweight &quot;basic HTML&quot; rendering, which still exposes the destination as a decodable redirect. In live verification runs roughly nine out of ten organic results came back with a fully decoded <code>url</code>; the rest get a best-effort URL built from the breadcrumb, or <code>null</code> with <code>displayedUrl</code> still filled.</p>

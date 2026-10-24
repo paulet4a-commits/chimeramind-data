@@ -1,0 +1,1439 @@
+{
+  "version": 1,
+  "origin": "https://data.chimeramind.com",
+  "generatedAt": "2026-10-24T13:51:43.873Z",
+  "sourceCommit": "aed259d6073987b91be8523fa1b9cef5c1ee53c0",
+  "products": [
+    {
+      "product": "apify--contact-extractor",
+      "actor": "contact-extractor",
+      "title": "Email Extractor — Website Contact & Social Finder",
+      "storeUrl": "https://apify.com/webdatatools/contact-extractor",
+      "toolUrl": "https://data.chimeramind.com/tools/contact-extractor/",
+      "preferredUrl": "https://data.chimeramind.com/guides/email-extractor-from-websites/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/email-extractor-from-websites/",
+          "title": "Email Extractor for Websites — Find Emails, Phones and Social Profiles in Bulk"
+        }
+      ],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/lead/",
+          "title": "Lead research"
+        }
+      ]
+    },
+    {
+      "product": "apify--tech-stack-detector",
+      "actor": "tech-stack-detector",
+      "title": "Tech Stack Detector — Wappalyzer & BuiltWith Alternative",
+      "storeUrl": "https://apify.com/webdatatools/tech-stack-detector",
+      "toolUrl": "https://data.chimeramind.com/tools/tech-stack-detector/",
+      "preferredUrl": "https://data.chimeramind.com/guides/website-tech-stack-lookup/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/website-tech-stack-lookup/",
+          "title": "Website Tech Stack Lookup in Bulk — a Wappalyzer and BuiltWith Alternative"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--core-web-vitals-audit",
+      "actor": "core-web-vitals-audit",
+      "title": "Bulk Core Web Vitals & PageSpeed Audit",
+      "storeUrl": "https://apify.com/webdatatools/core-web-vitals-audit",
+      "toolUrl": "https://data.chimeramind.com/tools/core-web-vitals-audit/",
+      "preferredUrl": "https://data.chimeramind.com/guides/bulk-core-web-vitals-check/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/bulk-core-web-vitals-check/",
+          "title": "Bulk Core Web Vitals Check — PageSpeed Insights for Hundreds of URLs"
+        }
+      ],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/seo/",
+          "title": "SEO audit workflow"
+        }
+      ]
+    },
+    {
+      "product": "apify--package-health-checker",
+      "actor": "package-health-checker",
+      "title": "npm, PyPI & Crates.io Package Health Checker",
+      "storeUrl": "https://apify.com/webdatatools/package-health-checker",
+      "toolUrl": "https://data.chimeramind.com/tools/package-health-checker/",
+      "preferredUrl": "https://data.chimeramind.com/tools/package-health-checker/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--hiring-signals",
+      "actor": "hiring-signals",
+      "title": "Hiring Signals Scraper (Greenhouse, Lever, Ashby, Workable)",
+      "storeUrl": "https://apify.com/webdatatools/hiring-signals",
+      "toolUrl": "https://data.chimeramind.com/tools/hiring-signals/",
+      "preferredUrl": "https://data.chimeramind.com/guides/greenhouse-lever-job-board-scraper/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/greenhouse-lever-job-board-scraper/",
+          "title": "Greenhouse, Lever, Ashby and Workday Job Scraper — Company Hiring Data via Official APIs"
+        }
+      ],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/hiring/",
+          "title": "Hiring research"
+        }
+      ]
+    },
+    {
+      "product": "apify--dns-email-security-checker",
+      "actor": "dns-email-security-checker",
+      "title": "Domain DNS & Email Security Checker",
+      "storeUrl": "https://apify.com/webdatatools/dns-email-security-checker",
+      "toolUrl": "https://data.chimeramind.com/tools/dns-email-security-checker/",
+      "preferredUrl": "https://data.chimeramind.com/tools/dns-email-security-checker/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--subdomain-finder",
+      "actor": "subdomain-finder",
+      "title": "Subdomain Finder (Certificate Transparency)",
+      "storeUrl": "https://apify.com/webdatatools/subdomain-finder",
+      "toolUrl": "https://data.chimeramind.com/tools/subdomain-finder/",
+      "preferredUrl": "https://data.chimeramind.com/tools/subdomain-finder/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--youtube-channel-videos",
+      "actor": "youtube-channel-videos",
+      "title": "YouTube Channel Latest Videos (RSS, no API key)",
+      "storeUrl": "https://apify.com/webdatatools/youtube-channel-videos",
+      "toolUrl": "https://data.chimeramind.com/tools/youtube-channel-videos/",
+      "preferredUrl": "https://data.chimeramind.com/tools/youtube-channel-videos/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--sitemap-extractor",
+      "actor": "sitemap-extractor",
+      "title": "Sitemap URL Extractor & Change Monitor",
+      "storeUrl": "https://apify.com/webdatatools/sitemap-extractor",
+      "toolUrl": "https://data.chimeramind.com/tools/sitemap-extractor/",
+      "preferredUrl": "https://data.chimeramind.com/tools/sitemap-extractor/",
+      "starters": [],
+      "guides": [],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/rag/",
+          "title": "RAG knowledge pipeline"
+        },
+        {
+          "url": "https://data.chimeramind.com/workflows/seo/",
+          "title": "SEO audit workflow"
+        }
+      ]
+    },
+    {
+      "product": "apify--structured-data-extractor",
+      "actor": "structured-data-extractor",
+      "title": "Structured Data & JSON-LD Extractor (Schema.org, Open Graph)",
+      "storeUrl": "https://apify.com/webdatatools/structured-data-extractor",
+      "toolUrl": "https://data.chimeramind.com/tools/structured-data-extractor/",
+      "preferredUrl": "https://data.chimeramind.com/tools/structured-data-extractor/",
+      "starters": [],
+      "guides": [],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/seo/",
+          "title": "SEO audit workflow"
+        }
+      ]
+    },
+    {
+      "product": "apify--wayback-page-diff",
+      "actor": "wayback-page-diff",
+      "title": "Wayback Machine Snapshot & Page Change Tracker",
+      "storeUrl": "https://apify.com/webdatatools/wayback-page-diff",
+      "toolUrl": "https://data.chimeramind.com/tools/wayback-page-diff/",
+      "preferredUrl": "https://data.chimeramind.com/tools/wayback-page-diff/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--app-store-lookup",
+      "actor": "app-store-lookup",
+      "title": "App Store (iOS) App Metadata, Ratings & Top Charts Lookup",
+      "storeUrl": "https://apify.com/webdatatools/app-store-lookup",
+      "toolUrl": "https://data.chimeramind.com/tools/app-store-lookup/",
+      "preferredUrl": "https://data.chimeramind.com/tools/app-store-lookup/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--press-release-monitor",
+      "actor": "press-release-monitor",
+      "title": "Press Release Monitor: PR Newswire, BusinessWire, GlobeNewswire",
+      "storeUrl": "https://apify.com/webdatatools/press-release-monitor",
+      "toolUrl": "https://data.chimeramind.com/tools/press-release-monitor/",
+      "preferredUrl": "https://data.chimeramind.com/tools/press-release-monitor/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--vscode-marketplace-extensions",
+      "actor": "vscode-marketplace-extensions",
+      "title": "VS Code Marketplace Extension Scraper (installs, ratings)",
+      "storeUrl": "https://apify.com/webdatatools/vscode-marketplace-extensions",
+      "toolUrl": "https://data.chimeramind.com/tools/vscode-marketplace-extensions/",
+      "preferredUrl": "https://data.chimeramind.com/tools/vscode-marketplace-extensions/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--github-repo-health",
+      "actor": "github-repo-health",
+      "title": "GitHub Repository Health & Activity Report",
+      "storeUrl": "https://apify.com/webdatatools/github-repo-health",
+      "toolUrl": "https://data.chimeramind.com/tools/github-repo-health/",
+      "preferredUrl": "https://data.chimeramind.com/tools/github-repo-health/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--crossref-doi-lookup",
+      "actor": "crossref-doi-lookup",
+      "title": "CrossRef DOI & Citation Metadata Lookup",
+      "storeUrl": "https://apify.com/webdatatools/crossref-doi-lookup",
+      "toolUrl": "https://data.chimeramind.com/tools/crossref-doi-lookup/",
+      "preferredUrl": "https://data.chimeramind.com/tools/crossref-doi-lookup/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--ical-calendar-extractor",
+      "actor": "ical-calendar-extractor",
+      "title": "iCal / ICS Calendar Feed to Events Extractor",
+      "storeUrl": "https://apify.com/webdatatools/ical-calendar-extractor",
+      "toolUrl": "https://data.chimeramind.com/tools/ical-calendar-extractor/",
+      "preferredUrl": "https://data.chimeramind.com/tools/ical-calendar-extractor/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--chrome-web-store-extensions",
+      "actor": "chrome-web-store-extensions",
+      "title": "Chrome Web Store Extension Scraper (installs, ratings)",
+      "storeUrl": "https://apify.com/webdatatools/chrome-web-store-extensions",
+      "toolUrl": "https://data.chimeramind.com/tools/chrome-web-store-extensions/",
+      "preferredUrl": "https://data.chimeramind.com/tools/chrome-web-store-extensions/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--shopify-products-scraper",
+      "actor": "shopify-products-scraper",
+      "title": "Shopify Store Products Scraper",
+      "storeUrl": "https://apify.com/webdatatools/shopify-products-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/shopify-products-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/shopify-products-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--domain-security-audit",
+      "actor": "domain-security-audit",
+      "title": "Domain Security Audit (TLS, HTTP headers, redirects, robots)",
+      "storeUrl": "https://apify.com/webdatatools/domain-security-audit",
+      "toolUrl": "https://data.chimeramind.com/tools/domain-security-audit/",
+      "preferredUrl": "https://data.chimeramind.com/guides/domain-security-audit/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/domain-security-audit/",
+          "title": "Bulk Domain Security Check — SSL Expiry, Security Headers, HTTPS Redirects"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--website-to-markdown",
+      "actor": "website-to-markdown",
+      "title": "Website to Markdown — Content Crawler for LLM & RAG",
+      "storeUrl": "https://apify.com/webdatatools/website-to-markdown",
+      "toolUrl": "https://data.chimeramind.com/tools/website-to-markdown/",
+      "preferredUrl": "https://data.chimeramind.com/guides/website-to-markdown/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/website-to-markdown/",
+          "title": "How to Convert a Website to Markdown for LLMs and RAG"
+        }
+      ],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/rag/",
+          "title": "RAG knowledge pipeline"
+        }
+      ]
+    },
+    {
+      "product": "apify--yc-companies-scraper",
+      "actor": "yc-companies-scraper",
+      "title": "Y Combinator Companies & Founders Scraper",
+      "storeUrl": "https://apify.com/webdatatools/yc-companies-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/yc-companies-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/yc-companies-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--article-extractor",
+      "actor": "article-extractor",
+      "title": "Article & News Extractor (clean text, author, date, markdown)",
+      "storeUrl": "https://apify.com/webdatatools/article-extractor",
+      "toolUrl": "https://data.chimeramind.com/tools/article-extractor/",
+      "preferredUrl": "https://data.chimeramind.com/tools/article-extractor/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--youtube-comments-scraper",
+      "actor": "youtube-comments-scraper",
+      "title": "YouTube Comments Scraper — Comments & Replies",
+      "storeUrl": "https://apify.com/webdatatools/youtube-comments-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/youtube-comments-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/youtube-comments-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-search-scraper",
+      "actor": "google-search-scraper",
+      "title": "Google Search Results Scraper — SERP API",
+      "storeUrl": "https://apify.com/webdatatools/google-search-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-search-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/google-search-results-api/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/google-search-results-api/",
+          "title": "Google Search Results API — Scrape Google SERPs to JSON"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--wikidata-entity-enrichment",
+      "actor": "wikidata-entity-enrichment",
+      "title": "Wikidata Entity & Company Enrichment (facts, IDs, links)",
+      "storeUrl": "https://apify.com/webdatatools/wikidata-entity-enrichment",
+      "toolUrl": "https://data.chimeramind.com/tools/wikidata-entity-enrichment/",
+      "preferredUrl": "https://data.chimeramind.com/tools/wikidata-entity-enrichment/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--openfda-recall-monitor",
+      "actor": "openfda-recall-monitor",
+      "title": "FDA Recalls & Adverse Events Monitor (openFDA)",
+      "storeUrl": "https://apify.com/webdatatools/openfda-recall-monitor",
+      "toolUrl": "https://data.chimeramind.com/tools/openfda-recall-monitor/",
+      "preferredUrl": "https://data.chimeramind.com/tools/openfda-recall-monitor/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--seo-page-audit",
+      "actor": "seo-page-audit",
+      "title": "On-Page SEO Audit",
+      "storeUrl": "https://apify.com/webdatatools/seo-page-audit",
+      "toolUrl": "https://data.chimeramind.com/tools/seo-page-audit/",
+      "preferredUrl": "https://data.chimeramind.com/guides/on-page-seo-audit/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/on-page-seo-audit/",
+          "title": "Bulk On-Page SEO Audit — Check Titles, Meta Tags and Headings for Any URL List"
+        }
+      ],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/seo/",
+          "title": "SEO audit workflow"
+        }
+      ]
+    },
+    {
+      "product": "apify--google-news-scraper",
+      "actor": "google-news-scraper",
+      "title": "Google News Scraper (Keyword, Topic, Site, Date Range)",
+      "storeUrl": "https://apify.com/webdatatools/google-news-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-news-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-news-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--youtube-channel-scraper",
+      "actor": "youtube-channel-scraper",
+      "title": "YouTube Channel Scraper (videos, shorts, live)",
+      "storeUrl": "https://apify.com/webdatatools/youtube-channel-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/youtube-channel-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/start/youtube-channel-inventory/",
+      "starters": [
+        {
+          "url": "https://data.chimeramind.com/start/youtube-channel-inventory/",
+          "title": "Export a YouTube channel inventory"
+        },
+        {
+          "url": "https://data.chimeramind.com/start/youtube-upload-monitor/",
+          "title": "Build a repeatable upload check"
+        }
+      ],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/youtube-channel-inventory/",
+          "title": "Export YouTube Channel Videos to CSV and Track New Uploads"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--youtube-search-scraper",
+      "actor": "youtube-search-scraper",
+      "title": "YouTube Search Results Scraper (videos, channels, no API key)",
+      "storeUrl": "https://apify.com/webdatatools/youtube-search-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/youtube-search-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/youtube-search-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--podcast-lookup",
+      "actor": "podcast-lookup",
+      "title": "Apple Podcasts Lookup & Episodes Scraper",
+      "storeUrl": "https://apify.com/webdatatools/podcast-lookup",
+      "toolUrl": "https://data.chimeramind.com/tools/podcast-lookup/",
+      "preferredUrl": "https://data.chimeramind.com/tools/podcast-lookup/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--email-validator",
+      "actor": "email-validator",
+      "title": "Email Validator & Verifier — Bulk Email Check",
+      "storeUrl": "https://apify.com/webdatatools/email-validator",
+      "toolUrl": "https://data.chimeramind.com/tools/email-validator/",
+      "preferredUrl": "https://data.chimeramind.com/guides/bulk-email-validator/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/bulk-email-validator/",
+          "title": "Bulk Email Validator — Check Syntax, MX Records and Disposable Domains"
+        }
+      ],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/lead/",
+          "title": "Lead research"
+        }
+      ]
+    },
+    {
+      "product": "apify--youtube-video-details",
+      "actor": "youtube-video-details",
+      "title": "YouTube Video Details Scraper (views, likes, description, tags)",
+      "storeUrl": "https://apify.com/webdatatools/youtube-video-details",
+      "toolUrl": "https://data.chimeramind.com/tools/youtube-video-details/",
+      "preferredUrl": "https://data.chimeramind.com/tools/youtube-video-details/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--overpass-poi-extractor",
+      "actor": "overpass-poi-extractor",
+      "title": "OpenStreetMap POI Extractor (Overpass API: shops, amenities)",
+      "storeUrl": "https://apify.com/webdatatools/overpass-poi-extractor",
+      "toolUrl": "https://data.chimeramind.com/tools/overpass-poi-extractor/",
+      "preferredUrl": "https://data.chimeramind.com/tools/overpass-poi-extractor/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--ai-web-search",
+      "actor": "ai-web-search",
+      "title": "AI Web Search & Read: Google results as clean Markdown",
+      "storeUrl": "https://apify.com/webdatatools/ai-web-search",
+      "toolUrl": "https://data.chimeramind.com/tools/ai-web-search/",
+      "preferredUrl": "https://data.chimeramind.com/tools/ai-web-search/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--company-360",
+      "actor": "company-360",
+      "title": "Company 360: full company profile from a domain",
+      "storeUrl": "https://apify.com/webdatatools/company-360",
+      "toolUrl": "https://data.chimeramind.com/tools/company-360/",
+      "preferredUrl": "https://data.chimeramind.com/guides/company-data-from-domain/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/company-data-from-domain/",
+          "title": "Company Data from a Domain — Contacts, Tech Stack, Firmographics and Hiring in One Row"
+        }
+      ],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/lead/",
+          "title": "Lead research"
+        }
+      ]
+    },
+    {
+      "product": "apify--bluesky-scraper",
+      "actor": "bluesky-scraper",
+      "title": "Bluesky Post, Search & Profile Scraper",
+      "storeUrl": "https://apify.com/webdatatools/bluesky-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/bluesky-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/bluesky-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-play-scraper",
+      "actor": "google-play-scraper",
+      "title": "Google Play Scraper",
+      "storeUrl": "https://apify.com/webdatatools/google-play-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-play-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-play-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--github-trending-scraper",
+      "actor": "github-trending-scraper",
+      "title": "GitHub Trending Repositories Scraper",
+      "storeUrl": "https://apify.com/webdatatools/github-trending-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/github-trending-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/github-trending-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--hacker-news-scraper",
+      "actor": "hacker-news-scraper",
+      "title": "Hacker News Search & Front Page Scraper",
+      "storeUrl": "https://apify.com/webdatatools/hacker-news-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/hacker-news-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/hacker-news-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--domain-whois-rdap",
+      "actor": "domain-whois-rdap",
+      "title": "Bulk Domain WHOIS & RDAP Lookup",
+      "storeUrl": "https://apify.com/webdatatools/domain-whois-rdap",
+      "toolUrl": "https://data.chimeramind.com/tools/domain-whois-rdap/",
+      "preferredUrl": "https://data.chimeramind.com/tools/domain-whois-rdap/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--market-quotes",
+      "actor": "market-quotes",
+      "title": "Stock, Crypto & FX Quotes",
+      "storeUrl": "https://apify.com/webdatatools/market-quotes",
+      "toolUrl": "https://data.chimeramind.com/tools/market-quotes/",
+      "preferredUrl": "https://data.chimeramind.com/guides/stock-crypto-fx-quotes-api/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/stock-crypto-fx-quotes-api/",
+          "title": "Free Stock, Crypto and FX Quotes API Without an API Key"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--substack-scraper",
+      "actor": "substack-scraper",
+      "title": "Substack Publication & Posts Scraper",
+      "storeUrl": "https://apify.com/webdatatools/substack-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/substack-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/substack-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--telegram-channel-scraper",
+      "actor": "telegram-channel-scraper",
+      "title": "Telegram Channel Posts Scraper",
+      "storeUrl": "https://apify.com/webdatatools/telegram-channel-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/telegram-channel-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/telegram-channel-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--stackexchange-scraper",
+      "actor": "stackexchange-scraper",
+      "title": "Stack Overflow & Stack Exchange Q&A Scraper",
+      "storeUrl": "https://apify.com/webdatatools/stackexchange-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/stackexchange-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/stackexchange-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--remote-jobs-aggregator",
+      "actor": "remote-jobs-aggregator",
+      "title": "Remote Jobs Aggregator (RemoteOK, WWR, Hacker News)",
+      "storeUrl": "https://apify.com/webdatatools/remote-jobs-aggregator",
+      "toolUrl": "https://data.chimeramind.com/tools/remote-jobs-aggregator/",
+      "preferredUrl": "https://data.chimeramind.com/tools/remote-jobs-aggregator/",
+      "starters": [],
+      "guides": [],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/hiring/",
+          "title": "Hiring research"
+        }
+      ]
+    },
+    {
+      "product": "apify--css-selector-extractor",
+      "actor": "css-selector-extractor",
+      "title": "Web Scraper — CSS Selector & Data Extractor",
+      "storeUrl": "https://apify.com/webdatatools/css-selector-extractor",
+      "toolUrl": "https://data.chimeramind.com/tools/css-selector-extractor/",
+      "preferredUrl": "https://data.chimeramind.com/start/website-fields/",
+      "starters": [
+        {
+          "url": "https://data.chimeramind.com/start/website-fields/",
+          "title": "Turn website fields into a spreadsheet"
+        }
+      ],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/css-selector-extractor/",
+          "title": "Extract Data from a Website with CSS Selectors — No Scraper Code Needed"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--app-store-reviews-scraper",
+      "actor": "app-store-reviews-scraper",
+      "title": "App Store Reviews Scraper",
+      "storeUrl": "https://apify.com/webdatatools/app-store-reviews-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/app-store-reviews-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/app-store-reviews-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-play-reviews-scraper",
+      "actor": "google-play-reviews-scraper",
+      "title": "Google Play Reviews Scraper",
+      "storeUrl": "https://apify.com/webdatatools/google-play-reviews-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-play-reviews-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-play-reviews-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--youtube-transcript-scraper",
+      "actor": "youtube-transcript-scraper",
+      "title": "YouTube Transcript Scraper",
+      "storeUrl": "https://apify.com/webdatatools/youtube-transcript-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/youtube-transcript-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/youtube-transcript-api/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/youtube-transcript-api/",
+          "title": "YouTube Transcript API — Get Video Captions and Timestamps as JSON, No API Key"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-trends-scraper",
+      "actor": "google-trends-scraper",
+      "title": "Google Trends Scraper",
+      "storeUrl": "https://apify.com/webdatatools/google-trends-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-trends-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-trends-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--website-screenshot",
+      "actor": "website-screenshot",
+      "title": "Website Screenshot Generator",
+      "storeUrl": "https://apify.com/webdatatools/website-screenshot",
+      "toolUrl": "https://data.chimeramind.com/tools/website-screenshot/",
+      "preferredUrl": "https://data.chimeramind.com/tools/website-screenshot/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--linkedin-jobs-scraper",
+      "actor": "linkedin-jobs-scraper",
+      "title": "LinkedIn Jobs Scraper",
+      "storeUrl": "https://apify.com/webdatatools/linkedin-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/linkedin-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/linkedin-jobs-scraper/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/linkedin-jobs-scraper/",
+          "title": "Scrape LinkedIn Jobs Without Login — Export Job Listings to JSON, CSV or Excel"
+        }
+      ],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/hiring/",
+          "title": "Hiring research"
+        }
+      ]
+    },
+    {
+      "product": "apify--youtube-shorts-scraper",
+      "actor": "youtube-shorts-scraper",
+      "title": "YouTube Shorts Scraper",
+      "storeUrl": "https://apify.com/webdatatools/youtube-shorts-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/youtube-shorts-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/youtube-shorts-scraper/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/youtube-shorts-scraper/",
+          "title": "How to Scrape YouTube Shorts — Channels, Hashtags and Search to JSON"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--pinterest-pins-scraper",
+      "actor": "pinterest-pins-scraper",
+      "title": "Pinterest Pins Scraper",
+      "storeUrl": "https://apify.com/webdatatools/pinterest-pins-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/pinterest-pins-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/pinterest-pins-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--seek-jobs-scraper",
+      "actor": "seek-jobs-scraper",
+      "title": "Seek Jobs Scraper (Australia & New Zealand)",
+      "storeUrl": "https://apify.com/webdatatools/seek-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/seek-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/seek-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--dice-jobs-scraper",
+      "actor": "dice-jobs-scraper",
+      "title": "Dice Jobs Scraper",
+      "storeUrl": "https://apify.com/webdatatools/dice-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/dice-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/dice-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--workday-jobs-scraper",
+      "actor": "workday-jobs-scraper",
+      "title": "Workday Jobs Scraper",
+      "storeUrl": "https://apify.com/webdatatools/workday-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/workday-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/workday-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--greenhouse-jobs-scraper",
+      "actor": "greenhouse-jobs-scraper",
+      "title": "Greenhouse Jobs Scraper",
+      "storeUrl": "https://apify.com/webdatatools/greenhouse-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/greenhouse-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/greenhouse-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--lever-jobs-scraper",
+      "actor": "lever-jobs-scraper",
+      "title": "Lever Jobs Scraper",
+      "storeUrl": "https://apify.com/webdatatools/lever-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/lever-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/lever-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--ashby-jobs-scraper",
+      "actor": "ashby-jobs-scraper",
+      "title": "Ashby Jobs Scraper",
+      "storeUrl": "https://apify.com/webdatatools/ashby-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/ashby-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/ashby-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--smartrecruiters-jobs-scraper",
+      "actor": "smartrecruiters-jobs-scraper",
+      "title": "SmartRecruiters Jobs Scraper",
+      "storeUrl": "https://apify.com/webdatatools/smartrecruiters-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/smartrecruiters-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/smartrecruiters-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-ads-transparency-scraper",
+      "actor": "google-ads-transparency-scraper",
+      "title": "Google Ads Transparency Scraper",
+      "storeUrl": "https://apify.com/webdatatools/google-ads-transparency-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-ads-transparency-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-ads-transparency-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--career-site-jobs-api",
+      "actor": "career-site-jobs-api",
+      "title": "Career Site Jobs API (Greenhouse, Lever, Ashby, Workday +1)",
+      "storeUrl": "https://apify.com/webdatatools/career-site-jobs-api",
+      "toolUrl": "https://data.chimeramind.com/tools/career-site-jobs-api/",
+      "preferredUrl": "https://data.chimeramind.com/tools/career-site-jobs-api/",
+      "starters": [],
+      "guides": [],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/hiring/",
+          "title": "Hiring research"
+        }
+      ]
+    },
+    {
+      "product": "apify--google-maps-scraper",
+      "actor": "google-maps-scraper",
+      "title": "Google Maps Scraper",
+      "storeUrl": "https://apify.com/webdatatools/google-maps-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-maps-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/google-maps-scraper/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/google-maps-scraper/",
+          "title": "Google Maps Scraper — Export Businesses, Phones, Websites and Ratings to CSV"
+        }
+      ],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/lead/",
+          "title": "Lead research"
+        }
+      ]
+    },
+    {
+      "product": "apify--bulk-image-downloader",
+      "actor": "bulk-image-downloader",
+      "title": "Bulk Image Downloader",
+      "storeUrl": "https://apify.com/webdatatools/bulk-image-downloader",
+      "toolUrl": "https://data.chimeramind.com/tools/bulk-image-downloader/",
+      "preferredUrl": "https://data.chimeramind.com/tools/bulk-image-downloader/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--keyword-suggestions-scraper",
+      "actor": "keyword-suggestions-scraper",
+      "title": "Keyword Suggestions Scraper (Google, YouTube, Amazon, Bing)",
+      "storeUrl": "https://apify.com/webdatatools/keyword-suggestions-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/keyword-suggestions-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/keyword-suggestions-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--autoscout24-scraper",
+      "actor": "autoscout24-scraper",
+      "title": "AutoScout24 Scraper",
+      "storeUrl": "https://apify.com/webdatatools/autoscout24-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/autoscout24-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/autoscout24-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--rightmove-scraper",
+      "actor": "rightmove-scraper",
+      "title": "Rightmove Scraper",
+      "storeUrl": "https://apify.com/webdatatools/rightmove-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/rightmove-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/rightmove-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--bilibili-scraper",
+      "actor": "bilibili-scraper",
+      "title": "Bilibili Scraper (Videos, Search, Popular)",
+      "storeUrl": "https://apify.com/webdatatools/bilibili-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/bilibili-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/bilibili-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--meetup-events-scraper",
+      "actor": "meetup-events-scraper",
+      "title": "Meetup Events Scraper (Search by Keyword & City)",
+      "storeUrl": "https://apify.com/webdatatools/meetup-events-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/meetup-events-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/meetup-events-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--mastodon-scraper",
+      "actor": "mastodon-scraper",
+      "title": "Mastodon Scraper (Hashtags, Accounts, Trending)",
+      "storeUrl": "https://apify.com/webdatatools/mastodon-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/mastodon-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/mastodon-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--aliexpress-scraper",
+      "actor": "aliexpress-scraper",
+      "title": "AliExpress Scraper (Search Products & Prices)",
+      "storeUrl": "https://apify.com/webdatatools/aliexpress-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/aliexpress-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/aliexpress-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--yandex-maps-scraper",
+      "actor": "yandex-maps-scraper",
+      "title": "Yandex Maps Scraper (Places, Ratings, Phones)",
+      "storeUrl": "https://apify.com/webdatatools/yandex-maps-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/yandex-maps-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/yandex-maps-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--craigslist-scraper",
+      "actor": "craigslist-scraper",
+      "title": "Craigslist Scraper (Listings, Prices, Locations)",
+      "storeUrl": "https://apify.com/webdatatools/craigslist-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/craigslist-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/craigslist-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--wellfound-jobs-scraper",
+      "actor": "wellfound-jobs-scraper",
+      "title": "Wellfound Jobs Scraper (AngelList Startup Jobs)",
+      "storeUrl": "https://apify.com/webdatatools/wellfound-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/wellfound-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/wellfound-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--eventbrite-scraper",
+      "actor": "eventbrite-scraper",
+      "title": "Eventbrite Scraper (Events by Keyword & City)",
+      "storeUrl": "https://apify.com/webdatatools/eventbrite-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/eventbrite-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/eventbrite-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-flights-scraper",
+      "actor": "google-flights-scraper",
+      "title": "Google Flights Scraper (Prices, Airlines, Stops)",
+      "storeUrl": "https://apify.com/webdatatools/google-flights-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-flights-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-flights-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-hotels-scraper",
+      "actor": "google-hotels-scraper",
+      "title": "Google Hotels Scraper (Prices, Ratings, Reviews)",
+      "storeUrl": "https://apify.com/webdatatools/google-hotels-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-hotels-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-hotels-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--jobstreet-scraper",
+      "actor": "jobstreet-scraper",
+      "title": "JobStreet Scraper (Malaysia, Singapore, PH, ID + JobsDB)",
+      "storeUrl": "https://apify.com/webdatatools/jobstreet-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/jobstreet-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/jobstreet-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--lazada-scraper",
+      "actor": "lazada-scraper",
+      "title": "Lazada Scraper (Products, Prices, Sold, Ratings)",
+      "storeUrl": "https://apify.com/webdatatools/lazada-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/lazada-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/lazada-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--kleinanzeigen-scraper",
+      "actor": "kleinanzeigen-scraper",
+      "title": "Kleinanzeigen Scraper (Ads, Prices, Locations)",
+      "storeUrl": "https://apify.com/webdatatools/kleinanzeigen-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/kleinanzeigen-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/kleinanzeigen-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--redfin-scraper",
+      "actor": "redfin-scraper",
+      "title": "Redfin Scraper (Homes for Sale, Prices, Details)",
+      "storeUrl": "https://apify.com/webdatatools/redfin-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/redfin-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/redfin-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--infojobs-scraper",
+      "actor": "infojobs-scraper",
+      "title": "InfoJobs Scraper (Spain Jobs, Salaries, Companies)",
+      "storeUrl": "https://apify.com/webdatatools/infojobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/infojobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/infojobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--trustpilot-reviews-scraper",
+      "actor": "trustpilot-reviews-scraper",
+      "title": "Trustpilot Reviews Scraper (Ratings, Replies, No Login)",
+      "storeUrl": "https://apify.com/webdatatools/trustpilot-reviews-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/trustpilot-reviews-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/trustpilot-reviews-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--booking-scraper",
+      "actor": "booking-scraper",
+      "title": "Booking.com Scraper (Hotel Prices, Ratings, Availability)",
+      "storeUrl": "https://apify.com/webdatatools/booking-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/booking-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/booking-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--x-tweet-scraper",
+      "actor": "x-tweet-scraper",
+      "title": "X Tweet Scraper (Twitter Posts by URL, No Login)",
+      "storeUrl": "https://apify.com/webdatatools/x-tweet-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/x-tweet-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/x-tweet-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--trendyol-scraper",
+      "actor": "trendyol-scraper",
+      "title": "Trendyol Scraper (Turkey Products, Prices, Ratings)",
+      "storeUrl": "https://apify.com/webdatatools/trendyol-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/trendyol-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/trendyol-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--llms-txt-generator",
+      "actor": "llms-txt-generator",
+      "title": "llms.txt Generator (Website to llms.txt & llms-full.txt)",
+      "storeUrl": "https://apify.com/webdatatools/llms-txt-generator",
+      "toolUrl": "https://data.chimeramind.com/tools/llms-txt-generator/",
+      "preferredUrl": "https://data.chimeramind.com/guides/llms-txt-generator/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/llms-txt-generator/",
+          "title": "llms.txt Generator — Create llms.txt and llms-full.txt for Any Website"
+        }
+      ],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/rag/",
+          "title": "RAG knowledge pipeline"
+        }
+      ]
+    },
+    {
+      "product": "apify--pdf-to-markdown",
+      "actor": "pdf-to-markdown",
+      "title": "PDF to Markdown Converter (Text, Headings, Metadata)",
+      "storeUrl": "https://apify.com/webdatatools/pdf-to-markdown",
+      "toolUrl": "https://data.chimeramind.com/tools/pdf-to-markdown/",
+      "preferredUrl": "https://data.chimeramind.com/tools/pdf-to-markdown/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--rag-text-chunker",
+      "actor": "rag-text-chunker",
+      "title": "RAG Text Chunker (Markdown to Chunks, Token Counts)",
+      "storeUrl": "https://apify.com/webdatatools/rag-text-chunker",
+      "toolUrl": "https://data.chimeramind.com/tools/rag-text-chunker/",
+      "preferredUrl": "https://data.chimeramind.com/tools/rag-text-chunker/",
+      "starters": [],
+      "guides": [],
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/rag/",
+          "title": "RAG knowledge pipeline"
+        }
+      ]
+    },
+    {
+      "product": "apify--zillow-scraper",
+      "actor": "zillow-scraper",
+      "title": "Zillow Scraper (Homes for Sale, Rent & Sold, Zestimates)",
+      "storeUrl": "https://apify.com/webdatatools/zillow-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/zillow-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/zillow-scraper/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/zillow-scraper/",
+          "title": "Zillow Scraper — Export Homes for Sale, Rentals and Recently Sold Listings"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--airbnb-scraper",
+      "actor": "airbnb-scraper",
+      "title": "Airbnb Scraper (Listings, Prices, Ratings, Coordinates)",
+      "storeUrl": "https://apify.com/webdatatools/airbnb-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/airbnb-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/airbnb-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--tiktok-profile-scraper",
+      "actor": "tiktok-profile-scraper",
+      "title": "TikTok Profile Scraper (Followers, Likes, Bio, Video Stats)",
+      "storeUrl": "https://apify.com/webdatatools/tiktok-profile-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/tiktok-profile-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/tiktok-profile-scraper/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/tiktok-profile-scraper/",
+          "title": "TikTok Profile Scraper — Followers, Likes and Video Stats in Bulk"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--stepstone-scraper",
+      "actor": "stepstone-scraper",
+      "title": "StepStone Scraper (Germany, Austria, Belgium Jobs)",
+      "storeUrl": "https://apify.com/webdatatools/stepstone-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/stepstone-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/stepstone-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--zillow-detail-scraper",
+      "actor": "zillow-detail-scraper",
+      "title": "Zillow Home Details Scraper (Description, Photos, History)",
+      "storeUrl": "https://apify.com/webdatatools/zillow-detail-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/zillow-detail-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/zillow-detail-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--naukri-jobs-scraper",
+      "actor": "naukri-jobs-scraper",
+      "title": "Naukri Jobs Scraper (Salary, Skills, Company Rating)",
+      "storeUrl": "https://apify.com/webdatatools/naukri-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/naukri-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/naukri-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--2gis-places-scraper",
+      "actor": "2gis-places-scraper",
+      "title": "2GIS Places Scraper (Phones, Websites, Ratings, Hours)",
+      "storeUrl": "https://apify.com/webdatatools/2gis-places-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/2gis-places-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/2gis-places-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--crypto-fear-greed-index",
+      "actor": "crypto-fear-greed-index",
+      "title": "Crypto Fear & Greed Index (Daily History, Bitcoin Sentiment)",
+      "storeUrl": "https://apify.com/webdatatools/crypto-fear-greed-index",
+      "toolUrl": "https://data.chimeramind.com/tools/crypto-fear-greed-index/",
+      "preferredUrl": "https://data.chimeramind.com/tools/crypto-fear-greed-index/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--dexscreener-scraper",
+      "actor": "dexscreener-scraper",
+      "title": "DexScreener Scraper (DEX Pairs, Prices, Liquidity, Boosts)",
+      "storeUrl": "https://apify.com/webdatatools/dexscreener-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/dexscreener-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/dexscreener-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--yahoo-finance-scraper",
+      "actor": "yahoo-finance-scraper",
+      "title": "Yahoo Finance Scraper (Quotes, Fundamentals, Financials, News)",
+      "storeUrl": "https://apify.com/webdatatools/yahoo-finance-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/yahoo-finance-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/yahoo-finance-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--polymarket-scraper",
+      "actor": "polymarket-scraper",
+      "title": "Polymarket Scraper (Prediction Markets, Odds, Volume)",
+      "storeUrl": "https://apify.com/webdatatools/polymarket-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/polymarket-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/polymarket-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--stocktwits-scraper",
+      "actor": "stocktwits-scraper",
+      "title": "StockTwits Scraper (Messages, Sentiment, Trending)",
+      "storeUrl": "https://apify.com/webdatatools/stocktwits-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/stocktwits-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/stocktwits-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--economic-calendar-scraper",
+      "actor": "economic-calendar-scraper",
+      "title": "Economic Calendar Scraper (Forex Events, Impact, Forecasts)",
+      "storeUrl": "https://apify.com/webdatatools/economic-calendar-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/economic-calendar-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/economic-calendar-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-maps-email-extractor",
+      "actor": "google-maps-email-extractor",
+      "title": "Google Maps Email Extractor: Only Places With E-mail",
+      "storeUrl": "https://apify.com/webdatatools/google-maps-email-extractor",
+      "toolUrl": "https://data.chimeramind.com/tools/google-maps-email-extractor/",
+      "preferredUrl": "https://data.chimeramind.com/guides/google-maps-email-extractor/",
+      "starters": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/google-maps-email-extractor/",
+          "title": "How to Get Emails from Google Maps — Export Business Leads to CSV or JSON"
+        }
+      ],
+      "workflows": []
+    },
+    {
+      "product": "apify--css-selector-extractor-js",
+      "actor": "css-selector-extractor-js",
+      "title": "CSS Selector Extractor for JavaScript Sites (Browser)",
+      "storeUrl": "https://apify.com/webdatatools/css-selector-extractor-js",
+      "toolUrl": "https://data.chimeramind.com/tools/css-selector-extractor-js/",
+      "preferredUrl": "https://data.chimeramind.com/tools/css-selector-extractor-js/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--tiktok-comments-scraper",
+      "actor": "tiktok-comments-scraper",
+      "title": "TikTok Comments Scraper (Video Comments & Replies)",
+      "storeUrl": "https://apify.com/webdatatools/tiktok-comments-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/tiktok-comments-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/tiktok-comments-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--tiktok-video-scraper",
+      "actor": "tiktok-video-scraper",
+      "title": "TikTok Video Scraper (Views, Likes, Caption, Music)",
+      "storeUrl": "https://apify.com/webdatatools/tiktok-video-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/tiktok-video-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/tiktok-video-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--amazon-search-scraper",
+      "actor": "amazon-search-scraper",
+      "title": "Amazon Search Scraper (Results, Prices, Ratings, Ads)",
+      "storeUrl": "https://apify.com/webdatatools/amazon-search-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/amazon-search-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/amazon-search-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--linkedin-company-scraper",
+      "actor": "linkedin-company-scraper",
+      "title": "LinkedIn Company Scraper (Public Company Pages)",
+      "storeUrl": "https://apify.com/webdatatools/linkedin-company-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/linkedin-company-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/linkedin-company-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--reddit-scraper",
+      "actor": "reddit-scraper",
+      "title": "Reddit Subreddit & Search Scraper (Posts, Scores)",
+      "storeUrl": "https://apify.com/webdatatools/reddit-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/reddit-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/reddit-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    }
+  ],
+  "note": "Content routes only. Fetch the selected page before making claims. A route is not runtime, traffic or sales evidence."
+}

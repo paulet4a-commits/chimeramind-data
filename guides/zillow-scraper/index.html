@@ -12,7 +12,11 @@
 <meta property="og:description" content="Collect Zillow search results for any city, ZIP code, neighborhood or filtered search URL — price, address, coordinates, beds, baths, square feet, Zestimate, rent Zestimate, tax-assessed value, broker, photos and sale date — as JSON, CSV or Excel.">
 <meta property="og:url" content="https://data.chimeramind.com/guides/zillow-scraper/">
 <meta property="og:site_name" content="ChimeraMiND Data">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://data.chimeramind.com/assets/social/catalog.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zillow Scraper — Export Homes for Sale, Rentals and Recently Sold Listings | ChimeraMiND Data — ChimeraMiND Data">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b8f6a">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -21,6 +25,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="module" src="/assets/sample-status.js"></script>
+<script type="module" src="/assets/attribution.mjs"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Zillow Scraper — Export Homes for Sale, Rentals and Recently Sold Listings","description":"Collect Zillow search results for any city, ZIP code, neighborhood or filtered search URL — price, address, coordinates, beds, baths, square feet, Zestimate, rent Zestimate, tax-assessed value, broker, photos and sale date — as JSON, CSV or Excel.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/zillow-scraper/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zillow Scraper (Homes for Sale, Rent & Sold, Zestimates)","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/zillow-scraper","offers":{"@type":"Offer","price":"1.00","priceCurrency":"USD","description":"per 1,000 homes"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Zillow Scraper — Export Homes for Sale, Rentals and Recently Sold Listings","item":"https://data.chimeramind.com/guides/zillow-scraper/"}]}</script>
@@ -39,7 +44,7 @@
 <article class="prose"><p>Zillow is where most US home searches start, and its search results already hold what an investor or analyst needs for a first pass: price, size, Zestimate, rent estimate, tax-assessed value and, for sold homes, the sale date and price. What Zillow doesn&#39;t offer is an export button. This guide shows how to turn any Zillow search into <strong>one row per home</strong>, for $1 per 1,000 homes.</p>
 <h2 id="what-you-get">What you get</h2>
 <p>A real row from a recorded run, trimmed:</p>
-<figure class="sample" data-sample-status="archived" data-sample-finished="2026-09-29T12:04:15.959Z" data-sample-run="ddClyjEm1t7D2e1vT"><figcaption><span data-sample-label>Archived example · 24 days old. This is a snapshot, not current data.</span><span class="mono">run ddClyjEm1t7D2e1vT · 2026-09-29</span></figcaption><pre><code class="language-json">{
+<figure class="sample" data-sample-status="archived" data-sample-finished="2026-09-29T12:04:15.959Z" data-sample-run="ddClyjEm1t7D2e1vT"><figcaption><span data-sample-label>Archived example · 25 days old. This is a snapshot, not current data.</span><span class="mono">run ddClyjEm1t7D2e1vT · 2026-09-29</span></figcaption><pre><code class="language-json">{
   &quot;position&quot;: 24,
   &quot;zpid&quot;: &quot;48848917&quot;,
   &quot;url&quot;: &quot;https://www.zillow.com/homedetails/6008-Oberlin-Ave-NE-Seattle-WA-98115/48848917_zpid/&quot;,
