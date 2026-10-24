@@ -6,7 +6,9 @@ export function campaignFrom(url) {
     return Object.fromEntries(FIELDS.filter(k => valid(query.get(k))).map(k => [k, query.get(k)]));
 }
 export function attributeLink(href, current) {
-    const here = new URL(current), target = new URL(href, here), campaign = campaignFrom(current);
+    let here, target;
+    try { here = new URL(current); target = new URL(href, here); } catch { return href; }
+    const campaign = campaignFrom(current);
     if (target.protocol !== 'https:' || !Object.keys(campaign).length) return target.href;
     if (target.origin === here.origin && /^\/(?:$|start\/|guides\/|tools\/|workflows\/)/.test(target.pathname)) {
         for (const [key, value] of Object.entries(campaign)) target.searchParams.set(key, value);
