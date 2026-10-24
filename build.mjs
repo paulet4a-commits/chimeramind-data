@@ -9,6 +9,7 @@ import { esc, money, parseFrontmatter, renderGuide, sampleBlock, pricingTable, c
 import { WORKFLOWS, relatedActors, attributedUrl } from './src/growth.mjs';
 import { validateData, hash } from './src/quality.mjs';
 import { QUICKSTARTS, n8nStarter } from './src/quickstarts.mjs';
+import { distributionManifest } from './src/distribution.mjs';
 
 const here = import.meta.dirname;
 const dist = path.join(here, 'dist');
@@ -149,4 +150,5 @@ write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE.origin}/sitemap.
 write('CNAME', 'data.chimeramind.com\n');
 write('.nojekyll', '');
 write('build-manifest.json', `${JSON.stringify({ builtAt: new Date().toISOString(), sourceCommit: process.env.GITHUB_SHA ?? null, pages: renderedPages }, null, 2)}\n`);
+write('distribution-manifest.json', JSON.stringify(distributionManifest({ actors, guides, quickstarts: QUICKSTARTS, workflows: WORKFLOWS, origin: SITE.origin, sourceCommit: process.env.GITHUB_SHA ?? null }), null, 2) + '\n');
 console.log(`built ${guides.length} guides, ${all.length} tool landings, ${WORKFLOWS.length} workflows (${urls.length} indexable pages) → dist/`);
