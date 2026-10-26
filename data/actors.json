@@ -1774,14 +1774,14 @@
   ],
   "price": {
    "unit": "keyword",
-   "usd": 0.01,
+   "usd": 0.0025,
    "tiers": {
-    "FREE": 0.01,
-    "BRONZE": 0.008,
-    "SILVER": 0.007,
-    "GOLD": 0.006,
-    "PLATINUM": 0.006,
-    "DIAMOND": 0.006
+    "FREE": 0.0025,
+    "BRONZE": 0.002,
+    "SILVER": 0.00175,
+    "GOLD": 0.0015,
+    "PLATINUM": 0.0015,
+    "DIAMOND": 0.0015
    }
   },
   "prefill": {
@@ -1840,14 +1840,14 @@
   ],
   "price": {
    "unit": "job",
-   "usd": 0.001,
+   "usd": 0.0015,
    "tiers": {
-    "FREE": 0.001,
-    "BRONZE": 0.0008,
-    "SILVER": 0.0007,
-    "GOLD": 0.0006,
-    "PLATINUM": 0.0006,
-    "DIAMOND": 0.0006
+    "FREE": 0.0015,
+    "BRONZE": 0.0012,
+    "SILVER": 0.00105,
+    "GOLD": 0.0009,
+    "PLATINUM": 0.0009,
+    "DIAMOND": 0.0009
    }
   },
   "prefill": {
@@ -1871,14 +1871,14 @@
   ],
   "price": {
    "unit": "short",
-   "usd": 0.001,
+   "usd": 0.003,
    "tiers": {
-    "FREE": 0.001,
-    "BRONZE": 0.0008,
-    "SILVER": 0.0007,
-    "GOLD": 0.0006,
-    "PLATINUM": 0.0006,
-    "DIAMOND": 0.0006
+    "FREE": 0.003,
+    "BRONZE": 0.0024,
+    "SILVER": 0.0021,
+    "GOLD": 0.0018,
+    "PLATINUM": 0.0018,
+    "DIAMOND": 0.0018
    }
   },
   "prefill": {
@@ -2481,14 +2481,14 @@
   ],
   "price": {
    "unit": "pin",
-   "usd": 0.0005,
+   "usd": 0.0022,
    "tiers": {
-    "FREE": 0.0005,
-    "BRONZE": 0.0004,
-    "SILVER": 0.00035,
-    "GOLD": 0.0003,
-    "PLATINUM": 0.0003,
-    "DIAMOND": 0.0003
+    "FREE": 0.0022,
+    "BRONZE": 0.00176,
+    "SILVER": 0.00154,
+    "GOLD": 0.00132,
+    "PLATINUM": 0.00132,
+    "DIAMOND": 0.00132
    }
   },
   "prefill": {
