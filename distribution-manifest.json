@@ -1,8 +1,8 @@
 {
   "version": 1,
   "origin": "https://data.chimeramind.com",
-  "generatedAt": "2026-10-26T18:30:06.753Z",
-  "sourceCommit": "d0cd0b2f7b5719eacc1ec4590f728eb9b2ac1ec6",
+  "generatedAt": "2026-10-27T17:38:15.307Z",
+  "sourceCommit": "a2b243e25c5e9469c660375a8d70d763ed85424b",
   "products": [
     {
       "product": "apify--contact-extractor",
@@ -1446,12 +1446,67 @@
       "workflows": []
     },
     {
+      "product": "apify--google-shopping-scraper",
+      "actor": "google-shopping-scraper",
+      "title": "Google Shopping Scraper (Product Prices, Sellers, Ratings)",
+      "storeUrl": "https://apify.com/webdatatools/google-shopping-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-shopping-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-shopping-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--himalayas-jobs-scraper",
+      "actor": "himalayas-jobs-scraper",
+      "title": "Himalayas Jobs Scraper (Remote Jobs with Filters)",
+      "storeUrl": "https://apify.com/webdatatools/himalayas-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/himalayas-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/himalayas-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--reed-jobs-scraper",
+      "actor": "reed-jobs-scraper",
+      "title": "Reed Jobs Scraper (UK Jobs, Salaries, Locations)",
+      "storeUrl": "https://apify.com/webdatatools/reed-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/reed-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/reed-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
       "product": "apify--google-jobs-scraper",
       "actor": "google-jobs-scraper",
       "title": "Google Jobs Scraper (Job Listings, Companies, Sources)",
       "storeUrl": "https://apify.com/webdatatools/google-jobs-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/google-jobs-scraper/",
       "preferredUrl": "https://data.chimeramind.com/tools/google-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--foundit-jobs-scraper",
+      "actor": "foundit-jobs-scraper",
+      "title": "Foundit Jobs Scraper (India Jobs, Salaries, Skills)",
+      "storeUrl": "https://apify.com/webdatatools/foundit-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/foundit-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/foundit-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--totaljobs-scraper",
+      "actor": "totaljobs-scraper",
+      "title": "Totaljobs Scraper (UK Jobs, Salaries, Locations)",
+      "storeUrl": "https://apify.com/webdatatools/totaljobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/totaljobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/totaljobs-scraper/",
       "starters": [],
       "guides": [],
       "workflows": []
