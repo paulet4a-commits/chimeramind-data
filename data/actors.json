@@ -3909,5 +3909,152 @@
     "microsoft"
    ]
   }
+ },
+ "google-shopping-scraper": {
+  "name": "google-shopping-scraper",
+  "title": "Google Shopping Scraper (Product Prices, Sellers, Ratings)",
+  "description": "Google Shopping Scraper returns product search results for keywords: title, price, seller, rating, review count and link. Uses the Apify GOOGLE_SERP proxy, no browser.",
+  "url": "https://apify.com/webdatatools/google-shopping-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "ECOMMERCE",
+   "SEO_TOOLS",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.003,
+   "tiers": {
+    "FREE": 0.003,
+    "BRONZE": 0.0027,
+    "SILVER": 0.0025,
+    "GOLD": 0.0022,
+    "PLATINUM": 0.0022,
+    "DIAMOND": 0.0022
+   }
+  },
+  "prefill": {
+   "queries": [
+    "wireless headphones"
+   ]
+  }
+ },
+ "himalayas-jobs-scraper": {
+  "name": "himalayas-jobs-scraper",
+  "title": "Himalayas Jobs Scraper (Remote Jobs with Filters)",
+  "description": "Scrape Himalayas remote job listings by keyword and country, with employment type, seniority, salary and posting-date filters: title, company, pay, location limits, categories and apply link.",
+  "url": "https://apify.com/webdatatools/himalayas-jobs-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "OTHER"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.0008,
+   "tiers": {
+    "FREE": 0.0008,
+    "BRONZE": 0.00064,
+    "SILVER": 0.00056,
+    "GOLD": 0.00048,
+    "PLATINUM": 0.00048,
+    "DIAMOND": 0.00048
+   }
+  },
+  "prefill": {
+   "keywords": "python developer"
+  }
+ },
+ "reed-jobs-scraper": {
+  "name": "reed-jobs-scraper",
+  "title": "Reed Jobs Scraper (UK Jobs, Salaries, Locations)",
+  "description": "Scrape Reed.co.uk UK job listings by keyword, city and radius: job title, employer, location, salary range, working pattern, posting date, snippet and optional full description.",
+  "url": "https://apify.com/webdatatools/reed-jobs-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.0004,
+   "tiers": {
+    "FREE": 0.0004,
+    "BRONZE": 0.00032,
+    "SILVER": 0.00028,
+    "GOLD": 0.00024,
+    "PLATINUM": 0.00024,
+    "DIAMOND": 0.00024
+   }
+  },
+  "prefill": {
+   "keywords": "developer"
+  }
+ },
+ "foundit-jobs-scraper": {
+  "name": "foundit-jobs-scraper",
+  "title": "Foundit Jobs Scraper (India Jobs, Salaries, Skills)",
+  "description": "Scrape Foundit (formerly Monster India) job listings by keyword and city: job title, company, location, experience range, salary text, employment type, skills, posting date and link. India only.",
+  "url": "https://apify.com/webdatatools/foundit-jobs-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.0035,
+   "tiers": {
+    "FREE": 0.0035,
+    "BRONZE": 0.0028,
+    "SILVER": 0.00245,
+    "GOLD": 0.0021,
+    "PLATINUM": 0.0021,
+    "DIAMOND": 0.0021
+   }
+  },
+  "prefill": {
+   "keywords": "developer"
+  }
+ },
+ "totaljobs-scraper": {
+  "name": "totaljobs-scraper",
+  "title": "Totaljobs Scraper (UK Jobs, Salaries, Locations)",
+  "description": "Scrape Totaljobs UK job listings by keyword and location: job title, employer, location, salary text, work type, posting date, snippet and link.",
+  "url": "https://apify.com/webdatatools/totaljobs-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.0012,
+   "tiers": {
+    "FREE": 0.0012,
+    "BRONZE": 0.0011,
+    "SILVER": 0.001,
+    "GOLD": 0.00096,
+    "PLATINUM": 0.00096,
+    "DIAMOND": 0.00096
+   }
+  },
+  "prefill": {
+   "keywords": "developer"
+  }
  }
 }
