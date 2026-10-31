@@ -141,9 +141,14 @@
 - [X (Twitter) Trends Scraper (Trends by Country & City)](https://data.chimeramind.com/tools/twitter-trends-scraper/): input, pricing, API and MCP instructions.
 - [LinkedIn Company Posts Scraper (Public Company Feed)](https://data.chimeramind.com/tools/linkedin-company-posts-scraper/): input, pricing, API and MCP instructions.
 - [Flipkart Product Scraper (Prices & Ratings)](https://data.chimeramind.com/tools/flipkart-scraper/): input, pricing, API and MCP instructions.
+- [Google AI Overviews Scraper (AI Overview Answers and Sources)](https://data.chimeramind.com/tools/google-ai-overviews-scraper/): input, pricing, API and MCP instructions.
 - [Gumtree Scraper (UK Listings & Prices)](https://data.chimeramind.com/tools/gumtree-scraper/): input, pricing, API and MCP instructions.
 - [Trendyol Reviews Scraper (Ratings, Comments, Sellers)](https://data.chimeramind.com/tools/trendyol-reviews-scraper/): input, pricing, API and MCP instructions.
 - [AutoTrader UK Car Scraper (Listings & Prices)](https://data.chimeramind.com/tools/autotrader-uk-scraper/): input, pricing, API and MCP instructions.
 - [Arbeitsagentur Jobs Scraper (Germany Job Listings)](https://data.chimeramind.com/tools/arbeitsagentur-jobs-scraper/): input, pricing, API and MCP instructions.
 - [Airbnb Reviews Scraper (Ratings, Text, Host Replies)](https://data.chimeramind.com/tools/airbnb-reviews-scraper/): input, pricing, API and MCP instructions.
 - [YellowPages Business Scraper (USA Listings)](https://data.chimeramind.com/tools/yellowpages-scraper/): input, pricing, API and MCP instructions.
+- [Social Media Finder (Official Brand Profile Links)](https://data.chimeramind.com/tools/social-media-finder/): input, pricing, API and MCP instructions.
+- [NaukriGulf Jobs Scraper (Gulf Job Listings)](https://data.chimeramind.com/tools/naukrigulf-jobs-scraper/): input, pricing, API and MCP instructions.
+- [RSS Feed Reader (RSS and Atom Items)](https://data.chimeramind.com/tools/rss-feed-reader/): input, pricing, API and MCP instructions.
+- [Google Patents Scraper (Search, Abstracts, CPC)](https://data.chimeramind.com/tools/google-patents-scraper/): input, pricing, API and MCP instructions.

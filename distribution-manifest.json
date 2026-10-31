@@ -1,8 +1,8 @@
 {
   "version": 1,
   "origin": "https://data.chimeramind.com",
-  "generatedAt": "2026-10-31T14:44:47.927Z",
-  "sourceCommit": "0b52ee50f844b507dda4984c8a112a4860ab682d",
+  "generatedAt": "2026-10-31T17:40:31.810Z",
+  "sourceCommit": "b97114cd25ea46bfc3b73d72723d8cb0eea1da0b",
   "products": [
     {
       "product": "apify--contact-extractor",
@@ -1649,6 +1649,17 @@
       "workflows": []
     },
     {
+      "product": "apify--google-ai-overviews-scraper",
+      "actor": "google-ai-overviews-scraper",
+      "title": "Google AI Overviews Scraper (AI Overview Answers and Sources)",
+      "storeUrl": "https://apify.com/webdatatools/google-ai-overviews-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-ai-overviews-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-ai-overviews-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
       "product": "apify--gumtree-scraper",
       "actor": "gumtree-scraper",
       "title": "Gumtree Scraper (UK Listings & Prices)",
@@ -1710,6 +1721,50 @@
       "storeUrl": "https://apify.com/webdatatools/yellowpages-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/yellowpages-scraper/",
       "preferredUrl": "https://data.chimeramind.com/tools/yellowpages-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--social-media-finder",
+      "actor": "social-media-finder",
+      "title": "Social Media Finder (Official Brand Profile Links)",
+      "storeUrl": "https://apify.com/webdatatools/social-media-finder",
+      "toolUrl": "https://data.chimeramind.com/tools/social-media-finder/",
+      "preferredUrl": "https://data.chimeramind.com/tools/social-media-finder/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--naukrigulf-jobs-scraper",
+      "actor": "naukrigulf-jobs-scraper",
+      "title": "NaukriGulf Jobs Scraper (Gulf Job Listings)",
+      "storeUrl": "https://apify.com/webdatatools/naukrigulf-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/naukrigulf-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/naukrigulf-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--rss-feed-reader",
+      "actor": "rss-feed-reader",
+      "title": "RSS Feed Reader (RSS and Atom Items)",
+      "storeUrl": "https://apify.com/webdatatools/rss-feed-reader",
+      "toolUrl": "https://data.chimeramind.com/tools/rss-feed-reader/",
+      "preferredUrl": "https://data.chimeramind.com/tools/rss-feed-reader/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-patents-scraper",
+      "actor": "google-patents-scraper",
+      "title": "Google Patents Scraper (Search, Abstracts, CPC)",
+      "storeUrl": "https://apify.com/webdatatools/google-patents-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-patents-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-patents-scraper/",
       "starters": [],
       "guides": [],
       "workflows": []
