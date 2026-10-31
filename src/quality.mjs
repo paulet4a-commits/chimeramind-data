@@ -104,7 +104,8 @@ export function validateDist(root) {
                 const resolved = path.join(dist, target, target.endsWith('/') ? 'index.html' : '');
                 assert.ok(fs.existsSync(resolved), `Broken internal link ${href} in ${rel}`);
             }
-            if (href.startsWith('https://apify.com/')) {
+            // Attribution applies to our conversion links, not cited competitor sources.
+            if (/^https:\/\/apify\.com\/webdatatools(?:\/|[?#]|$)/.test(href)) {
                 const u = new URL(href);
                 for (const param of ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','source_page','source_actor']) assert.ok(u.searchParams.get(param), `Missing CTA attribution ${param}: ${rel}`);
                 assert.equal(u.searchParams.get('source_page'), pagePath, `Wrong CTA source page: ${rel}`);

@@ -5,7 +5,7 @@ short: YouTube channel inventory
 kicker: Video research
 actor: youtube-channel-scraper
 description: Start with 10 public videos, export titles and URLs to CSV, and compare saved runs by video ID to find newly observed uploads.
-updated: 2026-10-23
+updated: 2026-10-31
 ---
 
 Use this workflow for content research, a channel inventory or a recurring upload check. You get one row per public video, with its URL, title and available public metrics. You do not need a YouTube API key; you do need an Apify account with enough credit to run the Actor.
@@ -55,7 +55,15 @@ The API examples below use the catalog's existing input. Replace it with the sma
 
 A cap of 10 means up to 10 video rows **per channel**, plus any applicable start or other charges. Handle resolution may need proxy access. A known channel ID avoids resolving a handle. Check your selected plan's current rates and use a maximum run budget.
 
-`videos`, `shorts` and `streams` select different tabs. A missing tab can produce an error row. Popular sorting is best-effort and may fall back to newest; Shorts use newest order. Changes to YouTube or blocking can affect availability.
+`videos`, `shorts` and `streams` select different tabs. The current Actor writes failed and empty-tab diagnostics to separate `DIAGNOSTIC-*` records; `OUTPUT` summarizes partial failures. Only usable videos enter the default dataset. A genuinely empty tab can finish with zero results, while failure of every attempted channel fails the run. Inspect `OUTPUT` before replacing an inventory. Popular sorting is best-effort and may fall back to newest; Shorts use newest order. Changes to YouTube or blocking can affect availability.
+
+## Choose the right approach before paying
+
+The [YouTube Data API](https://developers.google.com/youtube/v3/docs/search/list) is a strong alternative when you can manage an API project, authentication and quota. Prefer official owner analytics for private performance data. A hosted scraper is useful for public channel exports and scheduled datasets when you do not want to maintain that integration; it does not replace owner analytics.
+
+Compare the actual output unit, not only a headline price. As observed on 31 October 2026, [Streamers](https://apify.com/streamers/youtube-channel-scraper) lists pricing from $0.50 per 1,000 videos, [API Dojo](https://apify.com/apidojo/youtube-channel-information-scraper) lists channel information with separate search and lookup events, and [Grow Media](https://apify.com/grow_media/youtube-channel-video-scraper) lists pricing from $0.40 per 1,000 results. Their feature and price claims are publisher descriptions, not our independent performance benchmarks. Check each current Pricing tab and test your own channel before choosing.
+
+Our workflow emphasizes a bounded first export, a local result checker and comparison by stable video ID. These are useful acceptance checks, not a claim that we are fastest or cheapest. [Use the local checker and comparison recipe](/start/youtube-channel-inventory/) before connecting a recurring workflow.
 
 ## Recorded output
 
@@ -74,7 +82,7 @@ You can compare viewCount across successful observations of the same video ID. C
 ### Does the upload-check recipe send alerts automatically?
 No. It supplies a bounded extraction input. Save and schedule a task, retain the previous successful dataset, compare video IDs and connect your own notification step.
 
-### What should I do with an error row?
-Keep it out of your video inventory and inspect the error. Do not overwrite a previous successful inventory with an error or assume the channel has no videos.
+### What should I do with a failed or partial run?
+Inspect `OUTPUT` and the separate `DIAGNOSTIC-*` records. Preserve the previous successful inventory until you understand the failure. Legacy saved exports can contain error rows; exclude those from comparisons. An empty result alone does not prove that a channel has no videos.
 
 {{cta}}
