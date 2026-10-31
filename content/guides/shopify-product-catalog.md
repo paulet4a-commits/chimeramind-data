@@ -35,7 +35,9 @@ The public product feed does not reliably identify currency. Treat null `currenc
 
 ## Preserve the last complete observation
 
-Check the run and every row before replacing a saved inventory. A blocked or invalid later page is reported as a store error instead of a complete truncated catalog. Do not import an error row as a product or interpret a failed export as deleted stock.
+Check the run and its `OUTPUT` key-value record before replacing a saved inventory. `failedStores`, `budgetSkippedStores`, `budgetLimitedStores`, `truncatedRows` and `deliveryUnconfirmed` flag failures or spending limits that make an export unsuitable as a full replacement. Your configured product limit and availability filters can also exclude products.
+
+A blocked, invalid or repeating page creates a `DIAGNOSTIC-*` record instead of a billable product row. `OUTPUT.firstDiagnosticKey` points to the first record. A run with source failures and no usable products fails; a valid empty feed or no matching filter results is reported separately in `emptyStores`. Mixed runs retain usable products and expose failed-store counts. Preserve the previous inventory for failed or limited stores; an incomplete export is not evidence that stock was deleted.
 
 Save `scrapedAt` with your snapshot. Compare successful exports with the same store, collection filters, product limit and row mode. A missing product can reflect a limit or filter change; it does not establish that a product was removed. Scheduling, snapshot storage and notifications are separate steps you configure in your automation.
 
