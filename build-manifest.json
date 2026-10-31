@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-10-31T14:16:58.942Z",
-  "sourceCommit": "fa10ea4c2f132fff7843742d99f1c76b4a47fc13",
+  "builtAt": "2026-10-31T14:44:47.927Z",
+  "sourceCommit": "0b52ee50f844b507dda4984c8a112a4860ab682d",
   "pages": [
     {
       "file": "guides/bulk-core-web-vitals-check/index.html",
@@ -70,7 +70,7 @@
     {
       "file": "guides/shopify-product-catalog/index.html",
       "url": "https://data.chimeramind.com/guides/shopify-product-catalog/",
-      "sha256": "cf8ed515755f81d1b23786a137c27fad8020f1e512e443ce111f242116e1979e"
+      "sha256": "f09f352fefc19b85540c5c9a65c7ac7b573bb57ccd189d5b53caa253f4065880"
     },
     {
       "file": "guides/stock-crypto-fx-quotes-api/index.html",
@@ -90,7 +90,7 @@
     {
       "file": "guides/website-to-markdown/index.html",
       "url": "https://data.chimeramind.com/guides/website-to-markdown/",
-      "sha256": "eba86fcb7e696c58c2ffc610c639389e669d4eba2b0191dd50b141dc6f2a50c8"
+      "sha256": "6aa76611a6f4a0bf1c4e588bccf5deaaa0e8c36eeed4cafa5fe2aea5b7389f8d"
     },
     {
       "file": "guides/youtube-channel-inventory/index.html",
@@ -160,7 +160,7 @@
     {
       "file": "tools/website-to-markdown/index.html",
       "url": "https://data.chimeramind.com/tools/website-to-markdown/",
-      "sha256": "283c8aa4420a589c73c7b266147f8a5d672a893ca6a917070ccfca9827a32702"
+      "sha256": "dce00151bf477a734a17822c1772a0e0d5288dd46fd3fd190d1116eff7bf699c"
     },
     {
       "file": "tools/google-news-scraper/index.html",
