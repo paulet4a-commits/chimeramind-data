@@ -1,0 +1,38 @@
+{
+  "urls": [
+    "https://quotes.toscrape.com/js/"
+  ],
+  "selectors": [
+    {
+      "name": "text",
+      "selector": ".text",
+      "type": "text"
+    },
+    {
+      "name": "author",
+      "selector": ".author",
+      "type": "text"
+    }
+  ],
+  "firstMatchOnly": true,
+  "maxMatchesPerSelector": 20,
+  "trimWhitespace": true,
+  "maxConcurrency": 3,
+  "waitTimeoutSecs": 15,
+  "waitUntil": "load",
+  "maxScrolls": 10,
+  "maxClicks": 5,
+  "blockResources": true,
+  "itemSelector": ".quote",
+  "pageRange": {
+    "from": 1,
+    "to": 3
+  },
+  "proxyMode": "auto",
+  "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": [
+      "RESIDENTIAL"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "emails": [
+    "support@apify.com",
+    "jane.doe@gmail.com",
+    "info@mailinator.com"
+  ],
+  "checkMx": true,
+  "maxConcurrency": 10
+}

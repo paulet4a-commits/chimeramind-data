@@ -1,0 +1,13 @@
+{
+  "sources": [
+    "prnewswire",
+    "businesswire",
+    "globenewswire"
+  ],
+  "keywords": [
+    "funding",
+    "acquisition",
+    "partnership"
+  ],
+  "maxItemsPerSource": 100
+}

@@ -1,0 +1,11 @@
+{
+  "urls": [
+    "https://apify.com",
+    "https://example.com"
+  ],
+  "strategy": "mobile",
+  "categories": [
+    "performance",
+    "seo"
+  ]
+}

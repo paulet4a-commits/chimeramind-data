@@ -1,0 +1,17 @@
+{
+  "domains": [
+    "apify.com",
+    "github.com"
+  ],
+  "checkDkim": true,
+  "dkimSelectors": [
+    "google",
+    "selector1",
+    "selector2",
+    "default",
+    "k1",
+    "s1",
+    "zoho",
+    "mail"
+  ]
+}

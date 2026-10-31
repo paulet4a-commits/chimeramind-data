@@ -1,0 +1,8 @@
+{
+  "channels": [
+    "@telegram",
+    "@durov"
+  ],
+  "maxPosts": 50,
+  "includeText": true
+}

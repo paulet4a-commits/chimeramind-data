@@ -1,0 +1,8 @@
+{
+  "urls": [
+    "https://apify.com/pricing",
+    "https://example.com"
+  ],
+  "mode": "diff",
+  "maxSnapshots": 50
+}

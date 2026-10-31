@@ -1,0 +1,9 @@
+{
+  "domains": [
+    "github.com",
+    "wikipedia.org",
+    "apify.com"
+  ],
+  "includeNameservers": true,
+  "includeRawEvents": false
+}

@@ -1,0 +1,7 @@
+{
+  "stores": [
+    "https://www.allbirds.com"
+  ],
+  "maxProductsPerStore": 100,
+  "collectionHandles": []
+}

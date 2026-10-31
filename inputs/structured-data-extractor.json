@@ -1,0 +1,8 @@
+{
+  "urls": [
+    "https://www.apify.com",
+    "https://www.allbirds.com/products/mens-tree-dashers"
+  ],
+  "includeRawJsonLd": true,
+  "includeOpenGraph": true
+}

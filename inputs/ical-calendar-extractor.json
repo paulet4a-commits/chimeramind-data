@@ -1,0 +1,8 @@
+{
+  "feeds": [
+    "https://www.officeholidays.com/ics/usa",
+    "https://calendar.google.com/calendar/ical/en.usa%23holiday%40group.v.calendar.google.com/public/basic.ics"
+  ],
+  "from": "2026-01-01",
+  "to": "2026-12-31"
+}

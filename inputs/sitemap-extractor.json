@@ -1,0 +1,8 @@
+{
+  "sources": [
+    "https://apify.com",
+    "https://www.allbirds.com/sitemap.xml"
+  ],
+  "maxUrlsPerSource": 1000,
+  "urlFilter": ""
+}

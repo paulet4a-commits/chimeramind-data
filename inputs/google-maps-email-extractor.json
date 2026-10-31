@@ -1,0 +1,9 @@
+{
+  "searchQueries": "dentist",
+  "location": "Austin, TX",
+  "maxPlacesPerSearch": 10,
+  "maxPagesPerSite": 5,
+  "language": "en",
+  "country": "us",
+  "minRating": 0
+}

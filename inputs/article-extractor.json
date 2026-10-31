@@ -1,0 +1,9 @@
+{
+  "urls": [
+    "https://blog.apify.com/best-web-scraping-tools/",
+    "https://techcrunch.com/",
+    "https://www.bbc.com/news"
+  ],
+  "outputFormat": "markdown",
+  "includeImages": true
+}

@@ -1,0 +1,16 @@
+{
+  "searchUrls": [],
+  "urls": [],
+  "make": "",
+  "model": "",
+  "priceFrom": 0,
+  "priceTo": 999999,
+  "yearFrom": 2000,
+  "yearTo": 2026,
+  "mileageTo": 999999,
+  "fuel": "",
+  "country": "de",
+  "zip": "",
+  "radius": 50,
+  "maxListings": 40
+}

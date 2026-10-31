@@ -1,0 +1,8 @@
+{
+  "domains": [
+    "apify.com",
+    "stripe.com"
+  ],
+  "includeContacts": true,
+  "includeTechStack": true
+}

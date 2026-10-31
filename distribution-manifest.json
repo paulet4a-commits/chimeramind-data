@@ -1,8 +1,8 @@
 {
   "version": 1,
   "origin": "https://data.chimeramind.com",
-  "generatedAt": "2026-10-31T14:10:03.063Z",
-  "sourceCommit": "24f8c815c09eb75eac86e7b6b1189529e00c8c25",
+  "generatedAt": "2026-10-31T14:11:46.270Z",
+  "sourceCommit": "d4f9beb3bc11186a448eb0c2b34db721cfd7fe16",
   "products": [
     {
       "product": "apify--contact-extractor",

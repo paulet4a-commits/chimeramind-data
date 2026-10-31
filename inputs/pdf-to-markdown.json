@@ -1,0 +1,7 @@
+{
+  "pdfUrls": [
+    "https://arxiv.org/pdf/1706.03762"
+  ],
+  "maxPdfsPerPage": 20,
+  "maxPagesPerPdf": 200
+}

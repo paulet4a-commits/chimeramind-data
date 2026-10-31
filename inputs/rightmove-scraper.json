@@ -1,0 +1,11 @@
+{
+  "searchUrls": [],
+  "urls": [],
+  "location": "",
+  "channel": "buy",
+  "minPrice": 0,
+  "maxPrice": 9999999,
+  "minBedrooms": 0,
+  "radius": 1,
+  "maxProperties": 50
+}

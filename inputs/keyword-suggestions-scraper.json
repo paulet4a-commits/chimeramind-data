@@ -1,0 +1,11 @@
+{
+  "keywords": "running shoes",
+  "sources": [
+    "google"
+  ],
+  "language": "en",
+  "country": "US",
+  "expand": "none",
+  "maxDepth": 1,
+  "maxKeywords": 200
+}

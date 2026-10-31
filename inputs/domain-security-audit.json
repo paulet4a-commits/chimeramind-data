@@ -1,0 +1,8 @@
+{
+  "domains": [
+    "apify.com",
+    "example.com"
+  ],
+  "checkTls": true,
+  "checkHeaders": true
+}

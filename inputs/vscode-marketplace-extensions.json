@@ -1,0 +1,9 @@
+{
+  "queries": [
+    "ms-python.python",
+    "esbenp.prettier-vscode",
+    "search:markdown"
+  ],
+  "searchLimit": 25,
+  "maxConcurrency": 3
+}

@@ -1,0 +1,13 @@
+{
+  "channels": [
+    "@MrBeast",
+    "@mkbhd"
+  ],
+  "proxyMode": "auto",
+  "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": [
+      "RESIDENTIAL"
+    ]
+  }
+}

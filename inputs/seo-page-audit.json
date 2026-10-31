@@ -1,0 +1,8 @@
+{
+  "urls": [
+    "https://apify.com",
+    "https://example.com"
+  ],
+  "checkLinks": false,
+  "maxConcurrency": 5
+}

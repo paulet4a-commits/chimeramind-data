@@ -1,0 +1,9 @@
+{
+  "companies": [
+    "stripe",
+    "https://jobs.lever.co/spotify",
+    "https://jobs.ashbyhq.com/ashby"
+  ],
+  "outputMode": "jobs",
+  "maxJobsPerCompany": 200
+}

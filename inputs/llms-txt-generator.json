@@ -1,0 +1,9 @@
+{
+  "startUrls": [
+    {
+      "url": "https://crawlee.dev/js/docs/quick-start"
+    }
+  ],
+  "maxPages": 50,
+  "maxDepth": 3
+}

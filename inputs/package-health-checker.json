@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "npm:react",
+    "pypi:requests",
+    "crates:serde"
+  ],
+  "defaultRegistry": "npm",
+  "enrichGithub": true
+}

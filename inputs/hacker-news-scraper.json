@@ -1,0 +1,8 @@
+{
+  "queries": [
+    "front_page",
+    "apify"
+  ],
+  "contentType": "story",
+  "sortBy": "relevance"
+}

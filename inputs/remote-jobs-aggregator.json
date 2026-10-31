@@ -1,0 +1,11 @@
+{
+  "sources": [
+    "remoteok",
+    "weworkremotely",
+    "hackernews"
+  ],
+  "keywords": [
+    "python"
+  ],
+  "maxJobs": 100
+}

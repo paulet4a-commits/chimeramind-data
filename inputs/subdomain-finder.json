@@ -1,0 +1,8 @@
+{
+  "domains": [
+    "apify.com",
+    "github.com"
+  ],
+  "resolveDns": true,
+  "includeWildcards": false
+}

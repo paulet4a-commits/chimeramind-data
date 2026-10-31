@@ -1,0 +1,9 @@
+{
+  "startUrls": [
+    {
+      "url": "https://apify.com"
+    }
+  ],
+  "maxPagesPerDomain": 30,
+  "maxDepth": 2
+}

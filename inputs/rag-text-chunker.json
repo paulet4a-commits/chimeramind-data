@@ -1,0 +1,7 @@
+{
+  "texts": [
+    "# Guide\n\nFirst section text.\n\n## Details\n\nMore text here."
+  ],
+  "chunkSize": 500,
+  "overlap": 50
+}

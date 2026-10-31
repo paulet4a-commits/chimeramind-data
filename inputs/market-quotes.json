@@ -1,0 +1,9 @@
+{
+  "symbols": [
+    "AAPL",
+    "BTC-USD",
+    "EUR/USD"
+  ],
+  "assetType": "auto",
+  "includeHistory": false
+}

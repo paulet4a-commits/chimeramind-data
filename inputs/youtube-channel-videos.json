@@ -1,0 +1,13 @@
+{
+  "channels": [
+    "@MrBeast",
+    "https://www.youtube.com/@apify"
+  ],
+  "proxyMode": "auto",
+  "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": [
+      "RESIDENTIAL"
+    ]
+  }
+}

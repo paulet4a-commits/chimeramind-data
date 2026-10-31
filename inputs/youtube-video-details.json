@@ -1,0 +1,13 @@
+{
+  "videos": [
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "jNQXAC9IVRw"
+  ],
+  "proxyMode": "auto",
+  "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": [
+      "RESIDENTIAL"
+    ]
+  }
+}

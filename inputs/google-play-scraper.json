@@ -1,0 +1,9 @@
+{
+  "apps": [
+    "com.spotify.music",
+    "com.duolingo",
+    "search:meditation"
+  ],
+  "country": "us",
+  "language": "en"
+}

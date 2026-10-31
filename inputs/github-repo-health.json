@@ -1,0 +1,9 @@
+{
+  "repos": [
+    "apify/crawlee",
+    "https://github.com/expressjs/express",
+    "org:apify"
+  ],
+  "includeContributors": true,
+  "includeReleases": true
+}

@@ -1,0 +1,5 @@
+{
+  "dataset": "food-enforcement",
+  "searchQuery": "classification:\"Class I\"",
+  "sinceDays": 30
+}

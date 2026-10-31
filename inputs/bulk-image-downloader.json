@@ -1,0 +1,11 @@
+{
+  "imageUrls": [
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Cat03.jpg"
+  ],
+  "datasetId": "",
+  "urlField": "url",
+  "maxImages": 50,
+  "maxFileSizeMb": 20,
+  "timeoutSecs": 30,
+  "createZip": false
+}
