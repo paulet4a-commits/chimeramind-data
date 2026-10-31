@@ -4056,5 +4056,462 @@
   "prefill": {
    "keywords": "developer"
   }
+ },
+ "woolworths-au-scraper": {
+  "name": "woolworths-au-scraper",
+  "title": "Woolworths AU Scraper (Products, Prices, Specials)",
+  "description": "Scrape Woolworths Australia search results by keyword: product name, brand, price, was-price specials, unit price, stock, rating, image and product link.",
+  "url": "https://apify.com/webdatatools/woolworths-au-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 10,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "keywords": "milk"
+  }
+ },
+ "aldi-au-scraper": {
+  "name": "aldi-au-scraper",
+  "title": "ALDI AU Scraper (Products, Prices, Unit Prices)",
+  "description": "Scrape ALDI Australia product search results by keyword: product name, brand, pack size, price, was-price, unit price, category, image, product link and SKU.",
+  "url": "https://apify.com/webdatatools/aldi-au-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 10,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.0003,
+   "tiers": {
+    "FREE": 0.0003,
+    "BRONZE": 0.0003,
+    "SILVER": 0.0003,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "keywords": "milk"
+  }
+ },
+ "vinted-scraper": {
+  "name": "vinted-scraper",
+  "title": "Vinted Scraper (Listings, Prices, Brands, Sizes)",
+  "description": "Scrape Vinted search results by keyword or catalog URL on UK, France, Germany, Italy, Spain, Netherlands, Belgium, Poland and US sites: listing title, brand, size, condition, price, buyer total, favourites, photo and link. No login.",
+  "url": "https://apify.com/webdatatools/vinted-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 10,
+  "categories": [
+   "ECOMMERCE",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "listing",
+   "usd": 0.0025,
+   "tiers": {
+    "FREE": 0.0025,
+    "BRONZE": 0.002,
+    "SILVER": 0.00175,
+    "GOLD": 0.0015,
+    "PLATINUM": 0.0015,
+    "DIAMOND": 0.0015
+   }
+  },
+  "prefill": {
+   "searchQueries": [
+    "nike"
+   ]
+  }
+ },
+ "coles-au-scraper": {
+  "name": "coles-au-scraper",
+  "title": "Coles AU Scraper (Products, Prices, Specials)",
+  "description": "Scrape Coles Australia search results by keyword: product name, brand, pack size, price, was-price specials, unit price, category, stock flag, image, product link and product id.",
+  "url": "https://apify.com/webdatatools/coles-au-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 8,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "result",
+   "usd": 0.0008,
+   "tiers": {
+    "FREE": 0.0008,
+    "BRONZE": 0.00075,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "milk"
+  }
+ },
+ "medium-scraper": {
+  "name": "medium-scraper",
+  "title": "Medium Scraper (Articles, Claps, Tags, Reading Time)",
+  "description": "Scrape Medium stories by tag, author or publication: title, subtitle, author, date, claps, responses, tags, reading time, word count, link and optional full text.",
+  "url": "https://apify.com/webdatatools/medium-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 7,
+  "categories": [
+   "NEWS",
+   "LEAD_GENERATION",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "article",
+   "usd": 0.004,
+   "tiers": {
+    "FREE": 0.004,
+    "BRONZE": 0.0032,
+    "SILVER": 0.0028,
+    "GOLD": 0.0024,
+    "PLATINUM": 0.0024,
+    "DIAMOND": 0.0024
+   }
+  },
+  "prefill": {
+   "tags": [
+    "javascript"
+   ],
+   "authors": [],
+   "publications": []
+  }
+ },
+ "espn-scraper": {
+  "name": "espn-scraper",
+  "title": "ESPN Sports Scraper (Scores, Standings, Teams, Rosters)",
+  "description": "Scrape ESPN sports data for NBA, NFL, MLB, NHL and soccer leagues: game scores and status, league standings, team lists and player rosters, from ESPN public endpoints.",
+  "url": "https://apify.com/webdatatools/espn-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 9,
+  "categories": [
+   "NEWS",
+   "OTHER",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "row",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "leagues": [
+    "basketball/nba"
+   ]
+  }
+ },
+ "twitch-scraper": {
+  "name": "twitch-scraper",
+  "title": "Twitch Scraper (Live Streams, Viewers, Followers)",
+  "description": "Scrape Twitch channel profiles with follower counts and live status, live streams by category with viewer counts and titles, and the top categories directory.",
+  "url": "https://apify.com/webdatatools/twitch-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "VIDEOS",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "row",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "channels": [
+    "riotgames"
+   ],
+   "games": [
+    "Just Chatting"
+   ]
+  }
+ },
+ "twitter-trends-scraper": {
+  "name": "twitter-trends-scraper",
+  "title": "X (Twitter) Trends Scraper (Trends by Country & City)",
+  "description": "Scrape X (Twitter) trending topics by country or city from trends24.in: rank, trend name, search link and the hourly snapshot time for the last 24 hours.",
+  "url": "https://apify.com/webdatatools/twitter-trends-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "SOCIAL_MEDIA",
+   "NEWS",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "trend",
+   "usd": 0.0003,
+   "tiers": {
+    "FREE": 0.0003,
+    "BRONZE": 0.00024,
+    "SILVER": 0.00021,
+    "GOLD": 0.00018,
+    "PLATINUM": 0.00018,
+    "DIAMOND": 0.00018
+   }
+  },
+  "prefill": {
+   "locations": [
+    "united-states"
+   ]
+  }
+ },
+ "flipkart-scraper": {
+  "name": "flipkart-scraper",
+  "title": "Flipkart Product Scraper (Prices & Ratings)",
+  "description": "Scrape Flipkart.com search results for any keyword: product title, selling price, MRP, discount, star rating, rating count (the number shown next to the stars), image and product link, in INR. Pages through results. Plain HTTP, no login, pay per product.",
+  "url": "https://apify.com/webdatatools/flipkart-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 8,
+  "categories": [
+   "ECOMMERCE",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "product",
+   "usd": 0.0012,
+   "tiers": {
+    "FREE": 0.0012,
+    "BRONZE": 0.00108,
+    "SILVER": 0.00096,
+    "GOLD": 0.00084,
+    "PLATINUM": 0.00084,
+    "DIAMOND": 0.00084
+   }
+  },
+  "prefill": {
+   "keywords": "wireless earbuds",
+   "maxItems": 40
+  }
+ },
+ "gumtree-scraper": {
+  "name": "gumtree-scraper",
+  "title": "Gumtree Scraper (UK Listings & Prices)",
+  "description": "Scrape Gumtree.com (UK) search results: listing title, price, location, attributes such as year and mileage, featured flag, image and link, for any keyword and category. Pages through results. Plain HTTP, no login, pay per listing.",
+  "url": "https://apify.com/webdatatools/gumtree-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "listing",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.00093,
+    "SILVER": 0.00087,
+    "GOLD": 0.0008,
+    "PLATINUM": 0.0008,
+    "DIAMOND": 0.0008
+   }
+  },
+  "prefill": {
+   "keywords": "ford fiesta",
+   "category": "cars",
+   "maxItems": 60
+  }
+ },
+ "trendyol-reviews-scraper": {
+  "name": "trendyol-reviews-scraper",
+  "title": "Trendyol Reviews Scraper (Ratings, Comments, Sellers)",
+  "description": "Scrape Trendyol product reviews from a product URL: star rating, full text, date, seller, helpful votes, media count and the product’s rating totals. Real browser, no login.",
+  "url": "https://apify.com/webdatatools/trendyol-reviews-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 17,
+  "categories": [
+   "ECOMMERCE",
+   "MARKETING",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "review",
+   "usd": 0.0025,
+   "tiers": {
+    "FREE": 0.0025,
+    "BRONZE": 0.002,
+    "SILVER": 0.00175,
+    "GOLD": 0.0015,
+    "PLATINUM": 0.0015,
+    "DIAMOND": 0.0015
+   }
+  },
+  "prefill": {
+   "productUrls": [
+    "https://www.trendyol.com/tarcin/air-pro-2-anc-gurultu-engelleyici-bluetooth-kulaklik-ios-android-tum-telefonlar-ile-uyumlu-kulaklik-p-819066262"
+   ]
+  }
+ },
+ "autotrader-uk-scraper": {
+  "name": "autotrader-uk-scraper",
+  "title": "AutoTrader UK Car Scraper (Listings & Prices)",
+  "description": "Scrape AutoTrader UK car listings for any make, model, postcode and price range: title, asking price, year, mileage, location, private or dealer seller, price rating, image and link. Real Chromium, no login, pay per listing.",
+  "url": "https://apify.com/webdatatools/autotrader-uk-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 7,
+  "categories": [
+   "ECOMMERCE",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "listing",
+   "usd": 0.0011,
+   "tiers": {
+    "FREE": 0.0011,
+    "BRONZE": 0.00104,
+    "SILVER": 0.00099,
+    "GOLD": 0.00092,
+    "PLATINUM": 0.00092,
+    "DIAMOND": 0.00092
+   }
+  },
+  "prefill": {
+   "make": "Ford",
+   "postcode": "SW1A 1AA",
+   "maxItems": 50
+  }
+ },
+ "arbeitsagentur-jobs-scraper": {
+  "name": "arbeitsagentur-jobs-scraper",
+  "title": "Arbeitsagentur Jobs Scraper (Germany Job Listings)",
+  "description": "Scrape German job listings from the Bundesagentur fuer Arbeit Jobsuche by keyword, place, radius, working time and publication date: title, employer, location, publication and start dates, reference number and link.",
+  "url": "https://apify.com/webdatatools/arbeitsagentur-jobs-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 8,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "keywords": "Softwareentwickler",
+   "location": "Berlin"
+  }
+ },
+ "airbnb-reviews-scraper": {
+  "name": "airbnb-reviews-scraper",
+  "title": "Airbnb Reviews Scraper (Ratings, Text, Host Replies)",
+  "description": "Scrape guest reviews of Airbnb stays: rating, review text, date, language, reviewer first name and host reply, for any listing URL or ID. Real browser, no login. Pay per review.",
+  "url": "https://apify.com/webdatatools/airbnb-reviews-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 5,
+  "categories": [
+   "TRAVEL",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "review",
+   "usd": 0.004,
+   "tiers": {
+    "FREE": 0.004,
+    "BRONZE": 0.0032,
+    "SILVER": 0.0028,
+    "GOLD": 0.0024,
+    "PLATINUM": 0.0024,
+    "DIAMOND": 0.0024
+   }
+  },
+  "prefill": {
+   "listings": [
+    "https://www.airbnb.com/rooms/49049534"
+   ],
+   "maxReviews": 50
+  }
+ },
+ "yellowpages-scraper": {
+  "name": "yellowpages-scraper",
+  "title": "YellowPages Business Scraper (USA Listings)",
+  "description": "Scrape YellowPages.com business search results for any keyword and place: business name, categories, business phone, address, website, star rating, review count, years in business and profile link. Real Chromium, no login, pay per business.",
+  "url": "https://apify.com/webdatatools/yellowpages-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "LEAD_GENERATION",
+   "AUTOMATION"
+  ],
+  "price": {
+   "unit": "business",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.00093,
+    "SILVER": 0.00087,
+    "GOLD": 0.00081,
+    "PLATINUM": 0.00081,
+    "DIAMOND": 0.00081
+   }
+  },
+  "prefill": {
+   "searchTerms": "plumber",
+   "location": "Austin, TX",
+   "maxItems": 30
+  }
  }
 }
