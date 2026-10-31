@@ -4513,5 +4513,156 @@
    "location": "Austin, TX",
    "maxItems": 30
   }
+ },
+ "google-ai-overviews-scraper": {
+  "name": "google-ai-overviews-scraper",
+  "title": "Google AI Overviews Scraper (AI Overview Answers and Sources)",
+  "description": "Google AI Overviews Scraper returns the AI Overview answer for a query: answer text, bullet points and the cited sources with titles and URLs. Uses the Apify GOOGLE_SERP proxy, no browser.",
+  "url": "https://apify.com/webdatatools/google-ai-overviews-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "SEO_TOOLS",
+   "AI",
+   "LEAD_GENERATION"
+  ],
+  "price": {
+   "unit": "AI Overview",
+   "usd": 0.0125,
+   "tiers": {
+    "FREE": 0.0125,
+    "BRONZE": 0.0115,
+    "SILVER": 0.011,
+    "GOLD": 0.0105,
+    "PLATINUM": 0.0105,
+    "DIAMOND": 0.0105
+   }
+  },
+  "prefill": {
+   "queries": [
+    "how does solar power work"
+   ]
+  }
+ },
+ "social-media-finder": {
+  "name": "social-media-finder",
+  "title": "Social Media Finder (Official Brand Profile Links)",
+  "description": "Social Media Finder reads a company or brand website and returns its official social profile links: Instagram, X, Facebook, LinkedIn company page, YouTube, TikTok, Pinterest and Threads. Uses the site itself (footer and schema.org sameAs links), no search engine.",
+  "url": "https://apify.com/webdatatools/social-media-finder",
+  "icon": null,
+  "users30": 1,
+  "runs": 3,
+  "categories": [
+   "LEAD_GENERATION",
+   "SEO_TOOLS",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "Domain with social profiles",
+   "usd": 0.003,
+   "tiers": {
+    "FREE": 0.003,
+    "BRONZE": 0.0025,
+    "SILVER": 0.002,
+    "GOLD": 0.0017,
+    "PLATINUM": 0.0017,
+    "DIAMOND": 0.0017
+   }
+  },
+  "prefill": {
+   "domains": [
+    "shopify.com"
+   ]
+  }
+ },
+ "naukrigulf-jobs-scraper": {
+  "name": "naukrigulf-jobs-scraper",
+  "title": "NaukriGulf Jobs Scraper (Gulf Job Listings)",
+  "description": "Scrape NaukriGulf job listings for the Gulf region by keyword and location: title, company, location, experience range, posting date, summary, skills and apply link. Pay per job.",
+  "url": "https://apify.com/webdatatools/naukrigulf-jobs-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "JOBS",
+   "LEAD_GENERATION",
+   "OTHER"
+  ],
+  "price": {
+   "unit": "job",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "keywords": "developer",
+   "location": "Dubai"
+  }
+ },
+ "rss-feed-reader": {
+  "name": "rss-feed-reader",
+  "title": "RSS Feed Reader (RSS and Atom Items)",
+  "description": "Read RSS and Atom feeds from any URL, or find the feed on a web page, and get one row per item: title, link, author, published date, categories, summary and image. Filter by date. Pay per item.",
+  "url": "https://apify.com/webdatatools/rss-feed-reader",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "NEWS",
+   "AUTOMATION",
+   "DEVELOPER_TOOLS"
+  ],
+  "price": {
+   "unit": "item",
+   "usd": 0.0005,
+   "tiers": {
+    "FREE": 0.0005,
+    "BRONZE": 0.0004,
+    "SILVER": 0.00035,
+    "GOLD": 0.0003,
+    "PLATINUM": 0.0003,
+    "DIAMOND": 0.0003
+   }
+  },
+  "prefill": {
+   "urls": [
+    "https://blog.rust-lang.org/feed.xml"
+   ]
+  }
+ },
+ "google-patents-scraper": {
+  "name": "google-patents-scraper",
+  "title": "Google Patents Scraper (Search, Abstracts, CPC)",
+  "description": "Search Google Patents by keyword, assignee, inventor, country, status and date, and return one row per patent with dates, assignee, PDF link and optionally abstract, claims, CPC codes and legal status.",
+  "url": "https://apify.com/webdatatools/google-patents-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "OTHER",
+   "DEVELOPER_TOOLS"
+  ],
+  "price": {
+   "unit": "patent",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "query": "solid-state battery"
+  }
  }
 }
