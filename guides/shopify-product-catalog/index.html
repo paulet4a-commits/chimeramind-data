@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Export Shopify Products, Variants and Prices to CSV | ChimeraMiND Data</title>
+<meta name="description" content="Export public Shopify products and variants, distinguish stock flags from inventory quantities, and compare successful snapshots without inventing price changes.">
+
+<link rel="canonical" href="https://data.chimeramind.com/guides/shopify-product-catalog/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Export Shopify Products, Variants and Prices to CSV | ChimeraMiND Data">
+<meta property="og:description" content="Export public Shopify products and variants, distinguish stock flags from inventory quantities, and compare successful snapshots without inventing price changes.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/shopify-product-catalog/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta property="og:image" content="https://data.chimeramind.com/assets/social/catalog.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Export Shopify Products, Variants and Prices to CSV | ChimeraMiND Data — ChimeraMiND Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+<script type="module" src="/assets/attribution.mjs"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Export Shopify Products, Variants and Prices to CSV","description":"Export public Shopify products and variants, distinguish stock flags from inventory quantities, and compare successful snapshots without inventing price changes.","dateModified":"2026-10-31","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/shopify-product-catalog/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shopify Store Products Scraper","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/shopify-products-scraper","offers":{"@type":"Offer","price":"1.00","priceCurrency":"USD","description":"per 1,000 results"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Export Shopify Products, Variants and Prices to CSV","item":"https://data.chimeramind.com/guides/shopify-product-catalog/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I export a private or password-protected store?","acceptedAnswer":{"@type":"Answer","text":"No. The workflow requires a public product feed and does not log into stores."}},{"@type":"Question","name":"Does it automatically alert me about price changes?","acceptedAnswer":{"@type":"Answer","text":"No. It exports a snapshot. Store successful snapshots and compare identical variant keys in your own workflow."}},{"@type":"Question","name":"Can I use it without code?","acceptedAnswer":{"@type":"Answer","text":"Yes. Run it in Apify Console and export the dataset as CSV or JSON. Test a small input and inspect its result first. \u003cp class=\"cta-row\">\u003ca class=\"btn\" href=\"https://apify.com/webdatatools/shopify-products-scraper?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fshopify-product-catalog%2F%3Aguide_cta&amp;utm_term=shopify-products-scraper&amp;source_page=%2Fguides%2Fshopify-product-catalog%2F&amp;source_actor=shopify-products-scraper\">Run Shopify Store Products Scraper on Apify →\u003c/a>\u003c/p>"}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span><span>HIRING SIGNALS <b>$2</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL VIDEOS <b>$1</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Shopify catalog export</div>
+<div class="guide"><div><header><div class="kicker">Product research</div><h1>A Shopify product export you can check before comparing prices</h1><p class="lede">Export public Shopify products and variants, distinguish stock flags from inventory quantities, and compare successful snapshots without inventing price changes.</p>
+<div class="byline"><span>Updated 2026-10-31</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
+<article class="prose"><p>Use a public Shopify catalog export to research an assortment, compare product prices or prepare a product feed. Start with two products from one store, check the output, then increase the limit. This workflow reads the store&#39;s public product feed; it does not require store administrator access.</p>
+<h2 id="start-with-a-small-catalog-export">Start with a small catalog export</h2>
+<p>Open the Actor&#39;s input form and set <code>stores</code> to the store URL, <code>maxProductsPerStore</code> to <code>2</code>, <code>includeVariants</code> to <code>false</code>, and <code>maxConcurrency</code> to <code>1</code>. Review the current Pricing tab and set Maximum cost per run before starting.</p>
+<p>After completion, check that each row has a <code>productId</code>, <code>productUrl</code> and <code>title</code>, and that <code>error</code> is empty. Export JSON for a repeatable comparison, or CSV for a spreadsheet. These are input instructions, not a claim about how many products a particular store currently sells.</p>
+<h2 id="choose-product-rows-or-variant-rows">Choose product rows or variant rows</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>A row represents</th>
+<th>Useful price fields</th>
+<th>Stable comparison key</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>includeVariants: false</code></td>
+<td>One product</td>
+<td><code>minPrice</code>, <code>maxPrice</code></td>
+<td><code>store</code> + <code>productId</code></td>
+</tr>
+<tr>
+<td><code>includeVariants: true</code></td>
+<td>One size, color or other variant</td>
+<td><code>price</code>, <code>compareAtPrice</code></td>
+<td><code>store</code> + <code>variantId</code></td>
+</tr>
+</tbody></table>
+</div><p>The product limit counts products, not variant rows. A product with ten variants can produce ten rows in variant mode. Choose the mode deliberately before estimating result charges or importing a CSV.</p>
+<p>For price comparisons, use the same variant key in both snapshots. Do not compare one product&#39;s minimum price with another variant&#39;s list price. An absent <code>compareAtPrice</code> is unknown, not zero. Product-level discount values combine price ranges and should not be treated as a particular variant&#39;s verified discount.</p>
+<h2 id="understand-stock-and-currency-limits">Understand stock and currency limits</h2>
+<p><code>available</code> is a public variant availability flag; it is not a promise about stock quantity. <code>inventoryQuantity</code> is null when the store does not publish a quantity. Do not convert null into zero or infer a sell-out from missing information.</p>
+<p>The public product feed does not reliably identify currency. Treat null <code>currency</code> as unknown and confirm the storefront currency before comparing prices between stores. This tool does not convert currencies or include shipping and tax calculations.</p>
+<h2 id="preserve-the-last-complete-observation">Preserve the last complete observation</h2>
+<p>Check the run and every row before replacing a saved inventory. A blocked or invalid later page is reported as a store error instead of a complete truncated catalog. Do not import an error row as a product or interpret a failed export as deleted stock.</p>
+<p>Save <code>scrapedAt</code> with your snapshot. Compare successful exports with the same store, collection filters, product limit and row mode. A missing product can reflect a limit or filter change; it does not establish that a product was removed. Scheduling, snapshot storage and notifications are separate steps you configure in your automation.</p>
+<h2 id="when-a-free-direct-feed-is-enough">When a free direct feed is enough</h2>
+<p>If you maintain your own code and need only one occasional export, requesting the store&#39;s public <code>/products.json</code> feed directly may be sufficient. You will need to handle pagination, row mapping and failures yourself. A paid Actor is useful when you want the hosted run, standardized rows, dataset exports and API integration without operating that code. If the feed is blocked or private, this Actor does not grant access.</p>
+<h2 id="api-mcp-and-cli-access">API, MCP and CLI access</h2>
+<p><a href="/tools/shopify-products-scraper/">Open the tool page for its MCP connection address, CLI commands and downloadable input</a>. Authenticate with your own Apify account. Review the input and run budget before an agent executes it.</p>
+<div class="tabs"><input type="radio" name="t-shopify-products-scraper" id="t-shopify-products-scraper-python" checked><label for="t-shopify-products-scraper-python">Python</label><pre class="tab-python"><code class="language-python">import json&#10;import os&#10;from apify_client import ApifyClient&#10;&#10;client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])&#10;run = client.actor(&quot;webdatatools/shopify-products-scraper&quot;).call(run_input=json.loads(&quot;{\n    \&quot;stores\&quot;: [\n        \&quot;https://www.allbirds.com\&quot;\n    ],\n    \&quot;maxProductsPerStore\&quot;: 100,\n    \&quot;collectionHandles\&quot;: []\n}&quot;))&#10;&#10;for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():&#10;    print(item)</code></pre><input type="radio" name="t-shopify-products-scraper" id="t-shopify-products-scraper-js"><label for="t-shopify-products-scraper-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;&#10;&#10;const client = new ApifyClient({ token: process.env.APIFY_TOKEN });&#10;const run = await client.actor(&#39;webdatatools/shopify-products-scraper&#39;).call({&#10;    &quot;stores&quot;: [&#10;        &quot;https://www.allbirds.com&quot;&#10;    ],&#10;    &quot;maxProductsPerStore&quot;: 100,&#10;    &quot;collectionHandles&quot;: []&#10;});&#10;const { items } = await client.dataset(run.defaultDatasetId).listItems();&#10;console.log(items);</code></pre><input type="radio" name="t-shopify-products-scraper" id="t-shopify-products-scraper-bash"><label for="t-shopify-products-scraper-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~shopify-products-scraper/run-sync-get-dataset-items&quot; \&#10;  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \&#10;  -H &quot;Content-Type: application/json&quot; \&#10;  -d &#39;{&quot;stores&quot;:[&quot;https://www.allbirds.com&quot;],&quot;maxProductsPerStore&quot;:100,&quot;collectionHandles&quot;:[]}&#39;</code></pre></div><h2 id="pricing">Pricing</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
+<p class="fine">Primary event rates from a catalog snapshot; this is not the total price of a run. Additional charge events and Actor Start fees may apply; start fees can scale with memory. Check the Actor's Pricing tab on Apify for all events, conditions and current plan-specific rates, and set a maximum run budget before starting.</p><p>Check the Actor&#39;s live Pricing tab for all applicable events and start fees. More stores and more variants can increase the result count. A diagnostic or failed request does not guarantee the entire run is free.</p>
+<h2 id="recorded-example">Recorded example</h2>
+<p class="fine" data-sample-status="missing">No recorded sample is available yet.</p><h2 id="faq">FAQ</h2>
+<h3 id="can-i-export-a-private-or-password-protected-store">Can I export a private or password-protected store?</h3>
+<p>No. The workflow requires a public product feed and does not log into stores.</p>
+<h3 id="does-it-automatically-alert-me-about-price-changes">Does it automatically alert me about price changes?</h3>
+<p>No. It exports a snapshot. Store successful snapshots and compare identical variant keys in your own workflow.</p>
+<h3 id="can-i-use-it-without-code">Can I use it without code?</h3>
+<p>Yes. Run it in Apify Console and export the dataset as CSV or JSON. Test a small input and inspect its result first.</p>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/shopify-products-scraper?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fshopify-product-catalog%2F%3Aguide_cta&amp;utm_term=shopify-products-scraper&amp;source_page=%2Fguides%2Fshopify-product-catalog%2F&amp;source_actor=shopify-products-scraper">Run Shopify Store Products Scraper on Apify →</a></p></article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/aldi-au-scraper/">ALDI AU Scraper (Products, Prices, Unit Prices)</a></li><li><a href="/tools/aliexpress-scraper/">AliExpress Scraper (Search Products &amp; Prices)</a></li><li><a href="/tools/amazon-bestsellers-scraper/">Amazon Best Sellers Scraper (Ranks, Prices, Ratings)</a></li><li><a href="/tools/amazon-product-scraper/">Amazon Product Scraper (Price, Rating, BSR, Stock)</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-mL0VyvXUakhDZ4Khl-cYcovMkzvu-shopify-products-scraper.png" alt="" width="44" height="44"><h4>Shopify Store Products Scraper</h4></div>
+<dl><dt>Primary event rate</dt><dd>$1 / 1k results</dd><dt>Billing</dt><dd>Event rates; additional fees may apply</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/shopify-products-scraper?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fshopify-product-catalog%2F%3Aspec&amp;utm_term=shopify-products-scraper&amp;source_page=%2Fguides%2Fshopify-product-catalog%2F&amp;source_actor=shopify-products-scraper">Try it free on Apify</a><p><a href="/tools/shopify-products-scraper/">Tool details</a></p></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#start-with-a-small-catalog-export">Start with a small catalog export</a></li><li><a href="#choose-product-rows-or-variant-rows">Choose product rows or variant rows</a></li><li><a href="#understand-stock-and-currency-limits">Understand stock and currency limits</a></li><li><a href="#preserve-the-last-complete-observation">Preserve the last complete observation</a></li><li><a href="#when-a-free-direct-feed-is-enough">When a free direct feed is enough</a></li><li><a href="#api-mcp-and-cli-access">API, MCP and CLI access</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#recorded-example">Recorded example</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fshopify-product-catalog%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fguides%2Fshopify-product-catalog%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+<div>Monitoring tools by ChimeraMiND: <a href="https://watch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Domain Watch</a> · <a href="https://pagewatch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Page &amp; Price Watch</a> · <a href="https://watch.chimeramind.com/domain-health-check?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Free domain health check</a></div>
+</div></footer>
+</body>
+</html>

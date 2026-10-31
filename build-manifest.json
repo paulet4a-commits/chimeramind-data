@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-10-31T14:11:46.269Z",
-  "sourceCommit": "d4f9beb3bc11186a448eb0c2b34db721cfd7fe16",
+  "builtAt": "2026-10-31T14:16:58.942Z",
+  "sourceCommit": "fa10ea4c2f132fff7843742d99f1c76b4a47fc13",
   "pages": [
     {
       "file": "guides/bulk-core-web-vitals-check/index.html",
@@ -68,6 +68,11 @@
       "sha256": "f53d4d5364d44c43705903543e1c04147546511ece13751e851be2deeec2c96b"
     },
     {
+      "file": "guides/shopify-product-catalog/index.html",
+      "url": "https://data.chimeramind.com/guides/shopify-product-catalog/",
+      "sha256": "cf8ed515755f81d1b23786a137c27fad8020f1e512e443ce111f242116e1979e"
+    },
+    {
       "file": "guides/stock-crypto-fx-quotes-api/index.html",
       "url": "https://data.chimeramind.com/guides/stock-crypto-fx-quotes-api/",
       "sha256": "dbd8f8b08c031bb651f91b6c7f523810932a1c2efeb5ec71ce04f5a61015653c"
@@ -90,7 +95,7 @@
     {
       "file": "guides/youtube-channel-inventory/index.html",
       "url": "https://data.chimeramind.com/guides/youtube-channel-inventory/",
-      "sha256": "531fa0d29f3ea02b844357cb687a2d9811fff0aa67c824ac2e3f7e9e613cbb5f"
+      "sha256": "803455884257321fde3992b0b725f68a9f290cc2ad75aba7f56920486421e889"
     },
     {
       "file": "guides/youtube-shorts-scraper/index.html",
@@ -110,7 +115,7 @@
     {
       "file": "index.html",
       "url": "https://data.chimeramind.com/",
-      "sha256": "2912a6ae2eb4fedb340f9b932bd29eb8c6abf7c0dbae83249b3b41f28cd73dfb"
+      "sha256": "183100540b9050de1cb8dd870d707933f60f08e8218aff1f0352fd365c3dc91b"
     },
     {
       "file": "start/website-fields/index.html",
@@ -130,7 +135,7 @@
     {
       "file": "guides/index.html",
       "url": "https://data.chimeramind.com/guides/",
-      "sha256": "3645d0b5f894b12a421cbb56ba59aff8c14a637cc6c514c1f3b57d01a3d1aad3"
+      "sha256": "2895908ba7be7be3828dd931e242810406e9c27a265ca6429109933fd7a1174f"
     },
     {
       "file": "tools/index.html",
@@ -145,7 +150,7 @@
     {
       "file": "tools/shopify-products-scraper/index.html",
       "url": "https://data.chimeramind.com/tools/shopify-products-scraper/",
-      "sha256": "f6681d4cc5c93422ceed7b096c277bc39a515d5b502c275f93ef19a73d9cc184"
+      "sha256": "4376c3a7cf4746167bd78cc13ca34c81ba6885298e4b2680168f518bccffe934"
     },
     {
       "file": "tools/google-search-scraper/index.html",

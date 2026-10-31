@@ -1,8 +1,8 @@
 {
   "version": 1,
   "origin": "https://data.chimeramind.com",
-  "generatedAt": "2026-10-31T14:11:46.270Z",
-  "sourceCommit": "d4f9beb3bc11186a448eb0c2b34db721cfd7fe16",
+  "generatedAt": "2026-10-31T14:16:58.943Z",
+  "sourceCommit": "fa10ea4c2f132fff7843742d99f1c76b4a47fc13",
   "products": [
     {
       "product": "apify--contact-extractor",
@@ -257,9 +257,14 @@
       "title": "Shopify Store Products Scraper",
       "storeUrl": "https://apify.com/webdatatools/shopify-products-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/shopify-products-scraper/",
-      "preferredUrl": "https://data.chimeramind.com/tools/shopify-products-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/shopify-product-catalog/",
       "starters": [],
-      "guides": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/shopify-product-catalog/",
+          "title": "Export Shopify Products, Variants and Prices to CSV"
+        }
+      ],
       "workflows": []
     },
     {
