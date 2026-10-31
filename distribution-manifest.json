@@ -1,8 +1,8 @@
 {
   "version": 1,
   "origin": "https://data.chimeramind.com",
-  "generatedAt": "2026-10-28T14:36:21.580Z",
-  "sourceCommit": "64dc0c2fdafe8bb9e02fc224ae403448c070378a",
+  "generatedAt": "2026-10-31T14:10:03.063Z",
+  "sourceCommit": "24f8c815c09eb75eac86e7b6b1189529e00c8c25",
   "products": [
     {
       "product": "apify--contact-extractor",
@@ -1512,12 +1512,56 @@
       "workflows": []
     },
     {
+      "product": "apify--woolworths-au-scraper",
+      "actor": "woolworths-au-scraper",
+      "title": "Woolworths AU Scraper (Products, Prices, Specials)",
+      "storeUrl": "https://apify.com/webdatatools/woolworths-au-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/woolworths-au-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/woolworths-au-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
       "product": "apify--linkedin-company-scraper",
       "actor": "linkedin-company-scraper",
       "title": "LinkedIn Company Scraper (Public Company Pages)",
       "storeUrl": "https://apify.com/webdatatools/linkedin-company-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/linkedin-company-scraper/",
       "preferredUrl": "https://data.chimeramind.com/tools/linkedin-company-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--aldi-au-scraper",
+      "actor": "aldi-au-scraper",
+      "title": "ALDI AU Scraper (Products, Prices, Unit Prices)",
+      "storeUrl": "https://apify.com/webdatatools/aldi-au-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/aldi-au-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/aldi-au-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--vinted-scraper",
+      "actor": "vinted-scraper",
+      "title": "Vinted Scraper (Listings, Prices, Brands, Sizes)",
+      "storeUrl": "https://apify.com/webdatatools/vinted-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/vinted-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/vinted-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--coles-au-scraper",
+      "actor": "coles-au-scraper",
+      "title": "Coles AU Scraper (Products, Prices, Specials)",
+      "storeUrl": "https://apify.com/webdatatools/coles-au-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/coles-au-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/coles-au-scraper/",
       "starters": [],
       "guides": [],
       "workflows": []
@@ -1534,12 +1578,133 @@
       "workflows": []
     },
     {
+      "product": "apify--medium-scraper",
+      "actor": "medium-scraper",
+      "title": "Medium Scraper (Articles, Claps, Tags, Reading Time)",
+      "storeUrl": "https://apify.com/webdatatools/medium-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/medium-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/medium-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--espn-scraper",
+      "actor": "espn-scraper",
+      "title": "ESPN Sports Scraper (Scores, Standings, Teams, Rosters)",
+      "storeUrl": "https://apify.com/webdatatools/espn-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/espn-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/espn-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--twitch-scraper",
+      "actor": "twitch-scraper",
+      "title": "Twitch Scraper (Live Streams, Viewers, Followers)",
+      "storeUrl": "https://apify.com/webdatatools/twitch-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/twitch-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/twitch-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--twitter-trends-scraper",
+      "actor": "twitter-trends-scraper",
+      "title": "X (Twitter) Trends Scraper (Trends by Country & City)",
+      "storeUrl": "https://apify.com/webdatatools/twitter-trends-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/twitter-trends-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/twitter-trends-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
       "product": "apify--linkedin-company-posts-scraper",
       "actor": "linkedin-company-posts-scraper",
       "title": "LinkedIn Company Posts Scraper (Public Company Feed)",
       "storeUrl": "https://apify.com/webdatatools/linkedin-company-posts-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/linkedin-company-posts-scraper/",
       "preferredUrl": "https://data.chimeramind.com/tools/linkedin-company-posts-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--flipkart-scraper",
+      "actor": "flipkart-scraper",
+      "title": "Flipkart Product Scraper (Prices & Ratings)",
+      "storeUrl": "https://apify.com/webdatatools/flipkart-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/flipkart-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/flipkart-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--gumtree-scraper",
+      "actor": "gumtree-scraper",
+      "title": "Gumtree Scraper (UK Listings & Prices)",
+      "storeUrl": "https://apify.com/webdatatools/gumtree-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/gumtree-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/gumtree-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--trendyol-reviews-scraper",
+      "actor": "trendyol-reviews-scraper",
+      "title": "Trendyol Reviews Scraper (Ratings, Comments, Sellers)",
+      "storeUrl": "https://apify.com/webdatatools/trendyol-reviews-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/trendyol-reviews-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/trendyol-reviews-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--autotrader-uk-scraper",
+      "actor": "autotrader-uk-scraper",
+      "title": "AutoTrader UK Car Scraper (Listings & Prices)",
+      "storeUrl": "https://apify.com/webdatatools/autotrader-uk-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/autotrader-uk-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/autotrader-uk-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--arbeitsagentur-jobs-scraper",
+      "actor": "arbeitsagentur-jobs-scraper",
+      "title": "Arbeitsagentur Jobs Scraper (Germany Job Listings)",
+      "storeUrl": "https://apify.com/webdatatools/arbeitsagentur-jobs-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/arbeitsagentur-jobs-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/arbeitsagentur-jobs-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--airbnb-reviews-scraper",
+      "actor": "airbnb-reviews-scraper",
+      "title": "Airbnb Reviews Scraper (Ratings, Text, Host Replies)",
+      "storeUrl": "https://apify.com/webdatatools/airbnb-reviews-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/airbnb-reviews-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/airbnb-reviews-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--yellowpages-scraper",
+      "actor": "yellowpages-scraper",
+      "title": "YellowPages Business Scraper (USA Listings)",
+      "storeUrl": "https://apify.com/webdatatools/yellowpages-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/yellowpages-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/yellowpages-scraper/",
       "starters": [],
       "guides": [],
       "workflows": []
