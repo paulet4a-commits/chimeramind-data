@@ -10,6 +10,7 @@ import { WORKFLOWS, relatedActors, attributedUrl } from './src/growth.mjs';
 import { validateData, hash } from './src/quality.mjs';
 import { QUICKSTARTS, n8nStarter } from './src/quickstarts.mjs';
 import { distributionManifest } from './src/distribution.mjs';
+import { agentAccess, agentIndex } from './src/agent-access.mjs';
 
 const here = import.meta.dirname;
 const dist = path.join(here, 'dist');
@@ -132,8 +133,9 @@ write('tools/index.html', page({ path: '/tools/', title: `All ${all.length} data
 // ---- individual tool pages and workflow pages
 for (const a of all) {
     const toolPath = `/tools/${a.name}/`;
+    write(`inputs/${a.name}.json`, JSON.stringify(a.prefill ?? {}, null, 2) + '\n');
     const guide = guideFor[a.name];
-    const body = `<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / ${esc(a.title)}</div><section class="hero" style="grid-template-columns:1fr"><div><div class="kicker">${esc(CAT_LABEL[a.categories[0]] ?? 'Data tool')}</div><h1>${esc(a.title)}</h1><p class="lede">${esc(a.description)}</p><p class="cta-row"><a class="btn" href="${esc(attributedUrl(a, { page: toolPath, placement: 'tool_primary' }))}">Run ${esc(a.title)} on Apify →</a></p>${guide ? `<p><a href="/guides/${guide.slug}/">Read the step-by-step guide</a></p>` : ''}</div></section><article class="prose"><h2>Pricing</h2>${pricingTable(a)}<h2>Sample output</h2>${sampleBlock(sampleOf(a.name))}<h2>Call from code</h2><p>Use the existing catalog input below as a starting point. Review the tool's input form on Apify before running it.</p>${codeTabs(a)}</article>${growthLinks(a)}</div>`;
+    const body = `<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / ${esc(a.title)}</div><section class="hero" style="grid-template-columns:1fr"><div><div class="kicker">${esc(CAT_LABEL[a.categories[0]] ?? 'Data tool')}</div><h1>${esc(a.title)}</h1><p class="lede">${esc(a.description)}</p><p class="cta-row"><a class="btn" href="${esc(attributedUrl(a, { page: toolPath, placement: 'tool_primary' }))}">Run ${esc(a.title)} on Apify →</a></p>${guide ? `<p><a href="/guides/${guide.slug}/">Read the step-by-step guide</a></p>` : ''}</div></section><article class="prose"><h2>Pricing</h2>${pricingTable(a)}<h2>Sample output</h2>${sampleBlock(sampleOf(a.name))}<h2>Call from code</h2><p>Use the existing catalog input below as a starting point. Review the tool's input form on Apify before running it.</p>${codeTabs(a)}${agentAccess(a)}</article>${growthLinks(a)}</div>`;
     write(`tools/${a.name}/index.html`, page({ path: toolPath, title: `${a.title} — API, output & pricing | ${SITE.name}`, description: a.description, nav: 'tools', actors, body, jsonLd: [{ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: a.title, description: a.description, applicationCategory: 'DeveloperApplication', operatingSystem: 'Web, API', url: `${SITE.origin}${toolPath}`, offers: { '@type': 'Offer', price: a.price.usd, priceCurrency: 'USD', description: `Catalog price per ${a.price.unit}` } }, { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Tools', item: `${SITE.origin}/tools/` }, { '@type': 'ListItem', position: 2, name: a.title, item: `${SITE.origin}${toolPath}` }] }] }));
 }
 for (const w of WORKFLOWS) {
@@ -147,6 +149,7 @@ const today = new Date().toISOString().slice(0, 10);
 const urls = renderedPages.map(p => new URL(p.url).pathname);
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${SITE.origin}${u}</loc><lastmod>${guides.find((g) => `/guides/${g.slug}/` === u)?.meta.updated ?? today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE.origin}/sitemap.xml\n`);
+write('llms.txt', agentIndex(actors, SITE.origin));
 write('CNAME', 'data.chimeramind.com\n');
 write('.nojekyll', '');
 write('build-manifest.json', `${JSON.stringify({ builtAt: new Date().toISOString(), sourceCommit: process.env.GITHUB_SHA ?? null, pages: renderedPages }, null, 2)}\n`);
