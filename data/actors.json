@@ -4664,5 +4664,143 @@
   "prefill": {
    "query": "solid-state battery"
   }
+ },
+ "producthunt-scraper": {
+  "name": "producthunt-scraper",
+  "title": "Product Hunt Scraper (Daily Launches, Votes, Makers)",
+  "description": "Scrape Product Hunt launches: the daily leaderboard with rank, votes, comments, topics and makers, or the newest posts from the public feed. One row per product.",
+  "url": "https://apify.com/webdatatools/producthunt-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 6,
+  "categories": [
+   "MARKETING",
+   "NEWS"
+  ],
+  "price": {
+   "unit": "product",
+   "usd": 0.0015,
+   "tiers": {
+    "FREE": 0.0015,
+    "BRONZE": 0.0012,
+    "SILVER": 0.00105,
+    "GOLD": 0.0009,
+    "PLATINUM": 0.0009,
+    "DIAMOND": 0.0009
+   }
+  },
+  "prefill": {}
+ },
+ "spotify-playlist-scraper": {
+  "name": "spotify-playlist-scraper",
+  "title": "Spotify Playlist Scraper (Tracks, Artists, Previews)",
+  "description": "Scrape Spotify playlists, albums and artist top tracks: track name, artists, duration, Spotify URI, preview link and cover, from the public Spotify embed pages.",
+  "url": "https://apify.com/webdatatools/spotify-playlist-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "OTHER",
+   "DEVELOPER_TOOLS"
+  ],
+  "price": {
+   "unit": "track",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "links": [
+    "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
+   ]
+  }
+ },
+ "sports-odds-scraper": {
+  "name": "sports-odds-scraper",
+  "title": "Sports Odds Scraper (Moneyline, Spread, Totals)",
+  "description": "Scrape sports betting odds per game: moneyline, point spread and total prices from Pinnacle for NFL, NBA, MLB, NHL and the English Premier League, and DraftKings NFL. One row per game.",
+  "url": "https://apify.com/webdatatools/sports-odds-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 11,
+  "categories": [
+   "OTHER",
+   "MARKETING"
+  ],
+  "price": {
+   "unit": "game",
+   "usd": 0.003,
+   "tiers": {
+    "FREE": 0.003,
+    "BRONZE": 0.0024,
+    "SILVER": 0.0021,
+    "GOLD": 0.0018,
+    "PLATINUM": 0.0018,
+    "DIAMOND": 0.0018
+   }
+  },
+  "prefill": {}
+ },
+ "propertyfinder-scraper": {
+  "name": "propertyfinder-scraper",
+  "title": "Property Finder Scraper (UAE Rent & Sale Listings)",
+  "description": "Scrape Property Finder UAE listings for rent or sale by location and price: price, bedrooms, bathrooms, size, location, agent, broker, listing date, link and photo, one row per listing.",
+  "url": "https://apify.com/webdatatools/propertyfinder-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "OTHER",
+   "BUSINESS"
+  ],
+  "price": {
+   "unit": "listing",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {}
+ },
+ "youtube-playlist-scraper": {
+  "name": "youtube-playlist-scraper",
+  "title": "YouTube Playlist Scraper (Videos, Views, Durations)",
+  "description": "Scrape every video of a public YouTube playlist in playlist order: title, channel, views, age, duration, thumbnail and link, one row per video.",
+  "url": "https://apify.com/webdatatools/youtube-playlist-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 4,
+  "categories": [
+   "OTHER",
+   "DEVELOPER_TOOLS"
+  ],
+  "price": {
+   "unit": "video",
+   "usd": 0.001,
+   "tiers": {
+    "FREE": 0.001,
+    "BRONZE": 0.0008,
+    "SILVER": 0.0007,
+    "GOLD": 0.0006,
+    "PLATINUM": 0.0006,
+    "DIAMOND": 0.0006
+   }
+  },
+  "prefill": {
+   "playlists": [
+    "https://www.youtube.com/playlist?list=PL06diOotXAJLAAHBY7kIUm5GQwm2ZinOz"
+   ]
+  }
  }
 }
