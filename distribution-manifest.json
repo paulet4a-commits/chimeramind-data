@@ -1,8 +1,8 @@
 {
   "version": 1,
   "origin": "https://data.chimeramind.com",
-  "generatedAt": "2026-10-31T17:40:31.810Z",
-  "sourceCommit": "b97114cd25ea46bfc3b73d72723d8cb0eea1da0b",
+  "generatedAt": "2026-11-01T17:41:33.030Z",
+  "sourceCommit": "51b835bb6b05b9da00da2c4cd186f366f2985a77",
   "products": [
     {
       "product": "apify--contact-extractor",
@@ -1765,6 +1765,61 @@
       "storeUrl": "https://apify.com/webdatatools/google-patents-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/google-patents-scraper/",
       "preferredUrl": "https://data.chimeramind.com/tools/google-patents-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--producthunt-scraper",
+      "actor": "producthunt-scraper",
+      "title": "Product Hunt Scraper (Daily Launches, Votes, Makers)",
+      "storeUrl": "https://apify.com/webdatatools/producthunt-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/producthunt-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/producthunt-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--spotify-playlist-scraper",
+      "actor": "spotify-playlist-scraper",
+      "title": "Spotify Playlist Scraper (Tracks, Artists, Previews)",
+      "storeUrl": "https://apify.com/webdatatools/spotify-playlist-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/spotify-playlist-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/spotify-playlist-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--sports-odds-scraper",
+      "actor": "sports-odds-scraper",
+      "title": "Sports Odds Scraper (Moneyline, Spread, Totals)",
+      "storeUrl": "https://apify.com/webdatatools/sports-odds-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/sports-odds-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/sports-odds-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--propertyfinder-scraper",
+      "actor": "propertyfinder-scraper",
+      "title": "Property Finder Scraper (UAE Rent & Sale Listings)",
+      "storeUrl": "https://apify.com/webdatatools/propertyfinder-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/propertyfinder-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/propertyfinder-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--youtube-playlist-scraper",
+      "actor": "youtube-playlist-scraper",
+      "title": "YouTube Playlist Scraper (Videos, Views, Durations)",
+      "storeUrl": "https://apify.com/webdatatools/youtube-playlist-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/youtube-playlist-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/youtube-playlist-scraper/",
       "starters": [],
       "guides": [],
       "workflows": []

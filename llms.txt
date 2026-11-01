@@ -152,3 +152,8 @@
 - [NaukriGulf Jobs Scraper (Gulf Job Listings)](https://data.chimeramind.com/tools/naukrigulf-jobs-scraper/): input, pricing, API and MCP instructions.
 - [RSS Feed Reader (RSS and Atom Items)](https://data.chimeramind.com/tools/rss-feed-reader/): input, pricing, API and MCP instructions.
 - [Google Patents Scraper (Search, Abstracts, CPC)](https://data.chimeramind.com/tools/google-patents-scraper/): input, pricing, API and MCP instructions.
+- [Product Hunt Scraper (Daily Launches, Votes, Makers)](https://data.chimeramind.com/tools/producthunt-scraper/): input, pricing, API and MCP instructions.
+- [Spotify Playlist Scraper (Tracks, Artists, Previews)](https://data.chimeramind.com/tools/spotify-playlist-scraper/): input, pricing, API and MCP instructions.
+- [Sports Odds Scraper (Moneyline, Spread, Totals)](https://data.chimeramind.com/tools/sports-odds-scraper/): input, pricing, API and MCP instructions.
+- [Property Finder Scraper (UAE Rent & Sale Listings)](https://data.chimeramind.com/tools/propertyfinder-scraper/): input, pricing, API and MCP instructions.
+- [YouTube Playlist Scraper (Videos, Views, Durations)](https://data.chimeramind.com/tools/youtube-playlist-scraper/): input, pricing, API and MCP instructions.
