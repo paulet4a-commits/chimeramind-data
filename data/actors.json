@@ -4802,5 +4802,35 @@
     "https://www.youtube.com/playlist?list=PL06diOotXAJLAAHBY7kIUm5GQwm2ZinOz"
    ]
   }
+ },
+ "google-scholar-scraper": {
+  "name": "google-scholar-scraper",
+  "title": "Google Scholar Scraper (Papers, Citations, Free PDFs)",
+  "description": "Scrape Google Scholar search results: paper titles, authors, venue, year, snippet, cited-by counts, version counts and free PDF or HTML links, from public Scholar result pages.",
+  "url": "https://apify.com/webdatatools/google-scholar-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 12,
+  "categories": [
+   "OTHER",
+   "DEVELOPER_TOOLS"
+  ],
+  "price": {
+   "unit": "paper",
+   "usd": 0.002,
+   "tiers": {
+    "FREE": 0.002,
+    "BRONZE": 0.0016,
+    "SILVER": 0.0014,
+    "GOLD": 0.0012,
+    "PLATINUM": 0.0012,
+    "DIAMOND": 0.0012
+   }
+  },
+  "prefill": {
+   "queries": [
+    "solid-state battery"
+   ]
+  }
  }
 }
