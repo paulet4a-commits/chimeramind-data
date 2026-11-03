@@ -1,8 +1,8 @@
 {
   "version": 1,
   "origin": "https://data.chimeramind.com",
-  "generatedAt": "2026-11-01T17:41:33.030Z",
-  "sourceCommit": "51b835bb6b05b9da00da2c4cd186f366f2985a77",
+  "generatedAt": "2026-11-03T17:40:05.287Z",
+  "sourceCommit": "a2a87d55733b2a57e6aea0aa84213c612d911607",
   "products": [
     {
       "product": "apify--contact-extractor",
@@ -1732,6 +1732,17 @@
       "storeUrl": "https://apify.com/webdatatools/social-media-finder",
       "toolUrl": "https://data.chimeramind.com/tools/social-media-finder/",
       "preferredUrl": "https://data.chimeramind.com/tools/social-media-finder/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--google-scholar-scraper",
+      "actor": "google-scholar-scraper",
+      "title": "Google Scholar Scraper (Papers, Citations, Free PDFs)",
+      "storeUrl": "https://apify.com/webdatatools/google-scholar-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/google-scholar-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/google-scholar-scraper/",
       "starters": [],
       "guides": [],
       "workflows": []
