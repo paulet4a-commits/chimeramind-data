@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Export YouTube Video Metadata to CSV from Video URLs | ChimeraMiND Data</title>
+<meta name="description" content="Start with one YouTube video URL, check titles and public metrics, then export CSV or JSON. Includes field limits, proxy behavior and the official API alternative.">
+
+<link rel="canonical" href="https://data.chimeramind.com/guides/youtube-video-details/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Export YouTube Video Metadata to CSV from Video URLs | ChimeraMiND Data">
+<meta property="og:description" content="Start with one YouTube video URL, check titles and public metrics, then export CSV or JSON. Includes field limits, proxy behavior and the official API alternative.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/youtube-video-details/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta property="og:image" content="https://data.chimeramind.com/assets/social/youtube.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Export YouTube Video Metadata to CSV from Video URLs | ChimeraMiND Data — ChimeraMiND Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+<script type="module" src="/assets/attribution.mjs"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Export YouTube Video Metadata to CSV from Video URLs","description":"Start with one YouTube video URL, check titles and public metrics, then export CSV or JSON. Includes field limits, proxy behavior and the official API alternative.","dateModified":"2026-11-04","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/youtube-video-details/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YouTube Video Details Scraper (views, likes, description, tags)","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/youtube-video-details","offers":{"@type":"Offer","price":"1.00","priceCurrency":"USD","description":"per 1,000 videos"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Export YouTube Video Metadata to CSV from Video URLs","item":"https://data.chimeramind.com/guides/youtube-video-details/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I paste Shorts links or a bare video ID?","acceptedAnswer":{"@type":"Answer","text":"The input accepts IDs and watch, Shorts or youtu.be URLs. Accepted URL syntax does not guarantee access to the video."}},{"@type":"Question","name":"Can this discover every video on a channel?","acceptedAnswer":{"@type":"Answer","text":"This Actor starts from URLs or IDs you supply. Use the channel inventory workflow to discover public video URLs, then enrich the selected videos here."}},{"@type":"Question","name":"Does an empty field mean zero?","acceptedAnswer":{"@type":"Answer","text":"No. Check `error` and field availability. Preserve missing values instead of overwriting a previous successful observation with zero."}},{"@type":"Question","name":"Will opening the link start a paid run?","acceptedAnswer":{"@type":"Answer","text":"No. Review the Actor's input, applicable pricing events and maximum run budget before starting it."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>STOCKTWITS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE VIDEO DETAILS <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>STOCKTWITS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE VIDEO DETAILS <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / YouTube video metadata</div>
+<div class="guide"><div><header><div class="kicker">Video research</div><h1>Export titles and public metrics from a list of YouTube videos</h1><p class="lede">Start with one YouTube video URL, check titles and public metrics, then export CSV or JSON. Includes field limits, proxy behavior and the official API alternative.</p>
+<div class="byline"><span>Updated 2026-11-04</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
+<article class="prose"><p>Use this workflow when you already have video URLs and want titles, descriptions, uploader keywords and available public counts in a spreadsheet. For discovering uploads from a channel, start with the <a href="/guides/youtube-channel-inventory/">channel inventory guide</a> instead.</p>
+<p>You need an Apify account and enough credit for the run. A YouTube Data API key is not required for this Actor. Public data can still be unavailable, blocked or incomplete.</p>
+<h2 id="start-with-one-video">Start with one video</h2>
+<p>Open the Actor, switch Input to JSON and paste this small input. Replace the example ID with a public video you want to inspect.</p>
+<pre><code class="language-json">{
+  &quot;videos&quot;: [&quot;jNQXAC9IVRw&quot;],
+  &quot;maxConcurrency&quot;: 1,
+  &quot;proxyMode&quot;: &quot;auto&quot;
+}
+</code></pre>
+<p>Before starting, review the Actor&#39;s current <strong>Pricing</strong> tab and set <strong>Maximum cost per run</strong>. A one-video input limits the requested videos; it does not promise that the total run costs exactly one displayed video event. Start fees and other applicable charges must fit the budget too.</p>
+<p>After completion, check that <code>error</code> is empty and <code>videoId</code>, <code>url</code> and <code>title</code> identify the intended video. Inspect the fields your workflow needs before exporting CSV, JSON or Excel. A successful run does not mean every row contains usable data.</p>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/youtube-video-details?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fyoutube-video-details%2F%3Aguide_cta&amp;utm_term=youtube-video-details&amp;source_page=%2Fguides%2Fyoutube-video-details%2F&amp;source_actor=youtube-video-details">Run YouTube Video Details Scraper (views, likes, description, tags) on Apify →</a></p><h2 id="know-which-fields-you-are-importing">Know which fields you are importing</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning and limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>videoId</code>, <code>url</code></td>
+<td>Use the video ID as the stable key when joining observations.</td>
+</tr>
+<tr>
+<td><code>title</code>, <code>description</code>, <code>keywords</code></td>
+<td>Public metadata; keywords may be absent and are not a search ranking score.</td>
+</tr>
+<tr>
+<td><code>viewCount</code>, <code>likeCount</code></td>
+<td>Available public counters at collection time. Missing values are not zero.</td>
+</tr>
+<tr>
+<td><code>commentCountText</code>, <code>subscriberCountText</code></td>
+<td>Display text that may be abbreviated or unavailable. Preserve it as text.</td>
+</tr>
+<tr>
+<td><code>channelId</code>, <code>channelName</code>, <code>channelUrl</code></td>
+<td>The video&#39;s channel identity.</td>
+</tr>
+<tr>
+<td><code>publishDate</code>, <code>uploadDate</code>, <code>durationSeconds</code></td>
+<td>Inspect availability before using these in calculations.</td>
+</tr>
+<tr>
+<td><code>error</code>, <code>scrapedAt</code></td>
+<td>Row outcome and observation time. Keep both with the export.</td>
+</tr>
+</tbody></table>
+</div><p>This workflow does not retrieve watch time, audience demographics, creator revenue, comment bodies or transcripts. For captions, see the separate <a href="/guides/youtube-transcript-api/">transcript guide</a>.</p>
+<h2 id="check-proxy-behavior-and-missing-data">Check proxy behavior and missing data</h2>
+<p>With <code>proxyMode: &quot;auto&quot;</code>, the Actor tries direct requests first and can switch to the configured Apify proxy when blocked. Proxy access must be available in your account. <code>never</code> avoids proxy use but can leave blocked videos with errors; increasing concurrency does not fix an access block.</p>
+<p>The proxy path skips an extra request used for optional fields, so subscriber text, comment-count text or a like-count fallback may be missing. If those are required, inspect one representative result before submitting a larger list. Restricted or inaccessible videos may not produce usable metadata.</p>
+<h2 id="repeat-a-check-without-losing-the-last-good-observation">Repeat a check without losing the last good observation</h2>
+<p>Save successful observations with <code>videoId</code> and <code>scrapedAt</code>. Compare like-for-like fields from successful rows. Preserve previous values when a new row has an error or a missing field; missing counts should not look like a fall to zero.</p>
+<p>For API use, keep the Apify token in your environment or your automation tool&#39;s credential store. Retain the run ID, then retrieve its dataset after completion. If a synchronous request disconnects, check the existing run in Apify before starting another: a connection timeout does not prove the run stopped.</p>
+<h2 id="when-to-use-the-official-youtube-api">When to use the official YouTube API</h2>
+<p>The <a href="https://developers.google.com/youtube/data/reference/rest/v3/videos/list">official videos.list endpoint</a> supports public video metadata and statistics. Google documents a quota cost of one unit per request. Its <a href="https://developers.google.com/youtube/data/getting-started">setup guide</a> covers the project, API and credentials.</p>
+<p>Choose that route if you already maintain a YouTube API integration and it provides the fields you need. Choose this Actor when an Apify dataset, Console export or existing Apify task fits your workflow and you accept its price and scraping limitations. Neither route gives you another creator&#39;s private analytics.</p>
+<h2 id="pricing">Pricing</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per video</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
+<p class="fine">Primary event rates from a catalog snapshot; this is not the total price of a run. Additional charge events and Actor Start fees may apply; start fees can scale with memory. Check the Actor's Pricing tab on Apify for all events, conditions and current plan-specific rates, and set a maximum run budget before starting.</p><h2 id="faq">FAQ</h2>
+<h3 id="can-i-paste-shorts-links-or-a-bare-video-id">Can I paste Shorts links or a bare video ID?</h3>
+<p>The input accepts IDs and watch, Shorts or youtu.be URLs. Accepted URL syntax does not guarantee access to the video.</p>
+<h3 id="can-this-discover-every-video-on-a-channel">Can this discover every video on a channel?</h3>
+<p>This Actor starts from URLs or IDs you supply. Use the channel inventory workflow to discover public video URLs, then enrich the selected videos here.</p>
+<h3 id="does-an-empty-field-mean-zero">Does an empty field mean zero?</h3>
+<p>No. Check <code>error</code> and field availability. Preserve missing values instead of overwriting a previous successful observation with zero.</p>
+<h3 id="will-opening-the-link-start-a-paid-run">Will opening the link start a paid run?</h3>
+<p>No. Review the Actor&#39;s input, applicable pricing events and maximum run budget before starting it.</p>
+</article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/bilibili-scraper/">Bilibili Scraper (Videos, Search, Popular)</a></li><li><a href="/tools/pinterest-pins-scraper/">Pinterest Pins Scraper</a></li><li><a href="/tools/podcast-lookup/">Apple Podcasts Lookup &amp; Episodes Scraper</a></li><li><a href="/tools/substack-scraper/">Substack Publication &amp; Posts Scraper</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-oIsr3QIQoU6d5wmZn-w2lmUc4ftA-youtube-video-details.png" alt="" width="44" height="44"><h4>YouTube Video Details Scraper (views, likes, description, tags)</h4></div>
+<dl><dt>Primary event rate</dt><dd>$1 / 1k videos</dd><dt>Billing</dt><dd>Event rates; additional fees may apply</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/youtube-video-details?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fyoutube-video-details%2F%3Aspec&amp;utm_term=youtube-video-details&amp;source_page=%2Fguides%2Fyoutube-video-details%2F&amp;source_actor=youtube-video-details">Try it free on Apify</a><p><a href="/tools/youtube-video-details/">Tool details</a></p></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#start-with-one-video">Start with one video</a></li><li><a href="#know-which-fields-you-are-importing">Know which fields you are importing</a></li><li><a href="#check-proxy-behavior-and-missing-data">Check proxy behavior and missing data</a></li><li><a href="#repeat-a-check-without-losing-the-last-good-observation">Repeat a check without losing the last good observation</a></li><li><a href="#when-to-use-the-official-youtube-api">When to use the official YouTube API</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fyoutube-video-details%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fguides%2Fyoutube-video-details%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+<div>Monitoring tools by ChimeraMiND: <a href="https://watch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Domain Watch</a> · <a href="https://pagewatch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Page &amp; Price Watch</a> · <a href="https://watch.chimeramind.com/domain-health-check?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Free domain health check</a></div>
+</div></footer>
+</body>
+</html>

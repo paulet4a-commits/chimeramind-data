@@ -1,8 +1,8 @@
 {
   "version": 1,
   "origin": "https://data.chimeramind.com",
-  "generatedAt": "2026-11-03T17:40:05.287Z",
-  "sourceCommit": "a2a87d55733b2a57e6aea0aa84213c612d911607",
+  "generatedAt": "2026-11-04T19:27:39.459Z",
+  "sourceCommit": "8202026aab28c0f2d883f92e7bfa339d9a9feecc",
   "products": [
     {
       "product": "apify--contact-extractor",
@@ -294,7 +294,7 @@
       "guides": [
         {
           "url": "https://data.chimeramind.com/guides/website-to-markdown/",
-          "title": "How to Convert a Website to Markdown for LLMs and RAG"
+          "title": "Convert Website Pages to Markdown for RAG"
         }
       ],
       "workflows": [
@@ -481,9 +481,14 @@
       "title": "YouTube Video Details Scraper (views, likes, description, tags)",
       "storeUrl": "https://apify.com/webdatatools/youtube-video-details",
       "toolUrl": "https://data.chimeramind.com/tools/youtube-video-details/",
-      "preferredUrl": "https://data.chimeramind.com/tools/youtube-video-details/",
+      "preferredUrl": "https://data.chimeramind.com/guides/youtube-video-details/",
       "starters": [],
-      "guides": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/youtube-video-details/",
+          "title": "Export YouTube Video Metadata to CSV from Video URLs"
+        }
+      ],
       "workflows": []
     },
     {
@@ -1831,6 +1836,17 @@
       "storeUrl": "https://apify.com/webdatatools/youtube-playlist-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/youtube-playlist-scraper/",
       "preferredUrl": "https://data.chimeramind.com/tools/youtube-playlist-scraper/",
+      "starters": [],
+      "guides": [],
+      "workflows": []
+    },
+    {
+      "product": "apify--steam-reviews-scraper",
+      "actor": "steam-reviews-scraper",
+      "title": "Steam Reviews Scraper",
+      "storeUrl": "https://apify.com/webdatatools/steam-reviews-scraper",
+      "toolUrl": "https://data.chimeramind.com/tools/steam-reviews-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/tools/steam-reviews-scraper/",
       "starters": [],
       "guides": [],
       "workflows": []

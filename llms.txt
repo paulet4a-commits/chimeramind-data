@@ -158,3 +158,4 @@
 - [Sports Odds Scraper (Moneyline, Spread, Totals)](https://data.chimeramind.com/tools/sports-odds-scraper/): input, pricing, API and MCP instructions.
 - [Property Finder Scraper (UAE Rent & Sale Listings)](https://data.chimeramind.com/tools/propertyfinder-scraper/): input, pricing, API and MCP instructions.
 - [YouTube Playlist Scraper (Videos, Views, Durations)](https://data.chimeramind.com/tools/youtube-playlist-scraper/): input, pricing, API and MCP instructions.
+- [Steam Reviews Scraper](https://data.chimeramind.com/tools/steam-reviews-scraper/): input, pricing, API and MCP instructions.

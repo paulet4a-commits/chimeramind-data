@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Convert a Website to Markdown for LLMs and RAG | ChimeraMiND Data</title>
-<meta name="description" content="Crawl a docs site, blog or help center and get one clean Markdown document per page — navigation and cookie banners stripped, headings and code kept — ready for chunking and embeddings.">
+<title>Convert Website Pages to Markdown for RAG | ChimeraMiND Data</title>
+<meta name="description" content="Start with one public HTML page, inspect the Markdown and run diagnostics, then expand to a bounded crawl for your RAG pipeline. Includes a free local alternative.">
 
 <link rel="canonical" href="https://data.chimeramind.com/guides/website-to-markdown/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to Convert a Website to Markdown for LLMs and RAG | ChimeraMiND Data">
-<meta property="og:description" content="Crawl a docs site, blog or help center and get one clean Markdown document per page — navigation and cookie banners stripped, headings and code kept — ready for chunking and embeddings.">
+<meta property="og:title" content="Convert Website Pages to Markdown for RAG | ChimeraMiND Data">
+<meta property="og:description" content="Start with one public HTML page, inspect the Markdown and run diagnostics, then expand to a bounded crawl for your RAG pipeline. Includes a free local alternative.">
 <meta property="og:url" content="https://data.chimeramind.com/guides/website-to-markdown/">
 <meta property="og:site_name" content="ChimeraMiND Data">
 <meta property="og:image" content="https://data.chimeramind.com/assets/social/catalog.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="How to Convert a Website to Markdown for LLMs and RAG | ChimeraMiND Data — ChimeraMiND Data">
+<meta property="og:image:alt" content="Convert Website Pages to Markdown for RAG | ChimeraMiND Data — ChimeraMiND Data">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b8f6a">
 
@@ -26,10 +26,10 @@
 <link rel="stylesheet" href="/assets/site.css">
 <script type="module" src="/assets/sample-status.js"></script>
 <script type="module" src="/assets/attribution.mjs"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to Convert a Website to Markdown for LLMs and RAG","description":"Crawl a docs site, blog or help center and get one clean Markdown document per page — navigation and cookie banners stripped, headings and code kept — ready for chunking and embeddings.","dateModified":"2026-10-03","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/website-to-markdown/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Convert Website Pages to Markdown for RAG","description":"Start with one public HTML page, inspect the Markdown and run diagnostics, then expand to a bounded crawl for your RAG pipeline. Includes a free local alternative.","dateModified":"2026-11-04","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/website-to-markdown/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Website to Markdown — Content Crawler for LLM & RAG","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/website-to-markdown","offers":{"@type":"Offer","price":"1.00","priceCurrency":"USD","description":"per 1,000 results"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"How to Convert a Website to Markdown for LLMs and RAG","item":"https://data.chimeramind.com/guides/website-to-markdown/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can it crawl sites that need JavaScript?","acceptedAnswer":{"@type":"Answer","text":"No. It fetches raw HTML without running page scripts. Most documentation, blogs and help centers render on the server and work well; client-side single-page apps need a browser-based crawler instead."}},{"@type":"Question","name":"Does it respect robots.txt?","acceptedAnswer":{"@type":"Answer","text":"Yes, by default. URLs disallowed by the site's robots.txt are skipped. You can turn this off only for sites you own or have permission to crawl."}},{"@type":"Question","name":"How do I crawl only part of a site?","acceptedAnswer":{"@type":"Answer","text":"Use Include path prefixes (for example `/docs` or `/blog`) and Exclude patterns for things like `/login` or file downloads. Max depth limits how many links deep the crawl goes from the start URL."}},{"@type":"Question","name":"What happens if my run hits its timeout?","acceptedAnswer":{"@type":"Answer","text":"The crawler stops shortly before the run timeout and finishes successfully with every page crawled so far. You are only billed for pages that were delivered."}},{"@type":"Question","name":"Can an AI agent call it directly?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every Apify tool is available through the Apify MCP server, so assistants such as Claude or ChatGPT with MCP support can run the crawl and read the Markdown themselves."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Convert Website Pages to Markdown for RAG","item":"https://data.chimeramind.com/guides/website-to-markdown/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the crawler execute JavaScript or log in?","acceptedAnswer":{"@type":"Answer","text":"It fetches public HTML without a browser. Pages requiring client-side rendering or authentication need another permitted extraction path."}},{"@type":"Question","name":"Is a successful run a complete copy of the website?","acceptedAnswer":{"@type":"Answer","text":"No. Page limits, filters, robots rules, access errors and time or charge budgets can leave a partial crawl. Inspect `OUTPUT` and any error records before calling it complete."}},{"@type":"Question","name":"Can I keep a knowledge base updated automatically?","acceptedAnswer":{"@type":"Answer","text":"You can save an Apify task and configure a schedule. Storage updates, deletion policy, embeddings and alerts belong in your pipeline. Validate a manual run and its cost before scheduling repeated work."}},{"@type":"Question","name":"What if an API request disconnects?","acceptedAnswer":{"@type":"Answer","text":"Check the existing run, dataset and diagnostics in Apify before retrying. A retained run ID helps prevent duplicate work and charges."}}]}</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
 </head>
 <body>
@@ -37,14 +37,74 @@
 <a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
 <nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
 </div></header>
-<div class="ticker" aria-hidden="true"><div class="track"><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>STOCKTWITS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE VIDEO DETAILS <b>$1</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>STOCKTWITS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE VIDEO DETAILS <b>$1</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="ticker" aria-hidden="true"><div class="track"><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>STOCKTWITS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE VIDEO DETAILS <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>STOCKTWITS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE VIDEO DETAILS <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>TECH STACK DETECTOR <b>$20</b>/1k <span class="up">● catalog</span></span></div></div>
 <div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Website to Markdown</div>
-<div class="guide"><div><header><div class="kicker">AI &amp; LLM data</div><h1>Turn any website into clean Markdown for your LLM or RAG pipeline</h1><p class="lede">Crawl a docs site, blog or help center and get one clean Markdown document per page — navigation and cookie banners stripped, headings and code kept — ready for chunking and embeddings.</p>
-<div class="byline"><span>Updated 2026-10-03</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
-<article class="prose"><p>Large language models read Markdown far better than raw HTML. A typical documentation page is 80–90 % markup, scripts and navigation; the part you actually want an LLM to see — headings, paragraphs, code blocks, tables — is buried inside it. This guide shows how to crawl a whole site and get <strong>one clean Markdown document per page</strong>, with the boilerplate removed, in a few minutes and for about $1 per 1,000 results.</p>
-<h2 id="what-you-get">What you get</h2>
-<p>Each crawled page becomes one row with the page&#39;s <code>url</code>, <code>title</code>, <code>description</code>, <code>markdown</code> (or plain <code>text</code>), a <code>wordCount</code>, the page&#39;s heading outline and its outgoing links. Here is a real row from a recorded run, trimmed for length:</p>
-<figure class="sample" data-sample-status="recorded" data-sample-finished="2026-10-31T17:22:08.488Z" data-sample-run="htSihvxG9v43Yo8W4"><figcaption><span data-sample-label>Recorded example · 3 days old. This is a snapshot, not current data.</span><span class="mono">run htSihvxG9v43Yo8W4 · 2026-10-31</span></figcaption><pre><code class="language-json">{
+<div class="guide"><div><header><div class="kicker">AI and LLM data</div><h1>Convert website pages to Markdown and check them before indexing</h1><p class="lede">Start with one public HTML page, inspect the Markdown and run diagnostics, then expand to a bounded crawl for your RAG pipeline. Includes a free local alternative.</p>
+<div class="byline"><span>Updated 2026-11-04</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
+<article class="prose"><p>Collect readable content from public documentation, blogs or help centers for a knowledge base. This Actor fetches HTML without running page scripts. Inspect one representative page before expanding the crawl or paying for embeddings. A login screen or cookie notice is not the document you wanted to index.</p>
+<h2 id="start-with-one-page">Start with one page</h2>
+<p>Open the Actor, switch Input to JSON and paste this input. Replace the URL with a page you own or have permission to crawl.</p>
+<pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://docs.apify.com/platform&quot;,
+  &quot;outputFormat&quot;: &quot;markdown&quot;,
+  &quot;maxConcurrency&quot;: 1,
+  &quot;respectRobots&quot;: true,
+  &quot;chunkForRag&quot;: false,
+  &quot;changeDetection&quot;: false
+}
+</code></pre>
+<p>The <code>url</code> field selects single-page mode: it overrides crawl settings such as <code>startUrls</code> and <code>maxPages</code>, without sitemap seeding or link following. Review <strong>Pricing</strong> and set <strong>Maximum cost per run</strong> before starting. A page limit controls scope; the result rate alone is not a quote for every possible run charge.</p>
+<p>In the dataset, check the requested and final URLs, HTTP status, title and actual Markdown. Confirm that the paragraphs, headings and code you need were extracted, rather than an access page or navigation text. Only then export JSON or connect your ingestion step.</p>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/website-to-markdown?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fwebsite-to-markdown%2F%3Aguide_cta&amp;utm_term=website-to-markdown&amp;source_page=%2Fguides%2Fwebsite-to-markdown%2F&amp;source_actor=website-to-markdown">Run Website to Markdown — Content Crawler for LLM &amp; RAG on Apify →</a></p><h2 id="check-the-run-outcome-as-well-as-the-rows">Check the run outcome as well as the rows</h2>
+<p>The current source writes successful page rows to the dataset and lists failed pages separately. In the run&#39;s default key-value store, inspect:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Record</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>OUTPUT</code></td>
+<td><code>resultRows</code>, <code>failedPages</code>, <code>discoveryFailures</code> and <code>partial</code> describe this process attempt.</td>
+</tr>
+<tr>
+<td><code>ERRORS</code></td>
+<td>Failed page requests, when failures were recorded.</td>
+</tr>
+<tr>
+<td><code>DISCOVERY_ERRORS</code></td>
+<td>Sitemap or discovery failures, when present.</td>
+</tr>
+</tbody></table>
+</div><p>If <code>deliveryUnconfirmed</code> is true, inspect the existing dataset before retrying. A lost write response does not establish that no row was delivered. Retain run IDs in API integrations so a disconnected request can be reconciled without starting duplicate paid work.</p>
+<p>A successful run can still contain a partial crawl. An empty dataset does not prove the site has no content. Check status and diagnostics before updating your knowledge base, and preserve the last good documents when a replacement crawl fails.</p>
+<h2 id="expand-to-a-small-crawl">Expand to a small crawl</h2>
+<p>After the single-page check, remove <code>url</code> and use a bounded crawl input:</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [{ &quot;url&quot;: &quot;https://docs.apify.com/platform&quot; }],
+  &quot;maxPages&quot;: 5,
+  &quot;maxDepth&quot;: 1,
+  &quot;sameDomainOnly&quot;: true,
+  &quot;includePathPrefixes&quot;: [&quot;/platform&quot;],
+  &quot;useSitemap&quot;: false,
+  &quot;maxConcurrency&quot;: 1,
+  &quot;respectRobots&quot;: true,
+  &quot;outputFormat&quot;: &quot;markdown&quot;
+}
+</code></pre>
+<p>Replace both the URL and path prefix for your site. Sitemap seeding is off for this first crawl so discovery stays easier to inspect. Enable it later if useful, with the path filters and budget set correctly. Increase the page limit gradually; a limit does not guarantee that many usable pages will be fetched.</p>
+<h2 id="use-the-output-in-a-rag-pipeline">Use the output in a RAG pipeline</h2>
+<p>Keep <code>url</code>, <code>finalUrl</code>, <code>title</code>, <code>markdown</code>, <code>contentHash</code> and <code>crawledAt</code> with each document. They identify the source and help compare successful observations. Embeddings, vector storage and retrieval evaluation remain separate steps in your application.</p>
+<p>Setting <code>chunkForRag: true</code> adds heading-aware chunks. Review boundaries against your actual documents before choosing a chunk size. No chunk setting guarantees better answers.</p>
+<p>With <code>changeDetection: true</code>, state is associated with the start URLs in your Apify account. <code>changeStatus</code> can be <code>new</code>, <code>changed</code> or <code>unchanged</code>; it describes observations, not a complete audit of a site. When <code>skipUnchangedContent</code> removes the body from unchanged rows, retain the previous document in your storage. A page missing from a partial crawl should not be treated as deleted.</p>
+<h2 id="a-free-local-alternative">A free local alternative</h2>
+<p><a href="https://github.com/adbar/trafilatura">Trafilatura</a> is an open-source option for extracting content on infrastructure you manage. Its <a href="https://trafilatura.readthedocs.io/en/latest/usage-cli.html">command-line documentation</a> supports Markdown output with <code>--markdown</code> or <code>--output-format markdown</code>.</p>
+<p>Use a local library when you want to manage fetching, storage and operation yourself. Choose this Actor when an Apify run, dataset, export and scheduled task fit your workflow. Compare the output on your representative pages; there is no general speed, quality or total-cost advantage established here.</p>
+<h2 id="pricing-and-a-dated-example">Pricing and a dated example</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
+<p class="fine">Primary event rates from a catalog snapshot; this is not the total price of a run. Additional charge events and Actor Start fees may apply; start fees can scale with memory. Check the Actor's Pricing tab on Apify for all events, conditions and current plan-specific rates, and set a maximum run budget before starting.</p><p>The recorded sample below illustrates field format. Its displayed date applies to that saved run; it is not a fresh test of your target site or the current build.</p>
+<figure class="sample" data-sample-status="recorded" data-sample-finished="2026-10-31T17:22:08.488Z" data-sample-run="htSihvxG9v43Yo8W4"><figcaption><span data-sample-label>Recorded example · 4 days old. This is a snapshot, not current data.</span><span class="mono">run htSihvxG9v43Yo8W4 · 2026-10-31</span></figcaption><pre><code class="language-json">{
   &quot;url&quot;: &quot;https://data.chimeramind.com/&quot;,
   &quot;finalUrl&quot;: &quot;https://data.chimeramind.com/&quot;,
   &quot;statusCode&quot;: 200,
@@ -71,99 +131,20 @@
   &quot;error&quot;: null,
   &quot;chunks&quot;: null,
   &quot;changeStatus&quot;: null
-}</code></pre></figure><p>The crawler keeps what matters for retrieval and drops what doesn&#39;t:</p>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>Kept</th>
-<th>Removed</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Headings (<code>#</code>…<code>######</code>) and their hierarchy</td>
-<td>Site navigation, menus and breadcrumbs</td>
-</tr>
-<tr>
-<td>Paragraphs, lists, block quotes</td>
-<td>Footers, sidebars, &quot;related posts&quot;</td>
-</tr>
-<tr>
-<td>Code blocks, with their language when the site marks it</td>
-<td>Cookie banners and newsletter pop-ups</td>
-</tr>
-<tr>
-<td>Tables</td>
-<td>Scripts, styles, tracking pixels</td>
-</tr>
-<tr>
-<td>Links, rewritten to absolute URLs</td>
-<td>Decorative icon links</td>
-</tr>
-</tbody></table>
-</div><h2 id="step-by-step-crawl-a-site-in-the-apify-console">Step-by-step: crawl a site in the Apify Console</h2>
-<ol>
-<li>Open the tool and paste a start URL — for example the root of a docs site such as <code>https://docs.apify.com/platform</code>.</li>
-<li>Set <strong>Max pages</strong>. This is the billed unit and the crawl stops at exactly that number, so a 200-page crawl can never cost more than 200 results.</li>
-<li>Leave <strong>Use sitemap</strong> on. The crawler reads <code>/sitemap.xml</code> (including nested sitemap indexes) and starts from real content pages instead of discovering them link by link.</li>
-<li>Optional: add <strong>Include path prefixes</strong> such as <code>/docs</code> to stay inside one section of a large site.</li>
-<li>Click <strong>Start</strong>. A 50-page docs crawl usually finishes in under a minute; download the results as JSON, CSV or Excel, or read them through the API.</li>
-</ol>
-<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/website-to-markdown?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fwebsite-to-markdown%2F%3Aguide_cta&amp;utm_term=website-to-markdown&amp;source_page=%2Fguides%2Fwebsite-to-markdown%2F&amp;source_actor=website-to-markdown">Run Website to Markdown — Content Crawler for LLM &amp; RAG on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
-<p>The same crawl from Python, JavaScript or the command line. Replace the token with your own from the Apify Console (Settings → API &amp; Integrations).</p>
-<div class="tabs"><input type="radio" name="t-website-to-markdown" id="t-website-to-markdown-python" checked><label for="t-website-to-markdown-python">Python</label><pre class="tab-python"><code class="language-python">import json&#10;import os&#10;from apify_client import ApifyClient&#10;&#10;client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])&#10;run = client.actor(&quot;webdatatools/website-to-markdown&quot;).call(run_input=json.loads(&quot;{\n    \&quot;startUrls\&quot;: [\n        {\n            \&quot;url\&quot;: \&quot;https://docs.apify.com/platform\&quot;\n        },\n        {\n            \&quot;url\&quot;: \&quot;https://crawlee.dev/docs\&quot;\n        }\n    ],\n    \&quot;maxPages\&quot;: 50,\n    \&quot;maxDepth\&quot;: 3\n}&quot;))&#10;&#10;for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():&#10;    print(item)</code></pre><input type="radio" name="t-website-to-markdown" id="t-website-to-markdown-js"><label for="t-website-to-markdown-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;&#10;&#10;const client = new ApifyClient({ token: process.env.APIFY_TOKEN });&#10;const run = await client.actor(&#39;webdatatools/website-to-markdown&#39;).call({&#10;    &quot;startUrls&quot;: [&#10;        {&#10;            &quot;url&quot;: &quot;https://docs.apify.com/platform&quot;&#10;        },&#10;        {&#10;            &quot;url&quot;: &quot;https://crawlee.dev/docs&quot;&#10;        }&#10;    ],&#10;    &quot;maxPages&quot;: 50,&#10;    &quot;maxDepth&quot;: 3&#10;});&#10;const { items } = await client.dataset(run.defaultDatasetId).listItems();&#10;console.log(items);</code></pre><input type="radio" name="t-website-to-markdown" id="t-website-to-markdown-bash"><label for="t-website-to-markdown-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~website-to-markdown/run-sync-get-dataset-items&quot; \&#10;  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \&#10;  -H &quot;Content-Type: application/json&quot; \&#10;  -d &#39;{&quot;startUrls&quot;:[{&quot;url&quot;:&quot;https://docs.apify.com/platform&quot;},{&quot;url&quot;:&quot;https://crawlee.dev/docs&quot;}],&quot;maxPages&quot;:50,&quot;maxDepth&quot;:3}&#39;</code></pre></div><h2 id="getting-rag-ready-chunks-in-the-same-run">Getting RAG-ready chunks in the same run</h2>
-<p>Most pipelines split each page into chunks before embedding. Turn on <strong>Add RAG chunks</strong> (<code>chunkForRag: true</code>) and every row gets a <code>chunks</code> array: heading-aware pieces of the Markdown, each with its token count and the heading path it sits under (<code>[&quot;Platform&quot;, &quot;Actors&quot;, &quot;Running&quot;]</code>). Chunk size is set with <code>chunkSize</code> (500 tokens by default). Because chunks never cross a heading, a retrieved chunk always comes with the context of the section it belongs to — which measurably improves answer quality compared with fixed-length splitting.</p>
-<h2 id="keeping-a-knowledge-base-fresh">Keeping a knowledge base fresh</h2>
-<p>Re-crawling a 2,000-page site every day just to find the ten pages that changed is wasteful. With <strong>Change detection</strong> on, the crawler remembers each page&#39;s content hash from the previous run with the same start URLs and marks every row <code>new</code>, <code>changed</code> or <code>unchanged</code>. Unchanged pages can come back without their body text (<code>skipUnchangedContent</code>), so your pipeline only re-embeds what actually changed. Schedule the run daily in Apify and connect a webhook to your ingestion job.</p>
-<h2 id="how-much-does-it-cost">How much does it cost?</h2>
-<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
-<p class="fine">Primary event rates from a catalog snapshot; this is not the total price of a run. Additional charge events and Actor Start fees may apply; start fees can scale with memory. Check the Actor's Pricing tab on Apify for all events, conditions and current plan-specific rates, and set a maximum run budget before starting.</p><p>A practical example: a 300-page documentation site costs <strong>300 results</strong> on the free plan price above. There is no separate charge for compute, bandwidth or proxies — those are included in the per-result price.</p>
-<h2 id="how-it-compares">How it compares</h2>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>Approach</th>
-<th>Good at</th>
-<th>Watch out for</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>This tool</strong> (HTTP crawler)</td>
-<td>Fast, cheap, predictable cost; docs sites, blogs, help centers, marketing sites; sitemap-aware; chunks and change detection built in</td>
-<td>Does not execute JavaScript, so single-page apps that render all content client-side come back nearly empty</td>
-</tr>
-<tr>
-<td>Browser-based crawlers (e.g. Apify&#39;s Website Content Crawler)</td>
-<td>JavaScript-heavy sites and SPAs</td>
-<td>Each page loads a full browser, so runs are slower and more expensive per page</td>
-</tr>
-<tr>
-<td>Hosted &quot;URL to Markdown&quot; APIs</td>
-<td>Converting one URL at a time from an app</td>
-<td>You build the crawling, deduplication and page limits yourself; credit-based pricing</td>
-</tr>
-<tr>
-<td>DIY (<code>requests</code> + an HTML-to-Markdown library)</td>
-<td>Full control</td>
-<td>You maintain boilerplate removal, link resolution, sitemaps, retries and politeness rules</td>
-</tr>
-</tbody></table>
-</div><p>Rule of thumb: if you can see the content with JavaScript disabled in your browser, this HTTP crawler will get it — at a fraction of browser cost.</p>
-<h2 id="faq">FAQ</h2>
-<h3 id="can-it-crawl-sites-that-need-javascript">Can it crawl sites that need JavaScript?</h3>
-<p>No. It fetches raw HTML without running page scripts. Most documentation, blogs and help centers render on the server and work well; client-side single-page apps need a browser-based crawler instead.</p>
-<h3 id="does-it-respect-robots-txt">Does it respect robots.txt?</h3>
-<p>Yes, by default. URLs disallowed by the site&#39;s robots.txt are skipped. You can turn this off only for sites you own or have permission to crawl.</p>
-<h3 id="how-do-i-crawl-only-part-of-a-site">How do I crawl only part of a site?</h3>
-<p>Use Include path prefixes (for example <code>/docs</code> or <code>/blog</code>) and Exclude patterns for things like <code>/login</code> or file downloads. Max depth limits how many links deep the crawl goes from the start URL.</p>
-<h3 id="what-happens-if-my-run-hits-its-timeout">What happens if my run hits its timeout?</h3>
-<p>The crawler stops shortly before the run timeout and finishes successfully with every page crawled so far. You are only billed for pages that were delivered.</p>
-<h3 id="can-an-ai-agent-call-it-directly">Can an AI agent call it directly?</h3>
-<p>Yes. Every Apify tool is available through the Apify MCP server, so assistants such as Claude or ChatGPT with MCP support can run the crawl and read the Markdown themselves.</p>
+}</code></pre></figure><h2 id="faq">FAQ</h2>
+<h3 id="does-the-crawler-execute-javascript-or-log-in">Does the crawler execute JavaScript or log in?</h3>
+<p>It fetches public HTML without a browser. Pages requiring client-side rendering or authentication need another permitted extraction path.</p>
+<h3 id="is-a-successful-run-a-complete-copy-of-the-website">Is a successful run a complete copy of the website?</h3>
+<p>No. Page limits, filters, robots rules, access errors and time or charge budgets can leave a partial crawl. Inspect <code>OUTPUT</code> and any error records before calling it complete.</p>
+<h3 id="can-i-keep-a-knowledge-base-updated-automatically">Can I keep a knowledge base updated automatically?</h3>
+<p>You can save an Apify task and configure a schedule. Storage updates, deletion policy, embeddings and alerts belong in your pipeline. Validate a manual run and its cost before scheduling repeated work.</p>
+<h3 id="what-if-an-api-request-disconnects">What if an API request disconnects?</h3>
+<p>Check the existing run, dataset and diagnostics in Apify before retrying. A retained run ID helps prevent duplicate work and charges.</p>
 </article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/llms-txt-generator/">llms.txt Generator (Website to llms.txt &amp; llms-full.txt)</a></li><li><a href="/tools/rag-text-chunker/">RAG Text Chunker (Markdown to Chunks, Token Counts)</a></li><li><a href="/tools/sitemap-extractor/">Sitemap URL Extractor &amp; Change Monitor</a></li><li><a href="/tools/ai-web-search/">AI Web Search &amp; Read: Google results as clean Markdown</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/rag/">RAG knowledge pipeline</a></li><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div><aside class="spec"><div class="spec-card">
 <div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-XzLicaoE1OdrHNA4E-I3IqcPknuH-website-to-markdown.png" alt="" width="44" height="44"><h4>Website to Markdown — Content Crawler for LLM &amp; RAG</h4></div>
 <dl><dt>Primary event rate</dt><dd>$1 / 1k results</dd><dt>Billing</dt><dd>Event rates; additional fees may apply</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
 <a class="btn" href="https://apify.com/webdatatools/website-to-markdown?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fwebsite-to-markdown%2F%3Aspec&amp;utm_term=website-to-markdown&amp;source_page=%2Fguides%2Fwebsite-to-markdown%2F&amp;source_actor=website-to-markdown">Try it free on Apify</a><p><a href="/tools/website-to-markdown/">Tool details</a></p></div>
-<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step-crawl-a-site-in-the-apify-console">Step-by-step: crawl a site in the Apify Console</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#getting-rag-ready-chunks-in-the-same-run">Getting RAG-ready chunks in the same run</a></li><li><a href="#keeping-a-knowledge-base-fresh">Keeping a knowledge base fresh</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+<nav class="toc"><b>On this page</b><ol><li><a href="#start-with-one-page">Start with one page</a></li><li><a href="#check-the-run-outcome-as-well-as-the-rows">Check the run outcome as well as the rows</a></li><li><a href="#expand-to-a-small-crawl">Expand to a small crawl</a></li><li><a href="#use-the-output-in-a-rag-pipeline">Use the output in a RAG pipeline</a></li><li><a href="#a-free-local-alternative">A free local alternative</a></li><li><a href="#pricing-and-a-dated-example">Pricing and a dated example</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
 </aside></div></div>
 <footer class="site"><div class="wrap">
 <div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fwebsite-to-markdown%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fguides%2Fwebsite-to-markdown%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
