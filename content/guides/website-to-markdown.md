@@ -1,85 +1,106 @@
 ---
-title: How to Convert a Website to Markdown for LLMs and RAG
-h1: Turn any website into clean Markdown for your LLM or RAG pipeline
+title: Convert Website Pages to Markdown for RAG
+h1: Convert website pages to Markdown and check them before indexing
 short: Website to Markdown
-kicker: AI & LLM data
+kicker: AI and LLM data
 actor: website-to-markdown
-description: Crawl a docs site, blog or help center and get one clean Markdown document per page — navigation and cookie banners stripped, headings and code kept — ready for chunking and embeddings.
-updated: 2026-10-03
+description: Start with one public HTML page, inspect the Markdown and run diagnostics, then expand to a bounded crawl for your RAG pipeline. Includes a free local alternative.
+updated: 2026-11-04
 ---
 
-Large language models read Markdown far better than raw HTML. A typical documentation page is 80–90 % markup, scripts and navigation; the part you actually want an LLM to see — headings, paragraphs, code blocks, tables — is buried inside it. This guide shows how to crawl a whole site and get **one clean Markdown document per page**, with the boilerplate removed, in a few minutes and for about {{price}}.
+Collect readable content from public documentation, blogs or help centers for a knowledge base. This Actor fetches HTML without running page scripts. Inspect one representative page before expanding the crawl or paying for embeddings. A login screen or cookie notice is not the document you wanted to index.
 
-## What you get
+## Start with one page
 
-Each crawled page becomes one row with the page's `url`, `title`, `description`, `markdown` (or plain `text`), a `wordCount`, the page's heading outline and its outgoing links. Here is a real row from a recorded run, trimmed for length:
+Open the Actor, switch Input to JSON and paste this input. Replace the URL with a page you own or have permission to crawl.
 
-{{sample}}
+```json
+{
+  "url": "https://docs.apify.com/platform",
+  "outputFormat": "markdown",
+  "maxConcurrency": 1,
+  "respectRobots": true,
+  "chunkForRag": false,
+  "changeDetection": false
+}
+```
 
-The crawler keeps what matters for retrieval and drops what doesn't:
+The `url` field selects single-page mode: it overrides crawl settings such as `startUrls` and `maxPages`, without sitemap seeding or link following. Review **Pricing** and set **Maximum cost per run** before starting. A page limit controls scope; the result rate alone is not a quote for every possible run charge.
 
-| Kept | Removed |
-|---|---|
-| Headings (`#`…`######`) and their hierarchy | Site navigation, menus and breadcrumbs |
-| Paragraphs, lists, block quotes | Footers, sidebars, "related posts" |
-| Code blocks, with their language when the site marks it | Cookie banners and newsletter pop-ups |
-| Tables | Scripts, styles, tracking pixels |
-| Links, rewritten to absolute URLs | Decorative icon links |
-
-## Step-by-step: crawl a site in the Apify Console
-
-1. Open the tool and paste a start URL — for example the root of a docs site such as `https://docs.apify.com/platform`.
-2. Set **Max pages**. This is the billed unit and the crawl stops at exactly that number, so a 200-page crawl can never cost more than 200 results.
-3. Leave **Use sitemap** on. The crawler reads `/sitemap.xml` (including nested sitemap indexes) and starts from real content pages instead of discovering them link by link.
-4. Optional: add **Include path prefixes** such as `/docs` to stay inside one section of a large site.
-5. Click **Start**. A 50-page docs crawl usually finishes in under a minute; download the results as JSON, CSV or Excel, or read them through the API.
+In the dataset, check the requested and final URLs, HTTP status, title and actual Markdown. Confirm that the paragraphs, headings and code you need were extracted, rather than an access page or navigation text. Only then export JSON or connect your ingestion step.
 
 {{cta}}
 
-## Call it from code
+## Check the run outcome as well as the rows
 
-The same crawl from Python, JavaScript or the command line. Replace the token with your own from the Apify Console (Settings → API & Integrations).
+The current source writes successful page rows to the dataset and lists failed pages separately. In the run's default key-value store, inspect:
 
-{{code}}
+| Record | What to check |
+| --- | --- |
+| `OUTPUT` | `resultRows`, `failedPages`, `discoveryFailures` and `partial` describe this process attempt. |
+| `ERRORS` | Failed page requests, when failures were recorded. |
+| `DISCOVERY_ERRORS` | Sitemap or discovery failures, when present. |
 
-## Getting RAG-ready chunks in the same run
+If `deliveryUnconfirmed` is true, inspect the existing dataset before retrying. A lost write response does not establish that no row was delivered. Retain run IDs in API integrations so a disconnected request can be reconciled without starting duplicate paid work.
 
-Most pipelines split each page into chunks before embedding. Turn on **Add RAG chunks** (`chunkForRag: true`) and every row gets a `chunks` array: heading-aware pieces of the Markdown, each with its token count and the heading path it sits under (`["Platform", "Actors", "Running"]`). Chunk size is set with `chunkSize` (500 tokens by default). Because chunks never cross a heading, a retrieved chunk always comes with the context of the section it belongs to — which measurably improves answer quality compared with fixed-length splitting.
+A successful run can still contain a partial crawl. An empty dataset does not prove the site has no content. Check status and diagnostics before updating your knowledge base, and preserve the last good documents when a replacement crawl fails.
 
-## Keeping a knowledge base fresh
+## Expand to a small crawl
 
-Re-crawling a 2,000-page site every day just to find the ten pages that changed is wasteful. With **Change detection** on, the crawler remembers each page's content hash from the previous run with the same start URLs and marks every row `new`, `changed` or `unchanged`. Unchanged pages can come back without their body text (`skipUnchangedContent`), so your pipeline only re-embeds what actually changed. Schedule the run daily in Apify and connect a webhook to your ingestion job.
+After the single-page check, remove `url` and use a bounded crawl input:
 
-## How much does it cost?
+```json
+{
+  "startUrls": [{ "url": "https://docs.apify.com/platform" }],
+  "maxPages": 5,
+  "maxDepth": 1,
+  "sameDomainOnly": true,
+  "includePathPrefixes": ["/platform"],
+  "useSitemap": false,
+  "maxConcurrency": 1,
+  "respectRobots": true,
+  "outputFormat": "markdown"
+}
+```
+
+Replace both the URL and path prefix for your site. Sitemap seeding is off for this first crawl so discovery stays easier to inspect. Enable it later if useful, with the path filters and budget set correctly. Increase the page limit gradually; a limit does not guarantee that many usable pages will be fetched.
+
+## Use the output in a RAG pipeline
+
+Keep `url`, `finalUrl`, `title`, `markdown`, `contentHash` and `crawledAt` with each document. They identify the source and help compare successful observations. Embeddings, vector storage and retrieval evaluation remain separate steps in your application.
+
+Setting `chunkForRag: true` adds heading-aware chunks. Review boundaries against your actual documents before choosing a chunk size. No chunk setting guarantees better answers.
+
+With `changeDetection: true`, state is associated with the start URLs in your Apify account. `changeStatus` can be `new`, `changed` or `unchanged`; it describes observations, not a complete audit of a site. When `skipUnchangedContent` removes the body from unchanged rows, retain the previous document in your storage. A page missing from a partial crawl should not be treated as deleted.
+
+## A free local alternative
+
+[Trafilatura](https://github.com/adbar/trafilatura) is an open-source option for extracting content on infrastructure you manage. Its [command-line documentation](https://trafilatura.readthedocs.io/en/latest/usage-cli.html) supports Markdown output with `--markdown` or `--output-format markdown`.
+
+Use a local library when you want to manage fetching, storage and operation yourself. Choose this Actor when an Apify run, dataset, export and scheduled task fit your workflow. Compare the output on your representative pages; there is no general speed, quality or total-cost advantage established here.
+
+## Pricing and a dated example
 
 {{pricing}}
 
-A practical example: a 300-page documentation site costs **300 results** on the free plan price above. There is no separate charge for compute, bandwidth or proxies — those are included in the per-result price.
+The recorded sample below illustrates field format. Its displayed date applies to that saved run; it is not a fresh test of your target site or the current build.
 
-## How it compares
-
-| Approach | Good at | Watch out for |
-|---|---|---|
-| **This tool** (HTTP crawler) | Fast, cheap, predictable cost; docs sites, blogs, help centers, marketing sites; sitemap-aware; chunks and change detection built in | Does not execute JavaScript, so single-page apps that render all content client-side come back nearly empty |
-| Browser-based crawlers (e.g. Apify's Website Content Crawler) | JavaScript-heavy sites and SPAs | Each page loads a full browser, so runs are slower and more expensive per page |
-| Hosted "URL to Markdown" APIs | Converting one URL at a time from an app | You build the crawling, deduplication and page limits yourself; credit-based pricing |
-| DIY (`requests` + an HTML-to-Markdown library) | Full control | You maintain boilerplate removal, link resolution, sitemaps, retries and politeness rules |
-
-Rule of thumb: if you can see the content with JavaScript disabled in your browser, this HTTP crawler will get it — at a fraction of browser cost.
+{{sample}}
 
 ## FAQ
 
-### Can it crawl sites that need JavaScript?
-No. It fetches raw HTML without running page scripts. Most documentation, blogs and help centers render on the server and work well; client-side single-page apps need a browser-based crawler instead.
+### Does the crawler execute JavaScript or log in?
 
-### Does it respect robots.txt?
-Yes, by default. URLs disallowed by the site's robots.txt are skipped. You can turn this off only for sites you own or have permission to crawl.
+It fetches public HTML without a browser. Pages requiring client-side rendering or authentication need another permitted extraction path.
 
-### How do I crawl only part of a site?
-Use Include path prefixes (for example `/docs` or `/blog`) and Exclude patterns for things like `/login` or file downloads. Max depth limits how many links deep the crawl goes from the start URL.
+### Is a successful run a complete copy of the website?
 
-### What happens if my run hits its timeout?
-The crawler stops shortly before the run timeout and finishes successfully with every page crawled so far. You are only billed for pages that were delivered.
+No. Page limits, filters, robots rules, access errors and time or charge budgets can leave a partial crawl. Inspect `OUTPUT` and any error records before calling it complete.
 
-### Can an AI agent call it directly?
-Yes. Every Apify tool is available through the Apify MCP server, so assistants such as Claude or ChatGPT with MCP support can run the crawl and read the Markdown themselves.
+### Can I keep a knowledge base updated automatically?
+
+You can save an Apify task and configure a schedule. Storage updates, deletion policy, embeddings and alerts belong in your pipeline. Validate a manual run and its cost before scheduling repeated work.
+
+### What if an API request disconnects?
+
+Check the existing run, dataset and diagnostics in Apify before retrying. A retained run ID helps prevent duplicate work and charges.
