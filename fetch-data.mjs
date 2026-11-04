@@ -27,7 +27,11 @@ for (const a of listing.items) {
     const d = (await api(`acts/${a.id}`)).data;
     if (!d?.isPublic) continue;
     if (!baseline[d.name]) throw new Error(`Unexpected public Actor: ${d.name}; catalog review required`);
-    out[d.name] = { name: d.name, title: d.title, description: d.description, url: baseline[d.name].url, icon: d.pictureUrl ?? null, users30: d.stats?.totalUsers30Days ?? 0, runs: d.stats?.totalRuns ?? 0, categories: d.categories ?? [], price: primaryPrice(d), prefill: baseline[d.name].prefill };
+    // A public Actor can omit its metadata description while its reviewed README
+    // and input schema remain available. Keep only the existing reviewed text;
+    // unknown Actors, changed prices and missing catalog entries still fail.
+    const description = typeof d.description === 'string' && d.description.trim() ? d.description : baseline[d.name].description;
+    out[d.name] = { name: d.name, title: d.title, description, url: baseline[d.name].url, icon: d.pictureUrl ?? null, users30: d.stats?.totalUsers30Days ?? 0, runs: d.stats?.totalRuns ?? 0, categories: d.categories ?? [], price: primaryPrice(d), prefill: baseline[d.name].prefill };
     if (!wanted.has(d.name)) continue;
     const runs = (await api(`acts/${d.id}/runs?desc=1&limit=20&status=SUCCEEDED`)).data?.items;
     if (!Array.isArray(runs)) throw new Error(`Invalid run listing: ${d.name}`);

@@ -4832,5 +4832,27 @@
     "solid-state battery"
    ]
   }
+ },
+ "steam-reviews-scraper": {
+  "name": "steam-reviews-scraper",
+  "title": "Steam Reviews Scraper",
+  "description": "Collect public Steam game reviews with bounded runs and a persistent review ledger.",
+  "url": "https://apify.com/webdatatools/steam-reviews-scraper",
+  "icon": null,
+  "users30": 1,
+  "runs": 5,
+  "categories": [],
+  "price": {
+   "unit": "Result",
+   "usd": 0.0002,
+   "tiers": {
+    "FREE": 0.0002
+   }
+  },
+  "prefill": {
+   "appIds": [
+    "570"
+   ]
+  }
  }
 }
