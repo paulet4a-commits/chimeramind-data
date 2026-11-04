@@ -14,7 +14,7 @@ test('read-only fetch preserves prices, input and samples; drift fails before an
         for(const name of ['src','data','content','node_modules','fetch-data.mjs'])fs.cpSync(path.join(root,name),path.join(fixture,name),{recursive:true});
         fs.copyFileSync(path.join(root,'test/fetch-mock.mjs'),path.join(fixture,'mock.mjs'));
         const before=fs.readFileSync(path.join(fixture,'data/actors.json'),'utf8');
-        const run=drift=>spawnSync(process.execPath,['--import','./mock.mjs','fetch-data.mjs'],{cwd:fixture,encoding:'utf8',env:{...process.env,APIFY_TOKEN:'integration-test',TEST_PRICE_DRIFT:drift?'1':''}});
+        const run=(drift,missingDescription=false)=>spawnSync(process.execPath,['--import','./mock.mjs','fetch-data.mjs'],{cwd:fixture,encoding:'utf8',env:{...process.env,APIFY_TOKEN:'integration-test',TEST_PRICE_DRIFT:drift?'1':'',TEST_MISSING_DESCRIPTION:missingDescription?'1':''}});
         const failed=run(true);
         assert.notEqual(failed.status,0);assert.match(failed.stderr,/Price change blocked/);
         assert.equal(fs.readFileSync(path.join(fixture,'data/actors.json'),'utf8'),before);
@@ -22,6 +22,12 @@ test('read-only fetch preserves prices, input and samples; drift fails before an
         assert.equal(result.status,0,result.stderr);
         assert.equal(validateData(fixture,{release:true}).actors,ACTORS);
         assert.deepEqual(JSON.parse(fs.readFileSync(path.join(fixture,'data/actors.json'))),JSON.parse(before));
+        const missing=run(false,true);
+        assert.equal(missing.status,0,missing.stderr);
+        assert.deepEqual(JSON.parse(fs.readFileSync(path.join(fixture,'data/actors.json'))),JSON.parse(before),'missing public description keeps only reviewed catalog text');
+        const driftWithMissing=run(true,true);
+        assert.notEqual(driftWithMissing.status,0);assert.match(driftWithMissing.stderr,/Price change blocked/);
+        assert.deepEqual(JSON.parse(fs.readFileSync(path.join(fixture,'data/actors.json'))),JSON.parse(before),'description fallback cannot bypass pricing checks');
         for(const f of fs.readdirSync(path.join(root,'data/samples')))assert.deepEqual(fs.readFileSync(path.join(root,'data/samples',f)),fs.readFileSync(path.join(fixture,'data/samples',f)));
         const requests=fs.readFileSync(path.join(fixture,'requests.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
         assert.ok(requests.length>ACTORS && requests.every(r=>r.method==='GET' && !r.url.includes('token=')));

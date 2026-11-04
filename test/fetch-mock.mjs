@@ -13,6 +13,7 @@ globalThis.fetch = async (url, options) => {
     else if(p.startsWith('acts/')) {
         const a = actors[p.slice(5)];
         data={...a,id:a.name,isPublic:true,pictureUrl:a.icon,stats:{totalUsers30Days:a.users30,totalRuns:a.runs},pricingInfos:[{pricingPerEvent:{actorChargeEvents:{result:{isPrimaryEvent:true,eventTitle:a.price.unit,eventTieredPricingUsd:Object.fromEntries(Object.entries(a.price.tiers).map(([k,v])=>[k,{tieredEventPriceUsd:v+(process.env.TEST_PRICE_DRIFT && a.name==='email-validator'?0.001:0)}]))}}}}]};
+        if(process.env.TEST_MISSING_DESCRIPTION && a.name==='steam-reviews-scraper')delete data.description;
     } else throw new Error(`Unexpected endpoint: ${p}`);
     return {ok:true,json:async()=>({data})};
 };
