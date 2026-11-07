@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PR Newswire API Alternative: Press Release Monitor | ChimeraMiND Data</title>
+<meta name="description" content="Get PR Newswire, Business Wire and GlobeNewswire releases from their public RSS feeds as keyword-filtered rows. Not an official vendor API.">
+
+<link rel="canonical" href="https://data.chimeramind.com/guides/pr-newswire-api-press-release-monitor/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PR Newswire API Alternative: Press Release Monitor | ChimeraMiND Data">
+<meta property="og:description" content="Get PR Newswire, Business Wire and GlobeNewswire releases from their public RSS feeds as keyword-filtered rows. Not an official vendor API.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/pr-newswire-api-press-release-monitor/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta property="og:image" content="https://data.chimeramind.com/assets/social/catalog.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PR Newswire API Alternative: Press Release Monitor | ChimeraMiND Data — ChimeraMiND Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+<script type="module" src="/assets/attribution.mjs"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"PR Newswire API Alternative: Press Release Monitor","description":"Get PR Newswire, Business Wire and GlobeNewswire releases from their public RSS feeds as keyword-filtered rows. Not an official vendor API.","dateModified":"2026-11-07","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/pr-newswire-api-press-release-monitor/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Press Release Monitor: PR Newswire, BusinessWire, GlobeNewswire","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/press-release-monitor","offers":{"@type":"Offer","price":"1.00","priceCurrency":"USD","description":"per 1,000 results"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"PR Newswire API Alternative: Press Release Monitor","item":"https://data.chimeramind.com/guides/pr-newswire-api-press-release-monitor/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does PR Newswire have a public API?","acceptedAnswer":{"@type":"Answer","text":"This guide does not confirm whether PR Newswire offers an API. What the Actor does is read PR Newswire's public RSS feed. To get PR Newswire releases, select the PR Newswire source and run the Actor. Release pages are fetched only when **Fetch full release text** is on."}},{"@type":"Question","name":"Is there a Business Wire API?","acceptedAnswer":{"@type":"Answer","text":"The same applies: this guide does not confirm a Business Wire API. The Actor reads Business Wire's public RSS feed. Its `body` is always null, because the README says businesswire.com returns HTTP 403 to non-browser requests, so the Actor never fetches Business Wire release pages."}},{"@type":"Question","name":"Is this the full wire archive?","acceptedAnswer":{"@type":"Answer","text":"No. Each feed holds only the wire's most recent releases. Run the Actor on a schedule with **Only releases from the last N hours** to build your own history over time."}},{"@type":"Question","name":"Why is the company field sometimes wrong?","acceptedAnswer":{"@type":"Answer","text":"It is a heuristic, not a named-entity extractor. It takes the title text before the first of \" Announces\", \" Reports\", \" Launches\" or a comma, and falls back to the feed's creator or contributor field when the title has none of those markers. Check it on securities-style notices, where the fragment before the marker may not be the filer."}},{"@type":"Question","name":"Why are categories empty for PR Newswire and Business Wire?","acceptedAnswer":{"@type":"Answer","text":"The README says their RSS feeds do not publish a standard category tag on releases. GlobeNewswire's category tags carry stock ticker and ISIN codes rather than topic names, and the Actor passes them through as they are."}},{"@type":"Question","name":"Do I need an API key?","acceptedAnswer":{"@type":"Answer","text":"No. The README says the Actor needs no API key."}},{"@type":"Question","name":"How do I avoid getting the same release twice?","acceptedAnswer":{"@type":"Answer","text":"Use **Only releases from the last N hours** on a schedule. Results are also deduped by URL within a single run. The README does not describe deduplication across separate runs, so check overlap between runs yourself."}},{"@type":"Question","name":"Can I export the results?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can export JSON, CSV, Excel or HTML from the Output tab or through the API, and the dataset has ready-made Overview and Full detail views."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>STOCKTWITS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE VIDEO DETAILS <b>$1</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>X TWEET SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>STOCKTWITS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE VIDEO DETAILS <b>$1</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>X TWEET SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Press release monitor</div>
+<div class="guide"><div><header><div class="kicker">News &amp; competitor monitoring</div><h1>PR Newswire, Business Wire and GlobeNewswire releases in one keyword-filtered feed</h1><p class="lede">Get PR Newswire, Business Wire and GlobeNewswire releases from their public RSS feeds as keyword-filtered rows. Not an official vendor API.</p>
+<div class="byline"><span>Updated 2026-11-07</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
+<article class="prose"><p>If you are looking for a <strong>PR Newswire API</strong>, a <strong>Business Wire API</strong> or a <strong>GlobeNewswire API</strong>, this guide covers a practical alternative: <strong>Press Release Monitor</strong>, an Apify Actor that reads the public RSS feeds of the three wires and returns one row per press release, filtered by the keywords you choose. It is not an official vendor API. It reads the public feeds the wires publish, so you can search a <strong>press release API</strong>-style feed without writing a scraper.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>Each row is one press release with these fields:</p>
+<ul>
+<li><code>source</code>: <code>prnewswire</code>, <code>businesswire</code> or <code>globenewswire</code></li>
+<li><code>title</code>, <code>url</code> (the canonical link on the wire&#39;s own site) and <code>publishedAt</code> (ISO date)</li>
+<li><code>summary</code>: the feed description with HTML stripped, up to 1,000 characters</li>
+<li><code>company</code>: a heuristic name taken from the headline (see the FAQ)</li>
+<li><code>categories</code>: values from the feed&#39;s own category tags, when a wire publishes any</li>
+<li><code>matchedKeywords</code>: which of your keywords appear in the title or summary</li>
+<li><code>body</code>: up to 8,000 characters of full text, only when <strong>Fetch full release text</strong> is on</li>
+<li><code>guid</code>, <code>error</code> and <code>scrapedAt</code></li>
+</ul>
+<p><code>error</code> is set only on a row that stands for a wire whose feed could not be read. The other wires still return their rows. A sample row:</p>
+<p class="fine" data-sample-status="missing">No recorded sample is available yet.</p><p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/press-release-monitor?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fpr-newswire-api-press-release-monitor%2F%3Aguide_cta&amp;utm_term=press-release-monitor&amp;source_page=%2Fguides%2Fpr-newswire-api-press-release-monitor%2F&amp;source_actor=press-release-monitor">Run Press Release Monitor: PR Newswire, BusinessWire, GlobeNewswire on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<p>Here is a bounded example input. Every key and range comes from the Actor&#39;s input schema:</p>
+<pre><code class="language-json">{
+    &quot;sources&quot;: [&quot;prnewswire&quot;, &quot;globenewswire&quot;],
+    &quot;keywords&quot;: [&quot;funding&quot;, &quot;acquisition&quot;],
+    &quot;maxItemsPerSource&quot;: 50,
+    &quot;sinceHours&quot;: 24,
+    &quot;includeBody&quot;: false,
+    &quot;maxConcurrency&quot;: 3
+}
+</code></pre>
+<p><code>maxItemsPerSource</code> accepts 1 to 1000, <code>sinceHours</code> 0 or more (0 disables the time filter) and <code>maxConcurrency</code> 1 to 20. The code below runs the Actor&#39;s default prefill, which you can change to the input above:</p>
+<div class="tabs"><input type="radio" name="t-press-release-monitor" id="t-press-release-monitor-python" checked><label for="t-press-release-monitor-python">Python</label><pre class="tab-python"><code class="language-python">import json&#10;import os&#10;from apify_client import ApifyClient&#10;&#10;client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])&#10;run = client.actor(&quot;webdatatools/press-release-monitor&quot;).call(run_input=json.loads(&quot;{\n    \&quot;sources\&quot;: [\n        \&quot;prnewswire\&quot;,\n        \&quot;businesswire\&quot;,\n        \&quot;globenewswire\&quot;\n    ],\n    \&quot;keywords\&quot;: [\n        \&quot;funding\&quot;,\n        \&quot;acquisition\&quot;,\n        \&quot;partnership\&quot;\n    ],\n    \&quot;maxItemsPerSource\&quot;: 100\n}&quot;))&#10;&#10;for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():&#10;    print(item)</code></pre><input type="radio" name="t-press-release-monitor" id="t-press-release-monitor-js"><label for="t-press-release-monitor-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;&#10;&#10;const client = new ApifyClient({ token: process.env.APIFY_TOKEN });&#10;const run = await client.actor(&#39;webdatatools/press-release-monitor&#39;).call({&#10;    &quot;sources&quot;: [&#10;        &quot;prnewswire&quot;,&#10;        &quot;businesswire&quot;,&#10;        &quot;globenewswire&quot;&#10;    ],&#10;    &quot;keywords&quot;: [&#10;        &quot;funding&quot;,&#10;        &quot;acquisition&quot;,&#10;        &quot;partnership&quot;&#10;    ],&#10;    &quot;maxItemsPerSource&quot;: 100&#10;});&#10;const { items } = await client.dataset(run.defaultDatasetId).listItems();&#10;console.log(items);</code></pre><input type="radio" name="t-press-release-monitor" id="t-press-release-monitor-bash"><label for="t-press-release-monitor-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~press-release-monitor/run-sync-get-dataset-items&quot; \&#10;  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \&#10;  -H &quot;Content-Type: application/json&quot; \&#10;  -d &#39;{&quot;sources&quot;:[&quot;prnewswire&quot;,&quot;businesswire&quot;,&quot;globenewswire&quot;],&quot;keywords&quot;:[&quot;funding&quot;,&quot;acquisition&quot;,&quot;partnership&quot;],&quot;maxItemsPerSource&quot;:100}&#39;</code></pre></div><h2 id="recipes">Recipes</h2>
+<h3 id="monitor-a-competitor">Monitor a competitor</h3>
+<p>Put the competitor&#39;s name in <strong>Keywords</strong>. Matching is a case-insensitive substring match against the title and summary only, not the full body.</p>
+<h3 id="keyword-alerts-for-sales-triggers">Keyword alerts for sales triggers</h3>
+<p>Use keywords such as <code>funding</code>, <code>acquisition</code> or <code>partnership</code>, set <strong>Only releases from the last N hours</strong> to <code>24</code>, and put the run on an Apify schedule. The README describes attaching a webhook so each run can feed Slack, email or a CRM.</p>
+<h3 id="a-feed-for-an-ai-agent">A feed for an AI agent</h3>
+<p>The README states that the Actor is pay-per-event and callable through the Apify MCP server. An agent passes <code>keywords</code> and receives matching releases, which it can summarize into a briefing.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<p>Press Release Monitor charges per release row: <strong>$0.001 per row, which is $1 per 1,000 releases</strong>, plus a negligible actor-start fee. Current event rates by Apify plan:</p>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per result</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.001</td><td class="num">$1</td></tr><tr><td>Starter</td><td class="num">$0.0008</td><td class="num">$0.80</td></tr><tr><td>Scale</td><td class="num">$0.0007</td><td class="num">$0.70</td></tr><tr><td>Business</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr><tr><td>Enterprise+</td><td class="num">$0.0006</td><td class="num">$0.60</td></tr></tbody></table></div>
+<p class="fine">Primary event rates from a catalog snapshot; this is not the total price of a run. Additional charge events and Actor Start fees may apply; start fees can scale with memory. Check the Actor's Pricing tab on Apify for all events, conditions and current plan-specific rates, and set a maximum run budget before starting.</p><p>Set <strong>Maximum cost per run</strong> and the Actor trims the collected releases, newest first, to what the budget covers. These are primary event rates; check the Actor&#39;s Pricing tab for the full list.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This Actor</strong></td>
+<td>Three wires in one run, keyword filter, flat rows, schedule, webhook and export</td>
+<td>Reads only the latest feed entries (the README says PR Newswire and GlobeNewswire feeds hold up to 20, Business Wire 30 to 50); it is a live monitor, not a historical archive</td>
+</tr>
+<tr>
+<td>A wire&#39;s own website</td>
+<td>Reading any release in full in a browser</td>
+<td>Manual; no keyword alerts and no structured export</td>
+</tr>
+<tr>
+<td>Google Alerts</td>
+<td>Simple email alerts</td>
+<td>The README notes it indexes with a delay and sends email rather than a dataset</td>
+</tr>
+<tr>
+<td>Paid PR databases or media monitoring</td>
+<td>Searchable archives, usually a subscription</td>
+<td>Check what the vendor covers and what it costs before you commit</td>
+</tr>
+<tr>
+<td>An official vendor API, where one exists</td>
+<td>Vendor-supported access and terms</td>
+<td>Check availability and terms with the vendor; this guide does not verify one</td>
+</tr>
+</tbody></table>
+</div><h2 id="faq">FAQ</h2>
+<h3 id="does-pr-newswire-have-a-public-api">Does PR Newswire have a public API?</h3>
+<p>This guide does not confirm whether PR Newswire offers an API. What the Actor does is read PR Newswire&#39;s public RSS feed. To get PR Newswire releases, select the PR Newswire source and run the Actor. Release pages are fetched only when <strong>Fetch full release text</strong> is on.</p>
+<h3 id="is-there-a-business-wire-api">Is there a Business Wire API?</h3>
+<p>The same applies: this guide does not confirm a Business Wire API. The Actor reads Business Wire&#39;s public RSS feed. Its <code>body</code> is always null, because the README says businesswire.com returns HTTP 403 to non-browser requests, so the Actor never fetches Business Wire release pages.</p>
+<h3 id="is-this-the-full-wire-archive">Is this the full wire archive?</h3>
+<p>No. Each feed holds only the wire&#39;s most recent releases. Run the Actor on a schedule with <strong>Only releases from the last N hours</strong> to build your own history over time.</p>
+<h3 id="why-is-the-company-field-sometimes-wrong">Why is the company field sometimes wrong?</h3>
+<p>It is a heuristic, not a named-entity extractor. It takes the title text before the first of &quot; Announces&quot;, &quot; Reports&quot;, &quot; Launches&quot; or a comma, and falls back to the feed&#39;s creator or contributor field when the title has none of those markers. Check it on securities-style notices, where the fragment before the marker may not be the filer.</p>
+<h3 id="why-are-categories-empty-for-pr-newswire-and-business-wire">Why are categories empty for PR Newswire and Business Wire?</h3>
+<p>The README says their RSS feeds do not publish a standard category tag on releases. GlobeNewswire&#39;s category tags carry stock ticker and ISIN codes rather than topic names, and the Actor passes them through as they are.</p>
+<h3 id="do-i-need-an-api-key">Do I need an API key?</h3>
+<p>No. The README says the Actor needs no API key.</p>
+<h3 id="how-do-i-avoid-getting-the-same-release-twice">How do I avoid getting the same release twice?</h3>
+<p>Use <strong>Only releases from the last N hours</strong> on a schedule. Results are also deduped by URL within a single run. The README does not describe deduplication across separate runs, so check overlap between runs yourself.</p>
+<h3 id="can-i-export-the-results">Can I export the results?</h3>
+<p>Yes. You can export JSON, CSV, Excel or HTML from the Output tab or through the API, and the dataset has ready-made Overview and Full detail views.</p>
+</article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/company-360/">Company 360: full company profile from a domain</a></li><li><a href="/tools/contact-extractor/">Email Extractor — Website Contact &amp; Social Finder</a></li><li><a href="/tools/email-validator/">Email Validator &amp; Verifier — Bulk Email Check</a></li><li><a href="/tools/hiring-signals/">Hiring Signals Scraper (Greenhouse, Lever, Ashby, Workable)</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-prSHnDneKpW0Xbmhn-XrkmidRzLk-press-release-monitor.png" alt="" width="44" height="44"><h4>Press Release Monitor: PR Newswire, BusinessWire, GlobeNewswire</h4></div>
+<dl><dt>Primary event rate</dt><dd>$1 / 1k results</dd><dt>Billing</dt><dd>Event rates; additional fees may apply</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/press-release-monitor?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fpr-newswire-api-press-release-monitor%2F%3Aspec&amp;utm_term=press-release-monitor&amp;source_page=%2Fguides%2Fpr-newswire-api-press-release-monitor%2F&amp;source_actor=press-release-monitor">Try it free on Apify</a><p><a href="/tools/press-release-monitor/">Tool details</a></p></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fpr-newswire-api-press-release-monitor%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fguides%2Fpr-newswire-api-press-release-monitor%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+<div>Monitoring tools by ChimeraMiND: <a href="https://watch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Domain Watch</a> · <a href="https://pagewatch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Page &amp; Price Watch</a> · <a href="https://watch.chimeramind.com/domain-health-check?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Free domain health check</a></div>
+</div></footer>
+</body>
+</html>

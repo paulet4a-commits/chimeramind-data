@@ -1,8 +1,8 @@
 {
   "version": 1,
   "origin": "https://data.chimeramind.com",
-  "generatedAt": "2026-11-07T12:20:07.064Z",
-  "sourceCommit": "b893363b6fd498ce6a4dab095966f01d9dec088c",
+  "generatedAt": "2026-11-07T14:02:02.088Z",
+  "sourceCommit": "241918ace27a155b3bc1f976223c28acff120ee1",
   "products": [
     {
       "product": "apify--contact-extractor",
@@ -191,9 +191,14 @@
       "title": "Press Release Monitor: PR Newswire, BusinessWire, GlobeNewswire",
       "storeUrl": "https://apify.com/webdatatools/press-release-monitor",
       "toolUrl": "https://data.chimeramind.com/tools/press-release-monitor/",
-      "preferredUrl": "https://data.chimeramind.com/tools/press-release-monitor/",
+      "preferredUrl": "https://data.chimeramind.com/guides/pr-newswire-api-press-release-monitor/",
       "starters": [],
-      "guides": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/pr-newswire-api-press-release-monitor/",
+          "title": "PR Newswire API Alternative: Press Release Monitor"
+        }
+      ],
       "workflows": []
     },
     {
@@ -335,7 +340,12 @@
       "preferredUrl": "https://data.chimeramind.com/tools/youtube-comments-scraper/",
       "starters": [],
       "guides": [],
-      "workflows": []
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/youtube/",
+          "title": "YouTube channel & video research"
+        }
+      ]
     },
     {
       "product": "apify--google-search-scraper",
@@ -402,9 +412,14 @@
       "title": "Google News Scraper (Keyword, Topic, Site, Date Range)",
       "storeUrl": "https://apify.com/webdatatools/google-news-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/google-news-scraper/",
-      "preferredUrl": "https://data.chimeramind.com/tools/google-news-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/google-news-scraper-api/",
       "starters": [],
-      "guides": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/google-news-scraper-api/",
+          "title": "Google News Scraper API — Articles, Sources and Publisher Links"
+        }
+      ],
       "workflows": []
     },
     {
@@ -430,7 +445,12 @@
           "title": "Export YouTube Channel Videos to CSV and Track New Uploads"
         }
       ],
-      "workflows": []
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/youtube/",
+          "title": "YouTube channel & video research"
+        }
+      ]
     },
     {
       "product": "apify--youtube-search-scraper",
@@ -489,7 +509,12 @@
           "title": "Export YouTube Video Metadata to CSV from Video URLs"
         }
       ],
-      "workflows": []
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/youtube/",
+          "title": "YouTube channel & video research"
+        }
+      ]
     },
     {
       "product": "apify--overpass-poi-extractor",
@@ -711,7 +736,12 @@
           "title": "YouTube Transcript API — Get Video Captions and Timestamps as JSON, No API Key"
         }
       ],
-      "workflows": []
+      "workflows": [
+        {
+          "url": "https://data.chimeramind.com/workflows/youtube/",
+          "title": "YouTube channel & video research"
+        }
+      ]
     },
     {
       "product": "apify--google-trends-scraper",
@@ -719,9 +749,14 @@
       "title": "Google Trends Scraper",
       "storeUrl": "https://apify.com/webdatatools/google-trends-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/google-trends-scraper/",
-      "preferredUrl": "https://data.chimeramind.com/tools/google-trends-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/google-trends-scraper/",
       "starters": [],
-      "guides": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/google-trends-scraper/",
+          "title": "Google Trends Scraper: Interest, Regions and Related Queries"
+        }
+      ],
       "workflows": []
     },
     {
@@ -1046,9 +1081,14 @@
       "title": "Google Flights Scraper (Prices, Airlines, Stops)",
       "storeUrl": "https://apify.com/webdatatools/google-flights-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/google-flights-scraper/",
-      "preferredUrl": "https://data.chimeramind.com/tools/google-flights-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/google-flights-scraper/",
       "starters": [],
-      "guides": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/google-flights-scraper/",
+          "title": "Google Flights Scraper: Flight Prices, Airlines and Stops"
+        }
+      ],
       "workflows": []
     },
     {
@@ -1156,9 +1196,14 @@
       "title": "Trendyol Scraper (Turkey Products, Prices, Ratings)",
       "storeUrl": "https://apify.com/webdatatools/trendyol-scraper",
       "toolUrl": "https://data.chimeramind.com/tools/trendyol-scraper/",
-      "preferredUrl": "https://data.chimeramind.com/tools/trendyol-scraper/",
+      "preferredUrl": "https://data.chimeramind.com/guides/trendyol-scraper-api/",
       "starters": [],
-      "guides": [],
+      "guides": [
+        {
+          "url": "https://data.chimeramind.com/guides/trendyol-scraper-api/",
+          "title": "Trendyol Scraper API — Products, Prices & Ratings as JSON"
+        }
+      ],
       "workflows": []
     },
     {

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Flights Scraper: Flight Prices, Airlines and Stops | ChimeraMiND Data</title>
+<meta name="description" content="Google Flights scraper API for flight prices by route and date, with airlines, flight numbers, times, stops, layovers and CO2. $2 per 1,000 flights, no login.">
+
+<link rel="canonical" href="https://data.chimeramind.com/guides/google-flights-scraper/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Flights Scraper: Flight Prices, Airlines and Stops | ChimeraMiND Data">
+<meta property="og:description" content="Google Flights scraper API for flight prices by route and date, with airlines, flight numbers, times, stops, layovers and CO2. $2 per 1,000 flights, no login.">
+<meta property="og:url" content="https://data.chimeramind.com/guides/google-flights-scraper/">
+<meta property="og:site_name" content="ChimeraMiND Data">
+<meta property="og:image" content="https://data.chimeramind.com/assets/social/catalog.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Google Flights Scraper: Flight Prices, Airlines and Stops | ChimeraMiND Data — ChimeraMiND Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b8f6a">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="module" src="/assets/sample-status.js"></script>
+<script type="module" src="/assets/attribution.mjs"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Google Flights Scraper: Flight Prices, Airlines and Stops","description":"Google Flights scraper API for flight prices by route and date, with airlines, flight numbers, times, stops, layovers and CO2. $2 per 1,000 flights, no login.","dateModified":"2026-11-07","author":{"@type":"Organization","name":"ChimeraMiND Data","url":"https://data.chimeramind.com"},"mainEntityOfPage":"https://data.chimeramind.com/guides/google-flights-scraper/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google Flights Scraper (Prices, Airlines, Stops)","applicationCategory":"DeveloperApplication","operatingSystem":"Web, API","url":"https://apify.com/webdatatools/google-flights-scraper","offers":{"@type":"Offer","price":"2.00","priceCurrency":"USD","description":"per 1,000 flights"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://data.chimeramind.com/guides/"},{"@type":"ListItem","position":2,"name":"Google Flights Scraper: Flight Prices, Airlines and Stops","item":"https://data.chimeramind.com/guides/google-flights-scraper/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is there a Google Flights API?","acceptedAnswer":{"@type":"Answer","text":"This guide cannot confirm whether Google offers an official flight API, so nothing here should be read as one. This Actor reads the public Google Flights results page and returns the rows through the Apify API."}},{"@type":"Question","name":"Is scraping Google Flights legal?","acceptedAnswer":{"@type":"Answer","text":"This guide does not give legal advice. The Actor reads the public results page that anyone can open without an account. Check that your use of the data is allowed where you live and where you operate."}},{"@type":"Question","name":"Can I track flight prices over time?","acceptedAnswer":{"@type":"Answer","text":"Yes. Schedule the Actor, for example daily, with the same input, and compare `price` across runs. See the fare-tracking recipe above."}},{"@type":"Question","name":"Do I need a Google account or a browser?","acceptedAnswer":{"@type":"Answer","text":"No. The Actor needs no login, and it does not require a browser on your side."}},{"@type":"Question","name":"Are the prices what I will pay?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. Prices are what Google shows logged out for a US visitor (`gl=us`), in the currency you choose. The airline's or agent's checkout can differ."}},{"@type":"Question","name":"Why do round trips show only outbound flights?","acceptedAnswer":{"@type":"Answer","text":"For round trips, each row is an outbound option with the round-trip price that Google shows. The return flight is chosen on the next Google screen, which the Actor does not open."}},{"@type":"Question","name":"Does the output include booking links?","acceptedAnswer":{"@type":"Answer","text":"No. The booking links behind each price are not collected. The `searchUrl` field links to the Google Flights search itself."}},{"@type":"Question","name":"How many flights can one search return?","acceptedAnswer":{"@type":"Answer","text":"Set **Max flights per search** from 1 to 100; the default is 30. The input help notes that Google shows up to about 100 per route and date."}},{"@type":"Question","name":"Can I search several routes in one run?","acceptedAnswer":{"@type":"Answer","text":"Yes. Separate origins and destinations with `;`, and every origin is searched to every destination. The number of searches is origins times destinations times dates."}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"fadbc13040624319a834f09c5b167e36"}'></script>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>ChimeraMiND <b>Data</b></a>
+<nav class="top"><a href="/#market-data">Market data</a><a href="/guides/" aria-current="page">Guides</a><a href="/tools/">All tools</a><a href="/workflows/">Workflows</a><a class="hide-sm" href="https://chimeramind.com">ChimeraMiND ↗</a></nav>
+</div></header>
+<div class="ticker" aria-hidden="true"><div class="track"><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>STOCKTWITS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE VIDEO DETAILS <b>$1</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>X TWEET SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE CHANNEL SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>STOCKTWITS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>GOOGLE SEARCH SCRAPER <b>$5</b>/1k <span class="up">● catalog</span></span><span>SHOPIFY PRODUCTS SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>WEBSITE TO MARKDOWN <b>$1</b>/1k <span class="up">● catalog</span></span><span>GOOGLE NEWS SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>YOUTUBE VIDEO DETAILS <b>$1</b>/1k <span class="up">● catalog</span></span><span>TIKTOK PROFILE SCRAPER <b>$1</b>/1k <span class="up">● catalog</span></span><span>DOMAIN SECURITY AUDIT <b>$5</b>/1k <span class="up">● catalog</span></span><span>CSS SELECTOR EXTRACTOR <b>$2</b>/1k <span class="up">● catalog</span></span><span>SUBDOMAIN FINDER <b>$0.50</b>/1k <span class="up">● catalog</span></span><span>DOMAIN WHOIS RDAP <b>$3</b>/1k <span class="up">● catalog</span></span><span>DNS EMAIL SECURITY CHECKER <b>$5</b>/1k <span class="up">● catalog</span></span><span>X TWEET SCRAPER <b>$0.50</b>/1k <span class="up">● catalog</span></span></div></div>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Google Flights Scraper</div>
+<div class="guide"><div><header><div class="kicker">Travel &amp; flight prices</div><h1>Google Flights Scraper: scrape flight prices for any route and date</h1><p class="lede">Google Flights scraper API for flight prices by route and date, with airlines, flight numbers, times, stops, layovers and CO2. $2 per 1,000 flights, no login.</p>
+<div class="byline"><span>Updated 2026-11-07</span><span>Catalog prices and dated sample snapshots from Apify</span></div></header>
+<article class="prose"><p>A flight price scraper turns Google Flights search results into rows you can sort, filter and track. The Google Flights website is built around one search at a time. If you need the same route checked across many dates, or a record of prices over time, you need to scrape Google Flights in bulk. <strong>Google Flights Scraper</strong> does that. Give it origins, destinations and dates, and it returns every flight Google shows for each search, one row per flight, for $2 per 1,000 flights.</p>
+<p>It works as a Google Flights scraper API: call it from code, or run it by hand in Apify. Use it for fare tracking, travel market research, comparing airlines on a route, or feeding a travel tool. No login and no browser are needed.</p>
+<h2 id="what-you-get">What you get</h2>
+<p>Each row is one flight option from the results page. These fields come from the Actor&#39;s dataset schema:</p>
+<ul>
+<li><strong>The search:</strong> <code>searchFrom</code>, <code>searchTo</code>, <code>departureDate</code>, <code>returnDate</code>, <code>tripType</code>, <code>cabinClass</code>, <code>adults</code>, <code>currency</code>.</li>
+<li><strong>Price:</strong> <code>price</code> and <code>priceNote</code>, for all passengers. On round trips the price covers the whole trip. <code>isBest</code> marks flights listed under Google&#39;s &quot;Best&quot; flights.</li>
+<li><strong>Flight:</strong> <code>airlines</code>, <code>flightNumbers</code>, <code>departureAirport</code>, <code>departureTime</code>, <code>arrivalAirport</code>, <code>arrivalTime</code>, <code>durationMinutes</code>, <code>stops</code>. Times are local, for example <code>2026-11-12T08:00</code>.</li>
+<li><strong>Layovers and legs:</strong> <code>layovers</code> (airport, city and minutes for each stop) and <code>legs</code> (flight number, airline, airports, times, duration, aircraft and legroom for each segment).</li>
+<li><strong>Emissions:</strong> <code>co2Grams</code>, <code>co2TypicalGrams</code> and <code>co2DiffPercent</code>, an estimate compared with the typical figure for the route.</li>
+<li><strong>Provenance:</strong> <code>searchUrl</code>, the Google Flights link for the search, and <code>scrapedAt</code>, when the row was scraped.</li>
+</ul>
+<p>Most fields are nullable in the schema, so a field can be empty when Google does not show it.</p>
+<p class="fine" data-sample-status="missing">No recorded sample is available yet.</p><h2 id="step-by-step">Step-by-step</h2>
+<ol>
+<li>Enter <strong>From</strong> and <strong>To</strong> as airport codes or city names. Separate several with <code>;</code>. Every origin is searched to every destination.</li>
+<li>Enter <strong>Departure dates</strong> as <code>YYYY-MM-DD</code>, separated by <code>;</code>. If you leave this empty, the Actor searches dates 30 days from today.</li>
+<li>For a round trip, set a <strong>Return date</strong>, or a <strong>Trip length (days)</strong> from 1 to 60.</li>
+<li>Optional: pick the cabin (economy, premium economy, business or first), set adults from 1 to 9, turn on <strong>Nonstop only</strong>, or change the currency (any ISO code, default USD).</li>
+<li>Set <strong>Max flights per search</strong> from 1 to 100 (default 30) and run. Download the flights as JSON, CSV, Excel or HTML, or read them through the API.</li>
+</ol>
+<h2 id="example-input">Example input</h2>
+<p>This input stays bounded: 2 dates on 1 route make 2 searches, with at most 20 flights each.</p>
+<pre><code class="language-json">{
+    &quot;from&quot;: &quot;JFK&quot;,
+    &quot;to&quot;: &quot;LHR&quot;,
+    &quot;departureDates&quot;: &quot;2026-11-12; 2026-11-19&quot;,
+    &quot;cabinClass&quot;: &quot;economy&quot;,
+    &quot;adults&quot;: 1,
+    &quot;nonstopOnly&quot;: true,
+    &quot;currency&quot;: &quot;USD&quot;,
+    &quot;maxFlightsPerSearch&quot;: 20
+}
+</code></pre>
+<p class="cta-row"><a class="btn" href="https://apify.com/webdatatools/google-flights-scraper?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fgoogle-flights-scraper%2F%3Aguide_cta&amp;utm_term=google-flights-scraper&amp;source_page=%2Fguides%2Fgoogle-flights-scraper%2F&amp;source_actor=google-flights-scraper">Run Google Flights Scraper (Prices, Airlines, Stops) on Apify →</a></p><h2 id="call-it-from-code">Call it from code</h2>
+<div class="tabs"><input type="radio" name="t-google-flights-scraper" id="t-google-flights-scraper-python" checked><label for="t-google-flights-scraper-python">Python</label><pre class="tab-python"><code class="language-python">import json&#10;import os&#10;from apify_client import ApifyClient&#10;&#10;client = ApifyClient(os.environ[&quot;APIFY_TOKEN&quot;])&#10;run = client.actor(&quot;webdatatools/google-flights-scraper&quot;).call(run_input=json.loads(&quot;{\n    \&quot;from\&quot;: \&quot;JFK\&quot;,\n    \&quot;to\&quot;: \&quot;LHR; CDG\&quot;,\n    \&quot;departureDates\&quot;: \&quot;2026-11-12\&quot;\n}&quot;))&#10;&#10;for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():&#10;    print(item)</code></pre><input type="radio" name="t-google-flights-scraper" id="t-google-flights-scraper-js"><label for="t-google-flights-scraper-js">JavaScript</label><pre class="tab-js"><code class="language-js">import { ApifyClient } from &#39;apify-client&#39;;&#10;&#10;const client = new ApifyClient({ token: process.env.APIFY_TOKEN });&#10;const run = await client.actor(&#39;webdatatools/google-flights-scraper&#39;).call({&#10;    &quot;from&quot;: &quot;JFK&quot;,&#10;    &quot;to&quot;: &quot;LHR; CDG&quot;,&#10;    &quot;departureDates&quot;: &quot;2026-11-12&quot;&#10;});&#10;const { items } = await client.dataset(run.defaultDatasetId).listItems();&#10;console.log(items);</code></pre><input type="radio" name="t-google-flights-scraper" id="t-google-flights-scraper-bash"><label for="t-google-flights-scraper-bash">cURL</label><pre class="tab-bash"><code class="language-bash">curl -X POST &quot;https://api.apify.com/v2/acts/webdatatools~google-flights-scraper/run-sync-get-dataset-items&quot; \&#10;  -H &quot;Authorization: Bearer $APIFY_TOKEN&quot; \&#10;  -H &quot;Content-Type: application/json&quot; \&#10;  -d &#39;{&quot;from&quot;:&quot;JFK&quot;,&quot;to&quot;:&quot;LHR; CDG&quot;,&quot;departureDates&quot;:&quot;2026-11-12&quot;}&#39;</code></pre></div><h2 id="recipes">Recipes</h2>
+<h3 id="fare-tracking-for-one-route">Fare tracking for one route</h3>
+<p>Schedule the Actor daily with the same input, for example one route and one date. Store <code>price</code> and <code>scrapedAt</code> from each run and compare them over time. Each run is a fresh search, so a change between runs shows what Google displayed at that moment.</p>
+<h3 id="compare-dates-for-one-trip">Compare dates for one trip</h3>
+<p>List several dates in <code>departureDates</code>, separated by <code>;</code>, or set <code>tripLengthDays</code> for round trips. Sort the rows by <code>price</code> to find the cheapest date. Each date is a separate search, so the cost grows with the number of dates.</p>
+<h3 id="price-alerts">Price alerts</h3>
+<p>Run the Actor on a daily schedule, read the dataset through the API, and compare the lowest <code>price</code> for your route with your own threshold. Alert only when the threshold is crossed, not on every small change.</p>
+<h2 id="how-much-does-it-cost">How much does it cost?</h2>
+<div class="table-wrap"><table class="pricing"><thead><tr><th>Apify plan</th><th>Per flight</th><th>Per 1,000</th></tr></thead><tbody><tr><td>Free plan</td><td class="num">$0.002</td><td class="num">$2</td></tr><tr><td>Starter</td><td class="num">$0.0016</td><td class="num">$1.60</td></tr><tr><td>Scale</td><td class="num">$0.0014</td><td class="num">$1.40</td></tr><tr><td>Business</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr><tr><td>Enterprise+</td><td class="num">$0.0012</td><td class="num">$1.20</td></tr></tbody></table></div>
+<p class="fine">Primary event rates from a catalog snapshot; this is not the total price of a run. Additional charge events and Actor Start fees may apply; start fees can scale with memory. Check the Actor's Pricing tab on Apify for all events, conditions and current plan-specific rates, and set a maximum run budget before starting.</p><p>You pay per result: $0.002 per flight, which is $2 per 1,000 flights, with volume discounts on paid Apify plans. Searches that fail or find no flights are listed in the <code>ERRORS</code> record and cost nothing. Set <strong>Maximum cost per run</strong> to cap spending. The example input above costs at most 40 flights, or $0.08.</p>
+<h2 id="how-it-compares">How it compares</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Good at</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>This Actor</strong></td>
+<td>Many routes and dates in one run, one row per flight, JSON, CSV or Excel export, API access and scheduling</td>
+<td>Prices are logged-out results for a US visitor; booking links are not collected</td>
+</tr>
+<tr>
+<td>Google Flights website</td>
+<td>Checking one search by hand and reading the results on screen</td>
+<td>Built for one search at a time, so many routes and dates take many manual searches</td>
+</tr>
+<tr>
+<td>Paid flight-data APIs</td>
+<td>Access through the provider&#39;s own API, with its own terms</td>
+<td>Pricing, coverage and terms vary by provider; compare their current pages yourself</td>
+</tr>
+<tr>
+<td>Your own scraper</td>
+<td>Full control over the logic</td>
+<td>You maintain the parsing, the proxies and any changes on Google&#39;s side</td>
+</tr>
+</tbody></table>
+</div><p>This table compares how each option is used. It does not measure accuracy, coverage or speed against any other source.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="is-there-a-google-flights-api">Is there a Google Flights API?</h3>
+<p>This guide cannot confirm whether Google offers an official flight API, so nothing here should be read as one. This Actor reads the public Google Flights results page and returns the rows through the Apify API.</p>
+<h3 id="is-scraping-google-flights-legal">Is scraping Google Flights legal?</h3>
+<p>This guide does not give legal advice. The Actor reads the public results page that anyone can open without an account. Check that your use of the data is allowed where you live and where you operate.</p>
+<h3 id="can-i-track-flight-prices-over-time">Can I track flight prices over time?</h3>
+<p>Yes. Schedule the Actor, for example daily, with the same input, and compare <code>price</code> across runs. See the fare-tracking recipe above.</p>
+<h3 id="do-i-need-a-google-account-or-a-browser">Do I need a Google account or a browser?</h3>
+<p>No. The Actor needs no login, and it does not require a browser on your side.</p>
+<h3 id="are-the-prices-what-i-will-pay">Are the prices what I will pay?</h3>
+<p>Not necessarily. Prices are what Google shows logged out for a US visitor (<code>gl=us</code>), in the currency you choose. The airline&#39;s or agent&#39;s checkout can differ.</p>
+<h3 id="why-do-round-trips-show-only-outbound-flights">Why do round trips show only outbound flights?</h3>
+<p>For round trips, each row is an outbound option with the round-trip price that Google shows. The return flight is chosen on the next Google screen, which the Actor does not open.</p>
+<h3 id="does-the-output-include-booking-links">Does the output include booking links?</h3>
+<p>No. The booking links behind each price are not collected. The <code>searchUrl</code> field links to the Google Flights search itself.</p>
+<h3 id="how-many-flights-can-one-search-return">How many flights can one search return?</h3>
+<p>Set <strong>Max flights per search</strong> from 1 to 100; the default is 30. The input help notes that Google shows up to about 100 per route and date.</p>
+<h3 id="can-i-search-several-routes-in-one-run">Can I search several routes in one run?</h3>
+<p>Yes. Separate origins and destinations with <code>;</code>, and every origin is searched to every destination. The number of searches is origins times destinations times dates.</p>
+</article><section class="block"><h2>Related tools</h2><ul><li><a href="/tools/app-store-reviews-scraper/">App Store Reviews Scraper</a></li><li><a href="/tools/autoscout24-scraper/">AutoScout24 Scraper</a></li><li><a href="/tools/booking-scraper/">Booking.com Scraper (Hotel Prices, Ratings, Availability)</a></li><li><a href="/tools/bulk-image-downloader/">Bulk Image Downloader</a></li></ul><h2>Workflows</h2><ul><li><a href="/workflows/">Explore Lead, RAG, SEO and Hiring workflows</a></li></ul></section></div><aside class="spec"><div class="spec-card">
+<div class="row"><img src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/1o1Aj5GdADHQnlL35-actor-dGWvRayZAWrrQmmJ7-b8FRLFZ7al-google-flights-scraper.png" alt="" width="44" height="44"><h4>Google Flights Scraper (Prices, Airlines, Stops)</h4></div>
+<dl><dt>Primary event rate</dt><dd>$2 / 1k flights</dd><dt>Billing</dt><dd>Event rates; additional fees may apply</dd><dt>Output</dt><dd>JSON · CSV · Excel</dd><dt>Access</dt><dd>API · MCP · no-code</dd></dl>
+<a class="btn" href="https://apify.com/webdatatools/google-flights-scraper?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fgoogle-flights-scraper%2F%3Aspec&amp;utm_term=google-flights-scraper&amp;source_page=%2Fguides%2Fgoogle-flights-scraper%2F&amp;source_actor=google-flights-scraper">Try it free on Apify</a><p><a href="/tools/google-flights-scraper/">Tool details</a></p></div>
+<nav class="toc"><b>On this page</b><ol><li><a href="#what-you-get">What you get</a></li><li><a href="#step-by-step">Step-by-step</a></li><li><a href="#example-input">Example input</a></li><li><a href="#call-it-from-code">Call it from code</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#how-much-does-it-cost">How much does it cost?</a></li><li><a href="#how-it-compares">How it compares</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+</aside></div></div>
+<footer class="site"><div class="wrap">
+<div>© 2026 ChimeraMiND · Tools run on the <a href="https://apify.com/webdatatools?utm_source=data.chimeramind.com&amp;utm_medium=referral&amp;utm_campaign=growth_v2&amp;utm_content=%2Fguides%2Fgoogle-flights-scraper%2F%3Afooter&amp;utm_term=catalog&amp;source_page=%2Fguides%2Fgoogle-flights-scraper%2F&amp;source_actor=catalog">Apify platform</a> under the webdatatools account.</div>
+<div><a href="/guides/">Guides</a> · <a href="/tools/">All tools</a> · <a href="/sitemap.xml">Sitemap</a></div>
+<div>Monitoring tools by ChimeraMiND: <a href="https://watch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Domain Watch</a> · <a href="https://pagewatch.chimeramind.com/?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Page &amp; Price Watch</a> · <a href="https://watch.chimeramind.com/domain-health-check?utm_source=data-site&amp;utm_medium=footer&amp;utm_campaign=crosslink">Free domain health check</a></div>
+</div></footer>
+</body>
+</html>
