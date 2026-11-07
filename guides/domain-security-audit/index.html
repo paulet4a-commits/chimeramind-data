@@ -69,30 +69,35 @@
 </tr>
 </tbody></table>
 </div><p>A real row from a recorded run:</p>
-<figure class="sample" data-sample-status="recorded" data-sample-finished="2026-11-06T19:00:58.083Z" data-sample-run="8q1qjFEhk6fiF1ZZR"><figcaption><span data-sample-label>Recorded example · 0 days old. This is a snapshot, not current data.</span><span class="mono">run 8q1qjFEhk6fiF1ZZR · 2026-11-06</span></figcaption><pre><code class="language-json">{
-  &quot;domain&quot;: &quot;nginx.org&quot;,
-  &quot;certValidFrom&quot;: &quot;2026-10-15T12:15:39.000Z&quot;,
-  &quot;certValidTo&quot;: &quot;2027-01-13T12:15:38.000Z&quot;,
-  &quot;certDaysUntilExpiry&quot;: 67,
+<figure class="sample" data-sample-status="recorded" data-sample-finished="2026-11-07T16:01:00.033Z" data-sample-run="ahYJwVqBRPoeP4DUW"><figcaption><span data-sample-label>Recorded example · 0 days old. This is a snapshot, not current data.</span><span class="mono">run ahYJwVqBRPoeP4DUW · 2026-11-07</span></figcaption><pre><code class="language-json">{
+  &quot;domain&quot;: &quot;sqlite.org&quot;,
+  &quot;certValidFrom&quot;: &quot;2026-10-29T14:56:25.000Z&quot;,
+  &quot;certValidTo&quot;: &quot;2027-01-27T14:56:24.000Z&quot;,
+  &quot;certDaysUntilExpiry&quot;: 80,
   &quot;certIssuerOrg&quot;: &quot;Let&#39;s Encrypt&quot;,
   &quot;certIssuerCN&quot;: &quot;YE1&quot;,
-  &quot;certSubjectCN&quot;: &quot;nginx.org&quot;,
-  &quot;certSanCount&quot;: 16,
+  &quot;certSubjectCN&quot;: &quot;a1.sqlite.org&quot;,
+  &quot;certSanCount&quot;: 23,
   &quot;certAuthorized&quot;: true,
-  &quot;tlsProtocol&quot;: &quot;TLSv1.2&quot;,
-  &quot;finalUrl&quot;: &quot;http://nginx.org/&quot;,
-  &quot;redirectHops&quot;: 0,
+  &quot;tlsProtocol&quot;: &quot;TLSv1.3&quot;,
+  &quot;finalUrl&quot;: &quot;https://sqlite.org/&quot;,
+  &quot;redirectHops&quot;: 1,
   &quot;redirectChain&quot;: [
     {
-      &quot;url&quot;: &quot;http://nginx.org/&quot;,
+      &quot;url&quot;: &quot;http://sqlite.org/&quot;,
+      &quot;status&quot;: 301,
+      &quot;location&quot;: &quot;https://sqlite.org/&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://sqlite.org/&quot;,
       &quot;status&quot;: 200,
       &quot;location&quot;: null
     }
   ],
-  &quot;httpsRedirect&quot;: false,
+  &quot;httpsRedirect&quot;: true,
   &quot;wwwRedirect&quot;: false,
-  &quot;hasHsts&quot;: true,
-  &quot;hstsMaxAge&quot;: 31536000,
+  &quot;hasHsts&quot;: false,
+  &quot;hstsMaxAge&quot;: null,
   &quot;hstsIncludeSubdomains&quot;: false,
   &quot;hstsPreload&quot;: false,
   &quot;hasCsp&quot;: false,
@@ -101,29 +106,29 @@
   &quot;xContentTypeOptions&quot;: null,
   &quot;referrerPolicy&quot;: null,
   &quot;permissionsPolicy&quot;: null,
-  &quot;server&quot;: &quot;nginx/1.31.3&quot;,
+  &quot;server&quot;: null,
   &quot;xPoweredBy&quot;: null,
-  &quot;cacheControl&quot;: null,
+  &quot;cacheControl&quot;: &quot;max-age=120&quot;,
   &quot;cookieCount&quot;: 0,
   &quot;secureCookieCount&quot;: 0,
   &quot;httpOnlyCookieCount&quot;: 0,
   &quot;sameSiteCookieCount&quot;: 0,
   &quot;robotsStatus&quot;: 200,
   &quot;robotsDisallowAll&quot;: false,
-  &quot;robotsSitemapCount&quot;: 1,
+  &quot;robotsSitemapCount&quot;: 0,
   &quot;aiBotsDisallowed&quot;: [],
   &quot;llmsTxtExists&quot;: false,
   &quot;llmsTxtTitle&quot;: null,
   &quot;llmsTxtSize&quot;: null,
-  &quot;securityScore&quot;: 50,
+  &quot;securityScore&quot;: 55,
   &quot;securityGrade&quot;: &quot;C&quot;,
   &quot;issues&quot;: [
-    &quot;HTTP does not redirect to HTTPS&quot;,
+    &quot;No HSTS header&quot;,
     &quot;No Content-Security-Policy header&quot;,
     &quot;No X-Frame-Options header&quot;
   ],
   &quot;error&quot;: null,
-  &quot;scrapedAt&quot;: &quot;2026-11-06T19:00:57.472Z&quot;
+  &quot;scrapedAt&quot;: &quot;2026-11-07T16:00:59.056Z&quot;
 }</code></pre></figure><p>The certificate data comes from a direct TLS handshake on port 443; the rest is ordinary HTTP requests — the same public information any browser receives when it connects.</p>
 <h2 id="how-the-score-works">How the score works</h2>
 <p>Points are earned for: HTTPS redirect (+20), a valid, trusted certificate (+20) with more than 14 days left (+5), HSTS (+15), Content-Security-Policy (+10), X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy (+5 each), no <code>X-Powered-By</code> leak (+5) and all cookies carrying the <code>Secure</code> flag (+5). Grades: A ≥ 85, B ≥ 70, C ≥ 50, D ≥ 30, otherwise F. Every missed point is spelled out in <code>issues</code>, e.g. &quot;No HSTS header&quot; or &quot;TLS certificate expires in 9 day(s)&quot;.</p>
