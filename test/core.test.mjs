@@ -48,7 +48,7 @@ test('catalog prices and prefills are unchanged; missing actors, null prices and
 });
 
 test('every workflow actor exists; related tools exclude self and link real catalog entries', () => {
-    assert.equal(WORKFLOWS.length,4);
+    assert.equal(WORKFLOWS.length,5);
     for (const w of WORKFLOWS) for (const name of w.actors) assert.ok(actors[name]);
     for (const actor of Object.values(actors)) for (const related of relatedActors(actor,actors)) {
         assert.notEqual(related.name,actor.name); assert.ok(actors[related.name]);

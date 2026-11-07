@@ -2,6 +2,7 @@ export const WORKFLOWS = [
     { slug: 'lead', title: 'Lead research', description: 'Build a local business list, discover contact channels, check email addresses and enrich company profiles.', actors: ['google-maps-scraper', 'contact-extractor', 'email-validator', 'company-360'] },
     { slug: 'rag', title: 'RAG knowledge pipeline', description: 'Discover pages, extract website content, split text into chunks and prepare an llms.txt entry point.', actors: ['sitemap-extractor', 'website-to-markdown', 'rag-text-chunker', 'llms-txt-generator'] },
     { slug: 'seo', title: 'SEO audit workflow', description: 'Collect page URLs, audit on-page SEO, inspect structured data and measure Core Web Vitals.', actors: ['sitemap-extractor', 'seo-page-audit', 'structured-data-extractor', 'core-web-vitals-audit'] },
+    { slug: 'youtube', title: 'YouTube channel & video research', description: 'List the uploads of a channel, pull views and likes per video, then read the comments and full transcripts for content, sponsor and audience research.', actors: ['youtube-channel-scraper', 'youtube-video-details', 'youtube-comments-scraper', 'youtube-transcript-scraper'] },
     { slug: 'hiring', title: 'Hiring research', description: 'Collect jobs from company career sites, research LinkedIn postings and monitor hiring signals alongside remote vacancies.', actors: ['career-site-jobs-api', 'linkedin-jobs-scraper', 'hiring-signals', 'remote-jobs-aggregator'] },
 ];
 
