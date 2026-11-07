@@ -38,3 +38,19 @@ test('rate-limit delays are honored only within the total read deadline', async 
         else { await assert.rejects(api('acts/test'), /HTTP 429/); assert.equal(calls, 1); assert.deepEqual(waits, []); }
     }
 });
+
+test('interrupted or truncated response bodies retry instead of failing the whole sync', async () => {
+    let calls = 0;
+    const waits = [];
+    const api = createApi('test-only-token', async () => {
+        if (++calls === 1) return { ok: true, json: async () => { throw new SyntaxError('Unexpected end of JSON input'); } };
+        return { ok: true, json: async () => ({ data: 'complete' }) };
+    }, async ms => waits.push(ms));
+    assert.deepEqual(await api('acts/test'), { data: 'complete' });
+    assert.equal(calls, 2);
+    assert.deepEqual(waits, [500]);
+    let bad = 0;
+    const broken = createApi('test-only-token', async () => { bad++; return { ok: true, json: async () => { throw new SyntaxError('bad'); } }; }, async () => {});
+    await assert.rejects(broken('acts/test'), /invalid JSON/);
+    assert.equal(bad, 3);
+});

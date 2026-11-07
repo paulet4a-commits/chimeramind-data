@@ -14,7 +14,12 @@ export function createApi(token, request = fetch, sleep = pause) {
                 continue;
             }
             if (res.ok) {
-                try { return await res.json(); } catch { throw new Error('Apify returned invalid JSON.'); }
+                // The timeout signal also covers body streaming, so a slow body surfaces here; retry it like a network failure.
+                try { return await res.json(); } catch {
+                    if (attempt === 2 || Date.now() >= deadline) throw new Error('Apify returned invalid JSON.');
+                    await sleep(Math.min(500 * 2 ** attempt, Math.max(0, deadline - Date.now())));
+                    continue;
+                }
             }
             await res.body?.cancel().catch(() => {});
             if (![429, 500, 502, 503, 504].includes(res.status) || attempt === 2 || Date.now() >= deadline) throw new Error(`Apify read request failed (HTTP ${res.status}).`);
