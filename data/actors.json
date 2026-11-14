@@ -234,9 +234,9 @@
   ],
   "price": {
    "unit": "result",
-   "usd": 0.0005,
+   "usd": 0.0004,
    "tiers": {
-    "FREE": 0.0005,
+    "FREE": 0.0004,
     "BRONZE": 0.0004,
     "SILVER": 0.00035,
     "GOLD": 0.0003,
@@ -268,14 +268,14 @@
   ],
   "price": {
    "unit": "result",
-   "usd": 0.001,
+   "usd": 0.0005,
    "tiers": {
-    "FREE": 0.001,
-    "BRONZE": 0.0008,
-    "SILVER": 0.0007,
-    "GOLD": 0.0006,
-    "PLATINUM": 0.0006,
-    "DIAMOND": 0.0006
+    "FREE": 0.0005,
+    "BRONZE": 0.0002,
+    "SILVER": 0.0002,
+    "GOLD": 0.0002,
+    "PLATINUM": 0.0002,
+    "DIAMOND": 0.0002
    }
   },
   "prefill": {
@@ -312,9 +312,9 @@
     "FREE": 0.0002,
     "BRONZE": 0.00016,
     "SILVER": 0.00014,
-    "GOLD": 0.00012,
-    "PLATINUM": 0.00012,
-    "DIAMOND": 0.00012
+    "GOLD": 0.0001,
+    "PLATINUM": 0.0001,
+    "DIAMOND": 0.0001
    }
   },
   "prefill": {
@@ -655,10 +655,10 @@
   ],
   "price": {
    "unit": "result",
-   "usd": 0.001,
+   "usd": 0.0007,
    "tiers": {
-    "FREE": 0.001,
-    "BRONZE": 0.0008,
+    "FREE": 0.0007,
+    "BRONZE": 0.0007,
     "SILVER": 0.0007,
     "GOLD": 0.0006,
     "PLATINUM": 0.0006,
@@ -1180,14 +1180,14 @@
   ],
   "price": {
    "unit": "video",
-   "usd": 0.001,
+   "usd": 0.00095,
    "tiers": {
-    "FREE": 0.001,
+    "FREE": 0.00095,
     "BRONZE": 0.0008,
-    "SILVER": 0.0007,
-    "GOLD": 0.0006,
-    "PLATINUM": 0.0006,
-    "DIAMOND": 0.0006
+    "SILVER": 0.00065,
+    "GOLD": 0.0005,
+    "PLATINUM": 0.0005,
+    "DIAMOND": 0.0005
    }
   },
   "prefill": {
@@ -1708,14 +1708,14 @@
   ],
   "price": {
    "unit": "review",
-   "usd": 0.0002,
+   "usd": 0.0001,
    "tiers": {
-    "FREE": 0.0002,
-    "BRONZE": 0.00016,
-    "SILVER": 0.00014,
-    "GOLD": 0.00012,
-    "PLATINUM": 0.00012,
-    "DIAMOND": 0.00012
+    "FREE": 0.0001,
+    "BRONZE": 0.0001,
+    "SILVER": 0.0001,
+    "GOLD": 0.0001,
+    "PLATINUM": 0.0001,
+    "DIAMOND": 0.0001
    }
   },
   "prefill": {
@@ -1871,11 +1871,11 @@
   ],
   "price": {
    "unit": "short",
-   "usd": 0.003,
+   "usd": 0.002,
    "tiers": {
-    "FREE": 0.003,
-    "BRONZE": 0.0024,
-    "SILVER": 0.0021,
+    "FREE": 0.002,
+    "BRONZE": 0.002,
+    "SILVER": 0.002,
     "GOLD": 0.0018,
     "PLATINUM": 0.0018,
     "DIAMOND": 0.0018
@@ -1965,11 +1965,11 @@
   ],
   "price": {
    "unit": "job",
-   "usd": 0.003,
+   "usd": 0.002,
    "tiers": {
-    "FREE": 0.003,
-    "BRONZE": 0.0024,
-    "SILVER": 0.0021,
+    "FREE": 0.002,
+    "BRONZE": 0.002,
+    "SILVER": 0.002,
     "GOLD": 0.0018,
     "PLATINUM": 0.0018,
     "DIAMOND": 0.0018
@@ -2058,10 +2058,10 @@
   ],
   "price": {
    "unit": "job",
-   "usd": 0.002,
+   "usd": 0.00149,
    "tiers": {
-    "FREE": 0.002,
-    "BRONZE": 0.0016,
+    "FREE": 0.00149,
+    "BRONZE": 0.00149,
     "SILVER": 0.0014,
     "GOLD": 0.0012,
     "PLATINUM": 0.0012,
@@ -2122,9 +2122,9 @@
   ],
   "price": {
    "unit": "tweet",
-   "usd": 0.0005,
+   "usd": 0.0004,
    "tiers": {
-    "FREE": 0.0005,
+    "FREE": 0.0004,
     "BRONZE": 0.0004,
     "SILVER": 0.00035,
     "GOLD": 0.0003,
@@ -2975,10 +2975,10 @@
   ],
   "price": {
    "unit": "market",
-   "usd": 0.001,
+   "usd": 0.00075,
    "tiers": {
-    "FREE": 0.001,
-    "BRONZE": 0.0008,
+    "FREE": 0.00075,
+    "BRONZE": 0.00075,
     "SILVER": 0.0007,
     "GOLD": 0.0006,
     "PLATINUM": 0.0006,
@@ -3620,9 +3620,9 @@
     "FREE": 0.001,
     "BRONZE": 0.0008,
     "SILVER": 0.0007,
-    "GOLD": 0.0006,
-    "PLATINUM": 0.0006,
-    "DIAMOND": 0.0006
+    "GOLD": 0.0005,
+    "PLATINUM": 0.0005,
+    "DIAMOND": 0.0005
    }
   },
   "prefill": {
@@ -3645,14 +3645,14 @@
   ],
   "price": {
    "unit": "video",
-   "usd": 0.002,
+   "usd": 0.00025,
    "tiers": {
-    "FREE": 0.002,
-    "BRONZE": 0.0016,
-    "SILVER": 0.0014,
-    "GOLD": 0.0012,
-    "PLATINUM": 0.0012,
-    "DIAMOND": 0.0012
+    "FREE": 0.00025,
+    "BRONZE": 0.00025,
+    "SILVER": 0.00025,
+    "GOLD": 0.00025,
+    "PLATINUM": 0.00025,
+    "DIAMOND": 0.00025
    }
   },
   "prefill": {
@@ -3925,14 +3925,14 @@
   ],
   "price": {
    "unit": "result",
-   "usd": 0.003,
+   "usd": 0.00175,
    "tiers": {
-    "FREE": 0.003,
-    "BRONZE": 0.0027,
-    "SILVER": 0.0025,
-    "GOLD": 0.0022,
-    "PLATINUM": 0.0022,
-    "DIAMOND": 0.0022
+    "FREE": 0.00175,
+    "BRONZE": 0.00175,
+    "SILVER": 0.00175,
+    "GOLD": 0.00175,
+    "PLATINUM": 0.00175,
+    "DIAMOND": 0.00175
    }
   },
   "prefill": {
@@ -4072,11 +4072,11 @@
   ],
   "price": {
    "unit": "result",
-   "usd": 0.0005,
+   "usd": 0.0003,
    "tiers": {
-    "FREE": 0.0005,
-    "BRONZE": 0.0004,
-    "SILVER": 0.00035,
+    "FREE": 0.0003,
+    "BRONZE": 0.0003,
+    "SILVER": 0.0003,
     "GOLD": 0.0003,
     "PLATINUM": 0.0003,
     "DIAMOND": 0.0003
@@ -4101,14 +4101,14 @@
   ],
   "price": {
    "unit": "result",
-   "usd": 0.0003,
+   "usd": 0.0002,
    "tiers": {
-    "FREE": 0.0003,
-    "BRONZE": 0.0003,
-    "SILVER": 0.0003,
-    "GOLD": 0.0003,
-    "PLATINUM": 0.0003,
-    "DIAMOND": 0.0003
+    "FREE": 0.0002,
+    "BRONZE": 0.0002,
+    "SILVER": 0.0002,
+    "GOLD": 0.0002,
+    "PLATINUM": 0.0002,
+    "DIAMOND": 0.0002
    }
   },
   "prefill": {
@@ -4160,14 +4160,14 @@
   ],
   "price": {
    "unit": "result",
-   "usd": 0.0008,
+   "usd": 0.0005,
    "tiers": {
-    "FREE": 0.0008,
-    "BRONZE": 0.00075,
-    "SILVER": 0.0007,
-    "GOLD": 0.0006,
-    "PLATINUM": 0.0006,
-    "DIAMOND": 0.0006
+    "FREE": 0.0005,
+    "BRONZE": 0.0005,
+    "SILVER": 0.0005,
+    "GOLD": 0.0005,
+    "PLATINUM": 0.0005,
+    "DIAMOND": 0.0005
    }
   },
   "prefill": {
@@ -4467,14 +4467,14 @@
   ],
   "price": {
    "unit": "review",
-   "usd": 0.004,
+   "usd": 0.0025,
    "tiers": {
-    "FREE": 0.004,
-    "BRONZE": 0.0032,
-    "SILVER": 0.0028,
-    "GOLD": 0.0024,
-    "PLATINUM": 0.0024,
-    "DIAMOND": 0.0024
+    "FREE": 0.0025,
+    "BRONZE": 0.0025,
+    "SILVER": 0.0025,
+    "GOLD": 0.0023,
+    "PLATINUM": 0.0023,
+    "DIAMOND": 0.0023
    }
   },
   "prefill": {
