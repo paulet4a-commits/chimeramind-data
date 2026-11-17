@@ -2820,14 +2820,14 @@
   ],
   "price": {
    "unit": "hotel",
-   "usd": 0.002,
+   "usd": 0.00049,
    "tiers": {
-    "FREE": 0.002,
-    "BRONZE": 0.0016,
-    "SILVER": 0.0014,
-    "GOLD": 0.0012,
-    "PLATINUM": 0.0012,
-    "DIAMOND": 0.0012
+    "FREE": 0.00049,
+    "BRONZE": 0.00044,
+    "SILVER": 0.00039,
+    "GOLD": 0.00034,
+    "PLATINUM": 0.00034,
+    "DIAMOND": 0.00034
    }
   },
   "prefill": {
@@ -2851,14 +2851,14 @@
   ],
   "price": {
    "unit": "place",
-   "usd": 0.002,
+   "usd": 0.00024,
    "tiers": {
-    "FREE": 0.002,
-    "BRONZE": 0.0016,
-    "SILVER": 0.0014,
-    "GOLD": 0.0012,
-    "PLATINUM": 0.0012,
-    "DIAMOND": 0.0012
+    "FREE": 0.00024,
+    "BRONZE": 0.00022,
+    "SILVER": 0.00019,
+    "GOLD": 0.00017,
+    "PLATINUM": 0.00017,
+    "DIAMOND": 0.00017
    }
   },
   "prefill": {
@@ -3318,14 +3318,14 @@
   ],
   "price": {
    "unit": "place",
-   "usd": 0.002,
+   "usd": 0.00019,
    "tiers": {
-    "FREE": 0.002,
-    "BRONZE": 0.0016,
-    "SILVER": 0.0014,
-    "GOLD": 0.0012,
-    "PLATINUM": 0.0012,
-    "DIAMOND": 0.0012
+    "FREE": 0.00019,
+    "BRONZE": 0.00019,
+    "SILVER": 0.00019,
+    "GOLD": 0.00019,
+    "PLATINUM": 0.00019,
+    "DIAMOND": 0.00019
    }
   },
   "prefill": {
